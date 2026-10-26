@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CA Foundation | Ch 7 Unit 3: Budget Making & Public Debt</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Kalam:wght@400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --paper-bg: #fffdf7; --line-color: #e2e8f0; --margin-red: #fca5a5; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f1f5f9; }
+    .handwritten-title { font-family: 'Caveat', cursive; }
+    .handwritten-body { font-family: 'Kalam', cursive; line-height: 1.75; font-size: 1.12rem; }
+    .notebook-page {
+      background-color: var(--paper-bg);
+      background-image: linear-gradient(var(--line-color) 1px, transparent 1px);
+      background-size: 100% 32px;
+      border-left: 4px double var(--margin-red);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    }
+    .hl-yellow { background: linear-gradient(104deg, rgba(254, 240, 138, 0) 0.9%, rgba(254, 240, 138, 0.95) 2.4%, rgba(254, 240, 138, 0.6) 5.8%, rgba(254, 240, 138, 0.9) 93%, rgba(254, 240, 138, 0.7) 96%, rgba(254, 240, 138, 0) 98%); padding: 2px 6px; border-radius: 4px; }
+    .hl-green { background: linear-gradient(104deg, rgba(187, 247, 208, 0) 0.9%, rgba(187, 247, 208, 0.95) 2.4%, rgba(187, 247, 208, 0.7) 93%, rgba(187, 247, 208, 0) 98%); padding: 2px 6px; border-radius: 4px; }
+    .hl-pink { background: linear-gradient(104deg, rgba(251, 207, 232, 0) 0.9%, rgba(251, 207, 232, 0.95) 2.4%, rgba(251, 207, 232, 0.7) 93%, rgba(251, 207, 232, 0) 98%); padding: 2px 6px; border-radius: 4px; }
+    .sketch-box { border: 2px dashed #475569; border-radius: 14px; background: #ffffff; }
+    .flip-card { perspective: 1000px; min-height: 250px; }
+    .flip-card-inner { position: relative; width: 100%; height: 100%; min-height: 250px; transition: transform 0.6s; transform-style: preserve-3d; }
+    .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+    .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; }
+    .flip-card-back { transform: rotateY(180deg); }
+    @media print { .no-print { display: none !important; } .tab-section { display: block !important; page-break-after: always; } }
+  </style>
+</head>
+<body class="text-slate-800">
+
+  <header class="bg-gradient-to-r from-amber-900 via-orange-800 to-red-900 text-white sticky top-0 z-50 shadow-lg no-print">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+      <div>
+        <span class="text-xs uppercase tracking-widest bg-amber-400 text-slate-900 font-bold px-2.5 py-0.5 rounded-full">CA Foundation • Business Economics</span>
+        <h1 class="text-xl md:text-2xl font-bold mt-1">Chapter 7: Public Finance — Unit 3 Master Suite</h1>
+      </div>
+    </div>
+    <nav class="bg-slate-950/60 border-t border-white/10 overflow-x-auto">
+      <div class="max-w-7xl mx-auto px-4 flex space-x-1 py-1.5 text-sm font-semibold whitespace-nowrap">
+        <button onclick="switchTab('tab1')" id="btn-tab1" class="tab-btn bg-amber-400 text-slate-950 px-3.5 py-2 rounded-lg transition">1. ✍️ Handwritten Notes</button>
+        <button onclick="switchTab('tab2')" id="btn-tab2" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">2. ⚡ Revision Notes</button>
+        <button onclick="switchTab('tab3')" id="btn-tab3" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">3. 🃏 Flashcards</button>
+        <button onclick="switchTab('tab4')" id="btn-tab4" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">4. 🎯 Practice MCQs</button>
+        <button onclick="switchTab('tab5')" id="btn-tab5" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">5. 📊 Summary Table</button>
+        <button onclick="switchTab('tab6')" id="btn-tab6" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">6. 🧠 Mind Map</button>
+        <button onclick="switchTab('tab7')" id="btn-tab7" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">7. 🎥 Video Hub</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <!-- TAB 1: DETAILED HANDWRITTEN NOTES -->
+    <section id="tab1" class="tab-section space-y-8">
+      <div class="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-300 rounded-2xl p-4 flex justify-between items-center">
+        <h2 class="text-xl font-bold text-amber-950 flex items-center gap-2"><span>📓</span> Complete Visual Notes: Budget Making & Public Debt</h2>
+        <button onclick="window.print()" class="no-print bg-amber-900 hover:bg-amber-800 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow">🖨️ Print</button>
+      </div>
+
+      <!-- Part 1: Objectives & Process -->
+      <div class="notebook-page rounded-2xl p-6 md:p-10 relative">
+        <h3 class="handwritten-title text-4xl text-amber-950 font-bold mb-4">1. Need & Process of Budget Making[cite: 2]</h3>
+        <div class="handwritten-body space-y-6 text-slate-800">
+          <p>
+            A <strong>government budget</strong> is a document presented for approval by a government containing estimates of proposed expenditure and means of financing them for the next fiscal year (April 1 to March 31). It details 'where the money comes from' and 'where the money goes to'[cite: 2]. Under <strong>Article 112</strong>, it is called the "Annual Financial Statement"[cite: 2].
+          </p>
+          <div class="sketch-box p-5 bg-white">
+            <h4 class="font-bold text-lg text-amber-900 mb-2">🎯 5 Key Objectives of Budgeting:</h4>
+            <ul class="list-disc pl-5 space-y-1 font-sans text-sm">
+              <li>Efficiently allocate limited resources to ensure maximum social welfare[cite: 2].</li>
+              <li>Reallocate resources according to declared priorities[cite: 2].</li>
+              <li>Redistribute income and wealth[cite: 2].</li>
+              <li>Reduce/eliminate economic fluctuations to bring stability[cite: 2].</li>
+              <li>Achieve sustainable increase in real GDP and reduce regional disparities[cite: 2].</li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+            <div class="bg-amber-50 p-4 border border-amber-200 rounded-lg">
+              <strong class="text-amber-900 text-xl">Administrative Process (Preparation)</strong>
+              <ul class="list-disc pl-5 mt-2 space-y-1 text-sm font-sans">
+                <li>Starts in <span class="hl-yellow">August-September</span> of the previous year[cite: 2].</li>
+                <li>Prepared by the <strong>Ministry of Finance</strong> in consultation with NITI Aayog and other ministries[cite: 2].</li>
+                <li>Budget Division issues a circular with formats. Departments prepare receipts/expenditure estimates[cite: 2].</li>
+                <li>Finance Minister holds pre-budget consultations with stakeholders, industry experts, economists, and labour organisations[cite: 2].</li>
+              </ul>
+            </div>
+            <div class="bg-indigo-50 p-4 border border-indigo-200 rounded-lg">
+              <strong class="text-indigo-900 text-xl">Legislative Process & Documents</strong>
+              <ul class="list-disc pl-5 mt-2 space-y-1 text-sm font-sans">
+                <li>Budget is passed by Parliament after discussions[cite: 2].</li>
+                <li><strong>Budget Speech:</strong> A policy document presented by the FM in Lok Sabha outlining new tax, borrowing, and expenditure plans[cite: 2].</li>
+                <li><strong>3 Data Sets Shown:</strong> (1) Budget Estimates (BE) for ensuing year, (2) Revised Estimates (RE) for current year, (3) Actuals of the preceding year[cite: 2].</li>
+                <li><strong>Finance Bill:</strong> Details imposition, abolition, or regulation of taxes[cite: 2].</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part 2: Revenue & Expenditure -->
+      <div class="notebook-page rounded-2xl p-6 md:p-10 relative">
+        <h3 class="handwritten-title text-4xl text-amber-950 font-bold mb-4">2. Sources of Revenue & Expenditure Management[cite: 2]</h3>
+        <div class="handwritten-body space-y-6 text-slate-800">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-emerald-50 border border-emerald-300 p-4 rounded-xl">
+              <h4 class="font-bold text-xl text-emerald-900">📥 Government Receipts</h4>
+              <p class="text-sm font-sans mt-2"><strong>1. Revenue Receipts:</strong> Do not create liability or reduce assets. Comprises:<br>
+              - <em>Tax Revenue:</em> Corporation tax, Income tax, Wealth tax, Customs duties, Union excise duties, GST (including compensation cess), Taxes on UTs[cite: 2].<br>
+              - <em>Non-Tax Revenue</em>[cite: 2].</p>
+              <p class="text-sm font-sans mt-2"><strong>2. Capital Receipts:</strong> Lead to reduction in assets or increase in liabilities (e.g., loan recoveries, disinvestment, debt)[cite: 2].</p>
+            </div>
+            <div class="bg-rose-50 border border-rose-300 p-4 rounded-xl">
+              <h4 class="font-bold text-xl text-rose-900">📤 Government Expenditure</h4>
+              <p class="text-sm font-sans mt-2"><strong>1. Revenue Expenditure:</strong> For normal functioning of government, not for asset creation (e.g., interest payments, grants to states, day-to-day running)[cite: 2].</p>
+              <p class="text-sm font-sans mt-2"><strong>Expenditure Categories:</strong><br>
+              - <em>Establishment Exp:</em> Ministries/attached offices[cite: 2].<br>
+              - <em>Central Sector Schemes (CS):</em> 100% funded & implemented by Centre[cite: 2].<br>
+              - <em>Transfers:</em> Centrally sponsored schemes, Finance Commission transfers, other grants[cite: 2].</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part 3: Public Debt -->
+      <div class="notebook-page rounded-2xl p-6 md:p-10 relative">
+        <h3 class="handwritten-title text-4xl text-amber-950 font-bold mb-4">3. Public Debt Management & FRBM Act[cite: 2]</h3>
+        <div class="handwritten-body space-y-6 text-slate-800">
+          <p>
+            <strong>Public Debt:</strong> Government debt from internal and external sources contracted in the Consolidated Fund of India[cite: 2]. The objective is to raise required funding at the lowest possible cost while keeping debt sustainable[cite: 2].
+          </p>
+          <div class="sketch-box p-5 bg-white">
+            <h4 class="font-bold text-lg text-amber-900 mb-2">🏛️ Managing Institutions & Strategy:</h4>
+            <ul class="list-disc pl-5 space-y-1 font-sans text-sm">
+              <li><strong>Reserve Bank of India (RBI):</strong> Manages domestic marketable debt (dated securities, treasury bills, cash management bills)[cite: 2].</li>
+              <li><strong>Public Debt Management Cell (PDMC):</strong> Created in 2016 under Dept of Economic Affairs[cite: 2].</li>
+              <li><strong>MTDS 2021-24:</strong> Medium Term Debt Management Strategy—aims to raise debt efficiently at low cost without disruption[cite: 2]. Built on low cost, risk mitigation, and market development[cite: 2].</li>
+            </ul>
+          </div>
+          <div class="bg-blue-50 border border-blue-200 p-4 rounded-lg mt-4">
+            <strong class="text-blue-900 text-lg">FRBM Act (2003) & Deficit Concepts:</strong>
+            <p class="text-sm font-sans mt-1">The Fiscal Responsibility and Budget Management Act was passed to provide a legislative framework for reducing deficit and debt. Objectives: Inter-generational equity, long-run macro stability, fiscal-monetary coordination, and transparency[cite: 2].</p>
+            <p class="text-sm font-sans mt-2 font-bold text-rose-700">Formula: Primary Deficit = Fiscal Deficit – Net Interest Liabilities[cite: 2]</p>
+            <p class="text-sm font-sans mt-2 font-bold text-indigo-700">Outcome Budget: Progress card linking budgetary allocations to annual performance targets/outcomes[cite: 2].</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: REVISION -->
+    <section id="tab2" class="tab-section hidden space-y-6">
+      <div class="bg-amber-950 text-white rounded-2xl p-6 shadow border-l-4 border-amber-600">
+        <h2 class="text-2xl font-bold mt-2">⚡ Quick Revision Notes — Unit 3</h2>
+        <ul class="space-y-3 text-sm text-amber-100 mt-4">
+          <li>• <strong>Budget timeline:</strong> Starts in Aug-Sept; presented Feb 1st; Fiscal year is April 1 - Mar 31[cite: 2].</li>
+          <li>• <strong>Outcome Budget:</strong> Links allocations directly to performance outcomes/results[cite: 2].</li>
+          <li>• <strong>Finance Bill:</strong> Details the imposition, abolition, or alteration of taxes[cite: 2].</li>
+          <li>• <strong>Revenue vs Capital:</strong> Revenue receipts do not create liability/reduce assets. Capital receipts (like debt/disinvestment) do[cite: 2].</li>
+          <li>• <strong>Central Sector Schemes:</strong> Entirely funded and implemented by central agencies[cite: 2].</li>
+          <li>• <strong>RBI handles:</strong> Domestic marketable debt (T-bills, dated securities)[cite: 2].</li>
+          <li>• <strong>PDMC:</strong> Public Debt Management Cell (created 2016) formulates MTDS 2021-24 strategy[cite: 2].</li>
+          <li>• <strong>FRBM Act 2003:</strong> Aims for sustainable debt, macroeconomic stability, and inter-generational equity[cite: 2].</li>
+          <li>• <strong>Primary Deficit:</strong> Fiscal Deficit minus Net Interest liabilities[cite: 2].</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAB 3: FLASHCARDS -->
+    <section id="tab3" class="tab-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow border border-slate-200">
+        <h2 class="text-2xl font-bold text-slate-900 mt-1">🃏 Unit 3 Flashcards</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" id="flashcard-grid-u3"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: MCQs -->
+    <section id="tab4" class="tab-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow border border-slate-200">
+        <h2 class="text-2xl font-bold text-slate-900 mt-1">🎯 Practice MCQs (Unit 3)</h2>
+        <div id="mcq-container-u3" class="space-y-4 mt-4"></div>
+      </div>
+    </section>
+
+    <!-- TAB 5: SUMMARY TABLE -->
+    <section id="tab5" class="tab-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow border border-slate-200">
+        <h2 class="text-2xl font-bold text-slate-900 mt-1">📊 Unit 3 Summary Table</h2>
+        <div class="overflow-x-auto mt-4">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="bg-slate-900 text-white">
+                <th class="p-3.5 rounded-tl-xl">Concept</th>
+                <th class="p-3.5">Key Components / Definition</th>
+                <th class="p-3.5 rounded-tr-xl">Authority / Examples</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-amber-950">Budget Documents</td>
+                <td class="p-3.5">Budget Estimates (BE), Revised Estimates (RE), Actuals, Finance Bill, Outcome Budget[cite: 2]</td>
+                <td class="p-3.5">Ministry of Finance, NITI Aayog[cite: 2]</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-amber-950">Revenue Receipts</td>
+                <td class="p-3.5">Neither creates liability nor reduces assets[cite: 2]</td>
+                <td class="p-3.5">Tax (Corp, Income, GST, Customs) & Non-tax revenue[cite: 2]</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-amber-950">Capital Receipts</td>
+                <td class="p-3.5">Reduces assets or increases liabilities[cite: 2]</td>
+                <td class="p-3.5">Disinvestment, loan recovery, debt[cite: 2]</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-amber-950">Public Debt Mgt</td>
+                <td class="p-3.5">Raising funding at desired risk and lowest cost[cite: 2]</td>
+                <td class="p-3.5">RBI (Domestic), PDMC (MTDS 2021-24)[cite: 2]</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-amber-950">Deficit & FRBM</td>
+                <td class="p-3.5">Primary Deficit = Fiscal Deficit - Net Interest[cite: 2]</td>
+                <td class="p-3.5">FRBM Act 2003 (Macro stability, equity)[cite: 2]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: MIND MAP -->
+    <section id="tab6" class="tab-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow border border-slate-200 text-center">
+        <h2 class="text-2xl font-bold text-slate-900 mt-1 mb-4">🧠 Unit 3 Mind Map</h2>
+        <div class="inline-block bg-slate-900 text-white p-6 rounded-2xl shadow-inner">
+            <h3 class="text-lg font-bold text-amber-400 mb-4">THE PROCESS OF BUDGET MAKING & DEBT</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+              <div class="bg-slate-800 p-3 rounded-lg border border-slate-600 text-sm">
+                <strong class="text-white">1. Preparation & Bills</strong><br>
+                <span class="text-slate-300">- Starts Aug-Sept (MoF + NITI)<br>- BE, RE, Actuals<br>- Finance Bill (Taxes)<br>- Outcome Budget (Results)</span>
+              </div>
+              <div class="bg-slate-800 p-3 rounded-lg border border-slate-600 text-sm">
+                <strong class="text-white">2. Receipts & Expenditure</strong><br>
+                <span class="text-slate-300">- Revenue vs Capital Receipts<br>- Revenue vs Capital Exp<br>- CS Schemes vs Centrally Sponsored</span>
+              </div>
+              <div class="bg-slate-800 p-3 rounded-lg border border-slate-600 text-sm">
+                <strong class="text-white">3. Public Debt & FRBM</strong><br>
+                <span class="text-slate-300">- RBI handles Domestic Debt<br>- PDMC & MTDS 2021-24<br>- FRBM Act 2003<br>- Primary Deficit Formula</span>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 7: VIDEO HUB -->
+    <section id="tab7" class="tab-section hidden space-y-6">
+      <div class="bg-gradient-to-r from-amber-900 to-slate-900 text-white rounded-2xl p-6 shadow-lg">
+        <h2 class="text-2xl font-bold mt-2">🎥 Detailed Topic Video Lectures (Unit 3)</h2>
+        <div id="vid-visual-stage-u3" class="bg-slate-900 border border-slate-800 rounded-xl p-5 my-3 text-center">
+           <h4 class="text-xl font-bold text-amber-400" id="vid-title-u3">Module 1: Process of Budget Making</h4>
+           <p class="mt-4 text-slate-300" id="vid-text-u3">The Ministry of Finance works with NITI Aayog to draft the budget, issuing circulars in Aug-Sept. The Budget contains Budget Estimates, Revised Estimates, and Actuals[cite: 2].</p>
+           <button onclick="nextVidU3()" class="mt-4 bg-amber-500 text-black px-4 py-2 rounded font-bold text-sm">Next Module ➡️</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-section').forEach(sec => sec.classList.add('hidden'));
+      document.getElementById(tabId).classList.remove('hidden');
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-amber-400', 'text-slate-950');
+        btn.classList.add('text-slate-200');
+      });
+      const activeBtn = document.getElementById('btn-' + tabId);
+      activeBtn.classList.add('bg-amber-400', 'text-slate-950');
+      activeBtn.classList.remove('text-slate-200');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    const flashcardsData = [
+      { q: "Who manages the domestic marketable debt of the Central Government?", a: "The Reserve Bank of India (RBI)[cite: 2].", tag: "Debt Management" },
+      { q: "What is an Outcome Budget?", a: "A budget that establishes a direct link between budgetary allocations of schemes and annual performance targets/outcomes[cite: 2].", tag: "Concepts" },
+      { q: "What is the formula for Primary Deficit?", a: "Fiscal deficit – Net Interest liabilities[cite: 2].", tag: "Deficits" },
+      { q: "What is the Finance Bill?", a: "A bill detailing the imposition, abolition, alteration or regulation of taxes proposed in the budget[cite: 2].", tag: "Budget Process" },
+      { q: "What are Central Sector Schemes (CS)?", a: "Schemes which are entirely funded and implemented by the central agencies under union government ministries[cite: 2].", tag: "Expenditure" },
+      { q: "What was the objective of the FRBM Act (2003)?", a: "To provide a legislative framework for the reduction of deficit and debt to a sustainable level, ensuring macro stability and inter-generational equity[cite: 2].", tag: "Policy" }
+    ];
+
+    function renderFlashcards() {
+      const grid = document.getElementById('flashcard-grid-u3');
+      grid.innerHTML = flashcardsData.map((item, idx) => `
+        <div id="fcard-${idx}" class="flip-card cursor-pointer" onclick="document.getElementById('fcard-${idx}').classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front bg-white border-2 border-slate-200 shadow-sm">
+              <span class="text-xs font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded w-max">${item.tag}</span>
+              <p class="font-bold text-slate-800 text-base my-auto">${item.q}</p>
+            </div>
+            <div class="flip-card-back bg-amber-950 text-white shadow-md">
+              <span class="text-xs font-bold bg-amber-400 text-slate-950 px-2 py-1 rounded w-max">Answer</span>
+              <p class="text-sm text-amber-50 whitespace-pre-line my-auto">${item.a}</p>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const mcqData = [
+      {
+        q: "1. Public debt management aims at:",
+        options: ["An efficient budgetary policy to avail of domestic debt facilities", "Raising loans from international agencies at lower rates of interest", "Raising the required amount of funding at the desired risk and cost levels", "Management of public expenditure to reduce public debt"],
+        correct: 2,
+        exp: "Public debt management is the process of setting up and implementing a strategy to raise the required amount of funding at the desired risk and cost levels[cite: 2]."
+      },
+      {
+        q: "2. The railway budget is:",
+        options: ["Part of the general budget, but is presented by the railway minister", "Now merged with the general Union budget", "Presented separately by the Finance Minister", "Managed entirely by state governments"],
+        correct: 1,
+        exp: "As part of budgeting reforms, the railway budget has been merged with the general Union budget."
+      },
+      {
+        q: "3. Revenue receipts of the government include:",
+        options: ["Tax revenue and Non-tax revenue", "Debt receipts and Non-debt capital receipts", "Only Corporation tax and Wealth tax", "Recoveries of loans and disinvestment"],
+        correct: 0,
+        exp: "Government receipts are classified into Revenue Receipts (tax + non-tax revenue) and Capital Receipts (debt + non-debt capital receipts)[cite: 2]."
+      }
+    ];
+
+    let mcqAnswers = {};
+    function renderMCQs() {
+      const container = document.getElementById('mcq-container-u3');
+      container.innerHTML = mcqData.map((item, qIdx) => {
+        const userAns = mcqAnswers[qIdx];
+        const hasAns = userAns !== undefined;
+        return `
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+            <p class="font-bold text-slate-900 mb-4">${item.q}</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              ${item.options.map((opt, oIdx) => {
+                let style = "border-slate-200 text-slate-800";
+                if (hasAns) {
+                  if (oIdx === item.correct) style = "border-emerald-500 bg-emerald-50 font-bold";
+                  else if (oIdx === userAns) style = "border-rose-500 bg-rose-50 font-bold";
+                  else style = "border-slate-200 opacity-60";
+                }
+                return `<button onclick="selectMCQ(${qIdx}, ${oIdx})" ${hasAns ? 'disabled' : ''} class="text-left p-3 rounded-xl border-2 text-sm ${style}">${String.fromCharCode(65+oIdx)}. ${opt}</button>`;
+              }).join('')}
+            </div>
+            ${hasAns ? `<div class="mt-4 p-4 rounded-xl text-sm ${userAns === item.correct ? 'bg-emerald-50 text-emerald-950' : 'bg-rose-50 text-rose-950'}"><strong>${userAns === item.correct ? '✅ Correct!' : '❌ Incorrect.'}</strong> ${item.exp}</div>` : ''}
+          </div>
+        `;
+      }).join('');
+    }
+    function selectMCQ(qIdx, oIdx) { if(mcqAnswers[qIdx] !== undefined) return; mcqAnswers[qIdx] = oIdx; renderMCQs(); }
+
+    const vids = [
+      { t: "Module 1: Process of Budget Making", d: "The Ministry of Finance works with NITI Aayog to draft the budget, issuing circulars in Aug-Sept. The Budget contains Budget Estimates, Revised Estimates, and Actuals[cite: 2]." },
+      { t: "Module 2: Receipts & Expenditure", d: "Revenue receipts (Tax and Non-tax) don't create liability. Capital receipts (Debt, disinvestment) do. Expenditure is divided into Revenue and Capital[cite: 2]." },
+      { t: "Module 3: Public Debt & FRBM", d: "RBI manages domestic debt. PDMC formulates the MTDS 2021-24 strategy. The FRBM Act 2003 ensures sustainable debt and inter-generational equity[cite: 2]." }
+    ];
+    let vIdx = 0;
+    function nextVidU3() {
+      vIdx = (vIdx + 1) % vids.length;
+      document.getElementById('vid-title-u3').innerText = vids[vIdx].t;
+      document.getElementById('vid-text-u3').innerText = vids[vIdx].d;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => { renderFlashcards(); renderMCQs(); });
+  </script>
+</body>
+</html>

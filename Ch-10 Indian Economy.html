@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Foundation - Business Economics: Chapter 10 - Indian Economy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --line-color: #e5e7eb;
+            --margin-line: #ef4444;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: #1f2937;
+        }
+        .notebook-paper {
+            background-image: repeating-linear-gradient(transparent, transparent 31px, var(--line-color) 31px, var(--line-color) 32px);
+            background-position: 0 1.2rem;
+            background-attachment: local;
+            border-left: 2px solid var(--margin-line);
+            padding-left: 2rem;
+            font-family: 'Kalam', cursive;
+            font-size: 1.2rem;
+            line-height: 2rem;
+        }
+        .handwritten {
+            font-family: 'Patrick Hand', cursive;
+        }
+        .hl-yellow { background: linear-gradient(104deg, rgba(253,230,138,0) 0.9%, rgba(253,230,138,1) 2.4%, rgba(253,230,138,0.5) 5.8%, rgba(253,230,138,1) 93%, rgba(253,230,138,0.7) 96%, rgba(253,230,138,0) 98%); }
+        .hl-green { background: linear-gradient(104deg, rgba(167,243,208,0) 0.9%, rgba(167,243,208,1) 2.4%, rgba(167,243,208,0.5) 5.8%, rgba(167,243,208,1) 93%, rgba(167,243,208,0.7) 96%, rgba(167,243,208,0) 98%); }
+        .hl-pink { background: linear-gradient(104deg, rgba(252,165,165,0) 0.9%, rgba(252,165,165,1) 2.4%, rgba(252,165,165,0.5) 5.8%, rgba(252,165,165,1) 93%, rgba(252,165,165,0.7) 96%, rgba(252,165,165,0) 98%); }
+        .hl-blue { background: linear-gradient(104deg, rgba(191,219,254,0) 0.9%, rgba(191,219,254,1) 2.4%, rgba(191,219,254,0.5) 5.8%, rgba(191,219,254,1) 93%, rgba(191,219,254,0.7) 96%, rgba(191,219,254,0) 98%); }
+        
+        .sticky-note {
+            background-color: #fef08a;
+            box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+            padding: 1rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            margin: 1rem 0;
+            border-bottom-right-radius: 20px 5px;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 220px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.25rem;
+        }
+        .flip-card-front {
+            background-color: #ffffff;
+            border: 2px solid #e5e7eb;
+            color: #111827;
+        }
+        .flip-card-back {
+            background-color: #eff6ff;
+            border: 2px solid #93c5fd;
+            color: #1e3a8a;
+            transform: rotateY(180deg);
+        }
+
+        /* Tabs */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .tab-btn { transition: all 0.2s; }
+        .tab-btn.active { 
+            background-color: #3b82f6; 
+            color: white; 
+            border-color: #3b82f6;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            .notebook-paper { background: none; border: none; padding: 0; }
+            body { background: white; }
+            .tab-content { display: block !important; page-break-before: always; }
+            .tab-content:first-of-type { page-break-before: avoid; }
+        }
+        
+        /* Mind Map basic CSS */
+        .tree ul { padding-top: 20px; position: relative; transition: all 0.5s; }
+        .tree li { float: left; text-align: center; list-style-type: none; position: relative; padding: 20px 5px 0 5px; transition: all 0.5s; }
+        .tree li::before, .tree li::after { content: ''; position: absolute; top: 0; right: 50%; border-top: 2px solid #cbd5e1; width: 50%; height: 20px; }
+        .tree li::after { right: auto; left: 50%; border-left: 2px solid #cbd5e1; }
+        .tree li:only-child::after, .tree li:only-child::before { display: none; }
+        .tree li:only-child { padding-top: 0; }
+        .tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+        .tree li:last-child::before { border-right: 2px solid #cbd5e1; border-radius: 0 5px 0 0; }
+        .tree li:first-child::after { border-radius: 5px 0 0 0; }
+        .tree ul ul::before { content: ''; position: absolute; top: 0; left: 50%; border-left: 2px solid #cbd5e1; width: 0; height: 20px; }
+        .tree li a { border: 2px solid #cbd5e1; padding: 10px; text-decoration: none; color: #1e293b; font-family: 'Patrick Hand', cursive; display: inline-block; border-radius: 8px; background: white; transition: all 0.5s; }
+        .tree li a:hover { background: #e0f2fe; border-color: #38bdf8; }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-12">
+
+    <!-- Top Navigation & Tools -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">📓</span>
+                    <h1 class="font-bold text-xl tracking-tight text-gray-900">CA Foundation: Indian Economy</h1>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <!-- Pomodoro Timer -->
+                    <div class="flex items-center space-x-2 bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200">
+                        <span class="text-lg">⏱️</span>
+                        <span id="timer-display" class="font-mono font-semibold text-slate-700">25:00</span>
+                        <button id="timer-btn" onclick="toggleTimer()" class="text-xs font-bold text-blue-600 hover:text-blue-800 ml-2 px-2 py-1 rounded bg-blue-100 hover:bg-blue-200 transition">START</button>
+                    </div>
+                    
+                    <button onclick="window.print()" class="flex items-center space-x-1 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition shadow-sm">
+                        <span>🖨️</span><span>Save PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pillar Tabs -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto no-scrollbar border-t border-gray-100">
+            <div class="flex space-x-2 py-3" id="tabs-container">
+                <button onclick="switchTab('tab-notes')" class="tab-btn active whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">✍️ 1. Detailed Notes</button>
+                <button onclick="switchTab('tab-traps')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🚨 2. Trap Zone</button>
+                <button onclick="switchTab('tab-revision')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">⚡ 3. Revision & Mnemonics</button>
+                <button onclick="switchTab('tab-recall')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📝 4. Active Recall</button>
+                <button onclick="switchTab('tab-flashcards')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🃏 5. Flashcards</button>
+                <button onclick="switchTab('tab-mcq')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🎯 6. MCQs</button>
+                <button onclick="switchTab('tab-summary')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📊 7. Summary</button>
+                <button onclick="switchTab('tab-mindmap')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🧠 8. Mind Map</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto mt-8 px-4 sm:px-6 lg:px-8">
+
+        <!-- ========================================= -->
+        <!-- TAB 1: HANDWRITTEN DETAILED NOTES         -->
+        <!-- ========================================= -->
+        <div id="tab-notes" class="tab-content active notebook-paper bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden pr-6">
+            <h2 class="text-3xl font-bold mb-4 pt-4 hl-pink inline-block">Chapter 10: Indian Economy</h2>
+            <div class="mb-4 text-sm font-sans text-gray-500 font-semibold">Priority: ⭐⭐⭐⭐⭐ | Est. Study Time: 60 mins</div>
+
+            <h3 class="text-2xl font-bold mt-6 text-blue-800">1. Pre-Independence Period (1850-1947)</h3>
+            <p>Between the 1st and 17th century AD, India had the largest economy, controlling between 1/3 and 1/4 of world wealth. The advent of the British (East India Company 1757-1858, British Govt 1858-1947) caused a major shift.</p>
+            <ul class="list-disc ml-8">
+                <li><span class="hl-yellow">Reversal of Foreign Trade:</span> From an exporter of manufactures to an exporter of raw materials (due to the UK Industrial Revolution).</li>
+                <li><span class="hl-pink">Discriminatory Tariffs:</span> Heavy tariffs on Indian finished goods exports, low tariffs on British imports. Destroyed Indian handicrafts.</li>
+                <li><span class="hl-green">Agriculture Collapse:</span> De-industrialization led to overcrowding in agriculture, sub-division of land, Zamindari exploitation, absentee landlordism, and high indebtedness.</li>
+                <li><span class="hl-blue">Stagnated Industrialization:</span> Cotton (fifth globally in 1930s) and Jute (largest globally) mills expanded, but <strong>producer/capital goods industries were positively discouraged</strong>.</li>
+            </ul>
+
+            <div class="sticky-note mx-auto max-w-lg">
+                <strong>📌 Ancient Economic Philosophy:</strong><br>
+                <em>Arthashastra</em> by Kautilya (Chanakya).<br>
+                - Focus: Material prosperity ('artha'), statecraft, and advancing the greatest good of the subjects.<br>
+                - Taxes must be fair and equal for private and state businesses.
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">2. Post-Independence (1947-1991)</h3>
+            <p>India adopted the <span class="hl-yellow">Nehruvian model</span> (social and economic redistribution + state-directed industrialization). Established the Planning Commission (Centralized planning via 5-year plans).</p>
+            <ul class="list-disc ml-8">
+                <li><strong>Industrial Policy Resolution (1948 & 1956):</strong> Expanded public sector role, licensing for private sector. Discouraged private initiative.</li>
+                <li><strong>"Hindu Growth Rate":</strong> A modest 3.5% average annual GDP growth during 1950-80.</li>
+                <li><span class="hl-green">The Green Revolution (Mid-1960s):</span> Shifted focus from institutional reforms to technocratic ones (HYV seeds, fertilizers) after severe droughts, solving the food crisis.</li>
+                <li><span class="hl-pink">The Dark Phase (1965-1981):</span> Worst economic performance due to the "License-Raj", autarchic policies, MRTP Act 1969 (restricting large firms), small-scale reservations, wars, and oil shocks.</li>
+                <li><strong>Reforms by Stealth (1980s):</strong> Early liberalization (delicensing, broad-banding, raising MRTP limits, MODVAT, SEBI est. 1988) set the stage for 1991.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">3. The Economic Reforms of 1991 (LPG)</h3>
+            <p>Triggered by huge fiscal deficits, BoP crisis (forex reserves down to $1.2 billion - 2 weeks of imports), Gulf War oil shock, and IMF conditionalities.</p>
+            <p><strong>Objectives:</strong> Shift to a 'market-friendly' economy and macroeconomic stabilization.</p>
+            <ul class="list-disc ml-8">
+                <li><span class="hl-yellow">Fiscal Reforms:</span> Curbing expenditure, reducing subsidies, disinvestment in PSUs.</li>
+                <li><span class="hl-blue">Monetary/Financial Reforms:</span> Interest rate liberalization, new private banks, reduction in CRR/SLR (Narasimham Committee), prudential norms.</li>
+                <li><span class="hl-green">New Industrial Policy (July 24, 1991):</span> Abolished 'License Raj' (currently only 5 industries need licenses). Public sector monopolies reduced (currently only atomic energy and some railway ops). MRTP Act restructured (pre-entry scrutiny removed). FDI opened up (automatic route).</li>
+                <li><span class="hl-pink">Trade Policy Reforms:</span> Dismantling quantitative restrictions, replacing positive list with negative list for imports. Rupee devalued by 18-19%, leading to a managed floating exchange rate (1993).</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">4. NITI Aayog</h3>
+            <p>Established on <span class="hl-yellow">January 1, 2015</span>, replacing the Planning Commission. Acts as a <strong>'Think Tank'</strong> and promotes <strong>'Co-operative Federalism'</strong>. </p>
+            <p><em>Key Initiatives:</em> NDAP, Shoonya (EVs), E-Amrit, Methanol Economy. <em>Weaknesses:</em> Excluded from the budgeting process, lacks autonomy/power.</p>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">5. Current State of the Economy</h3>
+            <ul class="list-disc ml-8">
+                <li><strong>Primary Sector (Agriculture):</strong> 47% of population depends on it. 18.8% of GVA. India is a top exporter. Initiatives: PM KISAN, MSP (1.5x cost), e-NAM, Kisan Rail. <em>Issues: Fragmented holdings, cereal-centric, poor post-harvest infra.</em></li>
+                <li><strong>Secondary Sector (Industry):</strong> ~30% of GVA. Initiatives: Make in India 2.0 (27 sectors), PLI Scheme (14 sectors), PM Gati Shakti, National Logistics Policy. <em>FDI limit raised (100% in coal mining). FIPB abolished.</em></li>
+                <li><strong>Tertiary Sector (Services):</strong> <span class="hl-green">Largest sector (53.89% of GVA).</span> Highest labour productivity. India bypassed the secondary sector in its growth trajectory. Top 10 WTO member in service exports. <em>Largest recipient of FDI inflows.</em></li>
+            </ul>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 2: ICAI TRAP ZONE (MISTAKE TRACKER)   -->
+        <!-- ========================================= -->
+        <div id="tab-traps" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-red-600 flex items-center">🚨 ICAI Trap Zone & Mistake Tracker</h2>
+            <p class="mb-6 text-gray-600">ICAI loves to twist these specific concepts to confuse students in MCQs. Review these carefully!</p>
+            
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 border">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">What You Might Think (The Trap)</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-green-600 uppercase tracking-wider">What ICAI Actually Wants (The Truth)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">The sequence of growth and structural change in India followed the historical pattern (Agriculture -> Industry -> Services).</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> India has the <strong>unique experience</strong> of bypassing the secondary sector in its growth trajectory (Agriculture -> Services).</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">During the British period, Indian industries completely stagnated without any growth.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> <strong>Cotton and Jute</strong> industries saw significant expansion. It was the <strong>producer/capital goods</strong> industries that were discouraged.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">The 'Hindu growth rate' refers to high growth achieved after the 1991 reforms.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> It refers to the <strong>low rate of economic growth</strong> (around 3.5% avg) from the 1950s to the 1980s.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">The Green Revolution's primary strategy was institutional land reforms.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> The strategy <em>before</em> the Green Rev was institutional. The Green Revolution relied on <strong>technocratic/technological</strong> areas (HYV seeds, fertilizers).</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">NITI Aayog has the power to control expenditures and allocate budgets to states.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> NITI Aayog is a 'Think Tank' and is <strong>excluded from the budgeting process</strong>, which is its major weakness compared to the old Planning Commission.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">The Foreign Investment Promotion Board (FIPB) currently regulates FDI inflows.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> The FIPB was <strong>abolished in May 2017</strong> and replaced by the Foreign Investment Facilitation Portal (FIF).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 3: REVISION & MNEMONICS               -->
+        <!-- ========================================= -->
+        <div id="tab-revision" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-4 text-purple-700">⚡ Exam-Eve Revision Notes & Mnemonic Cheatsheet</h2>
+            
+            <div class="bg-purple-50 rounded-lg p-5 mb-6 border border-purple-100">
+                <h3 class="text-xl font-bold text-purple-800 mb-3">🧠 The Mnemonic Cheatsheet</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-4 rounded shadow-sm border border-gray-100">
+                        <strong class="text-blue-600 block mb-1">Causes for 1991 Reforms</strong>
+                        <div class="font-mono text-lg font-bold text-gray-800">"F-I-B-O"</div>
+                        <ul class="text-sm mt-2 text-gray-600 space-y-1">
+                            <li><strong>F</strong> - Fiscal Deficit & Debt (unsustainable)</li>
+                            <li><strong>I</strong> - IMF Conditionalities</li>
+                            <li><strong>B</strong> - Balance of Payments Crisis (Forex at $1.2B)</li>
+                            <li><strong>O</strong> - Oil shock (Gulf War)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded shadow-sm border border-gray-100">
+                        <strong class="text-blue-600 block mb-1">Current Licensing Industries (The 5 remaining)</strong>
+                        <div class="font-mono text-lg font-bold text-gray-800">"A-A-N-A-C"</div>
+                        <ul class="text-sm mt-2 text-gray-600 space-y-1">
+                            <li><strong>A</strong> - Arms & Ammunition</li>
+                            <li><strong>A</strong> - Atomic substances</li>
+                            <li><strong>N</strong> - Narcotic drugs & hazardous chemicals</li>
+                            <li><strong>A</strong> - Alcoholic drinks (distillation)</li>
+                            <li><strong>C</strong> - Cigarettes and cigars</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">⏱️ 15-Minute Rapid Review Bullet Points</h3>
+            <ul class="list-disc ml-5 space-y-2 text-gray-700">
+                <li><strong>Arthashastra:</strong> By Kautilya (Chanakya); focus on material prosperity and fair taxes.</li>
+                <li><strong>British Impact:</strong> Discriminatory tariffs ruined handicrafts; agriculture overcrowded; capital goods discouraged.</li>
+                <li><strong>Nehruvian Model:</strong> Centralized planning, state-directed industrialization, heavy public sector reliance.</li>
+                <li><strong>Hindu Growth Rate:</strong> ~3.5% avg GDP growth from 1950-80.</li>
+                <li><strong>Green Revolution:</strong> Shift to technocratic farming (HYV seeds) mid-1960s.</li>
+                <li><strong>1980s "Reforms by Stealth":</strong> Delicensing, broad-banding, MODVAT.</li>
+                <li><strong>1991 Reforms (LPG):</strong> Sparked by BoP crisis. Abolished License Raj, restructured MRTP, devalued Rupee (18%), reduced tariffs.</li>
+                <li><strong>NITI Aayog (Jan 1, 2015):</strong> Replaced Planning Commission. 'Think Tank', Cooperative Federalism. Weakness: No budget control.</li>
+                <li><strong>Agriculture (Primary):</strong> 47% employed. India is largest producer of milk/pulses. MSP at 1.5x cost. e-NAM connects mandis.</li>
+                <li><strong>Industry (Secondary):</strong> PLI Scheme (14 sectors). 'Make in India'. NLP & PM Gati Shakti for logistics. FIPB abolished (2017).</li>
+                <li><strong>Services (Tertiary):</strong> Largest contributor to GVA (53.89%). Highest labour productivity. India bypassed the manufacturing phase. Largest recipient of FDI.</li>
+            </ul>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 4: ACTIVE RECALL WORKSHEETS           -->
+        <!-- ========================================= -->
+        <div id="tab-recall" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-indigo-600">📝 Active Recall Worksheets</h2>
+                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Print to iPad / GoodNotes</span>
+            </div>
+            <p class="mb-4 text-gray-600">Use your Apple Pencil to fill in the blanks from memory. Do not look at the detailed notes!</p>
+            
+            <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 bg-gray-50">
+                <h3 class="text-lg font-bold mb-4">1. Fill in the Key Milestones & Terms</h3>
+                <ul class="space-y-4 text-lg">
+                    <li>1. The author of Arthashastra: ___________________________</li>
+                    <li>2. Average annual GDP growth (1950-80) known as the ___________________________ rate (approx. ____%).</li>
+                    <li>3. 1991 Reforms were triggered when Forex reserves fell to ______________ (approx 2 weeks imports).</li>
+                    <li>4. Date NITI Aayog was established: ___________________________</li>
+                    <li>5. The Act aimed at regulating large firms/monopolies (1969): ___________________________</li>
+                </ul>
+
+                <h3 class="text-lg font-bold mt-8 mb-4">2. Match the Government Initiative</h3>
+                <table class="w-full border-collapse border border-gray-400 bg-white">
+                    <tr>
+                        <td class="border border-gray-400 p-3 font-semibold w-1/2">e-NAM</td>
+                        <td class="border border-gray-400 p-3 text-gray-300 w-1/2">Purpose: _________________________</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-400 p-3 font-semibold">RoDTEP (2021)</td>
+                        <td class="border border-gray-400 p-3 text-gray-300">Purpose: _________________________</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-400 p-3 font-semibold">PLI Scheme</td>
+                        <td class="border border-gray-400 p-3 text-gray-300">Purpose: _________________________</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-400 p-3 font-semibold">PM Gati Shakti</td>
+                        <td class="border border-gray-400 p-3 text-gray-300">Purpose: _________________________</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 5: FLASHCARDS                         -->
+        <!-- ========================================= -->
+        <div id="tab-flashcards" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-teal-600 font-sans">🃏 3D Flip Flashcards</h2>
+                <div class="text-sm font-bold bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-sans">Mastered: <span id="fc-counter">0</span> / 6</div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Card 1 -->
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is the "Hindu Growth Rate"?</div>
+                            <div class="flip-card-back text-center text-lg flex flex-col">
+                                <span>The low rate of economic growth in India from the 1950s to the 1980s.</span>
+                                <span class="text-xl font-bold mt-2 text-teal-800">Averaged ~ 3.5% per year.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch10_fc1')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">How did the sequence of growth in the Indian economy differ from the historical pattern?</div>
+                            <div class="flip-card-back text-center text-lg flex flex-col">
+                                <span>India had the <strong>unique experience</strong> of bypassing the secondary (industrial) sector in its growth trajectory.</span>
+                                <span class="text-sm mt-2 text-teal-800">It shifted directly from Agriculture to Services.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch10_fc2')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is a major shortcoming / weakness of NITI Aayog?</div>
+                            <div class="flip-card-back text-center text-xl">It is excluded from the budgeting process (it does not allocate funds).</div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch10_fc3')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Which scheme replaced the Merchandise Exports from India Scheme (MEIS)?</div>
+                            <div class="flip-card-back text-center text-2xl font-bold">RoDTEP (2021)</div>
+                            <div class="flip-card-back text-center text-sm mt-12">(Remission of Duties and Taxes on Export Products)</div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch10_fc4')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What was the primary strategy shift that caused the Green Revolution?</div>
+                            <div class="flip-card-back text-center text-lg flex flex-col">
+                                <span>Shifted from <strong>Institutional reforms</strong> (land reforms) to <strong>Technocratic reforms</strong> (HYV seeds, fertilizers, irrigation).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch10_fc5')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What happened to the Foreign Investment Promotion Board (FIPB)?</div>
+                            <div class="flip-card-back text-center text-xl flex flex-col">
+                                <span>It was <strong>abolished</strong> in May 2017.</span>
+                                <span class="text-sm mt-2 text-teal-800">Replaced by the Foreign Investment Facilitation Portal (FIF).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch10_fc6')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+            </div>
+            <div class="mt-4 text-center text-xs text-gray-400 font-sans">Progress saves automatically to your iPad's local storage.</div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 6: MCQs                               -->
+        <!-- ========================================= -->
+        <div id="tab-mcq" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-orange-600">🎯 PYQ / MTP Practice MCQs</h2>
+                <div class="text-sm font-bold bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Score: <span id="mcq-score">0</span></div>
+            </div>
+            
+            <div class="space-y-8" id="mcq-container">
+                <!-- Question 1 -->
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border border-gray-200" data-correct="C">
+                    <p class="font-semibold text-lg mb-3">1. The sequence of growth and structural change in Indian economy is characterized by:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q1" value="A" class="mr-2"> (a) The historical pattern of prominence of sectors as agriculture, industry, services</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q1" value="B" class="mr-2"> (b) The historical pattern of prominence of sectors as industry, services, agriculture</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q1" value="C" class="mr-2"> (c) Unique experience of the sequence as agriculture, services, industry</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q1" value="D" class="mr-2"> (d) All the above are correct</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded border border-blue-200"><strong>Correct!</strong> India uniquely bypassed the secondary (industrial) sector in its growth trajectory, shifting directly from agriculture to services.</div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border border-gray-200" data-correct="B">
+                    <p class="font-semibold text-lg mb-3">2. The 'Hindu growth rate' is a term used to refer to -</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q2" value="A" class="mr-2"> (a) the high rate of growth achieved after the new economic policy of 1991</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q2" value="B" class="mr-2"> (b) the low rate of economic growth of India from the 1950s to the 1980s, which averaged around 3.5 per cent per year</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q2" value="C" class="mr-2"> (c) the low growth of the economy during British period marked by an average of 3.5 percent</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q2" value="D" class="mr-2"> (d) the growth rate of the country because India is referred to as 'Hindustan'</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded border border-blue-200"><strong>Correct!</strong> The term describes the modest ~3.5% average annual GDP growth in the three decades post-independence.</div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border border-gray-200" data-correct="B">
+                    <p class="font-semibold text-lg mb-3">3. The Foreign Investment Promotion Board (FIPB):</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q3" value="A" class="mr-2"> (a) a government entity through which inward investment proposals were routed to obtain required government approvals</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q3" value="B" class="mr-2"> (b) no more exists as the same is replaced by a new regime namely Foreign Investment Facilitation Portal</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q3" value="C" class="mr-2"> (c) no more exists as all inward investments are through automatic route and need no approval</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q3" value="D" class="mr-2"> (d) is the body which connects different ministries in respect of foreign portfolio investments</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded border border-blue-200"><strong>Correct!</strong> FIPB was abolished in May 2017 and replaced by the Foreign Investment Facilitation Portal to simplify FDI approvals.</div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border border-gray-200" data-correct="A">
+                    <p class="font-semibold text-lg mb-3">4. Merchandise Exports from India Scheme (MEIS) was replaced by:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q4" value="A" class="mr-2"> (a) Remission of Duties and Taxes on Export Products (RODTEP) in 2021</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q4" value="B" class="mr-2"> (b) National Logistics Policy (NLP) in 2020</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q4" value="C" class="mr-2"> (c) Remission of Duties and Taxes on Export Products (RoDTEP) in 2019</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q4" value="D" class="mr-2"> (d) None of the above</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded border border-blue-200"><strong>Correct!</strong> RoDTEP was introduced in 2021 to provide a rebate on hidden central, state, and local duties on exported goods.</div>
+                </div>
+
+                <button onclick="gradeMCQs()" class="w-full py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition shadow-md">Submit & Grade Answers</button>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 7: SUMMARY TABLE                      -->
+        <!-- ========================================= -->
+        <div id="tab-summary" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-green-700">📊 Chapter 10 Master Summary Table</h2>
+            
+            <div class="overflow-x-auto rounded-lg border border-gray-200">
+                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-green-50">
+                        <tr>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700 uppercase">Phase / Sector</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700 uppercase">Key Characteristics / Policies</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700 uppercase">Major Institutions / Terms</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-white">
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-gray-900 bg-gray-50">British Rule (1757-1947)</td>
+                            <td class="px-4 py-3">De-industrialization; Discriminatory tariffs; Agriculture collapsed; Cotton & Jute mills expanded but capital goods discouraged.</td>
+                            <td class="px-4 py-3">Zamindari System; Raw material exporter.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-gray-900 bg-gray-50">Post-Independence (1947-1991)</td>
+                            <td class="px-4 py-3">State-led industrialization; High public sector role; "License-Raj"; Modest 3.5% growth; Institutional to Technocratic shift in agriculture.</td>
+                            <td class="px-4 py-3">Planning Commission; MRTP Act 1969; Green Revolution; 'Hindu Growth Rate'.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-gray-900 bg-gray-50">1991 Reforms (LPG)</td>
+                            <td class="px-4 py-3">Market-oriented shift; License Raj abolished (except 5); FDI liberalized; Rupee devalued; Tariffs reduced.</td>
+                            <td class="px-4 py-3">New Industrial Policy (July 1991); Narasimham Committee.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-gray-900 bg-gray-50">Primary Sector (Agri)</td>
+                            <td class="px-4 py-3">~47% employment; 18.8% GVA; Shift from import-dependent to top exporter.</td>
+                            <td class="px-4 py-3">PM KISAN, MSP, e-NAM, APEDA, RoDTEP.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-gray-900 bg-gray-50">Secondary Sector (Ind)</td>
+                            <td class="px-4 py-3">~30% GVA; Focus on making India a manufacturing hub; FDI limits raised.</td>
+                            <td class="px-4 py-3">Make in India, PLI Scheme, PM Gati Shakti, FIF Portal.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-gray-900 bg-gray-50">Tertiary Sector (Serv)</td>
+                            <td class="px-4 py-3">Largest sector (53.89% GVA); Highest labour productivity; Largest FDI recipient.</td>
+                            <td class="px-4 py-3">Knowledge-based services; 100% FDI in Telecom.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-gray-900 bg-gray-50">NITI Aayog (2015)</td>
+                            <td class="px-4 py-3">Think Tank; Cooperative Federalism; No budget control.</td>
+                            <td class="px-4 py-3">NDAP, Shoonya, E-Amrit, India Policy Insights.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 8: MIND MAP                           -->
+        <!-- ========================================= -->
+        <div id="tab-mindmap" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans overflow-x-auto">
+            <h2 class="text-3xl font-bold mb-6 text-pink-600">🧠 Chapter 10 Mind Map</h2>
+            
+            <div class="tree flex justify-center min-w-max pb-8">
+                <ul>
+                    <li>
+                        <a href="#" class="font-bold bg-pink-50 text-xl">Indian Economy</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="font-bold text-blue-700">Historical Phases</a>
+                                <ul>
+                                    <li><a href="#">British Rule<br><span class="text-xs text-gray-500">De-industrialization</span></a></li>
+                                    <li><a href="#">1947-1991<br><span class="text-xs text-gray-500">State-led, Hindu Growth Rate</span></a></li>
+                                    <li><a href="#">1991 Reforms<br><span class="text-xs text-gray-500">LPG, BoP Crisis trigger</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-green-700">Economic Sectors</a>
+                                <ul>
+                                    <li><a href="#">Primary (Agri)<br><span class="text-xs text-gray-500">47% Jobs, MSP, e-NAM</span></a></li>
+                                    <li><a href="#">Secondary (Ind)<br><span class="text-xs text-gray-500">~30% GVA, PLI, Make in India</span></a></li>
+                                    <li><a href="#">Tertiary (Serv)<br><span class="text-xs text-gray-500">53.89% GVA, Bypassed Ind.</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-purple-700">Key Institutions</a>
+                                <ul>
+                                    <li><a href="#">Planning Comm.<br><span class="text-xs text-gray-500">Pre-2015</span></a></li>
+                                    <li><a href="#">NITI Aayog (2015)<br><span class="text-xs text-gray-500">Think Tank, No Budget Power</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-12 text-center text-gray-400 text-sm pb-8 font-sans no-print">
+        &copy; Gemini 8-Pillar Study Suite • CA Foundation Business Economics
+    </footer>
+
+    <!-- INTERACTIVITY SCRIPT -->
+    <script>
+        // 1. Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // 2. Local Storage for Flashcards
+        function markMastered(btn, cardId) {
+            if(btn.innerText === "Mark Mastered") {
+                btn.innerText = "✅ Mastered";
+                btn.classList.replace("bg-gray-100", "bg-teal-500");
+                btn.classList.replace("text-gray-600", "text-white");
+                localStorage.setItem(cardId, "true");
+            } else {
+                btn.innerText = "Mark Mastered";
+                btn.classList.replace("bg-teal-500", "bg-gray-100");
+                btn.classList.replace("text-white", "text-gray-600");
+                localStorage.removeItem(cardId);
+            }
+            updateFcCounter();
+        }
+
+        function updateFcCounter() {
+            let count = 0;
+            for(let i=1; i<=6; i++) {
+                if(localStorage.getItem('ch10_fc'+i)) count++;
+            }
+            document.getElementById('fc-counter').innerText = count;
+        }
+
+        // Initialize Flashcards on load
+        window.onload = function() {
+            for(let i=1; i<=6; i++) {
+                let id = 'ch10_fc'+i;
+                if(localStorage.getItem(id)) {
+                    let btns = document.querySelectorAll('#tab-flashcards button');
+                    if(btns[i-1]) {
+                        btns[i-1].innerText = "✅ Mastered";
+                        btns[i-1].classList.replace("bg-gray-100", "bg-teal-500");
+                        btns[i-1].classList.replace("text-gray-600", "text-white");
+                    }
+                }
+            }
+            updateFcCounter();
+            
+            // Load MCQ Score
+            if(localStorage.getItem('ch10_mcq_score')) {
+                document.getElementById('mcq-score').innerText = localStorage.getItem('ch10_mcq_score');
+            }
+        };
+
+        // 3. MCQ Grading Logic
+        function gradeMCQs() {
+            let score = 0;
+            let total = 4;
+            let cards = document.querySelectorAll('.mcq-card');
+            
+            cards.forEach((card, index) => {
+                let correctVal = card.getAttribute('data-correct');
+                let radios = card.querySelectorAll('input[type="radio"]');
+                let answered = false;
+                
+                radios.forEach(radio => {
+                    radio.parentElement.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    radio.disabled = true; 
+                    
+                    if(radio.checked) {
+                        answered = true;
+                        if(radio.value === correctVal) {
+                            score++;
+                            radio.parentElement.classList.add('bg-green-100', 'border-green-500');
+                        } else {
+                            radio.parentElement.classList.add('bg-red-100', 'border-red-500');
+                        }
+                    }
+                    if(radio.value === correctVal) {
+                        radio.parentElement.classList.add('border-green-500');
+                        radio.parentElement.style.borderWidth = '2px';
+                    }
+                });
+                
+                card.querySelector('.explanation').classList.remove('hidden');
+            });
+            
+            let finalScoreText = score + " / " + total;
+            document.getElementById('mcq-score').innerText = finalScoreText;
+            localStorage.setItem('ch10_mcq_score', finalScoreText);
+        }
+
+        // 4. Pomodoro Timer Logic
+        let timerInterval;
+        let timeLeft = 25 * 60; // 25 mins
+        let isRunning = false;
+
+        function toggleTimer() {
+            let btn = document.getElementById('timer-btn');
+            if(isRunning) {
+                clearInterval(timerInterval);
+                btn.innerText = "START";
+                btn.classList.replace("bg-red-100", "bg-blue-100");
+                btn.classList.replace("text-red-600", "text-blue-600");
+                isRunning = false;
+            } else {
+                timerInterval = setInterval(updateTimer, 1000);
+                btn.innerText = "PAUSE";
+                btn.classList.replace("bg-blue-100", "bg-red-100");
+                btn.classList.replace("text-blue-600", "text-red-600");
+                isRunning = true;
+            }
+        }
+
+        function updateTimer() {
+            if(timeLeft <= 0) {
+                clearInterval(timerInterval);
+                alert("🍅 Pomodoro complete! Take a 5-minute break.");
+                timeLeft = 25 * 60;
+                document.getElementById('timer-btn').innerText = "START";
+                isRunning = false;
+            } else {
+                timeLeft--;
+            }
+            
+            let m = Math.floor(timeLeft / 60);
+            let s = timeLeft % 60;
+            document.getElementById('timer-display').innerText = 
+                (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+        }
+    </script>
+</body>
+</html>

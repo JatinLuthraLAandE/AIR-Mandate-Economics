@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Foundation - Business Economics: Ch 9 Unit 3 — Trade Negotiations & Exchange Rates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #fdfbf7; --line-color: #e5e7eb; --margin-line: #ef4444; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: #1f2937; }
+        .notebook-paper {
+            background-image: repeating-linear-gradient(transparent, transparent 31px, var(--line-color) 31px, var(--line-color) 32px);
+            background-position: 0 1.2rem;
+            background-attachment: local;
+            border-left: 2px solid var(--margin-line);
+            padding-left: 2rem;
+            font-family: 'Kalam', cursive;
+            font-size: 1.15rem;
+            line-height: 2rem;
+        }
+        .hl-yellow { background: linear-gradient(104deg, rgba(253,230,138,0) 0.9%, rgba(253,230,138,1) 2.4%, rgba(253,230,138,0.6) 5.8%, rgba(253,230,138,1) 93%, rgba(253,230,138,0.7) 96%, rgba(253,230,138,0) 98%); }
+        .hl-green { background: linear-gradient(104deg, rgba(167,243,208,0) 0.9%, rgba(167,243,208,1) 2.4%, rgba(167,243,208,0.6) 5.8%, rgba(167,243,208,1) 93%, rgba(167,243,208,0.7) 96%, rgba(167,243,208,0) 98%); }
+        .hl-pink { background: linear-gradient(104deg, rgba(252,165,165,0) 0.9%, rgba(252,165,165,1) 2.4%, rgba(252,165,165,0.6) 5.8%, rgba(252,165,165,1) 93%, rgba(252,165,165,0.7) 96%, rgba(252,165,165,0) 98%); }
+        .hl-blue { background: linear-gradient(104deg, rgba(191,219,254,0) 0.9%, rgba(191,219,254,1) 2.4%, rgba(191,219,254,0.6) 5.8%, rgba(191,219,254,1) 93%, rgba(191,219,254,0.7) 96%, rgba(191,219,254,0) 98%); }
+        .sticky-note {
+            background-color: #fef08a; box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+            transform: rotate(-1deg); padding: 1rem; font-family: 'Caveat', cursive;
+            font-size: 1.25rem; margin: 1.25rem 0; border-bottom-right-radius: 20px 5px;
+        }
+        .flip-card { background-color: transparent; width: 100%; height: 230px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+        .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back {
+            position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+            display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+            border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-family: 'Patrick Hand', cursive; font-size: 1.2rem;
+        }
+        .flip-card-front { background-color: #ffffff; border: 2px solid #e5e7eb; color: #111827; }
+        .flip-card-back { background-color: #eff6ff; border: 2px solid #93c5fd; color: #1e3a8a; transform: rotateY(180deg); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .tab-btn { transition: all 0.2s; }
+        .tab-btn.active { background-color: #2563eb; color: white; border-color: #2563eb; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3); }
+        @media print {
+            .no-print { display: none !important; }
+            .notebook-paper { background: none; border: none; padding: 0; }
+            body { background: white; }
+            .tab-content { display: block !important; page-break-before: always; }
+            .tab-content:first-of-type { page-break-before: avoid; }
+        }
+        .tree ul { padding-top: 20px; position: relative; transition: all 0.5s; }
+        .tree li { float: left; text-align: center; list-style-type: none; position: relative; padding: 20px 5px 0 5px; transition: all 0.5s; }
+        .tree li::before, .tree li::after { content: ''; position: absolute; top: 0; right: 50%; border-top: 2px solid #cbd5e1; width: 50%; height: 20px; }
+        .tree li::after { right: auto; left: 50%; border-left: 2px solid #cbd5e1; }
+        .tree li:only-child::after, .tree li:only-child::before { display: none; }
+        .tree li:only-child { padding-top: 0; }
+        .tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+        .tree li:last-child::before { border-right: 2px solid #cbd5e1; border-radius: 0 5px 0 0; }
+        .tree li:first-child::after { border-radius: 5px 0 0 0; }
+        .tree ul ul::before { content: ''; position: absolute; top: 0; left: 50%; border-left: 2px solid #cbd5e1; width: 0; height: 20px; }
+        .tree li a { border: 2px solid #cbd5e1; padding: 8px 12px; text-decoration: none; color: #1e293b; font-family: 'Patrick Hand', cursive; display: inline-block; border-radius: 8px; background: white; }
+        .tree li a:hover { background: #e0f2fe; border-color: #38bdf8; }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-12">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">💱</span>
+                    <h1 class="font-bold text-xl tracking-tight text-gray-900">CA Foundation: Ch 9 Unit 3 — Negotiations, Forex & Capital Flows</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200">
+                        <span class="text-lg">⏱️</span>
+                        <span id="timer-display" class="font-mono font-semibold text-slate-700">25:00</span>
+                        <button id="timer-btn" onclick="toggleTimer()" class="text-xs font-bold text-blue-600 hover:text-blue-800 ml-2 px-2 py-1 rounded bg-blue-100 hover:bg-blue-200 transition">START</button>
+                    </div>
+                    <button onclick="window.print()" class="flex items-center space-x-1 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition shadow-sm">
+                        <span>🖨️</span><span>Save PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto no-scrollbar border-t border-gray-100">
+            <div class="flex space-x-2 py-3" id="tabs-container">
+                <button onclick="switchTab('tab-notes')" class="tab-btn active whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">✍️ 1. Detailed Notes</button>
+                <button onclick="switchTab('tab-traps')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🚨 2. Trap Zone</button>
+                <button onclick="switchTab('tab-revision')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">⚡ 3. Revision & Mnemonics</button>
+                <button onclick="switchTab('tab-recall')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📝 4. Active Recall</button>
+                <button onclick="switchTab('tab-flashcards')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🃏 5. Flashcards</button>
+                <button onclick="switchTab('tab-mcq')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🎯 6. MCQs</button>
+                <button onclick="switchTab('tab-summary')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📊 7. Summary</button>
+                <button onclick="switchTab('tab-mindmap')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🧠 8. Mind Map</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto mt-8 px-4 sm:px-6 lg:px-8">
+        <!-- TAB 1: DETAILED NOTES -->
+        <div id="tab-notes" class="tab-content active notebook-paper bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden pr-6">
+            <h2 class="text-3xl font-bold mb-4 pt-4 hl-pink inline-block">Ch 9 Unit 3: Trade Negotiations, Exchange Rates & Capital Movements</h2>
+            <div class="mb-4 text-sm font-sans text-gray-500 font-semibold">Weightage: Core Macro Finance (~3–4 Marks) | WTO, Regional Trade Agreements, Forex & FDI</div>
+
+            <h3 class="text-2xl font-bold mt-6 text-blue-800">1. From GATT to the World Trade Organization (WTO)</h3>
+            <p><strong>GATT (General Agreement on Tariffs and Trade):</strong> Established in 1947 as a provisional multilateral treaty covering trade in goods.</p>
+            <p><strong>WTO (World Trade Organization):</strong> Formed on <strong>January 1, 1995</strong> following the conclusion of the 8th round of GATT negotiations (<strong>The Uruguay Round</strong>, 1986–1994, Marrakesh Agreement). Headquartered in Geneva, Switzerland.</p>
+            <p class="font-bold text-indigo-900 mt-2">Fundamental Principles of the Multilateral Trading System:</p>
+            <ul class="list-disc ml-8">
+                <li><span class="hl-yellow font-bold">Most-Favored-Nation (MFN) Principle:</span> Non-discrimination among trading partners. Any special tariff favor granted to one nation must be extended immediately and unconditionally to all WTO members.</li>
+                <li><span class="hl-green font-bold">National Treatment Principle:</span> Non-discrimination between imported goods and domestically produced goods once they have entered the domestic market (internal taxes and regulations must treat both equally).</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">2. Regional Trade Agreements (RTAs)</h3>
+            <p>Arrangements where member countries grant preferential treatment to each other (an authorized exception to the MFN principle under GATT Article XXIV):</p>
+            <ol class="list-decimal ml-8">
+                <li><strong>Preferential Trade Area (PTA):</strong> Reduced tariffs on agreed selected goods (e.g., SAFTA).</li>
+                <li><strong>Free Trade Area (FTA):</strong> Tariffs eliminated among members on substantially all goods; each member maintains its <strong>own independent tariffs</strong> on non-members (e.g., NAFTA / USMCA).</li>
+                <li><span class="hl-pink font-bold">Customs Union:</span> Elimination of internal tariffs + Adoption of a <strong>Common External Tariff (CET)</strong> against outside non-members (e.g., MERCOSUR, historical EEC).</li>
+                <li><strong>Common Market:</strong> Customs union + Free movement of factors of production (labor and capital).</li>
+                <li><strong>Economic Union:</strong> Common market + Harmonization of economic, fiscal, and monetary policies (e.g., European Union / Eurozone).</li>
+            </ol>
+
+            <div class="sticky-note mx-auto max-w-lg">
+                <strong>📌 Exchange Rate Quotations:</strong><br>
+                • <strong>Direct Quote:</strong> Number of units of local currency required to purchase one unit of foreign currency (e.g., $1 USD = ₹83.00).<br>
+                • <strong>Indirect Quote:</strong> Number of units of foreign currency for one unit of local currency (e.g., ₹1 = $0.012 USD).<br>
+                • <strong>Depreciation / Devaluation:</strong> A rise in the direct quote (e.g., ₹83 $\rightarrow$ ₹88 per USD) makes domestic currency cheaper, stimulating exports and making imports costly.
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">3. Exchange Rate Regimes & Purchasing Power Parity (PPP)</h3>
+            <ul class="list-disc ml-8">
+                <li><strong>Fixed Exchange Rate (Pegged):</strong> Government/Central bank legally fixes the rate and intervenes in the forex market using reserves. Changes are called <em>Devaluation</em> or <em>Revaluation</em>.</li>
+                <li><strong>Floating / Flexible Exchange Rate:</strong> Rate is determined purely by the market forces of demand and supply of foreign currency without central bank intervention. Changes are called <em>Depreciation</em> or <em>Appreciation</em>.</li>
+                <li><strong>Managed Float ('Dirty Float'):</strong> Market forces determine the rate, but the central bank intervenes occasionally to curb excessive volatility. (India follows a managed floating regime).</li>
+                <li><span class="hl-blue font-bold">Purchasing Power Parity (PPP Theory - Gustav Cassel):</span> In the long run, exchange rates between currencies are in equilibrium when their purchasing power is equal in each of the two countries ($S = P_1 / P_2$, based on the Law of One Price).</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">4. Foreign Direct Investment (FDI) vs Foreign Portfolio Investment (FPI)</h3>
+            <ul class="list-disc ml-8">
+                <li><span class="hl-green font-bold">Foreign Direct Investment (FDI):</span> Direct physical investment in business enterprise by an overseas entity that involves a <strong>lasting interest and management control (typically $\ge 10\%$ equity stake)</strong>. Stable, long-term capital bringing physical technology, management practices, and employment.</li>
+                <li><span class="hl-pink font-bold">Foreign Portfolio Investment (FPI):</span> Passive financial investment in shares, bonds, and securities solely for financial return without management control ($< 10\%$ equity). Highly liquid, volatile, and known as <strong>'Hot Money'</strong> due to rapid cross-border flight during crises.</li>
+            </ul>
+        </div>
+
+        <!-- TAB 2: TRAP ZONE -->
+        <div id="tab-traps" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-red-600 flex items-center">🚨 ICAI Trap Zone & Mistake Tracker</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 border">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Common Student Confusion</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-green-600 uppercase">ICAI Exam Standard & Fact</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">In a Free Trade Area (FTA), member nations adopt a Common External Tariff against outside nations.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> In an FTA, members eliminate internal tariffs but maintain their <strong>own separate national tariffs</strong> on non-members. A <strong>Customs Union</strong> is the stage that introduces a Common External Tariff (CET)!</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Depreciation and Devaluation mean the exact same thing.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>Careful!</strong> <strong>Depreciation</strong> is a market-driven fall in currency value under a floating exchange rate regime. <strong>Devaluation</strong> is a deliberate, official downward adjustment by the government under a fixed exchange rate regime!</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">FPI gives foreign investors direct voting management control in the domestic firm.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> FPI is purely passive financial investment with <strong>zero management control</strong>. Direct control is acquired through <strong>FDI</strong>!</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 3: REVISION & MNEMONICS -->
+        <div id="tab-revision" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-4 text-purple-700">⚡ Rapid Revision & Mnemonic Matrix</h2>
+            <div class="bg-purple-50 rounded-lg p-5 mb-6 border border-purple-100">
+                <h3 class="text-xl font-bold text-purple-800 mb-3">🧠 Stages of Regional Economic Integration: "P-F-C-C-E"</h3>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-2 text-center text-xs">
+                    <div class="bg-white p-3 rounded shadow-sm border font-semibold">1. <strong>P</strong>TA (Lower tariffs)</div>
+                    <div class="bg-white p-3 rounded shadow-sm border font-semibold">2. <strong>F</strong>TA (Zero internal tariffs)</div>
+                    <div class="bg-white p-3 rounded shadow-sm border font-semibold">3. <strong>C</strong>ustoms Union (Common External Tariff)</div>
+                    <div class="bg-white p-3 rounded shadow-sm border font-semibold">4. <strong>C</strong>ommon Market (Free Factor mobility)</div>
+                    <div class="bg-white p-3 rounded shadow-sm border font-semibold">5. <strong>E</strong>conomic Union (Unified Monetary Policy)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: ACTIVE RECALL -->
+        <div id="tab-recall" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">📝 Active Recall Apple Pencil Worksheet</h2>
+            <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 bg-gray-50">
+                <h3 class="text-lg font-bold mb-3">1. International Economics Facts Recall</h3>
+                <ul class="space-y-4 text-lg">
+                    <li>1. The World Trade Organization (WTO) came into formal existence on: ___________________________</li>
+                    <li>2. The agreement that transformed GATT into the WTO was signed at: ___________________________</li>
+                    <li>3. A Customs Union differs from an FTA because it incorporates a: ___________________________</li>
+                    <li>4. Foreign investments involving less than 10% equity stake without management control are termed: ___________________________</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TAB 5: FLASHCARDS -->
+        <div id="tab-flashcards" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-teal-600 font-sans">🃏 3D Flip Flashcards</h2>
+                <div class="text-sm font-bold bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-sans">Mastered: <span id="fc-counter">0</span> / 4</div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is the Most-Favored-Nation (MFN) principle?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-blue-900">Equal non-discriminatory treatment to all WTO members!</span>
+                                <span class="mt-2 text-sm text-gray-700">Any trade concession given to one member must be given immediately and unconditionally to all.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c9u3_fc1')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Difference between FDI and FPI?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-green-900">FDI = Long-term physical assets with management control ($\ge 10\%$).</span>
+                                <span class="mt-2 text-sm text-gray-700"><strong>FPI = Passive financial securities</strong> without management control ($< 10\%$, highly volatile hot money).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c9u3_fc2')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is the Purchasing Power Parity (PPP) Theory?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-purple-900">Exchange rates equalize purchasing power of currencies!</span>
+                                <span class="mt-2 text-sm text-gray-700">Formulated by Gustav Cassel. A bundle of goods should cost the same in two countries when converted at the PPP exchange rate.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c9u3_fc3')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is a Customs Union? Give an example.</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-pink-700">Zero internal tariffs + Common External Tariff (CET)!</span>
+                                <span class="mt-2 text-sm text-gray-700">Member countries trade freely amongst themselves and charge identical tariffs on imports from non-members (e.g., MERCOSUR).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c9u3_fc4')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 6: MCQs -->
+        <div id="tab-mcq" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-orange-600">🎯 Unit 3 Practice MCQs</h2>
+                <div class="text-sm font-bold bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Score: <span id="mcq-score">0</span></div>
+            </div>
+            <div class="space-y-6">
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="B">
+                    <p class="font-semibold text-lg mb-3">1. The WTO came into existence as a result of which round of trade negotiations?</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="A" class="mr-2"> (a) Kennedy Round</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="B" class="mr-2"> (b) Uruguay Round</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="C" class="mr-2"> (c) Tokyo Round</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="D" class="mr-2"> (d) Doha Round</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> The Uruguay Round (1986–1994) culminated in the Marrakesh Agreement establishing the WTO on January 1, 1995.</div>
+                </div>
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="C">
+                    <p class="font-semibold text-lg mb-3">2. In which form of regional economic integration do members eliminate internal trade barriers AND adopt a Common External Tariff (CET) against outsiders?</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="A" class="mr-2"> (a) Free Trade Area (FTA)</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="B" class="mr-2"> (b) Preferential Trade Area (PTA)</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="C" class="mr-2"> (c) Customs Union</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="D" class="mr-2"> (d) Bilateral Trade Pact</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> The adoption of a Common External Tariff (CET) defines a Customs Union.</div>
+                </div>
+                <button onclick="gradeMCQs()" class="w-full py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition shadow">Grade Answers</button>
+            </div>
+        </div>
+
+        <!-- TAB 7: MASTER SUMMARY TABLE -->
+        <div id="tab-summary" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-green-700">📊 Regional Integration Stages Synthesis</h2>
+            <div class="overflow-x-auto rounded-lg border">
+                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-green-50">
+                        <tr>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Integration Stage</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Internal Tariffs</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Common External Tariff</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Factor Mobility</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Harmonized Economic Policy</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-white">
+                        <tr><td class="px-4 py-3 font-semibold">Preferential Trade Area (PTA)</td><td>Reduced</td><td>No</td><td>No</td><td>No</td></tr>
+                        <tr><td class="px-4 py-3 font-semibold">Free Trade Area (FTA)</td><td>Zero</td><td>No (Independent)</td><td>No</td><td>No</td></tr>
+                        <tr><td class="px-4 py-3 font-semibold text-blue-800">Customs Union</td><td>Zero</td><td>Yes (CET)</td><td>No</td><td>No</td></tr>
+                        <tr><td class="px-4 py-3 font-semibold text-purple-800">Common Market</td><td>Zero</td><td>Yes (CET)</td><td>Yes (Free K & L)</td><td>No</td></tr>
+                        <tr><td class="px-4 py-3 font-semibold text-green-800">Economic Union</td><td>Zero</td><td>Yes (CET)</td><td>Yes (Free K & L)</td><td>Yes (Unified Currency/Policy)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 8: MIND MAP -->
+        <div id="tab-mindmap" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans overflow-x-auto">
+            <h2 class="text-3xl font-bold mb-6 text-pink-600">🧠 Trade Negotiations & Forex Mind Map</h2>
+            <div class="tree flex justify-center min-w-max pb-8">
+                <ul>
+                    <li>
+                        <a href="#" class="font-bold bg-pink-50 text-xl">Negotiations & Forex (Unit 3)</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="font-bold text-blue-700">WTO Architecture</a>
+                                <ul>
+                                    <li><a href="#">Marrakesh Agreement (1995)</a></li>
+                                    <li><a href="#">MFN Principle</a></li>
+                                    <li><a href="#">National Treatment</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-green-700">Integration Levels</a>
+                                <ul>
+                                    <li><a href="#">FTA vs Customs Union</a></li>
+                                    <li><a href="#">Common Market</a></li>
+                                    <li><a href="#">Economic Union</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-purple-700">Forex & Capital</a>
+                                <ul>
+                                    <li><a href="#">Direct vs Indirect Quotes</a></li>
+                                    <li><a href="#">PPP Theory (Cassel)</a></li>
+                                    <li><a href="#">FDI vs FPI (Hot Money)</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-12 text-center text-gray-400 text-sm pb-8 font-sans no-print">
+        &copy; 8-Pillar Master Study Suite • CA Foundation Business Economics Ch 9 Unit 3
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+        function markMastered(btn, cardId) {
+            if(btn.innerText.includes("Mark Mastered")) {
+                btn.innerText = "✅ Mastered";
+                btn.classList.replace("bg-gray-100", "bg-teal-500");
+                btn.classList.replace("text-gray-600", "text-white");
+                localStorage.setItem(cardId, "true");
+            } else {
+                btn.innerText = "Mark Mastered";
+                btn.classList.replace("bg-teal-500", "bg-gray-100");
+                btn.classList.replace("text-white", "text-gray-600");
+                localStorage.removeItem(cardId);
+            }
+            updateFcCounter();
+        }
+        function updateFcCounter() {
+            let count = 0;
+            for(let i=1; i<=4; i++) { if(localStorage.getItem('c9u3_fc'+i)) count++; }
+            document.getElementById('fc-counter').innerText = count;
+        }
+        window.onload = function() {
+            for(let i=1; i<=4; i++) {
+                let id = 'c9u3_fc'+i;
+                if(localStorage.getItem(id)) {
+                    let btns = document.querySelectorAll('#tab-flashcards button');
+                    if(btns[i-1]) {
+                        btns[i-1].innerText = "✅ Mastered";
+                        btns[i-1].classList.replace("bg-gray-100", "bg-teal-500");
+                        btns[i-1].classList.replace("text-gray-600", "text-white");
+                    }
+                }
+            }
+            updateFcCounter();
+        };
+        function gradeMCQs() {
+            let score = 0, total = 2;
+            let cards = document.querySelectorAll('.mcq-card');
+            cards.forEach(card => {
+                let correctVal = card.getAttribute('data-correct');
+                let radios = card.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => {
+                    radio.parentElement.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    radio.disabled = true;
+                    if(radio.checked) {
+                        if(radio.value === correctVal) {
+                            score++;
+                            radio.parentElement.classList.add('bg-green-100', 'border-green-500');
+                        } else {
+                            radio.parentElement.classList.add('bg-red-100', 'border-red-500');
+                        }
+                    }
+                    if(radio.value === correctVal) radio.parentElement.classList.add('border-green-500');
+                });
+                card.querySelector('.explanation').classList.remove('hidden');
+            });
+            document.getElementById('mcq-score').innerText = score + " / " + total;
+        }
+        let timerInterval, timeLeft = 25 * 60, isRunning = false;
+        function toggleTimer() {
+            let btn = document.getElementById('timer-btn');
+            if(isRunning) {
+                clearInterval(timerInterval);
+                btn.innerText = "START";
+                btn.classList.replace("bg-red-100", "bg-blue-100");
+                btn.classList.replace("text-red-600", "text-blue-600");
+                isRunning = false;
+            } else {
+                timerInterval = setInterval(updateTimer, 1000);
+                btn.innerText = "PAUSE";
+                btn.classList.replace("bg-blue-100", "bg-red-100");
+                btn.classList.replace("text-blue-600", "text-red-600");
+                isRunning = true;
+            }
+        }
+        function updateTimer() {
+            if(timeLeft <= 0) {
+                clearInterval(timerInterval);
+                alert("🍅 Pomodoro complete! Take a 5-minute break.");
+                timeLeft = 25 * 60;
+                document.getElementById('timer-btn').innerText = "START";
+                isRunning = false;
+            } else { timeLeft--; }
+            let m = Math.floor(timeLeft / 60), s = timeLeft % 60;
+            document.getElementById('timer-display').innerText = (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CA Foundation | Ch 7 Unit 2: Market Failure & Government Intervention</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Kalam:wght@400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper-bg: #fffdf7;
+      --line-color: #e2e8f0;
+      --margin-red: #fca5a5;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+    }
+    .handwritten-title {
+      font-family: 'Caveat', cursive;
+    }
+    .handwritten-body {
+      font-family: 'Kalam', cursive;
+      line-height: 1.75;
+      font-size: 1.12rem;
+    }
+    .handwritten-alt {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.18rem;
+      line-height: 1.65;
+    }
+    .notebook-page {
+      background-color: var(--paper-bg);
+      background-image: linear-gradient(var(--line-color) 1px, transparent 1px);
+      background-size: 100% 32px;
+      border-left: 4px double var(--margin-red);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    }
+    .hl-yellow {
+      background: linear-gradient(104deg, rgba(254, 240, 138, 0) 0.9%, rgba(254, 240, 138, 0.95) 2.4%, rgba(254, 240, 138, 0.6) 5.8%, rgba(254, 240, 138, 0.9) 93%, rgba(254, 240, 138, 0.7) 96%, rgba(254, 240, 138, 0) 98%);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .hl-green {
+      background: linear-gradient(104deg, rgba(187, 247, 208, 0) 0.9%, rgba(187, 247, 208, 0.95) 2.4%, rgba(187, 247, 208, 0.7) 93%, rgba(187, 247, 208, 0) 98%);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .hl-pink {
+      background: linear-gradient(104deg, rgba(251, 207, 232, 0) 0.9%, rgba(251, 207, 232, 0.95) 2.4%, rgba(251, 207, 232, 0.7) 93%, rgba(251, 207, 232, 0) 98%);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .hl-blue {
+      background: linear-gradient(104deg, rgba(186, 230, 253, 0) 0.9%, rgba(186, 230, 253, 0.95) 2.4%, rgba(186, 230, 253, 0.7) 93%, rgba(186, 230, 253, 0) 98%);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .sticky-note {
+      background: #fef9c3;
+      border-top: 10px solid #fde047;
+      box-shadow: 3px 5px 12px rgba(0,0,0,0.08);
+      transform: rotate(-0.5deg);
+    }
+    .sticky-note-blue {
+      background: #e0f2fe;
+      border-top: 10px solid #38bdf8;
+      box-shadow: 3px 5px 12px rgba(0,0,0,0.08);
+      transform: rotate(0.5deg);
+    }
+    .sketch-box {
+      border: 2px dashed #475569;
+      border-radius: 14px;
+      background: #ffffff;
+    }
+    .flip-card {
+      perspective: 1000px;
+      min-height: 250px;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+    @media print {
+      .no-print { display: none !important; }
+      .tab-section { display: block !important; page-break-after: always; }
+    }
+  </style>
+</head>
+<body class="text-slate-800">
+
+  <!-- Top Navigation Header -->
+  <header class="bg-gradient-to-r from-sky-900 via-blue-900 to-indigo-900 text-white sticky top-0 z-50 shadow-lg no-print">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+      <div>
+        <span class="text-xs uppercase tracking-widest bg-sky-400 text-slate-900 font-bold px-2.5 py-0.5 rounded-full">CA Foundation • Business Economics</span>
+        <h1 class="text-xl md:text-2xl font-bold mt-1">Chapter 7: Public Finance — Unit 2 Master Suite</h1>
+      </div>
+      <div class="flex items-center gap-2 text-xs bg-white/10 px-3 py-2 rounded-xl border border-white/15">
+        <span>⏱️ Total Unit 2 Study Target: <strong class="text-sky-300">2 Hrs 15 Mins</strong></span>
+        <span>•</span>
+        <span>🔥 Exam Weightage: <strong class="text-emerald-300">3–5 Marks (Unit 2)</strong></span>
+      </div>
+    </div>
+
+    <!-- 7-Pillar Navigation Bar -->
+    <nav class="bg-slate-950/60 border-t border-white/10 overflow-x-auto">
+      <div class="max-w-7xl mx-auto px-4 flex space-x-1 py-1.5 text-sm font-semibold whitespace-nowrap">
+        <button onclick="switchTab('tab1')" id="btn-tab1" class="tab-btn bg-sky-400 text-slate-950 px-3.5 py-2 rounded-lg transition">1. ✍️ Handwritten Detailed Notes</button>
+        <button onclick="switchTab('tab2')" id="btn-tab2" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">2. ⚡ Exam-Eve Revision Notes</button>
+        <button onclick="switchTab('tab3')" id="btn-tab3" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">3. 🃏 20 Flashcards</button>
+        <button onclick="switchTab('tab4')" id="btn-tab4" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">4. 🎯 15 PYQ/MTP MCQs</button>
+        <button onclick="switchTab('tab5')" id="btn-tab5" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">5. 📊 Unit 2 Summary Table</button>
+        <button onclick="switchTab('tab6')" id="btn-tab6" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">6. 🧠 Full Ch-7 Mind Map</button>
+        <button onclick="switchTab('tab7')" id="btn-tab7" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">7. 🎥 Topic Video Hub</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-6">
+
+    <!-- ========================================================================= -->
+    <!-- TAB 1: DETAILED COLOURFUL HANDWRITTEN NOTES                               -->
+    <!-- ========================================================================= -->
+    <section id="tab1" class="tab-section space-y-8">
+      <!-- Intro Banner -->
+      <div class="bg-gradient-to-r from-sky-50 to-blue-50 border-2 border-sky-300 rounded-2xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl font-bold text-sky-950 flex items-center gap-2">
+            <span>📓</span> 100% Standalone Handwritten-Style Visual Notes (Unit 2)
+          </h2>
+          <p class="text-sm text-sky-900">Covers Complete vs Partial Market Failure, Externalities, Public Goods, Asymmetric Information, and Government Intervention strategies.</p>
+        </div>
+        <button onclick="window.print()" class="no-print bg-sky-900 hover:bg-sky-800 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow">🖨️ Print / Save PDF</button>
+      </div>
+
+      <!-- TOPIC 2.1 & 2.2 -->
+      <div class="notebook-page rounded-2xl p-6 md:p-10 relative">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-slate-300 pb-3 mb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider bg-blue-100 text-blue-800 px-2.5 py-1 rounded-md">Topic 2.1 & 2.2</span>
+            <h3 class="handwritten-title text-4xl md:text-5xl text-blue-950 font-bold mt-1">Concept of Market Failure</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-amber-100 border border-amber-300 text-amber-800 text-xs font-bold px-3 py-1.5 rounded-full">⭐⭐⭐⭐ High Priority</span>
+            <span class="bg-slate-800 text-sky-300 text-xs font-bold px-3 py-1.5 rounded-full">⏱️ Ideal Study Time: 15 Mins</span>
+          </div>
+        </div>
+
+        <div class="handwritten-body space-y-6 text-slate-800">
+          <p>
+            <strong class="text-blue-900 text-xl">1. What is Market Failure?</strong><br>
+            Market failure occurs when the free market (driven by individual self-interest and price mechanisms) results in an <span class="hl-pink font-bold">inefficient allocation of society's scarce resources</span>. This misallocation means there is either overproduction or underproduction of particular goods, leading to a less-than-optimal outcome for society.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div class="sketch-box p-5">
+              <h4 class="handwritten-title text-3xl text-center text-blue-900 mb-4">🌗 Complete vs. Partial Market Failure</h4>
+              <ul class="list-disc pl-6 space-y-2 text-sm font-sans">
+                <li><strong>Complete Market Failure (Missing Markets):</strong> The market simply does not exist. The free market fails to supply any quantity of the good (e.g., National Defence).</li>
+                <li><strong>Partial Market Failure:</strong> The market exists, but it produces the <em>wrong quantity</em> or at the <em>wrong price</em> (e.g., Over-producing polluting goods, under-producing healthcare).</li>
+              </ul>
+            </div>
+
+            <div class="sticky-note p-5 rounded-xl">
+              <h4 class="handwritten-title text-3xl text-amber-950 font-bold">⚠️ The 4 Major Sources of Market Failure</h4>
+              <p class="text-base text-slate-800 mt-1">Why do free markets fail to achieve efficiency? Primarily due to:</p>
+              <ol class="list-decimal pl-5 mt-2 space-y-1 font-bold text-slate-900">
+                <li>👑 <u>Market Power (Monopoly)</u></li>
+                <li>🏭 <u>Externalities (Spillover Effects)</u></li>
+                <li>🛡️ <u>Public Goods (Free Rider Problem)</u></li>
+                <li>🕵️ <u>Incomplete Information (Asymmetric Info)</u></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOPIC 2.3: MARKET POWER & EXTERNALITIES -->
+      <div class="notebook-page rounded-2xl p-6 md:p-10 relative">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-slate-300 pb-3 mb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider bg-rose-100 text-rose-800 px-2.5 py-1 rounded-md">Topic 2.3</span>
+            <h3 class="handwritten-title text-4xl md:text-5xl text-rose-950 font-bold mt-1">Market Power & Externalities</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-rose-100 border border-rose-300 text-rose-800 text-xs font-bold px-3 py-1.5 rounded-full">⭐⭐⭐⭐⭐ Super High Priority (Always tested)</span>
+            <span class="bg-slate-800 text-sky-300 text-xs font-bold px-3 py-1.5 rounded-full">⏱️ Ideal Study Time: 25 Mins</span>
+          </div>
+        </div>
+
+        <div class="handwritten-body space-y-6 text-slate-800">
+          <div class="bg-white/90 p-4 rounded-xl border border-slate-200">
+            <strong class="text-rose-900 text-xl">👑 1. Market Power (Monopoly Power):</strong>
+            <p class="mt-2">Firms with market power can profitably raise prices above Marginal Cost ($P > MC$). They deliberately <span class="hl-pink font-bold">restrict output</span> to charge higher prices, leading to an under-allocation of resources and a deadweight loss to society.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-rose-50 via-white to-orange-50 border-2 border-rose-400 rounded-2xl p-6 mt-6">
+            <h4 class="handwritten-title text-3xl md:text-4xl text-rose-950 font-bold">🏭 2. Externalities (Spillover Effects)</h4>
+            <p class="text-base mt-2">Arise when the production or consumption of a good affects third parties who are not directly involved in the transaction. Prices fail to reflect true costs/benefits.</p>
+            
+            <div class="my-4 p-4 bg-white rounded-xl shadow border border-rose-200 font-bold text-center text-lg font-sans text-rose-900">
+              SOCIAL COST = PRIVATE COST + EXTERNAL COST
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4 font-sans text-sm">
+              <div class="p-4 bg-rose-100 border border-rose-300 rounded-lg">
+                <strong class="text-rose-900">1. Negative Production Externality:</strong><br>
+                Social Cost > Private Cost. The market <span class="text-rose-700 font-bold">over-produces</span> these goods. (e.g., Factory pollution).
+              </div>
+              <div class="p-4 bg-rose-100 border border-rose-300 rounded-lg">
+                <strong class="text-rose-900">2. Negative Consumption Externality:</strong><br>
+                Social Benefit < Private Benefit. <span class="text-rose-700 font-bold">Over-consumed</span> by the market. (e.g., Smoking cigarettes, loud music).
+              </div>
+              <div class="p-4 bg-emerald-100 border border-emerald-300 rounded-lg">
+                <strong class="text-emerald-900">3. Positive Production Externality:</strong><br>
+                Social Cost < Private Cost. The market <span class="text-emerald-700 font-bold">under-produces</span> these goods. (e.g., R&D, corporate training).
+              </div>
+              <div class="p-4 bg-emerald-100 border border-emerald-300 rounded-lg">
+                <strong class="text-emerald-900">4. Positive Consumption Externality:</strong><br>
+                Social Benefit > Private Benefit. <span class="text-emerald-700 font-bold">Under-consumed</span> by the market. (e.g., Vaccinations, Education).
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOPIC 2.4 & 2.5: PUBLIC GOODS & INFO FAILURE -->
+      <div class="notebook-page rounded-2xl p-6 md:p-10 relative">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-slate-300 pb-3 mb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-md">Topic 2.4 & 2.5</span>
+            <h3 class="handwritten-title text-4xl md:text-5xl text-emerald-950 font-bold mt-1">Public Goods & Information Failure</h3>
+          </div>
+        </div>
+
+        <div class="handwritten-body space-y-6 text-slate-800">
+          <!-- Public Goods -->
+          <div class="bg-emerald-50 border-2 border-emerald-300 rounded-xl p-5">
+            <h4 class="handwritten-title text-3xl text-emerald-950 font-bold">🛡️ Public Goods (Paul Samuelson, 1954)</h4>
+            <p class="mt-2 text-base">Markets fail to supply pure public goods because private firms cannot force people to pay for them.</p>
+            <ul class="list-disc pl-6 mt-3 space-y-2">
+              <li><strong>Non-Rivalry:</strong> One person's consumption does not reduce the amount available for others (e.g., breathing air, national defence).</li>
+              <li><strong>Non-Excludability:</strong> Once provided, you cannot stop anyone from enjoying the benefit, even if they refuse to pay.</li>
+              <li><span class="hl-pink font-bold">The Free-Rider Problem:</span> Since people cannot be excluded, they have an incentive to consume the good without paying for it, leading to complete market failure.</li>
+            </ul>
+          </div>
+
+          <!-- Incomplete Info -->
+          <div class="sketch-box p-5 mt-6">
+            <h4 class="handwritten-title text-3xl text-indigo-950 font-bold mb-3">🕵️ Incomplete Information (Asymmetric Info)</h4>
+            <p class="text-base mb-3">Occurs when buyers and sellers do not have equal access to information.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans text-sm">
+              <div class="p-3 bg-indigo-50 border border-indigo-200 rounded-lg">
+                <strong>1. Adverse Selection (Akerlof's "Lemons"):</strong><br>
+                Occurs <em>before</em> the transaction. Bad products/risks drive good ones out of the market (e.g., used car market, unhealthy people buying health insurance).
+              </div>
+              <div class="p-3 bg-indigo-50 border border-indigo-200 rounded-lg">
+                <strong>2. Moral Hazard:</strong><br>
+                Occurs <em>after</em> the transaction. A party takes more risks because someone else bears the cost (e.g., driving recklessly after getting comprehensive car insurance).
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOPIC 2.6 - 2.13: GOVERNMENT INTERVENTION & FAILURE -->
+      <div class="notebook-page rounded-2xl p-6 md:p-10 relative">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-slate-300 pb-3 mb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider bg-purple-100 text-purple-800 px-2.5 py-1 rounded-md">Topic 2.6 to 2.13</span>
+            <h3 class="handwritten-title text-4xl md:text-5xl text-purple-950 font-bold mt-1">Government Intervention & Government Failure</h3>
+          </div>
+        </div>
+
+        <div class="handwritten-body space-y-6 text-slate-800">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-purple-50 border-2 border-purple-300 rounded-xl p-4">
+              <h4 class="handwritten-title text-2xl text-purple-950 font-bold">🛠️ Correcting Market Power & Externalities</h4>
+              <ul class="list-disc pl-5 mt-2 space-y-1 text-base">
+                <li><strong>Competition Act, 2002:</strong> India's law to prohibit anti-competitive agreements and abuse of dominant position.</li>
+                <li><strong>Pigouvian Taxes:</strong> Levied on polluters (negative externalities) equal to the marginal external cost. Makes them "internalize the externality".</li>
+                <li><strong>Subsidies:</strong> Given for positive externalities (like education) to lower consumer prices and increase consumption.</li>
+                <li><strong>Cap-and-Trade (Tradable Permits):</strong> Market-based approach allowing firms to buy/sell pollution permits.</li>
+              </ul>
+            </div>
+
+            <div class="bg-amber-50 border-2 border-amber-300 rounded-xl p-4">
+              <h4 class="handwritten-title text-2xl text-amber-950 font-bold">⚖️ Price Controls (Floors & Ceilings)</h4>
+              <ul class="list-disc pl-5 mt-2 space-y-1 text-base">
+                <li><strong>Price Ceiling (Maximum Price):</strong> Set <em>below</em> the equilibrium price to protect consumers (e.g., rent control, essential medicines). <span class="hl-pink">Leads to shortages (black markets).</span></li>
+                <li><strong>Price Floor (Minimum Price):</strong> Set <em>above</em> the equilibrium price to protect producers/workers (e.g., Minimum Support Price (MSP) for farmers, Minimum Wages). <span class="hl-green">Leads to surpluses.</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sticky-note-blue p-5 rounded-xl mt-6">
+            <h4 class="handwritten-title text-3xl text-sky-950 font-bold">⚠️ Government Failure</h4>
+            <p class="mt-2 text-slate-800">
+              Government intervention doesn't always result in an efficient allocation of resources. <strong>Government Failure</strong> occurs when the cost of government intervention exceeds the benefits, or when intervention creates <em>fresh and more serious problems</em>.
+              <br><br>
+              <strong>Causes:</strong> Information gaps by policymakers, bureaucratic red tape, corruption, and the deadweight loss of taxation required to fund the interventions.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 2: CONCISE EXAM-EVE REVISION NOTES                                    -->
+    <!-- ========================================================================= -->
+    <section id="tab2" class="tab-section hidden space-y-6">
+      <div class="bg-sky-950 text-white rounded-2xl p-6 shadow-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <span class="bg-amber-400 text-slate-950 text-xs font-extrabold px-2.5 py-1 rounded-full uppercase">15-Minute Rapid Revision</span>
+          <h2 class="text-2xl font-bold mt-2">⚡ Concise Exam-Eve Revision Notes — Unit 2</h2>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl p-6 shadow border-l-4 border-sky-600">
+          <h3 class="font-bold text-lg text-sky-950 mb-3">1. Market Failure & Externalities</h3>
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li>• <strong>Market Failure:</strong> Inefficient allocation of scarce resources.</li>
+            <li>• <strong>Monopoly Power:</strong> Firms restrict output and set $P > MC$, causing deadweight loss.</li>
+            <li>• <strong>Negative Externalities:</strong> Overproduction (Social Cost > Private Cost). E.g., Pollution.</li>
+            <li>• <strong>Positive Externalities:</strong> Underproduction (Social Benefit > Private Benefit). E.g., Education.</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow border-l-4 border-emerald-600">
+          <h3 class="font-bold text-lg text-emerald-950 mb-3">2. Public Goods & Info Failure</h3>
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li>• <strong>Public Goods:</strong> Non-rival and Non-excludable. Suffer from the <strong>Free-Rider problem</strong>.</li>
+            <li>• <strong>Adverse Selection:</strong> Hidden info <em>before</em> a deal. (Lemons problem - bad drives out good).</li>
+            <li>• <strong>Moral Hazard:</strong> Hidden actions <em>after</em> a deal. (Taking risks because you have insurance).</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow border-l-4 border-amber-500">
+          <h3 class="font-bold text-lg text-amber-950 mb-3">3. Corrective Government Tools</h3>
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li>• <strong>Pigouvian Tax:</strong> Imposed on negative externalities.</li>
+            <li>• <strong>Subsidies:</strong> Provided for positive externalities & merit goods.</li>
+            <li>• <strong>Price Ceiling:</strong> Maximum limit (protects consumers, causes shortages).</li>
+            <li>• <strong>Price Floor (MSP):</strong> Minimum limit (protects producers, causes surplus).</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-2xl p-6 shadow border-l-4 border-rose-600">
+          <h3 class="font-bold text-lg text-rose-950 mb-3">4. Government Failure</h3>
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li>• Occurs when government intervention worsens resource allocation or creates new problems.</li>
+            <li>• Caused by information gaps, bureaucratic inefficiencies, and the deadweight cost of taxes.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: 20 INTERACTIVE FLASHCARDS                                          -->
+    <!-- ========================================================================= -->
+    <section id="tab3" class="tab-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border border-slate-200">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mt-1">🃏 Unit 2 Flashcards</h2>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="bg-emerald-50 border border-emerald-300 px-4 py-2 rounded-xl text-sm font-bold text-emerald-900">
+            Mastered: <span id="fc-mastered-count">0</span> / 20
+          </div>
+          <button onclick="resetFlashcards()" class="text-xs bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-3 py-2 rounded-lg">Reset Deck</button>
+        </div>
+      </div>
+      <div id="flashcard-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 4: 15 PRACTICE MCQs                                                   -->
+    <!-- ========================================================================= -->
+    <section id="tab4" class="tab-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border border-slate-200">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mt-1">🎯 Practice MCQs (Unit 2)</h2>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="bg-sky-50 border border-sky-200 px-4 py-2 rounded-xl text-sm font-bold text-sky-950">
+            Score: <span id="mcq-score">0</span> / 15
+          </div>
+          <button onclick="resetMCQs()" class="text-xs bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-3 py-2 rounded-lg">Retake Test</button>
+        </div>
+      </div>
+      <div id="mcq-container" class="space-y-4"></div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 5: UNIT-WISE MASTER SUMMARY TABLE                                     -->
+    <!-- ========================================================================= -->
+    <section id="tab5" class="tab-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow border border-slate-200">
+        <h2 class="text-2xl font-bold text-slate-900 mt-1">📊 Unit 2 Master Summary Table</h2>
+        <div class="overflow-x-auto mt-4">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="bg-slate-900 text-white">
+                <th class="p-3.5 rounded-tl-xl">Market Failure Type</th>
+                <th class="p-3.5">Core Issue</th>
+                <th class="p-3.5">Market Outcome</th>
+                <th class="p-3.5 rounded-tr-xl">Government Intervention</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-sky-950">Monopoly Power</td>
+                <td class="p-3.5">Lack of competition ($P > MC$)</td>
+                <td class="p-3.5">Underproduction & higher prices</td>
+                <td class="p-3.5">Competition Act, Anti-trust laws, price regulation</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-sky-950">Negative Externalities</td>
+                <td class="p-3.5">Social Cost > Private Cost</td>
+                <td class="p-3.5">Overproduction (e.g., pollution)</td>
+                <td class="p-3.5">Pigouvian Taxes, Cap-and-trade, Direct regulation</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-sky-950">Positive Externalities / Merit Goods</td>
+                <td class="p-3.5">Social Benefit > Private Benefit</td>
+                <td class="p-3.5">Underproduction (e.g., education)</td>
+                <td class="p-3.5">Subsidies, direct public provision</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-sky-950">Public Goods</td>
+                <td class="p-3.5">Non-rival & Non-excludable</td>
+                <td class="p-3.5">Free-rider problem (missing markets)</td>
+                <td class="p-3.5">Direct government provision via taxation</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-sky-950">Information Failure</td>
+                <td class="p-3.5">Asymmetric Information</td>
+                <td class="p-3.5">Adverse selection & Moral hazard</td>
+                <td class="p-3.5">Mandatory disclosures, licensing, warranties</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 6: CHAPTER-WISE MIND MAP (Focus on Unit 2)                            -->
+    <!-- ========================================================================= -->
+    <section id="tab6" class="tab-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow border border-slate-200">
+        <h2 class="text-2xl font-bold text-slate-900 mt-1">🧠 Chapter 7: Public Finance — Mind Map</h2>
+        
+        <div class="bg-slate-900 text-white p-6 rounded-2xl mt-4 text-center shadow-inner">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-6 text-left">
+            <!-- Unit 1 -->
+            <div class="bg-slate-800 border-2 border-slate-600 rounded-2xl p-4 opacity-75">
+              <span class="bg-emerald-400 text-slate-950 text-xs font-extrabold px-2.5 py-1 rounded">UNIT 1</span>
+              <h3 class="font-bold mt-2">Fiscal Functions</h3>
+            </div>
+
+            <!-- Unit 2 (Current) -->
+            <div class="bg-slate-800 border-2 border-sky-400 rounded-2xl p-4 space-y-3">
+              <span class="bg-sky-400 text-slate-950 text-xs font-extrabold px-2.5 py-1 rounded">UNIT 2 (Current)</span>
+              <h3 class="font-bold text-base text-white">Market Failure & Govt Intervention</h3>
+              <ul class="text-xs space-y-1.5 text-slate-200">
+                <li>🔹 <strong>2.1–2.2 Concept:</strong> Missing vs Partial Market Failure</li>
+                <li>🔹 <strong>2.3 Market Power:</strong> Monopoly restricts output</li>
+                <li>🔹 <strong>2.3 Externalities:</strong> Pos/Neg; Social Cost formula</li>
+                <li>🔹 <strong>2.4 Public Goods:</strong> Non-rival, Non-excludable, Free-Rider</li>
+                <li>🔹 <strong>2.5 Incomplete Info:</strong> Adverse Selection & Moral Hazard</li>
+                <li>🔹 <strong>2.6+ Interventions:</strong> Pigouvian Tax, Subsidies, Price Floors/Ceilings, Govt Failure</li>
+              </ul>
+            </div>
+
+            <!-- Unit 3 & 4 -->
+            <div class="bg-slate-800 border-2 border-slate-600 rounded-2xl p-4 opacity-75">
+              <span class="bg-amber-400 text-slate-950 text-xs font-extrabold px-2.5 py-1 rounded">UNIT 3</span>
+              <h3 class="font-bold mt-2">Budgeting & Debt</h3>
+            </div>
+            <div class="bg-slate-800 border-2 border-slate-600 rounded-2xl p-4 opacity-75">
+              <span class="bg-rose-400 text-slate-950 text-xs font-extrabold px-2.5 py-1 rounded">UNIT 4</span>
+              <h3 class="font-bold mt-2">Fiscal Policy</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 7: DETAILED VIDEO HUB                                                 -->
+    <!-- ========================================================================= -->
+    <section id="tab7" class="tab-section hidden space-y-6">
+      <div class="bg-gradient-to-r from-sky-900 to-slate-900 text-white rounded-2xl p-6 shadow-lg">
+        <h2 class="text-2xl font-bold mt-2">🎥 Detailed Topic Video Lectures</h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-5 shadow border border-slate-200 space-y-3">
+          <button onclick="loadVideoLesson(0)" id="vid-btn-0" class="vid-btn w-full text-left p-3.5 rounded-xl border-2 border-sky-600 bg-sky-50 font-semibold text-sm text-sky-950 transition">
+            ▶️ Module 1: Intro & Market Power
+          </button>
+          <button onclick="loadVideoLesson(1)" id="vid-btn-1" class="vid-btn w-full text-left p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 font-semibold text-sm text-slate-800 transition">
+            ▶️ Module 2: Externalities & Public Goods
+          </button>
+          <button onclick="loadVideoLesson(2)" id="vid-btn-2" class="vid-btn w-full text-left p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 font-semibold text-sm text-slate-800 transition">
+            ▶️ Module 3: Interventions & Govt Failure
+          </button>
+        </div>
+
+        <div class="lg:col-span-2 bg-slate-950 text-white rounded-2xl p-6 shadow-xl flex flex-col justify-between min-h-[420px]">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3 mb-4">
+              <span id="vid-badge" class="bg-amber-400 text-slate-950 text-xs font-extrabold px-2.5 py-1 rounded">MODULE 1 OF 3</span>
+              <span id="vid-slide-counter" class="text-xs text-slate-400 font-mono">Slide 1 / 2</span>
+            </div>
+            <h3 id="vid-title" class="text-xl md:text-2xl font-bold text-amber-300 mb-3"></h3>
+            <div id="vid-visual-stage" class="bg-slate-900 border border-slate-800 rounded-xl p-5 my-3 min-h-[190px] flex flex-col justify-center text-center"></div>
+            <p id="vid-narration" class="text-sm text-slate-300 leading-relaxed bg-white/5 p-4 rounded-xl border border-white/10"></p>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-4 mt-4 border-t border-slate-800">
+            <div class="flex items-center gap-2">
+              <button onclick="prevSlide()" class="bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl">⬅️ Prev</button>
+              <button onclick="speakCurrentSlide()" class="bg-sky-600 hover:bg-sky-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl">🔊 Read Aloud</button>
+              <button onclick="stopSpeech()" class="bg-rose-700 hover:bg-rose-600 text-white text-xs font-bold px-3 py-2.5 rounded-xl">⏹️</button>
+              <button onclick="nextSlide()" class="bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-bold px-4 py-2.5 rounded-xl">Next ➡️</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Tab switching
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-section').forEach(sec => sec.classList.add('hidden'));
+      document.getElementById(tabId).classList.remove('hidden');
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-sky-400', 'text-slate-950');
+        btn.classList.add('text-slate-200');
+      });
+      const activeBtn = document.getElementById('btn-' + tabId);
+      activeBtn.classList.add('bg-sky-400', 'text-slate-950');
+      activeBtn.classList.remove('text-slate-200');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Flashcards Data
+    const flashcardsData = [
+      { q: "What is Market Failure?", a: "The inefficient allocation of society's scarce resources by the free market.", tag: "Concept" },
+      { q: "What is Complete Market Failure?", a: "Missing markets where the free market fails to supply any quantity of a good (e.g., National Defence).", tag: "Concept" },
+      { q: "How does Market Power cause failure?", a: "Monopolies restrict output and raise prices above marginal cost, leading to deadweight loss.", tag: "Sources" },
+      { q: "Define Negative Production Externality.", a: "When Social Cost > Private Cost, resulting in overproduction (e.g., factory pollution).", tag: "Externalities" },
+      { q: "Define Positive Consumption Externality.", a: "When Social Benefit > Private Benefit, resulting in under-consumption (e.g., vaccinations).", tag: "Externalities" },
+      { q: "What is the formula for Social Cost?", a: "Social Cost = Private Cost + External Cost", tag: "Formula" },
+      { q: "What are the 2 key characteristics of Public Goods?", a: "1. Non-Rivalry\n2. Non-Excludability", tag: "Public Goods" },
+      { q: "What is the Free-Rider Problem?", a: "Because a public good is non-excludable, individuals have an incentive to consume it without paying.", tag: "Public Goods" },
+      { q: "What is Adverse Selection?", a: "An asymmetric info problem BEFORE a transaction where bad quality drives out good (Lemons problem).", tag: "Info Failure" },
+      { q: "What is Moral Hazard?", a: "An asymmetric info problem AFTER a transaction where a party takes extra risks because someone else bears the cost.", tag: "Info Failure" },
+      { q: "How does the Competition Act help?", a: "It regulates monopolies and prevents anti-competitive behavior in India.", tag: "Intervention" },
+      { q: "What is a Pigouvian Tax?", a: "A tax imposed on negative externalities to make polluters internalize the external costs.", tag: "Intervention" },
+      { q: "What is a Price Ceiling?", a: "A maximum price set below equilibrium to protect consumers, causing shortages.", tag: "Price Controls" },
+      { q: "What is a Price Floor?", a: "A minimum price set above equilibrium (e.g., MSP) to protect producers, causing surpluses.", tag: "Price Controls" },
+      { q: "What is Cap-and-Trade?", a: "A market-based system where the government issues tradable pollution permits.", tag: "Intervention" },
+      { q: "What is Government Failure?", a: "When government intervention causes a more inefficient allocation of resources than the free market.", tag: "Govt Failure" }
+    ];
+
+    let masteredCards = new Set();
+    function renderFlashcards() {
+      const grid = document.getElementById('flashcard-grid');
+      grid.innerHTML = flashcardsData.map((item, idx) => {
+        const isMastered = masteredCards.has(idx);
+        return `
+          <div id="fcard-${idx}" class="flip-card cursor-pointer" onclick="flipCard(${idx})">
+            <div class="flip-card-inner">
+              <div class="flip-card-front bg-white border-2 ${isMastered ? 'border-emerald-400 bg-emerald-50/30' : 'border-slate-200'} shadow-sm">
+                <span class="text-xs font-bold bg-sky-100 text-sky-800 px-2 py-1 rounded w-max">${item.tag}</span>
+                <p class="font-bold text-slate-800 text-base my-auto">${item.q}</p>
+              </div>
+              <div class="flip-card-back bg-sky-950 text-white shadow-md">
+                <span class="text-xs font-bold bg-amber-400 text-slate-950 px-2 py-1 rounded w-max">Answer</span>
+                <p class="text-sm text-sky-50 whitespace-pre-line my-auto">${item.a}</p>
+                <button onclick="toggleMastered(event, ${idx})" class="text-xs font-bold px-2 py-1 rounded mt-2 ${isMastered ? 'bg-emerald-500 text-slate-950' : 'bg-white/20 text-white'}">${isMastered ? '✓ Mastered' : 'Mark Mastered'}</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+      document.getElementById('fc-mastered-count').textContent = masteredCards.size;
+    }
+    function flipCard(idx) { document.getElementById(`fcard-${idx}`).classList.toggle('flipped'); }
+    function toggleMastered(event, idx) {
+      event.stopPropagation();
+      masteredCards.has(idx) ? masteredCards.delete(idx) : masteredCards.add(idx);
+      renderFlashcards();
+    }
+    function resetFlashcards() { masteredCards.clear(); renderFlashcards(); }
+
+    // MCQ Data
+    const mcqData = [
+      {
+        q: "1. Which of the following is an example of a negative production externality?",
+        options: ["Vaccinations", "Factory pollution", "Loud music from a neighbor", "Research and Development"],
+        correct: 1,
+        exp: "Factory pollution is a negative production externality where Social Cost > Private Cost."
+      },
+      {
+        q: "2. The 'Free-Rider problem' is most strongly associated with which type of good?",
+        options: ["Merit Goods", "Demerit Goods", "Public Goods", "Common Property Resources"],
+        correct: 2,
+        exp: "Because public goods are non-excludable, individuals have an incentive to free-ride without paying."
+      },
+      {
+        q: "3. If a government sets a Minimum Support Price (MSP) for agricultural goods above the market equilibrium, it acts as a:",
+        options: ["Price Ceiling", "Price Floor", "Pigouvian Tax", "Cap-and-trade permit"],
+        correct: 1,
+        exp: "An MSP is a minimum limit (Price Floor) set above equilibrium to protect farmers, which leads to a surplus."
+      },
+      {
+        q: "4. Adverse Selection is an asymmetric information problem that occurs:",
+        options: ["After the transaction", "Before the transaction", "Only in monopoly markets", "Only in public goods"],
+        correct: 1,
+        exp: "Adverse selection occurs BEFORE the transaction (e.g., the 'Lemons' problem in used cars)."
+      },
+      {
+        q: "5. Government intervention can sometimes create new inefficiencies and misallocation of resources. This is known as:",
+        options: ["Market Failure", "Deadweight Loss", "Government Failure", "Moral Hazard"],
+        correct: 2,
+        exp: "Government Failure happens when the intervention is ineffective or creates fresh and more serious problems."
+      }
+    ];
+
+    let mcqAnswers = {};
+    let mcqScore = 0;
+    function renderMCQs() {
+      const container = document.getElementById('mcq-container');
+      container.innerHTML = mcqData.map((item, qIdx) => {
+        const userAns = mcqAnswers[qIdx];
+        const hasAns = userAns !== undefined;
+        return `
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+            <p class="font-bold text-slate-900 mb-4">${item.q}</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              ${item.options.map((opt, oIdx) => {
+                let style = "border-slate-200 text-slate-800";
+                if (hasAns) {
+                  if (oIdx === item.correct) style = "border-emerald-500 bg-emerald-50 font-bold";
+                  else if (oIdx === userAns) style = "border-rose-500 bg-rose-50 font-bold";
+                  else style = "border-slate-200 opacity-60";
+                }
+                return `<button onclick="selectMCQ(${qIdx}, ${oIdx})" ${hasAns ? 'disabled' : ''} class="text-left p-3 rounded-xl border-2 text-sm ${style}">${String.fromCharCode(65+oIdx)}. ${opt}</button>`;
+              }).join('')}
+            </div>
+            ${hasAns ? `<div class="mt-4 p-4 rounded-xl text-sm ${userAns === item.correct ? 'bg-emerald-50 text-emerald-950' : 'bg-rose-50 text-rose-950'}"><strong>${userAns === item.correct ? '✅ Correct!' : '❌ Incorrect.'}</strong> ${item.exp}</div>` : ''}
+          </div>
+        `;
+      }).join('');
+      document.getElementById('mcq-score').textContent = mcqScore;
+    }
+    function selectMCQ(qIdx, oIdx) {
+      if (mcqAnswers[qIdx] !== undefined) return;
+      mcqAnswers[qIdx] = oIdx;
+      if (oIdx === mcqData[qIdx].correct) mcqScore++;
+      renderMCQs();
+    }
+    function resetMCQs() { mcqAnswers = {}; mcqScore = 0; renderMCQs(); }
+
+    // Video Hub
+    const videoModules = [
+      {
+        title: "Module 1: Market Failure & Monopoly",
+        slides: [
+          { visual: `<h4 class="text-2xl font-bold text-sky-400">What is Market Failure?</h4><p class="mt-4">Inefficient allocation of scarce resources.</p>`, narration: "Market failure is the inefficient allocation of society's scarce resources." },
+          { visual: `<h4 class="text-2xl font-bold text-sky-400">Monopoly Power</h4><p class="mt-4">Price > Marginal Cost</p>`, narration: "Firms with market power restrict output and charge higher prices than perfect competition." }
+        ]
+      },
+      {
+        title: "Module 2: Externalities",
+        slides: [
+          { visual: `<h4 class="text-xl font-bold text-sky-400">Negative Externalities</h4><p class="mt-4 text-rose-400">Social Cost > Private Cost</p>`, narration: "Negative externalities lead to overproduction, as the social cost is higher than private cost." },
+          { visual: `<h4 class="text-xl font-bold text-sky-400">Public Goods</h4><p class="mt-4 text-emerald-400">Non-rival & Non-excludable</p>`, narration: "Public goods suffer from the free rider problem because they are non excludable." }
+        ]
+      },
+      {
+        title: "Module 3: Government Intervention",
+        slides: [
+          { visual: `<h4 class="text-xl font-bold text-sky-400">Corrective Measures</h4><p class="mt-4">Pigouvian Taxes & Subsidies</p>`, narration: "The government corrects market failures using Pigouvian taxes for negative externalities and subsidies for positive ones." }
+        ]
+      }
+    ];
+
+    let curMod = 0, curSlide = 0;
+    function loadVideoLesson(mIdx) {
+      curMod = mIdx; curSlide = 0;
+      document.querySelectorAll('.vid-btn').forEach((btn, i) => {
+        btn.className = (i === mIdx) 
+          ? "vid-btn w-full text-left p-3.5 rounded-xl border-2 border-sky-600 bg-sky-50 font-semibold text-sm text-sky-950 transition"
+          : "vid-btn w-full text-left p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 font-semibold text-sm text-slate-800 transition";
+      });
+      renderVideoSlide();
+    }
+    function renderVideoSlide() {
+      const mod = videoModules[curMod], slide = mod.slides[curSlide];
+      document.getElementById('vid-badge').textContent = `MODULE ${curMod + 1} OF ${videoModules.length}`;
+      document.getElementById('vid-slide-counter').textContent = `Slide ${curSlide + 1} / ${mod.slides.length}`;
+      document.getElementById('vid-title').textContent = mod.title;
+      document.getElementById('vid-visual-stage').innerHTML = slide.visual;
+      document.getElementById('vid-narration').textContent = slide.narration;
+    }
+    function nextSlide() { stopSpeech(); if (curSlide < videoModules[curMod].slides.length - 1) { curSlide++; renderVideoSlide(); } }
+    function prevSlide() { stopSpeech(); if (curSlide > 0) { curSlide--; renderVideoSlide(); } }
+    function speakCurrentSlide() {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const text = videoModules[curMod].slides[curSlide].narration;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 0.95;
+      window.speechSynthesis.speak(utterance);
+    }
+    function stopSpeech() { if ('speechSynthesis' in window) window.speechSynthesis.cancel(); }
+
+    window.addEventListener('DOMContentLoaded', () => { renderFlashcards(); renderMCQs(); renderVideoSlide(); });
+  </script>
+</body>
+</html>

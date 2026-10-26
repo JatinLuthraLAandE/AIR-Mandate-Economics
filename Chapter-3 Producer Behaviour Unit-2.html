@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Foundation - Business Economics: Ch 3 Unit 2 — Theory of Cost</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --line-color: #e5e7eb;
+            --margin-line: #ef4444;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: #1f2937; }
+        .notebook-paper {
+            background-image: repeating-linear-gradient(transparent, transparent 31px, var(--line-color) 31px, var(--line-color) 32px);
+            background-position: 0 1.2rem;
+            background-attachment: local;
+            border-left: 2px solid var(--margin-line);
+            padding-left: 2rem;
+            font-family: 'Kalam', cursive;
+            font-size: 1.15rem;
+            line-height: 2rem;
+        }
+        .hl-yellow { background: linear-gradient(104deg, rgba(253,230,138,0) 0.9%, rgba(253,230,138,1) 2.4%, rgba(253,230,138,0.6) 5.8%, rgba(253,230,138,1) 93%, rgba(253,230,138,0.7) 96%, rgba(253,230,138,0) 98%); }
+        .hl-green { background: linear-gradient(104deg, rgba(167,243,208,0) 0.9%, rgba(167,243,208,1) 2.4%, rgba(167,243,208,0.6) 5.8%, rgba(167,243,208,1) 93%, rgba(167,243,208,0.7) 96%, rgba(167,243,208,0) 98%); }
+        .hl-pink { background: linear-gradient(104deg, rgba(252,165,165,0) 0.9%, rgba(252,165,165,1) 2.4%, rgba(252,165,165,0.6) 5.8%, rgba(252,165,165,1) 93%, rgba(252,165,165,0.7) 96%, rgba(252,165,165,0) 98%); }
+        .hl-blue { background: linear-gradient(104deg, rgba(191,219,254,0) 0.9%, rgba(191,219,254,1) 2.4%, rgba(191,219,254,0.6) 5.8%, rgba(191,219,254,1) 93%, rgba(191,219,254,0.7) 96%, rgba(191,219,254,0) 98%); }
+        
+        .sticky-note {
+            background-color: #fef08a;
+            box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+            padding: 1rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.25rem;
+            margin: 1.25rem 0;
+            border-bottom-right-radius: 20px 5px;
+        }
+
+        .flip-card { background-color: transparent; width: 100%; height: 230px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+        .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back {
+            position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+            display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+            border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-family: 'Patrick Hand', cursive; font-size: 1.2rem;
+        }
+        .flip-card-front { background-color: #ffffff; border: 2px solid #e5e7eb; color: #111827; }
+        .flip-card-back { background-color: #eff6ff; border: 2px solid #93c5fd; color: #1e3a8a; transform: rotateY(180deg); }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .tab-btn { transition: all 0.2s; }
+        .tab-btn.active { background-color: #2563eb; color: white; border-color: #2563eb; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3); }
+
+        @media print {
+            .no-print { display: none !important; }
+            .notebook-paper { background: none; border: none; padding: 0; }
+            body { background: white; }
+            .tab-content { display: block !important; page-break-before: always; }
+            .tab-content:first-of-type { page-break-before: avoid; }
+        }
+
+        .tree ul { padding-top: 20px; position: relative; transition: all 0.5s; }
+        .tree li { float: left; text-align: center; list-style-type: none; position: relative; padding: 20px 5px 0 5px; transition: all 0.5s; }
+        .tree li::before, .tree li::after { content: ''; position: absolute; top: 0; right: 50%; border-top: 2px solid #cbd5e1; width: 50%; height: 20px; }
+        .tree li::after { right: auto; left: 50%; border-left: 2px solid #cbd5e1; }
+        .tree li:only-child::after, .tree li:only-child::before { display: none; }
+        .tree li:only-child { padding-top: 0; }
+        .tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+        .tree li:last-child::before { border-right: 2px solid #cbd5e1; border-radius: 0 5px 0 0; }
+        .tree li:first-child::after { border-radius: 5px 0 0 0; }
+        .tree ul ul::before { content: ''; position: absolute; top: 0; left: 50%; border-left: 2px solid #cbd5e1; width: 0; height: 20px; }
+        .tree li a { border: 2px solid #cbd5e1; padding: 8px 12px; text-decoration: none; color: #1e293b; font-family: 'Patrick Hand', cursive; display: inline-block; border-radius: 8px; background: white; }
+        .tree li a:hover { background: #e0f2fe; border-color: #38bdf8; }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-12">
+
+    <!-- Top Navigation & Tools -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">📊</span>
+                    <h1 class="font-bold text-xl tracking-tight text-gray-900">CA Foundation: Ch 3 Unit 2 — Theory of Cost</h1>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200">
+                        <span class="text-lg">⏱️</span>
+                        <span id="timer-display" class="font-mono font-semibold text-slate-700">25:00</span>
+                        <button id="timer-btn" onclick="toggleTimer()" class="text-xs font-bold text-blue-600 hover:text-blue-800 ml-2 px-2 py-1 rounded bg-blue-100 hover:bg-blue-200 transition">START</button>
+                    </div>
+                    
+                    <button onclick="window.print()" class="flex items-center space-x-1 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition shadow-sm">
+                        <span>🖨️</span><span>Save PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pillar Tabs -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto no-scrollbar border-t border-gray-100">
+            <div class="flex space-x-2 py-3" id="tabs-container">
+                <button onclick="switchTab('tab-notes')" class="tab-btn active whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">✍️ 1. Detailed Notes</button>
+                <button onclick="switchTab('tab-traps')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🚨 2. Trap Zone</button>
+                <button onclick="switchTab('tab-revision')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">⚡ 3. Revision & Mnemonics</button>
+                <button onclick="switchTab('tab-recall')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📝 4. Active Recall</button>
+                <button onclick="switchTab('tab-flashcards')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🃏 5. Flashcards</button>
+                <button onclick="switchTab('tab-mcq')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🎯 6. MCQs</button>
+                <button onclick="switchTab('tab-summary')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📊 7. Summary</button>
+                <button onclick="switchTab('tab-mindmap')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🧠 8. Mind Map</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto mt-8 px-4 sm:px-6 lg:px-8">
+
+        <!-- ========================================= -->
+        <!-- TAB 1: DETAILED HANDWRITTEN NOTES         -->
+        <!-- ========================================= -->
+        <div id="tab-notes" class="tab-content active notebook-paper bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden pr-6">
+            <h2 class="text-3xl font-bold mb-4 pt-4 hl-pink inline-block">Ch 3 Unit 2: Theory of Cost</h2>
+            <div class="mb-4 text-sm font-sans text-gray-500 font-semibold">Weightage: Core Micro Pillar (~5 Marks) | Short-Run Cost Curves & The LAC Envelope</div>
+
+            <h3 class="text-2xl font-bold mt-6 text-blue-800">1. Cost Concepts & Classifications</h3>
+            <ul class="list-disc ml-8">
+                <li><span class="hl-yellow">Explicit Cost (Out-of-Pocket / Accounting Cost):</span> Direct monetary payments made to outsiders for buying or hiring factor services (wages, raw materials, rent, fuel). Recorded in books of accounts.</li>
+                <li><span class="hl-green">Implicit Cost (Opportunity Cost of Self-Owned Factors):</span> Imputed value of inputs owned and employed by the entrepreneur himself (interest on self-invested capital, salary for owner's management, rent on own building). Not recorded in accounting books.</li>
+                <li><strong>Economic Cost:</strong> $\text{Economic Cost} = \text{Explicit Costs} + \text{Implicit Costs} + \text{Normal Profit}$.</li>
+                <li><span class="hl-blue">Accounting Profit vs. Economic Profit:</span>
+                    <ul class="list-circle ml-6">
+                        <li>$\text{Accounting Profit} = \text{Total Revenue} - \text{Explicit Costs}$.</li>
+                        <li>$\text{Economic Profit} = \text{Total Revenue} - \text{Economic Costs} = \text{Accounting Profit} - \text{Implicit Costs}$.</li>
+                    </ul>
+                </li>
+                <li><strong>Sunk Cost:</strong> Historical cost already incurred that cannot be recovered by any future decision (e.g., specialized R&D, abandoned branding expenditure). Irrelevant for forward decision-making.</li>
+            </ul>
+
+            <div class="sticky-note mx-auto max-w-lg">
+                <strong>📌 Normal Profit:</strong><br>
+                Normal profit is the minimum expected return required to keep the entrepreneur in the present business. In Economics, <strong>Normal Profit is treated as a component of Implicit Cost</strong>! Therefore, when Economic Profit = 0, the firm is still earning Normal Profit!
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">2. Short-Run Total Costs</h3>
+            <p>In the short run, total cost ($TC$) comprises two components: $TC = TFC + TVC$.</p>
+            <ul class="list-disc ml-8">
+                <li><strong>Total Fixed Cost (TFC):</strong> Costs that do not vary with output. Incurred even if output is ZERO (e.g., rent, plant insurance, permanent staff salaries). Curve is a <strong>horizontal straight line parallel to the X-axis</strong>.</li>
+                <li><strong>Total Variable Cost (TVC):</strong> Costs that change directly with the volume of output (raw materials, direct wages, power). Starts from the <strong>origin $(0,0)$</strong>. It is <strong>inverse S-shaped</strong> due to the Law of Variable Proportions (initially increases at a diminishing rate, then increases at an increasing rate).</li>
+                <li><strong>Total Cost (TC):</strong> Vertical summation of $TFC$ and $TVC$. Starts from the positive vertical intercept where $TC = TFC$ at zero output. Runs strictly parallel to $TVC$ (the vertical distance between $TC$ and $TVC$ is always constant and equal to $TFC$).</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">3. Short-Run Unit / Average Costs</h3>
+            <ul class="list-disc ml-8">
+                <li><span class="hl-pink">Average Fixed Cost (AFC):</span> $AFC = \frac{TFC}{Q}$.
+                    <br>• As output expands, $AFC$ declines continuously, but <strong>never touches the X-axis</strong> ($TFC > 0$) or the Y-axis.
+                    <br>• Shape: <strong>Rectangular Hyperbola</strong> ($P \times Q = TFC = \text{constant}$).
+                </li>
+                <li><strong>Average Variable Cost (AVC):</strong> $AVC = \frac{TVC}{Q}$.
+                    <br>• U-shaped curve due to the Law of Variable Proportions (falls, reaches minimum, then rises).
+                </li>
+                <li><strong>Average Total Cost (ATC / AC):</strong> $ATC = \frac{TC}{Q} = AFC + AVC$.
+                    <br>• U-shaped curve. As output expands, the gap between $ATC$ and $AVC$ gets progressively narrower because $AFC$ falls, but <strong>$ATC$ and $AVC$ never touch or intersect</strong> (since $AFC$ can never be zero).
+                    <br>• The minimum point of $ATC$ occurs to the <strong>right</strong> of the minimum point of $AVC$.
+                </li>
+                <li><span class="hl-yellow">Marginal Cost (MC):</span> Addition to total cost by producing one extra unit:
+                    $$MC_n = TC_n - TC_{n-1} = TVC_n - TVC_{n-1} = \frac{\Delta TC}{\Delta Q}$$
+                    <br>• $MC$ is independent of fixed costs; it depends <strong>entirely on variable costs</strong>!
+                    <br>• Shape: U-shaped (looks like a tick mark $\checkmark$).
+                </li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">4. Crucial Relationships: AC and MC</h3>
+            <ol class="list-decimal ml-8">
+                <li>When $MC < AC \implies AC$ is <strong>falling</strong>.</li>
+                <li>When $MC = AC \implies AC$ is at its <strong>minimum</strong> ($MC$ cuts $AC$ and $AVC$ at their lowest points from below).</li>
+                <li>When $MC > AC \implies AC$ is <strong>rising</strong>.</li>
+                <li>$MC$ reaches its minimum point <strong>earlier</strong> than both $AVC$ and $AC$.</li>
+            </ol>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">5. Long-Run Cost Curves (The Planning Curve)</h3>
+            <p>In the long run, there are NO fixed costs; all costs and inputs are variable. A firm can choose between various plant sizes represented by Short-Run Average Cost ($SAC$) curves.</p>
+            <ul class="list-disc ml-8">
+                <li><span class="hl-green">Long-Run Average Cost (LAC) Curve:</span> Tangent to a family of $SAC$ curves. Known as the <strong>"Envelope Curve"</strong> or <strong>"Planning Curve"</strong>.</li>
+                <li><strong>Why is LAC U-shaped?</strong> In the short run, the U-shape is caused by the <em>Law of Variable Proportions</em>. In the long run, the U-shape is caused by the <strong>Laws of Returns to Scale</strong> (Economies of scale cause LAC to fall; Diseconomies of scale cause LAC to rise).</li>
+                <li><span class="hl-pink">Tangency Rule:</span> LAC is tangent to the falling portions of $SAC$ curves when LAC is declining, tangent to the rising portions of $SAC$ curves when LAC is increasing, and tangent to the <strong>minimum point of the optimum SAC</strong> only at the <strong>minimum point of the LAC</strong> (Optimum Firm scale).</li>
+            </ul>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 2: ICAI TRAP ZONE                     -->
+        <!-- ========================================= -->
+        <div id="tab-traps" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-red-600 flex items-center">🚨 ICAI Trap Zone & Mistake Tracker</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 border">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">What You Might Think (Trap)</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-green-600 uppercase">ICAI Exam Standard & Fact</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Marginal cost is calculated from Total Cost, so it depends on fixed costs.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> Since Fixed Cost does not change with output ($\Delta TFC = 0$), $MC$ is <strong>completely independent of fixed costs</strong>. $MC = \Delta TC / \Delta Q = \Delta TVC / \Delta Q$.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">LAC is tangent to the minimum points of all SAC curves.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> LAC is tangent to the minimum point of <strong>ONLY ONE SAC curve</strong>—the optimum plant size at the lowest point of the LAC. On the declining phase of LAC, it touches SAC curves on their <em>falling</em> segments.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">ATC and AVC curves intersect each other at very high levels of output.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> $ATC - AVC = AFC$. Since $TFC > 0$, $AFC$ can become infinitely small but can <strong>never equal zero</strong>. Hence, $ATC$ and $AVC$ get closer and closer but <strong>NEVER touch or intersect</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Both SAC and LAC are U-shaped due to the Law of Variable Proportions.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> $SAC$ is U-shaped due to the <strong>Law of Variable Proportions</strong> (short run). $LAC$ is U-shaped due to <strong>Economies and Diseconomies of Scale</strong> (Returns to scale in the long run).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 3: REVISION & MNEMONICS               -->
+        <!-- ========================================= -->
+        <div id="tab-revision" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-4 text-purple-700">⚡ Rapid Revision & Mnemonic Matrix</h2>
+            
+            <div class="bg-purple-50 rounded-lg p-5 mb-6 border border-purple-100">
+                <h3 class="text-xl font-bold text-purple-800 mb-3">🧠 Cost Relationships: The 3 Cardinal Rules</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Phase 1: Below</span>
+                        <div class="text-lg font-bold text-blue-600 mt-1">$MC < AC$</div>
+                        <p class="text-xs text-gray-600 mt-1">$AC$ is pulled downward</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Phase 2: The Cut</span>
+                        <div class="text-lg font-bold text-green-600 mt-1">$MC = AC$</div>
+                        <p class="text-xs text-gray-600 mt-1">$AC$ is at its absolute minimum</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Phase 3: Above</span>
+                        <div class="text-lg font-bold text-red-600 mt-1">$MC > AC$</div>
+                        <p class="text-xs text-gray-600 mt-1">$AC$ is pulled upward</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">⏱️ 5-Minute Core Rules Summary</h3>
+            <ul class="list-disc ml-5 space-y-2 text-gray-700">
+                <li><strong>AFC Shape:</strong> Rectangular Hyperbola; the area under the curve ($AFC \times Q = TFC$) remains constant throughout.</li>
+                <li><strong>Vertical Distance:</strong> Distance between $TC$ and $TVC$ is always constant and equals $TFC$. Distance between $ATC$ and $AVC$ narrows continuously and equals $AFC$.</li>
+                <li><strong>Minimum Point Sequence:</strong> $MC$ reaches its minimum first, followed by $AVC$, and finally $ATC$.</li>
+                <li><strong>LAC Synonyms:</strong> "Envelope Curve" (envelopes family of SACs) and "Planning Curve" (helps firm plan future plant size).</li>
+            </ul>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 4: ACTIVE RECALL                      -->
+        <!-- ========================================= -->
+        <div id="tab-recall" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">📝 Active Recall Apple Pencil Worksheet</h2>
+            <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 bg-gray-50">
+                <h3 class="text-lg font-bold mb-3">1. Formula & Curve Recall</h3>
+                <ul class="space-y-4 text-lg">
+                    <li>1. Economic Profit = Total Revenue minus ___________________________</li>
+                    <li>2. The geometrical shape of the Average Fixed Cost (AFC) curve is: ___________________________</li>
+                    <li>3. Marginal Cost curve cuts Average Cost curve at its ___________________________ point.</li>
+                    <li>4. The vertical distance between the TC curve and the TVC curve represents: ___________________________</li>
+                </ul>
+
+                <h3 class="text-lg font-bold mt-8 mb-3">2. Classification: Explicit vs. Implicit Cost</h3>
+                <ul class="space-y-3 text-lg">
+                    <li>• Salary paid to an appointed factory manager: ___________________________</li>
+                    <li>• Imputed rent of the building owned by the proprietor: ___________________________</li>
+                    <li>• Normal profit earned by an entrepreneur: ___________________________</li>
+                    <li>• Payment made for raw material purchases: ___________________________</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 5: FLASHCARDS                         -->
+        <!-- ========================================= -->
+        <div id="tab-flashcards" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-teal-600 font-sans">🃏 3D Flip Flashcards</h2>
+                <div class="text-sm font-bold bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-sans">Mastered: <span id="fc-counter">0</span> / 4</div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Why do ATC and AVC curves NEVER touch each other?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-blue-900">Because $AFC$ can never be ZERO!</span>
+                                <span class="mt-2 text-sm text-gray-700">The vertical difference between $ATC$ and $AVC$ is $AFC$. Since $TFC > 0$, $AFC$ approaches zero asymptotically but never reaches zero.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c3u2_fc1')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Why is the LAC curve called the 'Planning Curve'?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-green-900">Guides long-term plant size choices!</span>
+                                <span class="mt-2 text-sm text-gray-700">In the long run, the firm plans which plant size ($SAC$) to build to produce anticipated output at minimum cost.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c3u2_fc2')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Why is MC independent of Fixed Cost?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-purple-800">Fixed Cost does not vary with output ($\Delta TFC = 0$).</span>
+                                <span class="mt-2 text-sm text-gray-700">Since $MC$ measures only the change in cost resulting from one extra unit ($\Delta TC / \Delta Q$), it is solely determined by variable costs.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c3u2_fc3')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is a Sunk Cost? Is it relevant for future business decisions?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-pink-700">A past cost that cannot be recovered.</span>
+                                <span class="mt-2 text-sm text-gray-700">It is <strong>IRRELEVANT</strong> for forward-looking rational decision making.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c3u2_fc4')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 6: MCQs                               -->
+        <!-- ========================================= -->
+        <div id="tab-mcq" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-orange-600">🎯 Unit 2 Practice MCQs</h2>
+                <div class="text-sm font-bold bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Score: <span id="mcq-score">0</span></div>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="C">
+                    <p class="font-semibold text-lg mb-3">1. Which of the following cost curves is a rectangular hyperbola?</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="A" class="mr-2"> (a) Total Cost curve</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="B" class="mr-2"> (b) Marginal Cost curve</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="C" class="mr-2"> (c) Average Fixed Cost curve</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="D" class="mr-2"> (d) Average Variable Cost curve</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> $AFC = TFC / Q \implies AFC \times Q = TFC = \text{constant}$. This mathematical property defines a rectangular hyperbola.</div>
+                </div>
+
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="B">
+                    <p class="font-semibold text-lg mb-3">2. Marginal cost curve cuts the average cost curve:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="A" class="mr-2"> (a) At the falling portion of the AC curve</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="B" class="mr-2"> (b) At the minimum point of the AC curve</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="C" class="mr-2"> (c) At the rising portion of the AC curve</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="D" class="mr-2"> (d) At the point where AFC is zero</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> $MC = AC$ precisely at the lowest (minimum) point of the Average Cost curve.</div>
+                </div>
+
+                <button onclick="gradeMCQs()" class="w-full py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition shadow">Grade Answers</button>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 7: MASTER SUMMARY TABLE               -->
+        <!-- ========================================= -->
+        <div id="tab-summary" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-green-700">📊 Short-Run Cost Curves Master Blueprint</h2>
+            <div class="overflow-x-auto rounded-lg border">
+                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-green-50">
+                        <tr>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Cost Measure</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Formula</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Geometrical Shape</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Behavior as Output Increases</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-white">
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Total Fixed Cost ($TFC$)</td>
+                            <td>Constant at all levels</td>
+                            <td>Horizontal line parallel to X-axis</td>
+                            <td>Remains unchanged even at zero output</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Total Variable Cost ($TVC$)</td>
+                            <td>$TVC = TC - TFC$</td>
+                            <td>Inverse S-shaped (starts from origin)</td>
+                            <td>Increases first at decreasing rate, then increasing rate</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Total Cost ($TC$)</td>
+                            <td>$TC = TFC + TVC$</td>
+                            <td>Inverse S-shaped (starts at $TFC$ intercept)</td>
+                            <td>Parallel to $TVC$, vertical gap equals $TFC$</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Average Fixed Cost ($AFC$)</td>
+                            <td>$AFC = TFC / Q$</td>
+                            <td>Rectangular Hyperbola</td>
+                            <td>Declines continuously, never touches axes</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Average Variable Cost ($AVC$)</td>
+                            <td>$AVC = TVC / Q$</td>
+                            <td>U-shaped</td>
+                            <td>Falls, reaches minimum, then increases</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Average Total Cost ($ATC$)</td>
+                            <td>$ATC = AFC + AVC$</td>
+                            <td>U-shaped</td>
+                            <td>Falls, reaches minimum to the right of $AVC$ min, then rises</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Marginal Cost ($MC$)</td>
+                            <td>$MC = \Delta TC / \Delta Q$</td>
+                            <td>U-shaped (sharp $\checkmark$ shape)</td>
+                            <td>Cuts both $AVC$ and $ATC$ at their lowest points</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 8: MIND MAP                           -->
+        <!-- ========================================= -->
+        <div id="tab-mindmap" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans overflow-x-auto">
+            <h2 class="text-3xl font-bold mb-6 text-pink-600">🧠 Theory of Cost Mind Map</h2>
+            <div class="tree flex justify-center min-w-max pb-8">
+                <ul>
+                    <li>
+                        <a href="#" class="font-bold bg-pink-50 text-xl">Theory of Cost</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="font-bold text-blue-700">Cost Concepts</a>
+                                <ul>
+                                    <li><a href="#">Explicit (Accounting)</a></li>
+                                    <li><a href="#">Implicit (Opportunity)</a></li>
+                                    <li><a href="#">Normal Profit</a></li>
+                                    <li><a href="#">Sunk Cost (Irrelevant)</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-green-700">Short Run</a>
+                                <ul>
+                                    <li><a href="#">$TFC$ (Horizontal)</a></li>
+                                    <li><a href="#">$TVC$ & $TC$ (Inverse S)</a></li>
+                                    <li><a href="#">$AFC$ (Hyperbola)</a></li>
+                                    <li><a href="#">$MC$ cuts $AC$ at min</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-purple-700">Long Run</a>
+                                <ul>
+                                    <li><a href="#">Envelope Curve</a></li>
+                                    <li><a href="#">Planning Curve</a></li>
+                                    <li><a href="#">Economies of Scale</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-12 text-center text-gray-400 text-sm pb-8 font-sans no-print">
+        &copy; 8-Pillar Master Study Suite • CA Foundation Business Economics Ch 3 Unit 2
+    </footer>
+
+    <!-- INTERACTIVITY SCRIPT -->
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function markMastered(btn, cardId) {
+            if(btn.innerText.includes("Mark Mastered")) {
+                btn.innerText = "✅ Mastered";
+                btn.classList.replace("bg-gray-100", "bg-teal-500");
+                btn.classList.replace("text-gray-600", "text-white");
+                localStorage.setItem(cardId, "true");
+            } else {
+                btn.innerText = "Mark Mastered";
+                btn.classList.replace("bg-teal-500", "bg-gray-100");
+                btn.classList.replace("text-white", "text-gray-600");
+                localStorage.removeItem(cardId);
+            }
+            updateFcCounter();
+        }
+
+        function updateFcCounter() {
+            let count = 0;
+            for(let i=1; i<=4; i++) {
+                if(localStorage.getItem('c3u2_fc'+i)) count++;
+            }
+            document.getElementById('fc-counter').innerText = count;
+        }
+
+        window.onload = function() {
+            for(let i=1; i<=4; i++) {
+                let id = 'c3u2_fc'+i;
+                if(localStorage.getItem(id)) {
+                    let btns = document.querySelectorAll('#tab-flashcards button');
+                    if(btns[i-1]) {
+                        btns[i-1].innerText = "✅ Mastered";
+                        btns[i-1].classList.replace("bg-gray-100", "bg-teal-500");
+                        btns[i-1].classList.replace("text-gray-600", "text-white");
+                    }
+                }
+            }
+            updateFcCounter();
+        };
+
+        function gradeMCQs() {
+            let score = 0;
+            let total = 2;
+            let cards = document.querySelectorAll('.mcq-card');
+            
+            cards.forEach(card => {
+                let correctVal = card.getAttribute('data-correct');
+                let radios = card.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => {
+                    radio.parentElement.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    radio.disabled = true;
+                    if(radio.checked) {
+                        if(radio.value === correctVal) {
+                            score++;
+                            radio.parentElement.classList.add('bg-green-100', 'border-green-500');
+                        } else {
+                            radio.parentElement.classList.add('bg-red-100', 'border-red-500');
+                        }
+                    }
+                    if(radio.value === correctVal) radio.parentElement.classList.add('border-green-500');
+                });
+                card.querySelector('.explanation').classList.remove('hidden');
+            });
+            document.getElementById('mcq-score').innerText = score + " / " + total;
+        }
+
+        let timerInterval;
+        let timeLeft = 25 * 60;
+        let isRunning = false;
+
+        function toggleTimer() {
+            let btn = document.getElementById('timer-btn');
+            if(isRunning) {
+                clearInterval(timerInterval);
+                btn.innerText = "START";
+                btn.classList.replace("bg-red-100", "bg-blue-100");
+                btn.classList.replace("text-red-600", "text-blue-600");
+                isRunning = false;
+            } else {
+                timerInterval = setInterval(updateTimer, 1000);
+                btn.innerText = "PAUSE";
+                btn.classList.replace("bg-blue-100", "bg-red-100");
+                btn.classList.replace("text-blue-600", "text-red-600");
+                isRunning = true;
+            }
+        }
+
+        function updateTimer() {
+            if(timeLeft <= 0) {
+                clearInterval(timerInterval);
+                alert("🍅 Pomodoro complete! Take a 5-minute break.");
+                timeLeft = 25 * 60;
+                document.getElementById('timer-btn').innerText = "START";
+                isRunning = false;
+            } else {
+                timeLeft--;
+            }
+            let m = Math.floor(timeLeft / 60);
+            let s = timeLeft % 60;
+            document.getElementById('timer-display').innerText = 
+                (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+        }
+    </script>
+</body>
+</html>

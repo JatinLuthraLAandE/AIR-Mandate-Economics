@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CA Foundation | Ch 7 Unit 4: Fiscal Policy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Kalam:wght@400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --paper-bg: #fffdf7; --line-color: #e2e8f0; --margin-red: #fca5a5; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f1f5f9; }
+    .handwritten-title { font-family: 'Caveat', cursive; }
+    .handwritten-body { font-family: 'Kalam', cursive; line-height: 1.75; font-size: 1.12rem; }
+    .notebook-page {
+      background-color: var(--paper-bg);
+      background-image: linear-gradient(var(--line-color) 1px, transparent 1px);
+      background-size: 100% 32px;
+      border-left: 4px double var(--margin-red);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    }
+    .hl-yellow { background: linear-gradient(104deg, rgba(254, 240, 138, 0) 0.9%, rgba(254, 240, 138, 0.95) 2.4%, rgba(254, 240, 138, 0.6) 5.8%, rgba(254, 240, 138, 0.9) 93%, rgba(254, 240, 138, 0.7) 96%, rgba(254, 240, 138, 0) 98%); padding: 2px 6px; border-radius: 4px; }
+    .hl-green { background: linear-gradient(104deg, rgba(187, 247, 208, 0) 0.9%, rgba(187, 247, 208, 0.95) 2.4%, rgba(187, 247, 208, 0.7) 93%, rgba(187, 247, 208, 0) 98%); padding: 2px 6px; border-radius: 4px; }
+    .hl-pink { background: linear-gradient(104deg, rgba(251, 207, 232, 0) 0.9%, rgba(251, 207, 232, 0.95) 2.4%, rgba(251, 207, 232, 0.7) 93%, rgba(251, 207, 232, 0) 98%); padding: 2px 6px; border-radius: 4px; }
+    .sketch-box { border: 2px dashed #475569; border-radius: 14px; background: #ffffff; }
+    .flip-card { perspective: 1000px; min-height: 250px; }
+    .flip-card-inner { position: relative; width: 100%; height: 100%; min-height: 250px; transition: transform 0.6s; transform-style: preserve-3d; }
+    .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+    .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; }
+    .flip-card-back { transform: rotateY(180deg); }
+    @media print { .no-print { display: none !important; } .tab-section { display: block !important; page-break-after: always; } }
+  </style>
+</head>
+<body class="text-slate-800">
+
+  <header class="bg-gradient-to-r from-teal-900 via-emerald-800 to-green-900 text-white sticky top-0 z-50 shadow-lg no-print">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+      <div>
+        <span class="text-xs uppercase tracking-widest bg-teal-400 text-slate-900 font-bold px-2.5 py-0.5 rounded-full">CA Foundation • Business Economics</span>
+        <h1 class="text-xl md:text-2xl font-bold mt-1">Chapter 7: Public Finance — Unit 4 Master Suite</h1>
+      </div>
+    </div>
+    <nav class="bg-slate-950/60 border-t border-white/10 overflow-x-auto">
+      <div class="max-w-7xl mx-auto px-4 flex space-x-1 py-1.5 text-sm font-semibold whitespace-nowrap">
+        <button onclick="switchTab('tab1')" id="btn-tab1" class="tab-btn bg-teal-400 text-slate-950 px-3.5 py-2 rounded-lg transition">1. ✍️ Handwritten Notes</button>
+        <button onclick="switchTab('tab2')" id="btn-tab2" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">2. ⚡ Revision Notes</button>
+        <button onclick="switchTab('tab3')" id="btn-tab3" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">3. 🃏 Flashcards</button>
+        <button onclick="switchTab('tab4')" id="btn-tab4" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">4. 🎯 Practice MCQs</button>
+        <button onclick="switchTab('tab5')" id="btn-tab5" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">5. 📊 Summary Table</button>
+        <button onclick="switchTab('tab6')" id="btn-tab6" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">6. 🧠 Mind Map</button>
+        <button onclick="switchTab('tab7')" id="btn-tab7" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">7. 🎥 Video Hub</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-6">
+    <!-- TAB 1: DETAILED HANDWRITTEN NOTES -->
+    <section id="tab1" class="tab-section space-y-8">
+      <div class="bg-gradient-to-r from-teal-50 to-emerald-50 border-2 border-teal-300 rounded-2xl p-4 flex justify-between items-center">
+        <h2 class="text-xl font-bold text-teal-950 flex items-center gap-2"><span>📓</span> Complete Visual Notes: Fiscal Policy</h2>
+        <button onclick="window.print()" class="no-print bg-teal-900 hover:bg-teal-800 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow">🖨️ Print</button>
+      </div>
+
+      <!-- Part 1: Types of Fiscal Policy -->
+      <div class="notebook-page rounded-2xl p-6 md:p-10 relative">
+        <h3 class="handwritten-title text-4xl text-teal-950 font-bold mb-4">1. Meaning & Types of Fiscal Policy[cite: 3, 4]</h3>
+        <div class="handwritten-body space-y-6 text-slate-800">
+          <p>
+            <strong>Fiscal Policy</strong> involves the government making deliberate attempts to adjust revenues, expenditures, and public debt to eliminate unemployment during recession and achieve price stability during inflation. It acts as a contra-cyclical tool[cite: 4].
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+            <div class="bg-emerald-50 border border-emerald-300 rounded-lg p-4">
+              <strong class="text-emerald-900 text-xl">a) Expansionary Fiscal Policy</strong>
+              <ul class="list-disc pl-5 mt-2 space-y-1 text-sm font-sans">
+                <li>Used during <span class="hl-green">recessions or deflation</span> to correct instability and close a 'recessionary gap'[cite: 4].</li>
+                <li>Stimulates the economy by boosting aggregate spending/demand[cite: 4].</li>
+                <li><strong>Instruments:</strong> Increase government spending and/or decrease taxes[cite: 4].</li>
+                <li><strong>Result:</strong> Often leads to a <strong>budget deficit</strong> because tax cuts reduce income while expenditures exceed revenues[cite: 4].</li>
+              </ul>
+            </div>
+            <div class="bg-rose-50 border border-rose-300 rounded-lg p-4">
+              <strong class="text-rose-900 text-xl">b) Contractionary Fiscal Policy</strong>
+              <ul class="list-disc pl-5 mt-2 space-y-1 text-sm font-sans">
+                <li>Used during an <span class="hl-pink">inflationary phase</span> or asset bubble to eliminate an 'inflationary gap'[cite: 4].</li>
+                <li>Restrains the level of economic activity and curtails aggregate demand[cite: 4].</li>
+                <li><strong>Instruments:</strong> Decrease government spending, increase personal income taxes (reduces disposable income), increase business taxes (reduces firm investments)[cite: 4].</li>
+                <li><strong>Result:</strong> Ideally leads to a <strong>smaller deficit or a larger budget surplus</strong>[cite: 4].</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part 2: Public Expenditure & Debt Instruments -->
+      <div class="notebook-page rounded-2xl p-6 md:p-10 relative">
+        <h3 class="handwritten-title text-4xl text-teal-950 font-bold mb-4">2. Expenditure & Debt Instruments[cite: 3, 4]</h3>
+        <div class="handwritten-body space-y-6 text-slate-800">
+          <p>
+            Public expenditures are income-generating and include capital expenditures on public works, relief, subsidies, and <strong>transfer payments</strong> (spending that doesn't contribute to GDP directly, just transfers income)[cite: 3].
+          </p>
+          <div class="bg-blue-50 border border-blue-300 p-4 rounded-xl mt-4">
+            <h4 class="font-bold text-xl text-blue-900">🏦 Public Debt as a Fiscal Instrument</h4>
+            <p class="text-sm font-sans mt-2">A rational policy of public borrowing and debt repayment is a potent weapon to fight inflation and deflation[cite: 3].</p>
+            <ul class="list-disc pl-5 mt-2 space-y-1 text-sm font-sans">
+              <li><strong>Internal Debt:</strong> Borrowing from its own people/domestic market[cite: 3].</li>
+              <li><strong>External Debt:</strong> Borrowing from outside sources/international agencies[cite: 3].</li>
+              <li><strong>Forms:</strong> Takes two main forms namely, <em>market loans</em> (T-bills, bonds) and <em>small savings</em>[cite: 3].</li>
+              <li>For financing capital projects, long-term capital bonds are floated; for meeting short-term expenditure, treasury bills are issued[cite: 4].</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Part 3: Crowding Out Effect -->
+      <div class="notebook-page rounded-2xl p-6 md:p-10 relative">
+        <h3 class="handwritten-title text-4xl text-teal-950 font-bold mb-4">3. The Crowding Out Effect & Conclusion[cite: 4]</h3>
+        <div class="handwritten-body space-y-6 text-slate-800">
+          <div class="sketch-box p-5 bg-white">
+            <h4 class="font-bold text-xl text-teal-900 mb-2">⚠️ What is Crowding Out?</h4>
+            <p class="mt-2 text-sm font-sans">
+              When the government aims to solve a recession with expansionary policy, it runs a budget deficit. This deficit is financed by borrowing from the credit market (issuing long-term bonds). This massive borrowing can push up interest rates, which causes private spending and investment to shrink (be "crowded out"). In such cases, fiscal policy impact is smaller than it should be, making it ineffective[cite: 4]. 
+              <br><br>
+              <strong class="text-emerald-700">Exception:</strong> During deep recessions, crowding-out is less likely to happen because private sector investment is already minimal (insignificant private spending to crowd out), and the government can borrow without increasing interest rates[cite: 4].
+            </p>
+          </div>
+          <div class="mt-6 text-sm font-sans bg-gray-100 p-4 rounded border-l-4 border-gray-500">
+            <strong>Conclusion:</strong> Well-designed and timely fiscal responses are necessary. If an economy has idle capacity and unemployed workers (recession), an increase in aggregate demand increases output without changing prices. If an economy is at full employment, expansionary policy only pushes prices up (inflation) with no impact on total output[cite: 4].
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: REVISION -->
+    <section id="tab2" class="tab-section hidden space-y-6">
+      <div class="bg-teal-950 text-white rounded-2xl p-6 shadow border-l-4 border-teal-600">
+        <h2 class="text-2xl font-bold mt-2">⚡ Quick Revision Notes — Unit 4</h2>
+        <ul class="space-y-3 text-sm text-teal-100 mt-4">
+          <li>• <strong>Objective:</strong> Eliminate unemployment (recession) and achieve price stability (inflation)[cite: 4].</li>
+          <li>• <strong>Expansionary Policy:</strong> Used in recession. ⬆️ Govt Spending, ⬇️ Taxes = Budget Deficit[cite: 4].</li>
+          <li>• <strong>Contractionary Policy:</strong> Used in inflation. ⬇️ Govt Spending, ⬆️ Taxes = Budget Surplus or smaller deficit[cite: 4].</li>
+          <li>• <strong>Transfer Payments:</strong> Govt spending that does not contribute to GDP directly (e.g., pensions)[cite: 3].</li>
+          <li>• <strong>Public Debt Types:</strong> Internal vs External. Takes the form of market loans and small savings[cite: 3].</li>
+          <li>• <strong>Crowding Out:</strong> Government deficit borrowing raises interest rates, substituting/displacing private sector investment[cite: 4].</li>
+          <li>• <strong>Deep Recession Exception:</strong> Crowding out is less likely during deep recessions as private investment is already minimal[cite: 4].</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TAB 3: FLASHCARDS -->
+    <section id="tab3" class="tab-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow border border-slate-200">
+        <h2 class="text-2xl font-bold text-slate-900 mt-1">🃏 Unit 4 Flashcards</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4" id="flashcard-grid-u4"></div>
+      </div>
+    </section>
+
+    <!-- TAB 4: MCQs -->
+    <section id="tab4" class="tab-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow border border-slate-200">
+        <h2 class="text-2xl font-bold text-slate-900 mt-1">🎯 Practice MCQs (Unit 4)</h2>
+        <div id="mcq-container-u4" class="space-y-4 mt-4"></div>
+      </div>
+    </section>
+
+    <!-- TAB 5: SUMMARY TABLE -->
+    <section id="tab5" class="tab-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow border border-slate-200">
+        <h2 class="text-2xl font-bold text-slate-900 mt-1">📊 Unit 4 Summary Table</h2>
+        <div class="overflow-x-auto mt-4">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="bg-slate-900 text-white">
+                <th class="p-3.5 rounded-tl-xl">Fiscal Policy Type</th>
+                <th class="p-3.5">Economic Condition</th>
+                <th class="p-3.5">Actions Required</th>
+                <th class="p-3.5 rounded-tr-xl">Budget Impact</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-teal-950">Expansionary Fiscal Policy[cite: 4]</td>
+                <td class="p-3.5">Recession / Deflation[cite: 4]</td>
+                <td class="p-3.5">Increase Government Spending, Decrease Taxes[cite: 4]</td>
+                <td class="p-3.5 text-rose-600 font-bold">Budget Deficit[cite: 4]</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-teal-950">Contractionary Fiscal Policy[cite: 4]</td>
+                <td class="p-3.5">Inflation / Asset Bubbles[cite: 4]</td>
+                <td class="p-3.5">Decrease Government Spending, Increase Taxes[cite: 4]</td>
+                <td class="p-3.5 text-emerald-600 font-bold">Budget Surplus (or smaller deficit)[cite: 4]</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: MIND MAP -->
+    <section id="tab6" class="tab-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow border border-slate-200 text-center">
+        <h2 class="text-2xl font-bold text-slate-900 mt-1 mb-4">🧠 Unit 4 Mind Map</h2>
+        <div class="inline-block bg-slate-900 text-white p-6 rounded-2xl shadow-inner">
+            <h3 class="text-lg font-bold text-teal-400 mb-4">FISCAL POLICY FRAMEWORK</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+              <div class="bg-slate-800 p-3 rounded-lg border border-slate-600 text-sm">
+                <strong class="text-white">1. Expansionary</strong><br>
+                <span class="text-slate-300">- Fixes Recession<br>- Boosts aggregate demand<br>- ⬆️ Gov Spend, ⬇️ Tax<br>- Results in Deficit</span>
+              </div>
+              <div class="bg-slate-800 p-3 rounded-lg border border-slate-600 text-sm">
+                <strong class="text-white">2. Contractionary</strong><br>
+                <span class="text-slate-300">- Fixes Inflation<br>- Curtails demand<br>- ⬇️ Gov Spend, ⬆️ Tax<br>- Results in Surplus</span>
+              </div>
+              <div class="bg-slate-800 p-3 rounded-lg border border-slate-600 text-sm">
+                <strong class="text-white">3. Secondary Effects</strong><br>
+                <span class="text-slate-300">- Crowding Out<br>- Deficit borrowing hikes interest rates<br>- Private investment falls</span>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 7: VIDEO HUB -->
+    <section id="tab7" class="tab-section hidden space-y-6">
+      <div class="bg-gradient-to-r from-teal-900 to-slate-900 text-white rounded-2xl p-6 shadow-lg">
+        <h2 class="text-2xl font-bold mt-2">🎥 Detailed Topic Video Lectures (Unit 4)</h2>
+        <div id="vid-visual-stage-u4" class="bg-slate-900 border border-slate-800 rounded-xl p-5 my-3 text-center">
+           <h4 class="text-xl font-bold text-teal-400" id="vid-title-u4">Module 1: Expansionary vs Contractionary Policy</h4>
+           <p class="mt-4 text-slate-300" id="vid-text-u4">Expansionary: Increase spending/cut taxes to fight recession, creating a deficit. Contractionary: Cut spending/raise taxes to fight inflation, creating a surplus[cite: 4].</p>
+           <button onclick="nextVidU4()" class="mt-4 bg-teal-500 text-white px-4 py-2 rounded font-bold text-sm">Next Module ➡️</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-section').forEach(sec => sec.classList.add('hidden'));
+      document.getElementById(tabId).classList.remove('hidden');
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-teal-400', 'text-slate-950');
+        btn.classList.add('text-slate-200');
+      });
+      const activeBtn = document.getElementById('btn-' + tabId);
+      activeBtn.classList.add('bg-teal-400', 'text-slate-950');
+      activeBtn.classList.remove('text-slate-200');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    const flashcardsData = [
+      { q: "What is an Expansionary Fiscal Policy?", a: "A policy that increases aggregate demand by increasing government spending and/or decreasing taxes, used during a recession[cite: 4].", tag: "Policy Type" },
+      { q: "What is a Contractionary Fiscal Policy?", a: "A policy that decreases aggregate demand by reducing government spending and/or increasing taxes, used during inflation[cite: 4].", tag: "Policy Type" },
+      { q: "What is the Crowding Out effect?", a: "When government borrowing (to finance a deficit) raises interest rates, substituting/causing private sector investment to fall, making fiscal policy less effective[cite: 4].", tag: "Concept" },
+      { q: "Why is crowding out less likely during deep recessions?", a: "Because private sector investment is already minimal, and the government can usually borrow without significantly increasing interest rates[cite: 4].", tag: "Concept" },
+      { q: "What are transfer payments?", a: "Government spending which does not contribute to GDP because income is only transferred from one group of people to another without direct contribution from receivers[cite: 3].", tag: "Expenditure" }
+    ];
+
+    function renderFlashcards() {
+      const grid = document.getElementById('flashcard-grid-u4');
+      grid.innerHTML = flashcardsData.map((item, idx) => `
+        <div id="fcard-${idx}" class="flip-card cursor-pointer" onclick="document.getElementById('fcard-${idx}').classList.toggle('flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-front bg-white border-2 border-slate-200 shadow-sm">
+              <span class="text-xs font-bold bg-teal-100 text-teal-800 px-2 py-1 rounded w-max">${item.tag}</span>
+              <p class="font-bold text-slate-800 text-base my-auto">${item.q}</p>
+            </div>
+            <div class="flip-card-back bg-teal-950 text-white shadow-md">
+              <span class="text-xs font-bold bg-teal-400 text-slate-950 px-2 py-1 rounded w-max">Answer</span>
+              <p class="text-sm text-teal-50 whitespace-pre-line my-auto">${item.a}</p>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    const mcqData = [
+      {
+        q: "1. Contractionary fiscal policy is resorted to when:",
+        options: ["government expenditure is greater than tax revenues of any particular year", "the economy is in a deep recession", "the state of the economy is such that its growth rate is extraordinarily high causing inflation", "there is a need to increase disposable income of people through tax cuts"],
+        correct: 2,
+        exp: "Contractionary policy is used during inflationary phases to curtail aggregate demand and eliminate an inflationary gap[cite: 4]."
+      },
+      {
+        q: "2. If the government uses expansionary fiscal policy during a recession, it may run into:",
+        options: ["A budget surplus because taxes increase", "Budget deficits because tax cuts reduce income and government expenditures exceed tax revenues", "A balanced budget to avoid inflation", "None of the above"],
+        correct: 1,
+        exp: "Expansionary policy requires increased spending and reduced taxes, leading to budget deficits[cite: 4]."
+      },
+      {
+        q: "3. What is the Crowding Out effect?",
+        options: ["When government spending completely eliminates unemployment", "When government borrowing raises interest rates, causing private sector investment to fall", "When increased taxes lead to higher private spending", "When foreign debt exceeds internal debt"],
+        correct: 1,
+        exp: "Government borrowing to finance a deficit pushes up interest rates, crowding out private investment[cite: 4]."
+      }
+    ];
+
+    let mcqAnswers = {};
+    function renderMCQs() {
+      const container = document.getElementById('mcq-container-u4');
+      container.innerHTML = mcqData.map((item, qIdx) => {
+        const userAns = mcqAnswers[qIdx];
+        const hasAns = userAns !== undefined;
+        return `
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+            <p class="font-bold text-slate-900 mb-4">${item.q}</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              ${item.options.map((opt, oIdx) => {
+                let style = "border-slate-200 text-slate-800";
+                if (hasAns) {
+                  if (oIdx === item.correct) style = "border-emerald-500 bg-emerald-50 font-bold";
+                  else if (oIdx === userAns) style = "border-rose-500 bg-rose-50 font-bold";
+                  else style = "border-slate-200 opacity-60";
+                }
+                return `<button onclick="selectMCQ(${qIdx}, ${oIdx})" ${hasAns ? 'disabled' : ''} class="text-left p-3 rounded-xl border-2 text-sm ${style}">${String.fromCharCode(65+oIdx)}. ${opt}</button>`;
+              }).join('')}
+            </div>
+            ${hasAns ? `<div class="mt-4 p-4 rounded-xl text-sm ${userAns === item.correct ? 'bg-emerald-50 text-emerald-950' : 'bg-rose-50 text-rose-950'}"><strong>${userAns === item.correct ? '✅ Correct!' : '❌ Incorrect.'}</strong> ${item.exp}</div>` : ''}
+          </div>
+        `;
+      }).join('');
+    }
+    function selectMCQ(qIdx, oIdx) { if(mcqAnswers[qIdx] !== undefined) return; mcqAnswers[qIdx] = oIdx; renderMCQs(); }
+
+    const vids = [
+      { t: "Module 1: Expansionary vs Contractionary Policy", d: "Expansionary: Increase spending/cut taxes to fight recession. Contractionary: Cut spending/raise taxes to fight inflation[cite: 4]." },
+      { t: "Module 2: Crowding Out Effect", d: "Government borrowing raises interest rates, pushing out private investment. Less likely in deep recessions because private investment is already minimal[cite: 4]." },
+      { t: "Module 3: Public Debt", d: "Internal debt is borrowing from domestic markets, external is from outside sources. Forms include market loans and small savings[cite: 3]." }
+    ];
+    let vIdx = 0;
+    function nextVidU4() {
+      vIdx = (vIdx + 1) % vids.length;
+      document.getElementById('vid-title-u4').innerText = vids[vIdx].t;
+      document.getElementById('vid-text-u4').innerText = vids[vIdx].d;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => { renderFlashcards(); renderMCQs(); });
+  </script>
+</body>
+</html>

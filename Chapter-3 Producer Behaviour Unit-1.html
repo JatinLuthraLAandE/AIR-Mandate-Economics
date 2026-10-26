@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Foundation - Business Economics: Ch 3 Unit 1 — Theory of Production</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --line-color: #e5e7eb;
+            --margin-line: #ef4444;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: #1f2937; }
+        .notebook-paper {
+            background-image: repeating-linear-gradient(transparent, transparent 31px, var(--line-color) 31px, var(--line-color) 32px);
+            background-position: 0 1.2rem;
+            background-attachment: local;
+            border-left: 2px solid var(--margin-line);
+            padding-left: 2rem;
+            font-family: 'Kalam', cursive;
+            font-size: 1.15rem;
+            line-height: 2rem;
+        }
+        .hl-yellow { background: linear-gradient(104deg, rgba(253,230,138,0) 0.9%, rgba(253,230,138,1) 2.4%, rgba(253,230,138,0.6) 5.8%, rgba(253,230,138,1) 93%, rgba(253,230,138,0.7) 96%, rgba(253,230,138,0) 98%); }
+        .hl-green { background: linear-gradient(104deg, rgba(167,243,208,0) 0.9%, rgba(167,243,208,1) 2.4%, rgba(167,243,208,0.6) 5.8%, rgba(167,243,208,1) 93%, rgba(167,243,208,0.7) 96%, rgba(167,243,208,0) 98%); }
+        .hl-pink { background: linear-gradient(104deg, rgba(252,165,165,0) 0.9%, rgba(252,165,165,1) 2.4%, rgba(252,165,165,0.6) 5.8%, rgba(252,165,165,1) 93%, rgba(252,165,165,0.7) 96%, rgba(252,165,165,0) 98%); }
+        .hl-blue { background: linear-gradient(104deg, rgba(191,219,254,0) 0.9%, rgba(191,219,254,1) 2.4%, rgba(191,219,254,0.6) 5.8%, rgba(191,219,254,1) 93%, rgba(191,219,254,0.7) 96%, rgba(191,219,254,0) 98%); }
+        
+        .sticky-note {
+            background-color: #fef08a;
+            box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+            padding: 1rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.25rem;
+            margin: 1.25rem 0;
+            border-bottom-right-radius: 20px 5px;
+        }
+
+        .flip-card { background-color: transparent; width: 100%; height: 230px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+        .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back {
+            position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+            display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+            border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-family: 'Patrick Hand', cursive; font-size: 1.2rem;
+        }
+        .flip-card-front { background-color: #ffffff; border: 2px solid #e5e7eb; color: #111827; }
+        .flip-card-back { background-color: #eff6ff; border: 2px solid #93c5fd; color: #1e3a8a; transform: rotateY(180deg); }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .tab-btn { transition: all 0.2s; }
+        .tab-btn.active { background-color: #2563eb; color: white; border-color: #2563eb; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3); }
+
+        @media print {
+            .no-print { display: none !important; }
+            .notebook-paper { background: none; border: none; padding: 0; }
+            body { background: white; }
+            .tab-content { display: block !important; page-break-before: always; }
+            .tab-content:first-of-type { page-break-before: avoid; }
+        }
+
+        .tree ul { padding-top: 20px; position: relative; transition: all 0.5s; }
+        .tree li { float: left; text-align: center; list-style-type: none; position: relative; padding: 20px 5px 0 5px; transition: all 0.5s; }
+        .tree li::before, .tree li::after { content: ''; position: absolute; top: 0; right: 50%; border-top: 2px solid #cbd5e1; width: 50%; height: 20px; }
+        .tree li::after { right: auto; left: 50%; border-left: 2px solid #cbd5e1; }
+        .tree li:only-child::after, .tree li:only-child::before { display: none; }
+        .tree li:only-child { padding-top: 0; }
+        .tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+        .tree li:last-child::before { border-right: 2px solid #cbd5e1; border-radius: 0 5px 0 0; }
+        .tree li:first-child::after { border-radius: 5px 0 0 0; }
+        .tree ul ul::before { content: ''; position: absolute; top: 0; left: 50%; border-left: 2px solid #cbd5e1; width: 0; height: 20px; }
+        .tree li a { border: 2px solid #cbd5e1; padding: 8px 12px; text-decoration: none; color: #1e293b; font-family: 'Patrick Hand', cursive; display: inline-block; border-radius: 8px; background: white; }
+        .tree li a:hover { background: #e0f2fe; border-color: #38bdf8; }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-12">
+
+    <!-- Top Navigation & Tools -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">⚙️</span>
+                    <h1 class="font-bold text-xl tracking-tight text-gray-900">CA Foundation: Ch 3 Unit 1 — Theory of Production</h1>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200">
+                        <span class="text-lg">⏱️</span>
+                        <span id="timer-display" class="font-mono font-semibold text-slate-700">25:00</span>
+                        <button id="timer-btn" onclick="toggleTimer()" class="text-xs font-bold text-blue-600 hover:text-blue-800 ml-2 px-2 py-1 rounded bg-blue-100 hover:bg-blue-200 transition">START</button>
+                    </div>
+                    
+                    <button onclick="window.print()" class="flex items-center space-x-1 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition shadow-sm">
+                        <span>🖨️</span><span>Save PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pillar Tabs -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto no-scrollbar border-t border-gray-100">
+            <div class="flex space-x-2 py-3" id="tabs-container">
+                <button onclick="switchTab('tab-notes')" class="tab-btn active whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">✍️ 1. Detailed Notes</button>
+                <button onclick="switchTab('tab-traps')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🚨 2. Trap Zone</button>
+                <button onclick="switchTab('tab-revision')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">⚡ 3. Revision & Mnemonics</button>
+                <button onclick="switchTab('tab-recall')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📝 4. Active Recall</button>
+                <button onclick="switchTab('tab-flashcards')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🃏 5. Flashcards</button>
+                <button onclick="switchTab('tab-mcq')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🎯 6. MCQs</button>
+                <button onclick="switchTab('tab-summary')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📊 7. Summary</button>
+                <button onclick="switchTab('tab-mindmap')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🧠 8. Mind Map</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto mt-8 px-4 sm:px-6 lg:px-8">
+
+        <!-- ========================================= -->
+        <!-- TAB 1: DETAILED HANDWRITTEN NOTES         -->
+        <!-- ========================================= -->
+        <div id="tab-notes" class="tab-content active notebook-paper bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden pr-6">
+            <h2 class="text-3xl font-bold mb-4 pt-4 hl-pink inline-block">Ch 3 Unit 1: Theory of Production</h2>
+            <div class="mb-4 text-sm font-sans text-gray-500 font-semibold">Weightage: Core Micro Pillar (~5 Marks) | Law of Variable Proportions & Cobb-Douglas Function</div>
+
+            <h3 class="text-2xl font-bold mt-6 text-blue-800">1. Meaning & Creation of Utility in Production</h3>
+            <p>In Economics, <strong>Production</strong> is NOT the creation of matter (man cannot create matter). Production is the <span class="hl-yellow">creation or addition of utility</span>.</p>
+            <p>Four primary forms of utility created by production:</p>
+            <ul class="list-disc ml-8">
+                <li><strong>Form Utility:</strong> Changing raw form into useful finished goods (e.g., wood into chair).</li>
+                <li><strong>Place Utility:</strong> Transporting goods from place of extraction to place of consumption (e.g., apples from Kashmir to Mumbai).</li>
+                <li><strong>Time Utility:</strong> Storing goods produced in one season for consumption in another (e.g., warehousing grains).</li>
+                <li><strong>Personal / Service Utility:</strong> Rendering direct specialized services (e.g., chartered accountants, doctors, teachers).</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">2. Factors of Production & Distinctions</h3>
+            <ul class="list-disc ml-8">
+                <li><span class="hl-green">Land:</span> Free gift of nature, strictly passive, permanently fixed and indestructible in primary powers (Ricardo), perfectly inelastic supply from the viewpoint of the entire economy.</li>
+                <li><span class="hl-yellow">Labour:</span> Human effort (physical/mental) exerted for economic reward. <strong>Perishable</strong> (a lost day's labour is lost forever), <strong>inseparable</strong> from the labourer, poor bargaining power, and features a <em>backward-bending individual supply curve</em>.</li>
+                <li><span class="hl-blue">Capital:</span> Produced means of production / man-made goods used for further production. It is a <em>stock concept</em>, whereas capital formation (investment) is a <em>flow concept</em>.</li>
+                <li><span class="hl-pink">Entrepreneur:</span> Mobilizes and coordinates the other three factors, bears non-insurable risks and uncertainties (Knight's Risk Theory), and introduces innovations (Schumpeter's Innovation Theory).</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">3. Short Run vs. Long Run Production Function</h3>
+            <p><strong>Production Function:</strong> $Q = f(K, L)$ represents the purely technical relationship between physical inputs and maximum obtainable physical output.</p>
+            <ul class="list-disc ml-8">
+                <li><strong>Short Run:</strong> Period where at least ONE factor of production is <em>fixed</em> (e.g., plant, heavy machinery) while other factors (e.g., labour, raw material) are <em>variable</em>. Law: <strong>Law of Variable Proportions</strong>.</li>
+                <li><strong>Long Run:</strong> Period of time in which ALL factors of production are <em>variable</em>. Plant size itself can be altered. Law: <strong>Laws of Returns to Scale</strong>.</li>
+            </ul>
+
+            <div class="sticky-note mx-auto max-w-lg">
+                <strong>📌 Short Run Product Metrics:</strong><br>
+                • <strong>Total Product (TP):</strong> Total physical output produced by given units of variable input.<br>
+                • <strong>Average Product (AP):</strong> Output per unit of variable factor ($AP = TP / L$).<br>
+                • <strong>Marginal Product (MP):</strong> Addition to TP by employing one additional variable unit ($MP_n = TP_n - TP_{n-1} = \frac{\Delta TP}{\Delta L}$).
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">4. The Law of Variable Proportions (Three Stages of Production)</h3>
+            <p>Examines output behavior in the short run when variable input ($L$) is added to a fixed factor ($K$).</p>
+
+            <div class="my-4 border border-gray-300 rounded-lg p-4 bg-white">
+                <h4 class="font-bold text-lg text-indigo-900 border-b pb-2">The Three Distinct Stages:</h4>
+                <ul class="mt-2 space-y-2 text-sm">
+                    <li><strong>Stage 1: Stage of Increasing Returns</strong>
+                        <br>• $TP$ increases at an increasing rate up to the <em>Point of Inflexion</em> (where $MP$ is maximum), then increases at a diminishing rate.
+                        <br>• $MP$ rises, peaks, and falls, but remains higher than $AP$.
+                        <br>• $AP$ rises continuously and reaches its maximum where <strong>$MP = AP$</strong> (End of Stage 1).
+                    </li>
+                    <li><strong>Stage 2: Stage of Diminishing Returns (The Only Rational Stage!)</strong>
+                        <br>• $TP$ continues to increase at a diminishing rate until it reaches its absolute <strong>maximum</strong>.
+                        <br>• Both $AP$ and $MP$ are falling, but both remain <strong>positive</strong>. $MP < AP$.
+                        <br>• Stage 2 ends where <strong>$MP = 0$</strong> and $TP$ is maximum.
+                    </li>
+                    <li><strong>Stage 3: Stage of Negative Returns</strong>
+                        <br>• $TP$ starts falling downward.
+                        <br>• $MP$ turns <strong>negative</strong>. $AP$ continues to fall but remains positive.
+                    </li>
+                </ul>
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">5. Crucial Interrelationships: AP & MP</h3>
+            <ol class="list-decimal ml-8">
+                <li>When $MP > AP \implies AP$ is <strong>rising</strong>.</li>
+                <li>When $MP = AP \implies AP$ is at its <strong>maximum</strong> ($MP$ cuts $AP$ from above at its peak).</li>
+                <li>When $MP < AP \implies AP$ is <strong>falling</strong>.</li>
+                <li>$MP$ reaches its peak earlier than $AP$. $MP$ can be zero or negative, but $AP$ is always positive as long as $TP > 0$.</li>
+            </ol>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">6. Long-Run: Laws of Returns to Scale & Cobb-Douglas</h3>
+            <p>Analyzes what happens to output when ALL inputs are increased in equal proportion:</p>
+            <ul class="list-disc ml-8">
+                <li><strong>Increasing Returns to Scale (IRS):</strong> % $\Delta$ Output > % $\Delta$ Inputs (caused by internal/external economies of scale).</li>
+                <li><strong>Constant Returns to Scale (CRS / Linear Homogeneous):</strong> % $\Delta$ Output = % $\Delta$ Inputs.</li>
+                <li><strong>Decreasing Returns to Scale (DRS):</strong> % $\Delta$ Output < % $\Delta$ Inputs (caused by internal/external diseconomies of scale).</li>
+            </ul>
+
+            <p class="mt-4"><strong>The Cobb-Douglas Production Function:</strong></p>
+            <p class="text-center font-bold text-lg text-purple-900 bg-purple-50 py-2 rounded">$$Q = K \cdot L^a \cdot C^{1-a} \quad \text{or} \quad Q = A \cdot L^\alpha \cdot K^\beta$$</p>
+            <ul class="list-disc ml-8">
+                <li>In their empirical study of US manufacturing, Labour contributed about <strong>3/4 (75%)</strong> and Capital contributed <strong>1/4 (25%)</strong>.</li>
+                <li>If $\alpha + \beta = 1 \implies$ <strong>Constant Returns to Scale</strong>.</li>
+                <li>If $\alpha + \beta > 1 \implies$ <strong>Increasing Returns to Scale</strong>.</li>
+                <li>If $\alpha + \beta < 1 \implies$ <strong>Decreasing Returns to Scale</strong>.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">7. Isoquants & Marginal Rate of Technical Substitution (MRTS)</h3>
+            <p><strong>Isoquant (Equal Product Curve):</strong> A curve showing all combinations of two variable inputs ($L$ and $K$) that yield the exact same physical output.</p>
+            <p>• Slope of Isoquant = <strong>$MRTS_{LK} = -\frac{\Delta K}{\Delta L} = \frac{MP_L}{MP_K}$</strong>.</p>
+            <p>• Isoquants are <strong>convex to the origin</strong> due to the <em>Diminishing Marginal Rate of Technical Substitution (DMRTS)</em>.</p>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 2: ICAI TRAP ZONE                     -->
+        <!-- ========================================= -->
+        <div id="tab-traps" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-red-600 flex items-center">🚨 ICAI Trap Zone & Mistake Tracker</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 border">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">What You Might Think (Trap)</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-green-600 uppercase">ICAI Exam Standard & Fact</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">A rational producer operates in Stage 1 because output increases at an increasing rate.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> A rational producer <strong>NEVER operates in Stage 1</strong> (where fixed factors are under-utilized) or Stage 3 (where $MP < 0$). A rational firm ALWAYS operates in <strong>Stage 2 (Diminishing Returns)</strong>!</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">At the point of inflexion on the TP curve, Total Product is at its maximum.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> At the point of inflexion, <strong>$MP$ is at its maximum</strong> and curvature changes from concave upward to concave downward. $TP$ is at its maximum much later when <strong>$MP = 0$</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">In the Cobb-Douglas function $Q = A \cdot L^{0.6} \cdot K^{0.5}$, returns to scale are constant.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> Sum of exponents $= 0.6 + 0.5 = 1.1$. Since $1.1 > 1.0$, this production function exhibits <strong>Increasing Returns to Scale (IRS)</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Land supply is elastic for an individual firm.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>True for a firm, but false for the economy!</strong> Supply of land is perfectly inelastic for the <em>economy as a whole</em>, but relatively elastic for a <em>single specific firm/industry</em>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 3: REVISION & MNEMONICS               -->
+        <!-- ========================================= -->
+        <div id="tab-revision" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-4 text-purple-700">⚡ Rapid Revision & Mnemonic Matrix</h2>
+            
+            <div class="bg-purple-50 rounded-lg p-5 mb-6 border border-purple-100">
+                <h3 class="text-xl font-bold text-purple-800 mb-3">🧠 Production Stages Transition Points</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Stage 1 Boundary</span>
+                        <div class="text-lg font-bold text-blue-600 mt-1">$MP = AP$</div>
+                        <p class="text-xs text-gray-600 mt-1">$AP$ is at its peak; Stage 1 ends</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Stage 2 Boundary (Rational Zone)</span>
+                        <div class="text-lg font-bold text-green-600 mt-1">$MP = 0 \iff TP \text{ Max}$</div>
+                        <p class="text-xs text-gray-600 mt-1">Stage 2 ends; optimum variable factor</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Stage 3 (Irrational Zone)</span>
+                        <div class="text-lg font-bold text-red-600 mt-1">$MP < 0 \iff TP \text{ Falls}$</div>
+                        <p class="text-xs text-gray-600 mt-1">Negative marginal product</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">⏱️ 5-Minute Core Rules Summary</h3>
+            <ul class="list-disc ml-5 space-y-2 text-gray-700">
+                <li><strong>Point of Inflexion:</strong> Point where $TP$ changes from convex to concave; corresponds to peak of $MP$.</li>
+                <li><strong>Cut from Above:</strong> $MP$ curve always cuts $AP$ curve from above at the maximum point of $AP$.</li>
+                <li><strong>Returns to Scale:</strong> Short-run involves changes in input <em>proportions</em>; Long-run involves change in <em>scale</em> with constant proportions.</li>
+                <li><strong>Cobb-Douglas Contribution:</strong> In the classic empirical study, Labour accounted for 75% ($3/4$) and Capital accounted for 25% ($1/4$) of production growth.</li>
+            </ul>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 4: ACTIVE RECALL                      -->
+        <!-- ========================================= -->
+        <div id="tab-recall" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">📝 Active Recall Apple Pencil Worksheet</h2>
+            <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 bg-gray-50">
+                <h3 class="text-lg font-bold mb-3">1. Critical Production Landmarks Recall</h3>
+                <ul class="space-y-4 text-lg">
+                    <li>1. At what condition does Stage 1 of the Law of Variable Proportions end? ___________________________</li>
+                    <li>2. What happens to Total Product when Marginal Product is zero? ___________________________</li>
+                    <li>3. In which stage does a rational entrepreneur always decide to produce? ___________________________</li>
+                    <li>4. Slope of an Isoquant curve is known as: ___________________________</li>
+                </ul>
+
+                <h3 class="text-lg font-bold mt-8 mb-3">2. Exponent Evaluation in Cobb-Douglas</h3>
+                <ul class="space-y-3 text-lg">
+                    <li>• If $Q = 2 \cdot L^{0.4} \cdot K^{0.6}$, Returns to Scale are: ___________________________</li>
+                    <li>• If $Q = 5 \cdot L^{0.7} \cdot K^{0.5}$, Returns to Scale are: ___________________________</li>
+                    <li>• If $Q = 10 \cdot L^{0.3} \cdot K^{0.4}$, Returns to Scale are: ___________________________</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 5: FLASHCARDS                         -->
+        <!-- ========================================= -->
+        <div id="tab-flashcards" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-teal-600 font-sans">🃏 3D Flip Flashcards</h2>
+                <div class="text-sm font-bold bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-sans">Mastered: <span id="fc-counter">0</span> / 4</div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Why does a rational producer NEVER operate in Stage 1?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-blue-900">Fixed factors remain underutilized!</span>
+                                <span class="mt-2 text-sm text-gray-700">In Stage 1, adding more variable input increases $AP$. By adding more variable units, efficiency increases, so stopping in Stage 1 wastes fixed factor capacity.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c3u1_fc1')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is the Point of Inflexion on the TP curve?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-purple-800">Point where MP reaches its Maximum!</span>
+                                <span class="mt-2 text-sm text-gray-700">At this point, $TP$ stops increasing at an increasing rate and begins increasing at a diminishing rate.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c3u1_fc2')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What does the Cobb-Douglas production function assume about input shares?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-green-900">Constant Returns to Scale ($a + b = 1$)</span>
+                                <span class="mt-2 text-sm text-gray-700">Labour accounted for $3/4$ (75%) and Capital accounted for $1/4$ (25%) of total output in the empirical American study.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c3u1_fc3')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Why is an Isoquant convex to the origin?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-pink-700">Diminishing MRTS ($MRTS_{LK}$)</span>
+                                <span class="mt-2 text-sm text-gray-700">As more Labour is substituted for Capital, the marginal technical rate of substitution ($MP_L / MP_K$) diminishes.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c3u1_fc4')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 6: MCQs                               -->
+        <!-- ========================================= -->
+        <div id="tab-mcq" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-orange-600">🎯 Unit 1 Practice MCQs</h2>
+                <div class="text-sm font-bold bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Score: <span id="mcq-score">0</span></div>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="B">
+                    <p class="font-semibold text-lg mb-3">1. Marginal product ($MP$) is equal to average product ($AP$) when:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="A" class="mr-2"> (a) Marginal product is maximum</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="B" class="mr-2"> (b) Average product is maximum</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="C" class="mr-2"> (c) Total product is maximum</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="D" class="mr-2"> (d) Marginal product is zero</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> $MP$ intersects $AP$ exactly from above at the point where $AP$ reaches its maximum.</div>
+                </div>
+
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="C">
+                    <p class="font-semibold text-lg mb-3">2. In which stage of the Law of Variable Proportions does a rational producer choose to operate?</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="A" class="mr-2"> (a) Stage 1 (Increasing Returns)</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="B" class="mr-2"> (b) Stage 3 (Negative Returns)</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="C" class="mr-2"> (c) Stage 2 (Diminishing Returns)</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="D" class="mr-2"> (d) Any of the three stages</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> A rational producer operates strictly in Stage 2, where both $AP$ and $MP$ are falling but positive, and both factors are utilized economically.</div>
+                </div>
+
+                <button onclick="gradeMCQs()" class="w-full py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition shadow">Grade Answers</button>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 7: MASTER SUMMARY TABLE               -->
+        <!-- ========================================= -->
+        <div id="tab-summary" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-green-700">📊 The 3 Stages of Variable Proportions Matrix</h2>
+            <div class="overflow-x-auto rounded-lg border">
+                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-green-50">
+                        <tr>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Stage</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Total Product ($TP$)</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Marginal Product ($MP$)</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Average Product ($AP$)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-white">
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-blue-900">Stage 1: Increasing Returns</td>
+                            <td>Increases at increasing rate up to Point of Inflexion, then increases at diminishing rate</td>
+                            <td>Increases, reaches peak, then falls but remains $> AP$</td>
+                            <td>Increases continuously to its maximum ($AP = MP$)</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-green-900 bg-green-50">Stage 2: Diminishing Returns (Rational)</td>
+                            <td class="bg-green-50">Increases at diminishing rate until reaching absolute maximum</td>
+                            <td class="bg-green-50">Falls continuously until it reaches zero ($MP = 0$)</td>
+                            <td class="bg-green-50">Falls continuously, but remains positive throughout ($AP > MP$)</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-red-900">Stage 3: Negative Returns</td>
+                            <td>Diminishes (slopes downwards)</td>
+                            <td>Turns <strong>negative</strong> ($MP < 0$)</td>
+                            <td>Continues falling, but remains positive</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 8: MIND MAP                           -->
+        <!-- ========================================= -->
+        <div id="tab-mindmap" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans overflow-x-auto">
+            <h2 class="text-3xl font-bold mb-6 text-pink-600">🧠 Theory of Production Mind Map</h2>
+            <div class="tree flex justify-center min-w-max pb-8">
+                <ul>
+                    <li>
+                        <a href="#" class="font-bold bg-pink-50 text-xl">Production Theory</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="font-bold text-blue-700">4 Factors</a>
+                                <ul>
+                                    <li><a href="#">Land (Fixed/Passive)</a></li>
+                                    <li><a href="#">Labour (Perishable)</a></li>
+                                    <li><a href="#">Capital (Man-Made)</a></li>
+                                    <li><a href="#">Entrepreneur (Risk)</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-green-700">Short Run</a>
+                                <ul>
+                                    <li><a href="#">Law of Variable Prop.</a></li>
+                                    <li><a href="#">Stage 1 ($AP \text{ peak}$)</a></li>
+                                    <li><a href="#">Stage 2 ($MP=0$, Rational)</a></li>
+                                    <li><a href="#">Stage 3 ($MP<0$)</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-purple-700">Long Run</a>
+                                <ul>
+                                    <li><a href="#">Returns to Scale</a></li>
+                                    <li><a href="#">Cobb-Douglas ($L^{3/4} K^{1/4}$)</a></li>
+                                    <li><a href="#">Isoquants & MRTS</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-12 text-center text-gray-400 text-sm pb-8 font-sans no-print">
+        &copy; 8-Pillar Master Study Suite • CA Foundation Business Economics Ch 3 Unit 1
+    </footer>
+
+    <!-- INTERACTIVITY SCRIPT -->
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function markMastered(btn, cardId) {
+            if(btn.innerText.includes("Mark Mastered")) {
+                btn.innerText = "✅ Mastered";
+                btn.classList.replace("bg-gray-100", "bg-teal-500");
+                btn.classList.replace("text-gray-600", "text-white");
+                localStorage.setItem(cardId, "true");
+            } else {
+                btn.innerText = "Mark Mastered";
+                btn.classList.replace("bg-teal-500", "bg-gray-100");
+                btn.classList.replace("text-white", "text-gray-600");
+                localStorage.removeItem(cardId);
+            }
+            updateFcCounter();
+        }
+
+        function updateFcCounter() {
+            let count = 0;
+            for(let i=1; i<=4; i++) {
+                if(localStorage.getItem('c3u1_fc'+i)) count++;
+            }
+            document.getElementById('fc-counter').innerText = count;
+        }
+
+        window.onload = function() {
+            for(let i=1; i<=4; i++) {
+                let id = 'c3u1_fc'+i;
+                if(localStorage.getItem(id)) {
+                    let btns = document.querySelectorAll('#tab-flashcards button');
+                    if(btns[i-1]) {
+                        btns[i-1].innerText = "✅ Mastered";
+                        btns[i-1].classList.replace("bg-gray-100", "bg-teal-500");
+                        btns[i-1].classList.replace("text-gray-600", "text-white");
+                    }
+                }
+            }
+            updateFcCounter();
+        };
+
+        function gradeMCQs() {
+            let score = 0;
+            let total = 2;
+            let cards = document.querySelectorAll('.mcq-card');
+            
+            cards.forEach(card => {
+                let correctVal = card.getAttribute('data-correct');
+                let radios = card.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => {
+                    radio.parentElement.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    radio.disabled = true;
+                    if(radio.checked) {
+                        if(radio.value === correctVal) {
+                            score++;
+                            radio.parentElement.classList.add('bg-green-100', 'border-green-500');
+                        } else {
+                            radio.parentElement.classList.add('bg-red-100', 'border-red-500');
+                        }
+                    }
+                    if(radio.value === correctVal) radio.parentElement.classList.add('border-green-500');
+                });
+                card.querySelector('.explanation').classList.remove('hidden');
+            });
+            document.getElementById('mcq-score').innerText = score + " / " + total;
+        }
+
+        let timerInterval;
+        let timeLeft = 25 * 60;
+        let isRunning = false;
+
+        function toggleTimer() {
+            let btn = document.getElementById('timer-btn');
+            if(isRunning) {
+                clearInterval(timerInterval);
+                btn.innerText = "START";
+                btn.classList.replace("bg-red-100", "bg-blue-100");
+                btn.classList.replace("text-red-600", "text-blue-600");
+                isRunning = false;
+            } else {
+                timerInterval = setInterval(updateTimer, 1000);
+                btn.innerText = "PAUSE";
+                btn.classList.replace("bg-blue-100", "bg-red-100");
+                btn.classList.replace("text-blue-600", "text-red-600");
+                isRunning = true;
+            }
+        }
+
+        function updateTimer() {
+            if(timeLeft <= 0) {
+                clearInterval(timerInterval);
+                alert("🍅 Pomodoro complete! Take a 5-minute break.");
+                timeLeft = 25 * 60;
+                document.getElementById('timer-btn').innerText = "START";
+                isRunning = false;
+            } else {
+                timeLeft--;
+            }
+            let m = Math.floor(timeLeft / 60);
+            let s = timeLeft % 60;
+            document.getElementById('timer-display').innerText = 
+                (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Foundation - Business Economics: Ch 5 Unit 1 — National Income Accounting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #fdfbf7; --line-color: #e5e7eb; --margin-line: #ef4444; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: #1f2937; }
+        .notebook-paper {
+            background-image: repeating-linear-gradient(transparent, transparent 31px, var(--line-color) 31px, var(--line-color) 32px);
+            background-position: 0 1.2rem;
+            background-attachment: local;
+            border-left: 2px solid var(--margin-line);
+            padding-left: 2rem;
+            font-family: 'Kalam', cursive;
+            font-size: 1.15rem;
+            line-height: 2rem;
+        }
+        .hl-yellow { background: linear-gradient(104deg, rgba(253,230,138,0) 0.9%, rgba(253,230,138,1) 2.4%, rgba(253,230,138,0.6) 5.8%, rgba(253,230,138,1) 93%, rgba(253,230,138,0.7) 96%, rgba(253,230,138,0) 98%); }
+        .hl-green { background: linear-gradient(104deg, rgba(167,243,208,0) 0.9%, rgba(167,243,208,1) 2.4%, rgba(167,243,208,0.6) 5.8%, rgba(167,243,208,1) 93%, rgba(167,243,208,0.7) 96%, rgba(167,243,208,0) 98%); }
+        .hl-pink { background: linear-gradient(104deg, rgba(252,165,165,0) 0.9%, rgba(252,165,165,1) 2.4%, rgba(252,165,165,0.6) 5.8%, rgba(252,165,165,1) 93%, rgba(252,165,165,0.7) 96%, rgba(252,165,165,0) 98%); }
+        .hl-blue { background: linear-gradient(104deg, rgba(191,219,254,0) 0.9%, rgba(191,219,254,1) 2.4%, rgba(191,219,254,0.6) 5.8%, rgba(191,219,254,1) 93%, rgba(191,219,254,0.7) 96%, rgba(191,219,254,0) 98%); }
+        .sticky-note {
+            background-color: #fef08a; box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+            transform: rotate(-1deg); padding: 1rem; font-family: 'Caveat', cursive;
+            font-size: 1.25rem; margin: 1.25rem 0; border-bottom-right-radius: 20px 5px;
+        }
+        .flip-card { background-color: transparent; width: 100%; height: 230px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+        .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back {
+            position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+            display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+            border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-family: 'Patrick Hand', cursive; font-size: 1.2rem;
+        }
+        .flip-card-front { background-color: #ffffff; border: 2px solid #e5e7eb; color: #111827; }
+        .flip-card-back { background-color: #eff6ff; border: 2px solid #93c5fd; color: #1e3a8a; transform: rotateY(180deg); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .tab-btn { transition: all 0.2s; }
+        .tab-btn.active { background-color: #2563eb; color: white; border-color: #2563eb; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3); }
+        @media print {
+            .no-print { display: none !important; }
+            .notebook-paper { background: none; border: none; padding: 0; }
+            body { background: white; }
+            .tab-content { display: block !important; page-break-before: always; }
+            .tab-content:first-of-type { page-break-before: avoid; }
+        }
+        .tree ul { padding-top: 20px; position: relative; transition: all 0.5s; }
+        .tree li { float: left; text-align: center; list-style-type: none; position: relative; padding: 20px 5px 0 5px; transition: all 0.5s; }
+        .tree li::before, .tree li::after { content: ''; position: absolute; top: 0; right: 50%; border-top: 2px solid #cbd5e1; width: 50%; height: 20px; }
+        .tree li::after { right: auto; left: 50%; border-left: 2px solid #cbd5e1; }
+        .tree li:only-child::after, .tree li:only-child::before { display: none; }
+        .tree li:only-child { padding-top: 0; }
+        .tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+        .tree li:last-child::before { border-right: 2px solid #cbd5e1; border-radius: 0 5px 0 0; }
+        .tree li:first-child::after { border-radius: 5px 0 0 0; }
+        .tree ul ul::before { content: ''; position: absolute; top: 0; left: 50%; border-left: 2px solid #cbd5e1; width: 0; height: 20px; }
+        .tree li a { border: 2px solid #cbd5e1; padding: 8px 12px; text-decoration: none; color: #1e293b; font-family: 'Patrick Hand', cursive; display: inline-block; border-radius: 8px; background: white; }
+        .tree li a:hover { background: #e0f2fe; border-color: #38bdf8; }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-12">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">🌐</span>
+                    <h1 class="font-bold text-xl tracking-tight text-gray-900">CA Foundation: Ch 5 Unit 1 — National Income Accounting</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200">
+                        <span class="text-lg">⏱️</span>
+                        <span id="timer-display" class="font-mono font-semibold text-slate-700">25:00</span>
+                        <button id="timer-btn" onclick="toggleTimer()" class="text-xs font-bold text-blue-600 hover:text-blue-800 ml-2 px-2 py-1 rounded bg-blue-100 hover:bg-blue-200 transition">START</button>
+                    </div>
+                    <button onclick="window.print()" class="flex items-center space-x-1 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition shadow-sm">
+                        <span>🖨️</span><span>Save PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto no-scrollbar border-t border-gray-100">
+            <div class="flex space-x-2 py-3" id="tabs-container">
+                <button onclick="switchTab('tab-notes')" class="tab-btn active whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">✍️ 1. Detailed Notes</button>
+                <button onclick="switchTab('tab-traps')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🚨 2. Trap Zone</button>
+                <button onclick="switchTab('tab-revision')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">⚡ 3. Revision & Mnemonics</button>
+                <button onclick="switchTab('tab-recall')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📝 4. Active Recall</button>
+                <button onclick="switchTab('tab-flashcards')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🃏 5. Flashcards</button>
+                <button onclick="switchTab('tab-mcq')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🎯 6. MCQs</button>
+                <button onclick="switchTab('tab-summary')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📊 7. Summary</button>
+                <button onclick="switchTab('tab-mindmap')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🧠 8. Mind Map</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto mt-8 px-4 sm:px-6 lg:px-8">
+        <!-- TAB 1: DETAILED NOTES -->
+        <div id="tab-notes" class="tab-content active notebook-paper bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden pr-6">
+            <h2 class="text-3xl font-bold mb-4 pt-4 hl-pink inline-block">Ch 5 Unit 1: National Income Accounting</h2>
+            <div class="mb-4 text-sm font-sans text-gray-500 font-semibold">Weightage: High Macro Pillar (~7–8 Marks) | Aggregates, Conversions & Measurement Methods</div>
+
+            <h3 class="text-2xl font-bold mt-6 text-blue-800">1. Definition & Fundamental Nature</h3>
+            <p><strong>National Income</strong> is the net money value of all final economic goods and services produced by normal residents of a country within an accounting year, plus net factor income from abroad.</p>
+            <ul class="list-disc ml-8">
+                <li>It is a <span class="hl-yellow">flow measure</span> (measured per unit of time, normally one financial year), NOT a stock measure.</li>
+                <li>Only <span class="hl-green">final goods and services</span> are counted to avoid double counting; intermediate goods are excluded.</li>
+                <li>Transfer payments (scholarships, gifts, pensions of retired persons) are <span class="hl-pink">excluded</span> because they do not correspond to any current productive factor service.</li>
+            </ul>
+
+            <div class="sticky-note mx-auto max-w-lg">
+                <strong>📌 The Three Golden Conversion Bridges:</strong><br>
+                1. <strong>Gross $\longleftrightarrow$ Net:</strong> $\text{Gross} - \text{Depreciation (CFC)} = \text{Net}$<br>
+                2. <strong>Domestic $\longleftrightarrow$ National:</strong> $\text{Domestic} + \text{NFIA} = \text{National}$<br>
+                3. <strong>Market Price $\longleftrightarrow$ Factor Cost:</strong> $\text{Market Price (MP)} - \text{NIT} = \text{Factor Cost (FC)}$<br>
+                <em>Where $\text{NIT} = \text{Indirect Taxes} - \text{Subsidies}$; $\text{NFIA} = \text{FIFA} - \text{FITA}$.</em>
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">2. The 8 Core National Income Aggregates</h3>
+            <ul class="list-disc ml-8">
+                <li><strong>$GDP_{MP}$ (Gross Domestic Product at Market Price):</strong> Market value of all final goods & services produced within domestic territory during a year, inclusive of depreciation.</li>
+                <li><strong>$NDP_{MP}$:</strong> $GDP_{MP} - \text{Depreciation}$.</li>
+                <li><strong>$GNP_{MP}$:</strong> $GDP_{MP} + \text{NFIA}$.</li>
+                <li><strong>$NNP_{MP}$:</strong> $GNP_{MP} - \text{Depreciation}$.</li>
+                <li><strong>$GDP_{FC}$:</strong> $GDP_{MP} - \text{NIT}$ (Sum of factor payments: Compensation of employees + Operating surplus + Mixed income + Depreciation).</li>
+                <li><strong>$NDP_{FC}$ (Domestic Factor Income):</strong> $GDP_{FC} - \text{Depreciation}$.</li>
+                <li><strong>$GNP_{FC}$:</strong> $GNP_{MP} - \text{NIT}$.</li>
+                <li><span class="hl-yellow font-bold">$NNP_{FC}$ (NATIONAL INCOME):</span> $NDP_{FC} + \text{NFIA} = NNP_{MP} - \text{NIT}$. <em>In economics, $NNP_{FC}$ is strictly called "National Income".</em></li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">3. Three Methods of Measuring National Income</h3>
+            <p><strong>A. Product / Value Added Method (Output Method):</strong></p>
+            <p class="text-center font-bold text-lg text-blue-900 bg-blue-50 py-2 rounded">$\text{Gross Value Added (GVA at MP)} = \text{Value of Output} - \text{Intermediate Consumption}$</p>
+            <ul class="list-disc ml-8">
+                <li>$\text{Value of Output} = \text{Sales} + \text{Change in Stock } (\text{Closing} - \text{Opening})$.</li>
+                <li>$\sum GVA_{MP} = GDP_{MP}$. Then deduct Depreciation and NIT, add NFIA to get $NNP_{FC}$.</li>
+            </ul>
+
+            <p class="mt-4"><strong>B. Income Method (Factor Payment Method):</strong> Sums factor incomes earned by resident factor owners:</p>
+            <p class="text-center font-bold text-lg text-green-900 bg-green-50 py-2 rounded">$NDP_{FC} = \text{Compensation of Employees (COE)} + \text{Operating Surplus (OS)} + \text{Mixed Income (MI)}$</p>
+            <ul class="list-disc ml-8">
+                <li><strong>COE:</strong> Wages & salaries (cash/kind) + Employer's contribution to social security schemes.</li>
+                <li><strong>Operating Surplus:</strong> Rent + Royalty + Interest + Profit (Dividends + Undistributed Profits + Corporate Tax).</li>
+                <li><strong>Mixed Income:</strong> Incomes of own-account workers and unincorporated enterprises (doctors, farmers, sole proprietors).</li>
+            </ul>
+
+            <p class="mt-4"><strong>C. Expenditure Method:</strong> Sums final spending on GDP:</p>
+            <p class="text-center font-bold text-lg text-purple-900 bg-purple-50 py-2 rounded">$GDP_{MP} = C + I + G + (X - M)$</p>
+            <ul class="list-disc ml-8">
+                <li><strong>$C$:</strong> Private Final Consumption Expenditure.</li>
+                <li><strong>$I$:</strong> Gross Domestic Capital Formation (Gross Fixed Capital Formation + Change in Stock).</li>
+                <li><strong>$G$:</strong> Government Final Consumption Expenditure.</li>
+                <li><strong>$(X - M)$:</strong> Net Exports (Exports minus Imports).</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">4. Nominal GDP, Real GDP & The GDP Deflator</h3>
+            <ul class="list-disc ml-8">
+                <li><strong>Nominal GDP (at Current Prices):</strong> Output valued at current year market prices ($P_1 \times Q_1$). Changes due to both price changes and quantity changes.</li>
+                <li><strong>Real GDP (at Constant Prices):</strong> Output valued at base year prices ($P_0 \times Q_1$). Reflects true physical production growth.</li>
+                <li><span class="hl-pink font-bold">GDP Deflator (Price Index):</span>
+                    $$\text{GDP Deflator} = \frac{\text{Nominal GDP}}{\text{Real GDP}} \times 100$$
+                </li>
+            </ul>
+        </div>
+
+        <!-- TAB 2: TRAP ZONE -->
+        <div id="tab-traps" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-red-600 flex items-center">🚨 ICAI Trap Zone & Mistake Tracker</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 border">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Common Student Error</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-green-600 uppercase">ICAI Standard & Fact</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Sale of second-hand cars and commissions earned on them are both excluded.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>Careful distinction!</strong> The sale value of the <em>second-hand car itself</em> is excluded (counted in the year it was originally produced). However, the <strong>broker's commission or service fee is INCLUDED</strong> because it represents current productive service!</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Transfer payments like old age pensions and unemployment allowances are included in Factor Income.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> Transfer payments are unearned one-way payments with no factor contribution; they are <strong>strictly EXCLUDED</strong>. However, <em>retirement pensions</em> (deferred wage) are <strong>INCLUDED</strong> under COE!</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">National Income is $GDP_{MP}$.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> In official economic terminology and ICAI exams, National Income strictly refers to <strong>$NNP_{FC}$ (Net National Product at Factor Cost)</strong>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 3: REVISION & MNEMONICS -->
+        <div id="tab-revision" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-4 text-purple-700">⚡ Rapid Revision & Mnemonic Matrix</h2>
+            <div class="bg-purple-50 rounded-lg p-5 mb-6 border border-purple-100">
+                <h3 class="text-xl font-bold text-purple-800 mb-3">🧠 Conversion Matrix: "D-N-N"</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Gross to Net</span>
+                        <div class="text-xl font-bold text-blue-600 mt-1">− Depreciation</div>
+                        <p class="text-xs text-gray-600 mt-1">Consumption of Fixed Capital</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Domestic to National</span>
+                        <div class="text-xl font-bold text-green-600 mt-1">+ NFIA</div>
+                        <p class="text-xs text-gray-600 mt-1">Net Factor Income Abroad</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Market Price to FC</span>
+                        <div class="text-xl font-bold text-purple-600 mt-1">− NIT</div>
+                        <p class="text-xs text-gray-600 mt-1">Indirect Taxes − Subsidies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: ACTIVE RECALL -->
+        <div id="tab-recall" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">📝 Active Recall Apple Pencil Worksheet</h2>
+            <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 bg-gray-50">
+                <h3 class="text-lg font-bold mb-3">1. Formula Conversion Drills</h3>
+                <ul class="space-y-4 text-lg">
+                    <li>1. $NNP_{FC} = GDP_{MP} - $ _________________ $+$ _________________ $-$ _________________</li>
+                    <li>2. GDP Deflator formula = ___________________________</li>
+                    <li>3. Operating Surplus consists of: ___________________________</li>
+                    <li>4. Net Indirect Taxes (NIT) = ___________________________ minus ___________________________</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TAB 5: FLASHCARDS -->
+        <div id="tab-flashcards" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-teal-600 font-sans">🃏 3D Flip Flashcards</h2>
+                <div class="text-sm font-bold bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-sans">Mastered: <span id="fc-counter">0</span> / 4</div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is the difference between Old Age Pension and Retirement Pension in National Income?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-blue-900">Old Age Pension = Transfer Payment (EXCLUDED).</span>
+                                <span class="mt-2 text-sm text-gray-700"><strong>Retirement Pension = Deferred Factor Payment (INCLUDED)</strong> as part of Compensation of Employees.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c5u1_fc1')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Calculate Real GDP if Nominal GDP = ₹6,600 crore and GDP Deflator = 110.</div>
+                            <div class="flip-card-back text-center text-xl flex flex-col">
+                                <span class="font-bold text-green-900">₹6,000 crore</span>
+                                <span class="mt-2 text-sm text-gray-700">$\text{Real GDP} = \frac{\text{Nominal GDP}}{\text{Deflator}} \times 100 = \frac{6600}{110} \times 100 = 6000$.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c5u1_fc2')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Why is imputed rent of owner-occupied houses included in GDP?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-purple-900">It provides housing services with real market value!</span>
+                                <span class="mt-2 text-sm text-gray-700">Even though no cash changes hands, the house produces productive housing utility comparable to rented property.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c5u1_fc3')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is Mixed Income of the self-employed?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-pink-700">Combined return to labour, capital, land & entrepreneurship!</span>
+                                <span class="mt-2 text-sm text-gray-700">Earned by unincorporated small proprietors (farmers, lawyers, shopkeepers) where wages, interest, rent, and profit cannot be separated.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c5u1_fc4')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 6: MCQs -->
+        <div id="tab-mcq" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-orange-600">🎯 Unit 1 Practice MCQs</h2>
+                <div class="text-sm font-bold bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Score: <span id="mcq-score">0</span></div>
+            </div>
+            <div class="space-y-6">
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="B">
+                    <p class="font-semibold text-lg mb-3">1. National Income in economics strictly corresponds to:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="A" class="mr-2"> (a) $GDP_{MP}$</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="B" class="mr-2"> (b) $NNP_{FC}$</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="C" class="mr-2"> (c) $NDP_{FC}$</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="D" class="mr-2"> (d) $GNP_{MP}$</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> In national accounting, National Income is identically defined as Net National Product at Factor Cost ($NNP_{FC}$).</div>
+                </div>
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="C">
+                    <p class="font-semibold text-lg mb-3">2. Which of the following is INCLUDED in the estimation of National Income?</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="A" class="mr-2"> (a) Winning a lottery ticket</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="B" class="mr-2"> (b) Sale of an old residential flat</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="C" class="mr-2"> (c) Brokerage paid on purchase of an old building</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="D" class="mr-2"> (d) Scholarship received by a university student</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> Brokerage/commission represents payment for current productive service and is always included. Windfall gains, second-hand assets, and scholarships are excluded.</div>
+                </div>
+                <button onclick="gradeMCQs()" class="w-full py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition shadow">Grade Answers</button>
+            </div>
+        </div>
+
+        <!-- TAB 7: MASTER SUMMARY TABLE -->
+        <div id="tab-summary" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-green-700">📊 National Income Measurement Methods Comparison</h2>
+            <div class="overflow-x-auto rounded-lg border">
+                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-green-50">
+                        <tr>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Measurement Method</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Primary Starting Aggregate</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Components Included</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Key Exclusions / Precautions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-white">
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Value Added (Product) Method</td>
+                            <td>$GDP_{MP} = \sum GVA_{MP}$</td>
+                            <td>Sales + Change in stock − Intermediate consumption</td>
+                            <td>Exclude intermediate goods; include imputed rent and production for self-consumption</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Income (Factor Payment) Method</td>
+                            <td>$NDP_{FC}$</td>
+                            <td>COE + Operating Surplus (Rent, Royalty, Interest, Profit) + Mixed Income</td>
+                            <td>Exclude transfer payments, capital gains, illegal earnings; include employer PF contributions</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Expenditure Method</td>
+                            <td>$GDP_{MP}$</td>
+                            <td>$C + I + G + (X - M)$</td>
+                            <td>Exclude intermediate expenditure, transfer payments, and expenditure on second-hand goods</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 8: MIND MAP -->
+        <div id="tab-mindmap" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans overflow-x-auto">
+            <h2 class="text-3xl font-bold mb-6 text-pink-600">🧠 National Income Accounting Mind Map</h2>
+            <div class="tree flex justify-center min-w-max pb-8">
+                <ul>
+                    <li>
+                        <a href="#" class="font-bold bg-pink-50 text-xl">National Income</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="font-bold text-blue-700">Aggregates</a>
+                                <ul>
+                                    <li><a href="#">$GDP_{MP}$</a></li>
+                                    <li><a href="#">$NDP_{FC}$ (Domestic Inc)</a></li>
+                                    <li><a href="#">$NNP_{FC}$ (National Inc)</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-green-700">3 Methods</a>
+                                <ul>
+                                    <li><a href="#">Value Added ($GVA$)</a></li>
+                                    <li><a href="#">Income ($COE+OS+MI$)</a></li>
+                                    <li><a href="#">Expenditure ($C+I+G+NX$)</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-purple-700">Key Ratios</a>
+                                <ul>
+                                    <li><a href="#">$\text{Real GDP} = P_0 \times Q_1$</a></li>
+                                    <li><a href="#">$\text{Deflator} = \frac{\text{Nominal}}{\text{Real}} \times 100$</a></li>
+                                    <li><a href="#">$\text{NFIA} = \text{FIFA} - \text{FITA}$</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-12 text-center text-gray-400 text-sm pb-8 font-sans no-print">
+        &copy; 8-Pillar Master Study Suite • CA Foundation Business Economics Ch 5 Unit 1
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+        function markMastered(btn, cardId) {
+            if(btn.innerText.includes("Mark Mastered")) {
+                btn.innerText = "✅ Mastered";
+                btn.classList.replace("bg-gray-100", "bg-teal-500");
+                btn.classList.replace("text-gray-600", "text-white");
+                localStorage.setItem(cardId, "true");
+            } else {
+                btn.innerText = "Mark Mastered";
+                btn.classList.replace("bg-teal-500", "bg-gray-100");
+                btn.classList.replace("text-white", "text-gray-600");
+                localStorage.removeItem(cardId);
+            }
+            updateFcCounter();
+        }
+        function updateFcCounter() {
+            let count = 0;
+            for(let i=1; i<=4; i++) { if(localStorage.getItem('c5u1_fc'+i)) count++; }
+            document.getElementById('fc-counter').innerText = count;
+        }
+        window.onload = function() {
+            for(let i=1; i<=4; i++) {
+                let id = 'c5u1_fc'+i;
+                if(localStorage.getItem(id)) {
+                    let btns = document.querySelectorAll('#tab-flashcards button');
+                    if(btns[i-1]) {
+                        btns[i-1].innerText = "✅ Mastered";
+                        btns[i-1].classList.replace("bg-gray-100", "bg-teal-500");
+                        btns[i-1].classList.replace("text-gray-600", "text-white");
+                    }
+                }
+            }
+            updateFcCounter();
+        };
+        function gradeMCQs() {
+            let score = 0, total = 2;
+            let cards = document.querySelectorAll('.mcq-card');
+            cards.forEach(card => {
+                let correctVal = card.getAttribute('data-correct');
+                let radios = card.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => {
+                    radio.parentElement.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    radio.disabled = true;
+                    if(radio.checked) {
+                        if(radio.value === correctVal) {
+                            score++;
+                            radio.parentElement.classList.add('bg-green-100', 'border-green-500');
+                        } else {
+                            radio.parentElement.classList.add('bg-red-100', 'border-red-500');
+                        }
+                    }
+                    if(radio.value === correctVal) radio.parentElement.classList.add('border-green-500');
+                });
+                card.querySelector('.explanation').classList.remove('hidden');
+            });
+            document.getElementById('mcq-score').innerText = score + " / " + total;
+        }
+        let timerInterval, timeLeft = 25 * 60, isRunning = false;
+        function toggleTimer() {
+            let btn = document.getElementById('timer-btn');
+            if(isRunning) {
+                clearInterval(timerInterval);
+                btn.innerText = "START";
+                btn.classList.replace("bg-red-100", "bg-blue-100");
+                btn.classList.replace("text-red-600", "text-blue-600");
+                isRunning = false;
+            } else {
+                timerInterval = setInterval(updateTimer, 1000);
+                btn.innerText = "PAUSE";
+                btn.classList.replace("bg-blue-100", "bg-red-100");
+                btn.classList.replace("text-blue-600", "text-red-600");
+                isRunning = true;
+            }
+        }
+        function updateTimer() {
+            if(timeLeft <= 0) {
+                clearInterval(timerInterval);
+                alert("🍅 Pomodoro complete! Take a 5-minute break.");
+                timeLeft = 25 * 60;
+                document.getElementById('timer-btn').innerText = "START";
+                isRunning = false;
+            } else { timeLeft--; }
+            let m = Math.floor(timeLeft / 60), s = timeLeft % 60;
+            document.getElementById('timer-display').innerText = (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+        }
+    </script>
+</body>
+</html>

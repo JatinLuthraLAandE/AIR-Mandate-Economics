@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Foundation - Business Economics: Chapter 6 - Business Cycles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --line-color: #e5e7eb;
+            --margin-line: #ef4444;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: #1f2937;
+        }
+        .notebook-paper {
+            background-image: repeating-linear-gradient(transparent, transparent 31px, var(--line-color) 31px, var(--line-color) 32px);
+            background-position: 0 1.2rem;
+            background-attachment: local;
+            border-left: 2px solid var(--margin-line);
+            padding-left: 2rem;
+            font-family: 'Kalam', cursive;
+            font-size: 1.2rem;
+            line-height: 2rem;
+        }
+        .handwritten {
+            font-family: 'Patrick Hand', cursive;
+        }
+        .hl-yellow { background: linear-gradient(104deg, rgba(253,230,138,0) 0.9%, rgba(253,230,138,1) 2.4%, rgba(253,230,138,0.5) 5.8%, rgba(253,230,138,1) 93%, rgba(253,230,138,0.7) 96%, rgba(253,230,138,0) 98%); }
+        .hl-green { background: linear-gradient(104deg, rgba(167,243,208,0) 0.9%, rgba(167,243,208,1) 2.4%, rgba(167,243,208,0.5) 5.8%, rgba(167,243,208,1) 93%, rgba(167,243,208,0.7) 96%, rgba(167,243,208,0) 98%); }
+        .hl-pink { background: linear-gradient(104deg, rgba(252,165,165,0) 0.9%, rgba(252,165,165,1) 2.4%, rgba(252,165,165,0.5) 5.8%, rgba(252,165,165,1) 93%, rgba(252,165,165,0.7) 96%, rgba(252,165,165,0) 98%); }
+        .hl-blue { background: linear-gradient(104deg, rgba(191,219,254,0) 0.9%, rgba(191,219,254,1) 2.4%, rgba(191,219,254,0.5) 5.8%, rgba(191,219,254,1) 93%, rgba(191,219,254,0.7) 96%, rgba(191,219,254,0) 98%); }
+        
+        .sticky-note {
+            background-color: #fef08a;
+            box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+            padding: 1rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            margin: 1rem 0;
+            border-bottom-right-radius: 20px 5px;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 220px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.25rem;
+        }
+        .flip-card-front {
+            background-color: #ffffff;
+            border: 2px solid #e5e7eb;
+            color: #111827;
+        }
+        .flip-card-back {
+            background-color: #eff6ff;
+            border: 2px solid #93c5fd;
+            color: #1e3a8a;
+            transform: rotateY(180deg);
+        }
+
+        /* Tabs */
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .tab-btn { transition: all 0.2s; }
+        .tab-btn.active { 
+            background-color: #3b82f6; 
+            color: white; 
+            border-color: #3b82f6;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3);
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            .notebook-paper { background: none; border: none; padding: 0; }
+            body { background: white; }
+            .tab-content { display: block !important; page-break-before: always; }
+            .tab-content:first-of-type { page-break-before: avoid; }
+        }
+        
+        /* Mind Map basic CSS */
+        .tree ul { padding-top: 20px; position: relative; transition: all 0.5s; }
+        .tree li { float: left; text-align: center; list-style-type: none; position: relative; padding: 20px 5px 0 5px; transition: all 0.5s; }
+        .tree li::before, .tree li::after { content: ''; position: absolute; top: 0; right: 50%; border-top: 2px solid #cbd5e1; width: 50%; height: 20px; }
+        .tree li::after { right: auto; left: 50%; border-left: 2px solid #cbd5e1; }
+        .tree li:only-child::after, .tree li:only-child::before { display: none; }
+        .tree li:only-child { padding-top: 0; }
+        .tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+        .tree li:last-child::before { border-right: 2px solid #cbd5e1; border-radius: 0 5px 0 0; }
+        .tree li:first-child::after { border-radius: 5px 0 0 0; }
+        .tree ul ul::before { content: ''; position: absolute; top: 0; left: 50%; border-left: 2px solid #cbd5e1; width: 0; height: 20px; }
+        .tree li a { border: 2px solid #cbd5e1; padding: 10px; text-decoration: none; color: #1e293b; font-family: 'Patrick Hand', cursive; display: inline-block; border-radius: 8px; background: white; transition: all 0.5s; }
+        .tree li a:hover { background: #e0f2fe; border-color: #38bdf8; }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-12">
+
+    <!-- Top Navigation & Tools -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">📓</span>
+                    <h1 class="font-bold text-xl tracking-tight text-gray-900">CA Foundation: Business Cycles</h1>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <!-- Pomodoro Timer -->
+                    <div class="flex items-center space-x-2 bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200">
+                        <span class="text-lg">⏱️</span>
+                        <span id="timer-display" class="font-mono font-semibold text-slate-700">25:00</span>
+                        <button id="timer-btn" onclick="toggleTimer()" class="text-xs font-bold text-blue-600 hover:text-blue-800 ml-2 px-2 py-1 rounded bg-blue-100 hover:bg-blue-200 transition">START</button>
+                    </div>
+                    
+                    <button onclick="window.print()" class="flex items-center space-x-1 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition shadow-sm">
+                        <span>🖨️</span><span>Save PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pillar Tabs -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto no-scrollbar border-t border-gray-100">
+            <div class="flex space-x-2 py-3" id="tabs-container">
+                <button onclick="switchTab('tab-notes')" class="tab-btn active whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">✍️ 1. Detailed Notes</button>
+                <button onclick="switchTab('tab-traps')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🚨 2. Trap Zone</button>
+                <button onclick="switchTab('tab-revision')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">⚡ 3. Revision & Mnemonics</button>
+                <button onclick="switchTab('tab-recall')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📝 4. Active Recall</button>
+                <button onclick="switchTab('tab-flashcards')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🃏 5. Flashcards</button>
+                <button onclick="switchTab('tab-mcq')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🎯 6. MCQs</button>
+                <button onclick="switchTab('tab-summary')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📊 7. Summary</button>
+                <button onclick="switchTab('tab-mindmap')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🧠 8. Mind Map</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto mt-8 px-4 sm:px-6 lg:px-8">
+
+        <!-- ========================================= -->
+        <!-- TAB 1: HANDWRITTEN DETAILED NOTES         -->
+        <!-- ========================================= -->
+        <div id="tab-notes" class="tab-content active notebook-paper bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden pr-6">
+            <h2 class="text-3xl font-bold mb-4 pt-4 hl-pink inline-block">Chapter 6: Business Cycles</h2>
+            <div class="mb-4 text-sm font-sans text-gray-500 font-semibold">Priority: ⭐⭐⭐⭐⭐ | Est. Study Time: 45 mins</div>
+
+            <h3 class="text-2xl font-bold mt-6 text-blue-800">1. Introduction & Meaning</h3>
+            <p>Economics is concerned with fluctuations in economic activities. The economic history of nearly all countries point towards the fact that they have gone through periods of prosperity alternating with periods of economic downturns.</p>
+            <p>These rhythmic fluctuations in aggregate economic activity that an economy experiences over a period of time are called <span class="hl-yellow">business cycles or trade cycles</span>.</p>
+            <p><strong>Characteristics:</strong> They occur periodically, but they do NOT exhibit the same regularity (they are not of the same length or intensity).</p>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">2. Phases of Business Cycle</h3>
+            <p>A typical business cycle has four distinct phases:</p>
+            <ol class="list-decimal ml-8">
+                <li><strong><span class="hl-green">Expansion (Boom / Upswing):</span></strong> Characterized by increase in national output, employment, aggregate demand, sales, profits, rising stock prices. Continues till there is full employment of resources. Involuntary unemployment is almost zero (only frictional/structural remains).</li>
+                <li><strong><span class="hl-yellow">Peak (Boom / Prosperity):</span></strong> The highest point. Inputs become short in demand -> input prices increase -> output prices rise. Actual demand stagnates. The point where economic growth stabilizes before reversing.</li>
+                <li><strong><span class="hl-pink">Contraction (Downswing / Recession):</span></strong> Increase in demand halts. Producers maintain investment leading to mismatch (Supply > Demand). Stoppage of orders, cancellation of investments. Incomes decline, demand falls, prices fall. Bank credit shrinks.</li>
+                <li><strong><span class="hl-blue">Trough (Depression):</span></strong> Severe form of recession. Extremely sluggish economic activity. Negative growth. Prices are at lowest. Mounting unemployment. Fall in interest rate, but demand for credit is still low due to low investor confidence.</li>
+            </ol>
+            <p class="mt-2"><strong>Recovery:</strong> Starts from the trough. Labour accepts lower wages -> lower costs -> business confidence revives -> investments pick up -> aggregate demand increases.</p>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">3. Economic Indicators</h3>
+            <p>Used to measure and predict where the economy is headed.</p>
+            <ul class="list-disc ml-8">
+                <li><span class="hl-pink">Leading Indicators:</span> Change <strong>before</strong> the real output changes. Signal the onset of cycles. <em>Examples: Changes in stock prices, new orders for capital/consumer goods, building permits, money growth rate.</em> (Note: They are not always 100% accurate!)</li>
+                <li><span class="hl-yellow">Lagging Indicators:</span> Change <strong>after</strong> real output changes. Confirm the trends. <em>Examples: Unemployment, corporate profit, labour cost per unit of output, commercial lending activity.</em></li>
+                <li><span class="hl-green">Coincident / Concurrent Indicators:</span> Change <strong>simultaneously</strong> with the cycle. Show current state. <em>Examples: GDP, Industrial production, inflation, retail sales, personal income.</em></li>
+            </ul>
+
+            <div class="sticky-note mx-auto max-w-lg">
+                <strong>📌 Famous Economists & Their Causes:</strong><br>
+                1. <strong>Keynes:</strong> Fluctuations in Aggregate Effective Demand.<br>
+                2. <strong>Hawtrey:</strong> Purely monetary phenomenon (Money supply).<br>
+                3. <strong>Pigou:</strong> Psychological factors (waves of optimism/pessimism).<br>
+                4. <strong>Schumpeter:</strong> Innovations.<br>
+                5. <strong>Nicholas Kaldor:</strong> Cobweb theory (present prices influence future production).
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">4. Causes of Business Cycles</h3>
+            
+            <p><strong>A. Internal Causes (Endogenous):</strong></p>
+            <ul class="list-disc ml-8">
+                <li>Fluctuations in Effective Demand (Keynes)</li>
+                <li>Fluctuations in Investment (Prime cause per some economists)</li>
+                <li>Variations in government spending</li>
+                <li>Macroeconomic policies (Expansionary vs Anti-inflationary)</li>
+                <li>Money Supply (Hawtrey)</li>
+                <li>Psychological factors (Pigou)</li>
+            </ul>
+
+            <p class="mt-4"><strong>B. External Causes (Exogenous):</strong></p>
+            <ul class="list-disc ml-8">
+                <li>Wars (diverts resources to weapons, affects consumer goods)</li>
+                <li>Post War Reconstruction (pushes up effective demand)</li>
+                <li>Technology Shocks (adoption of new tech boosts economy)</li>
+                <li>Natural Factors (weather/agriculture failures drag down industry)</li>
+                <li>Population growth (if > economic growth -> lesser savings -> low investment)</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">5. Relevance in Business Decision Making</h3>
+            <p>Businesses must alter production relative to demand. <strong>"Cyclical" businesses</strong> (fashion, home builders, restaurants) suffer sharp drops during slumps and strong demand during booms. Non-cyclical/essential businesses are less affected. Some businesses even benefit from downturns (e.g., cheaper alternative brands).</p>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 2: ICAI TRAP ZONE (MISTAKE TRACKER)   -->
+        <!-- ========================================= -->
+        <div id="tab-traps" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-red-600 flex items-center">🚨 ICAI Trap Zone & Mistake Tracker</h2>
+            <p class="mb-6 text-gray-600">ICAI loves to twist these specific concepts to confuse students in MCQs. Review these carefully!</p>
+            
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 border">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">What You Might Think (The Trap)</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-green-600 uppercase tracking-wider">What ICAI Actually Wants (The Truth)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Business cycles occur at regular, predictable intervals of time.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> They are recurrent and periodic, but they do <strong>NOT</strong> exhibit the same regularity (intensity and length vary).</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Leading indicators are always accurate in predicting turning points.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> Leading indicators are <strong>not always accurate</strong>. Even experts disagree on their timing.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">A.C. Pigou argued that trade cycles are a monetary phenomenon.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> Pigou = <strong>Psychological</strong> (Optimism/Pessimism). Hawtrey = <strong>Monetary</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Agriculture is the sector most prone to adverse effects of trade cycles.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> The <strong>Industrial sector</strong> (specifically capital goods and durable consumer goods) is disproportionately affected compared to agriculture.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">During a depression, interest rates go up because money is tight.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> A typical feature of depression is the <strong>fall in the interest rate</strong> (though demand for credit still declines due to low investor confidence).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 3: REVISION & MNEMONICS               -->
+        <!-- ========================================= -->
+        <div id="tab-revision" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-4 text-purple-700">⚡ Exam-Eve Revision Notes & Mnemonic Cheatsheet</h2>
+            
+            <div class="bg-purple-50 rounded-lg p-5 mb-6 border border-purple-100">
+                <h3 class="text-xl font-bold text-purple-800 mb-3">🧠 The Mnemonic Cheatsheet</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-4 rounded shadow-sm border border-gray-100">
+                        <strong class="text-blue-600 block mb-1">Causes of Internal Fluctuations</strong>
+                        <div class="font-mono text-lg font-bold text-gray-800">"PIGS M-E"</div>
+                        <ul class="text-sm mt-2 text-gray-600 space-y-1">
+                            <li><strong>P</strong> - Psychological factors (Pigou)</li>
+                            <li><strong>I</strong> - Investment fluctuations</li>
+                            <li><strong>G</strong> - Government spending variations</li>
+                            <li><strong>S</strong> - Supply of Money (Hawtrey)</li>
+                            <li><strong>M</strong> - Macroeconomic policies</li>
+                            <li><strong>E</strong> - Effective Demand (Keynes)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded shadow-sm border border-gray-100">
+                        <strong class="text-blue-600 block mb-1">Causes of External Fluctuations</strong>
+                        <div class="font-mono text-lg font-bold text-gray-800">"T-W-P-N"</div>
+                        <ul class="text-sm mt-2 text-gray-600 space-y-1">
+                            <li><strong>T</strong> - Technology shocks</li>
+                            <li><strong>W</strong> - Wars & Post-war recon.</li>
+                            <li><strong>P</strong> - Population growth</li>
+                            <li><strong>N</strong> - Natural factors (Weather)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">⏱️ 15-Minute Rapid Review Bullet Points</h3>
+            <ul class="list-disc ml-5 space-y-2 text-gray-700">
+                <li><strong>Business Cycles:</strong> Rhythmic fluctuations in aggregate economic activity. Occur periodically but not regularly.</li>
+                <li><strong>Phases:</strong> Expansion (Boom) -> Peak -> Contraction (Recession) -> Trough (Depression).</li>
+                <li><strong>Peak:</strong> Inputs fall short -> costs rise -> prices rise -> demand stagnates.</li>
+                <li><strong>Trough:</strong> Negative growth, prices at lowest, high unemployment, low interest rates.</li>
+                <li><strong>Recovery:</strong> Pervasive unemployment forces workers to accept lower wages -> anticipating lower costs, producers invest -> confidence takes off.</li>
+                <li><strong>Leading Indicators:</strong> Signal onset. E.g., Stock prices, new orders.</li>
+                <li><strong>Lagging Indicators:</strong> Confirm trends. E.g., Unemployment, corporate profits, labour cost per unit.</li>
+                <li><strong>Coincident Indicators:</strong> Occur simultaneously. E.g., GDP, inflation, retail sales.</li>
+                <li><strong>Schumpeter:</strong> Innovations cause cycles.</li>
+                <li><strong>Nicholas Kaldor:</strong> Cobweb theory (present prices dictate future production).</li>
+            </ul>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 4: ACTIVE RECALL WORKSHEETS           -->
+        <!-- ========================================= -->
+        <div id="tab-recall" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-indigo-600">📝 Active Recall Worksheets</h2>
+                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Print to iPad / GoodNotes</span>
+            </div>
+            <p class="mb-4 text-gray-600">Use your Apple Pencil to fill in the blanks from memory. Do not look at the detailed notes!</p>
+            
+            <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 bg-gray-50">
+                <h3 class="text-lg font-bold mb-4">1. Fill in the Key Economists</h3>
+                <ul class="space-y-4 text-lg">
+                    <li>1. Fluctuations in Effective Demand: ___________________________</li>
+                    <li>2. Trade cycle is a purely monetary phenomenon: ___________________________</li>
+                    <li>3. Waves of optimism and pessimism (Psychological): ___________________________</li>
+                    <li>4. Occur as a result of Innovations: ___________________________</li>
+                    <li>5. Cobweb Theory: ___________________________</li>
+                </ul>
+
+                <h3 class="text-lg font-bold mt-8 mb-4">2. Match the Indicator Type</h3>
+                <table class="w-full border-collapse border border-gray-400 bg-white">
+                    <tr>
+                        <td class="border border-gray-400 p-3 font-semibold w-1/3">Stock Prices</td>
+                        <td class="border border-gray-400 p-3 text-gray-300 w-2/3">Type: _________________________</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-400 p-3 font-semibold">Gross Domestic Product (GDP)</td>
+                        <td class="border border-gray-400 p-3 text-gray-300">Type: _________________________</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-400 p-3 font-semibold">Unemployment Rate</td>
+                        <td class="border border-gray-400 p-3 text-gray-300">Type: _________________________</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-400 p-3 font-semibold">New orders for plant/equipment</td>
+                        <td class="border border-gray-400 p-3 text-gray-300">Type: _________________________</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 5: FLASHCARDS                         -->
+        <!-- ========================================= -->
+        <div id="tab-flashcards" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-teal-600 font-sans">🃏 3D Flip Flashcards</h2>
+                <div class="text-sm font-bold bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-sans">Mastered: <span id="fc-counter">0</span> / 6</div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Card 1 -->
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is a Leading Indicator? Give examples.</div>
+                            <div class="flip-card-back text-center text-lg flex flex-col">
+                                <span>Changes <strong>before</strong> real output changes. Signals trend onset.</span>
+                                <span class="text-sm mt-2 text-teal-800">Ex: Stock prices, new orders, building permits.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch6_fc1')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Which economist propounded that trade cycles are purely a monetary phenomenon?</div>
+                            <div class="flip-card-back text-center text-2xl">Hawtrey</div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch6_fc2')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What happens to interest rates and money holding preference during a Depression?</div>
+                            <div class="flip-card-back text-center text-lg flex flex-col">
+                                <span>Interest rates <strong>FALL</strong>.</span>
+                                <span>People's demand for holding liquid money (cash) <strong>INCREASES</strong>.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch6_fc3')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">According to Pigou, what causes business fluctuations?</div>
+                            <div class="flip-card-back text-center text-xl">Psychological factors (waves of optimism and pessimism of businessmen).</div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch6_fc4')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">State the Cobweb Theory and its author.</div>
+                            <div class="flip-card-back text-center text-lg flex flex-col">
+                                <span><strong>Author:</strong> Nicholas Kaldor</span>
+                                <span class="text-sm mt-2"><strong>Theory:</strong> Present prices substantially influence the production at some future date.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch6_fc5')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Which sectors are most disproportionately affected by business cycles?</div>
+                            <div class="flip-card-back text-center text-xl">Capital goods industries and Durable consumer goods industries.</div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch6_fc6')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+            </div>
+            <div class="mt-4 text-center text-xs text-gray-400 font-sans">Progress saves automatically to your iPad's local storage.</div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 6: MCQs                               -->
+        <!-- ========================================= -->
+        <div id="tab-mcq" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-orange-600">🎯 PYQ / MTP Practice MCQs</h2>
+                <div class="text-sm font-bold bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Score: <span id="mcq-score">0</span></div>
+            </div>
+            
+            <div class="space-y-8" id="mcq-container">
+                <!-- Question 1 -->
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border border-gray-200" data-correct="D">
+                    <p class="font-semibold text-lg mb-3">1. The lowest point in the business cycle is referred to as the:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q1" value="A" class="mr-2"> (a) Expansion</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q1" value="B" class="mr-2"> (b) Boom</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q1" value="C" class="mr-2"> (c) Peak</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q1" value="D" class="mr-2"> (d) Trough</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded border border-blue-200"><strong>Correct!</strong> Trough is the lowest point or the depth of depression before recovery starts.</div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border border-gray-200" data-correct="B">
+                    <p class="font-semibold text-lg mb-3">2. A leading indicator is:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q2" value="A" class="mr-2"> (a) a variable that tends to move along with the level of economic activity</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q2" value="B" class="mr-2"> (b) a variable that tends to move in advance of aggregate economic activity</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q2" value="C" class="mr-2"> (c) a variable that tends to move consequent on the level of aggregate economic activity</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q2" value="D" class="mr-2"> (d) None of the above</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded border border-blue-200"><strong>Correct!</strong> Leading indicators change BEFORE the economy follows a particular trend.</div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border border-gray-200" data-correct="D">
+                    <p class="font-semibold text-lg mb-3">3. Industries that are extremely sensitive to the business cycle are the:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q3" value="A" class="mr-2"> (a) Durable goods and service sectors.</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q3" value="B" class="mr-2"> (b) Non-durable goods and service sectors.</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q3" value="C" class="mr-2"> (c) Capital goods and non-durable goods sectors.</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q3" value="D" class="mr-2"> (d) Capital goods and durable goods sectors.</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded border border-blue-200"><strong>Correct!</strong> Capital and durable goods are disproportionately affected compared to agricultural or essential goods.</div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border border-gray-200" data-correct="A">
+                    <p class="font-semibold text-lg mb-3">4. According to Keynes, fluctuations in Economic activities are due to:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q4" value="A" class="mr-2"> (a) Fluctuation in aggregate effective demand.</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q4" value="B" class="mr-2"> (b) Innovations</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q4" value="C" class="mr-2"> (c) Changes in money supply</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q4" value="D" class="mr-2"> (d) Fluctuation in agricultural output</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded border border-blue-200"><strong>Correct!</strong> Keynes attributed cycles to aggregate effective demand. Schumpeter (Innovations), Hawtrey (Money Supply).</div>
+                </div>
+
+                <button onclick="gradeMCQs()" class="w-full py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition shadow-md">Submit & Grade Answers</button>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 7: SUMMARY TABLE                      -->
+        <!-- ========================================= -->
+        <div id="tab-summary" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-green-700">📊 Chapter 6 Master Summary Table</h2>
+            
+            <div class="overflow-x-auto rounded-lg border border-gray-200">
+                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-green-50">
+                        <tr>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700 uppercase">Category</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700 uppercase">Concept / Element</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700 uppercase">Key Detail / Formula / Authority</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-white">
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-gray-900 bg-gray-50" rowspan="4">Phases of Cycle</td>
+                            <td class="px-4 py-3 font-semibold text-blue-600">Expansion (Boom)</td>
+                            <td class="px-4 py-3">Full employment of resources; Rising prices & costs; Net investment occurs.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-blue-600">Peak (Prosperity)</td>
+                            <td class="px-4 py-3">Highest point; Inputs fall short; Growth stabilizes before reversing.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-blue-600">Contraction (Recession)</td>
+                            <td class="px-4 py-3">Supply exceeds Demand; Cancellation of orders; Incomes decline.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-blue-600">Trough (Depression)</td>
+                            <td class="px-4 py-3">Severe sluggishness; Negative growth; Low interest rates; Bankruptcies.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-gray-900 bg-gray-50" rowspan="3">Indicators</td>
+                            <td class="px-4 py-3">Leading</td>
+                            <td class="px-4 py-3">Change <strong>before</strong> real output. (e.g., Stock prices, new orders).</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3">Lagging</td>
+                            <td class="px-4 py-3">Change <strong>after</strong> real output. (e.g., Unemployment, Corporate Profits).</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3">Coincident</td>
+                            <td class="px-4 py-3">Change <strong>simultaneously</strong>. (e.g., GDP, Inflation, Industrial Production).</td>
+                        </tr>
+
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-gray-900 bg-gray-50" rowspan="5">Economists & Theories (Internal)</td>
+                            <td class="px-4 py-3">Keynes</td>
+                            <td class="px-4 py-3">Fluctuations in Aggregate Effective Demand</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3">Hawtrey</td>
+                            <td class="px-4 py-3">Purely monetary phenomenon (Money supply)</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3">Pigou</td>
+                            <td class="px-4 py-3">Psychological factors (optimism/pessimism)</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3">Schumpeter</td>
+                            <td class="px-4 py-3">Innovation theory</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3">Nicholas Kaldor</td>
+                            <td class="px-4 py-3">Cobweb theory (present prices influence future production)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 8: MIND MAP                           -->
+        <!-- ========================================= -->
+        <div id="tab-mindmap" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans overflow-x-auto">
+            <h2 class="text-3xl font-bold mb-6 text-pink-600">🧠 Chapter 6 Mind Map</h2>
+            
+            <div class="tree flex justify-center min-w-max pb-8">
+                <ul>
+                    <li>
+                        <a href="#" class="font-bold bg-pink-50 text-xl">Business Cycles</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="font-bold text-blue-700">Phases</a>
+                                <ul>
+                                    <li><a href="#">1. Expansion</a></li>
+                                    <li><a href="#">2. Peak</a></li>
+                                    <li><a href="#">3. Contraction</a></li>
+                                    <li><a href="#">4. Trough</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-green-700">Indicators</a>
+                                <ul>
+                                    <li><a href="#">Leading (Before)<br><span class="text-xs text-gray-500">Stock Prices</span></a></li>
+                                    <li><a href="#">Lagging (After)<br><span class="text-xs text-gray-500">Unemployment</span></a></li>
+                                    <li><a href="#">Coincident (Same)<br><span class="text-xs text-gray-500">GDP, Inflation</span></a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-purple-700">Causes</a>
+                                <ul>
+                                    <li>
+                                        <a href="#">Internal</a>
+                                        <ul>
+                                            <li><a href="#">Effective Demand (Keynes)</a></li>
+                                            <li><a href="#">Money Supply (Hawtrey)</a></li>
+                                            <li><a href="#">Psychological (Pigou)</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">External</a>
+                                        <ul>
+                                            <li><a href="#">Wars & Tech Shocks</a></li>
+                                            <li><a href="#">Natural Factors</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-12 text-center text-gray-400 text-sm pb-8 font-sans no-print">
+        &copy; Gemini 8-Pillar Study Suite • CA Foundation Business Economics
+    </footer>
+
+    <!-- INTERACTIVITY SCRIPT -->
+    <script>
+        // 1. Tab Switching Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // 2. Local Storage for Flashcards
+        function markMastered(btn, cardId) {
+            if(btn.innerText === "Mark Mastered") {
+                btn.innerText = "✅ Mastered";
+                btn.classList.replace("bg-gray-100", "bg-teal-500");
+                btn.classList.replace("text-gray-600", "text-white");
+                localStorage.setItem(cardId, "true");
+            } else {
+                btn.innerText = "Mark Mastered";
+                btn.classList.replace("bg-teal-500", "bg-gray-100");
+                btn.classList.replace("text-white", "text-gray-600");
+                localStorage.removeItem(cardId);
+            }
+            updateFcCounter();
+        }
+
+        function updateFcCounter() {
+            let count = 0;
+            for(let i=1; i<=6; i++) {
+                if(localStorage.getItem('ch6_fc'+i)) count++;
+            }
+            document.getElementById('fc-counter').innerText = count;
+        }
+
+        // Initialize Flashcards on load
+        window.onload = function() {
+            for(let i=1; i<=6; i++) {
+                let id = 'ch6_fc'+i;
+                if(localStorage.getItem(id)) {
+                    // Find the button associated with this card (assuming DOM order)
+                    let btns = document.querySelectorAll('#tab-flashcards button');
+                    if(btns[i-1]) {
+                        btns[i-1].innerText = "✅ Mastered";
+                        btns[i-1].classList.replace("bg-gray-100", "bg-teal-500");
+                        btns[i-1].classList.replace("text-gray-600", "text-white");
+                    }
+                }
+            }
+            updateFcCounter();
+            
+            // Load MCQ Score
+            if(localStorage.getItem('ch6_mcq_score')) {
+                document.getElementById('mcq-score').innerText = localStorage.getItem('ch6_mcq_score');
+            }
+        };
+
+        // 3. MCQ Grading Logic
+        function gradeMCQs() {
+            let score = 0;
+            let total = 4;
+            let cards = document.querySelectorAll('.mcq-card');
+            
+            cards.forEach((card, index) => {
+                let correctVal = card.getAttribute('data-correct');
+                let radios = card.querySelectorAll('input[type="radio"]');
+                let answered = false;
+                
+                radios.forEach(radio => {
+                    // Reset styling
+                    radio.parentElement.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    radio.disabled = true; // lock after submit
+                    
+                    if(radio.checked) {
+                        answered = true;
+                        if(radio.value === correctVal) {
+                            score++;
+                            radio.parentElement.classList.add('bg-green-100', 'border-green-500');
+                        } else {
+                            radio.parentElement.classList.add('bg-red-100', 'border-red-500');
+                        }
+                    }
+                    // Highlight correct answer anyway
+                    if(radio.value === correctVal) {
+                        radio.parentElement.classList.add('border-green-500');
+                        radio.parentElement.style.borderWidth = '2px';
+                    }
+                });
+                
+                // Show explanation
+                card.querySelector('.explanation').classList.remove('hidden');
+            });
+            
+            let finalScoreText = score + " / " + total;
+            document.getElementById('mcq-score').innerText = finalScoreText;
+            localStorage.setItem('ch6_mcq_score', finalScoreText);
+        }
+
+        // 4. Pomodoro Timer Logic
+        let timerInterval;
+        let timeLeft = 25 * 60; // 25 mins
+        let isRunning = false;
+
+        function toggleTimer() {
+            let btn = document.getElementById('timer-btn');
+            if(isRunning) {
+                clearInterval(timerInterval);
+                btn.innerText = "START";
+                btn.classList.replace("bg-red-100", "bg-blue-100");
+                btn.classList.replace("text-red-600", "text-blue-600");
+                isRunning = false;
+            } else {
+                timerInterval = setInterval(updateTimer, 1000);
+                btn.innerText = "PAUSE";
+                btn.classList.replace("bg-blue-100", "bg-red-100");
+                btn.classList.replace("text-blue-600", "text-red-600");
+                isRunning = true;
+            }
+        }
+
+        function updateTimer() {
+            if(timeLeft <= 0) {
+                clearInterval(timerInterval);
+                alert("🍅 Pomodoro complete! Take a 5-minute break.");
+                timeLeft = 25 * 60;
+                document.getElementById('timer-btn').innerText = "START";
+                isRunning = false;
+            } else {
+                timeLeft--;
+            }
+            
+            let m = Math.floor(timeLeft / 60);
+            let s = timeLeft % 60;
+            document.getElementById('timer-display').innerText = 
+                (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Foundation - Business Economics: Chapter 1 - Introduction to Business Economics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --line-color: #e5e7eb;
+            --margin-line: #ef4444;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: #1f2937;
+        }
+        .notebook-paper {
+            background-image: repeating-linear-gradient(transparent, transparent 31px, var(--line-color) 31px, var(--line-color) 32px);
+            background-position: 0 1.2rem;
+            background-attachment: local;
+            border-left: 2px solid var(--margin-line);
+            padding-left: 2rem;
+            font-family: 'Kalam', cursive;
+            font-size: 1.15rem;
+            line-height: 2rem;
+        }
+        .hl-yellow { background: linear-gradient(104deg, rgba(253,230,138,0) 0.9%, rgba(253,230,138,1) 2.4%, rgba(253,230,138,0.6) 5.8%, rgba(253,230,138,1) 93%, rgba(253,230,138,0.7) 96%, rgba(253,230,138,0) 98%); }
+        .hl-green { background: linear-gradient(104deg, rgba(167,243,208,0) 0.9%, rgba(167,243,208,1) 2.4%, rgba(167,243,208,0.6) 5.8%, rgba(167,243,208,1) 93%, rgba(167,243,208,0.7) 96%, rgba(167,243,208,0) 98%); }
+        .hl-pink { background: linear-gradient(104deg, rgba(252,165,165,0) 0.9%, rgba(252,165,165,1) 2.4%, rgba(252,165,165,0.6) 5.8%, rgba(252,165,165,1) 93%, rgba(252,165,165,0.7) 96%, rgba(252,165,165,0) 98%); }
+        .hl-blue { background: linear-gradient(104deg, rgba(191,219,254,0) 0.9%, rgba(191,219,254,1) 2.4%, rgba(191,219,254,0.6) 5.8%, rgba(191,219,254,1) 93%, rgba(191,219,254,0.7) 96%, rgba(191,219,254,0) 98%); }
+        
+        .sticky-note {
+            background-color: #fef08a;
+            box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+            padding: 1rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.25rem;
+            margin: 1.25rem 0;
+            border-bottom-right-radius: 20px 5px;
+        }
+
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 220px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-family: 'Patrick Hand', cursive;
+            font-size: 1.25rem;
+        }
+        .flip-card-front {
+            background-color: #ffffff;
+            border: 2px solid #e5e7eb;
+            color: #111827;
+        }
+        .flip-card-back {
+            background-color: #eff6ff;
+            border: 2px solid #93c5fd;
+            color: #1e3a8a;
+            transform: rotateY(180deg);
+        }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .tab-btn { transition: all 0.2s; }
+        .tab-btn.active { 
+            background-color: #2563eb; 
+            color: white; 
+            border-color: #2563eb;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3);
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            .notebook-paper { background: none; border: none; padding: 0; }
+            body { background: white; }
+            .tab-content { display: block !important; page-break-before: always; }
+            .tab-content:first-of-type { page-break-before: avoid; }
+        }
+        
+        .tree ul { padding-top: 20px; position: relative; transition: all 0.5s; }
+        .tree li { float: left; text-align: center; list-style-type: none; position: relative; padding: 20px 5px 0 5px; transition: all 0.5s; }
+        .tree li::before, .tree li::after { content: ''; position: absolute; top: 0; right: 50%; border-top: 2px solid #cbd5e1; width: 50%; height: 20px; }
+        .tree li::after { right: auto; left: 50%; border-left: 2px solid #cbd5e1; }
+        .tree li:only-child::after, .tree li:only-child::before { display: none; }
+        .tree li:only-child { padding-top: 0; }
+        .tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+        .tree li:last-child::before { border-right: 2px solid #cbd5e1; border-radius: 0 5px 0 0; }
+        .tree li:first-child::after { border-radius: 5px 0 0 0; }
+        .tree ul ul::before { content: ''; position: absolute; top: 0; left: 50%; border-left: 2px solid #cbd5e1; width: 0; height: 20px; }
+        .tree li a { border: 2px solid #cbd5e1; padding: 8px 12px; text-decoration: none; color: #1e293b; font-family: 'Patrick Hand', cursive; display: inline-block; border-radius: 8px; background: white; }
+        .tree li a:hover { background: #e0f2fe; border-color: #38bdf8; }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-12">
+
+    <!-- Top Navigation & Tools -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">📘</span>
+                    <h1 class="font-bold text-xl tracking-tight text-gray-900">CA Foundation: Ch 1 - Introduction to Business Economics</h1>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <!-- Pomodoro Timer -->
+                    <div class="flex items-center space-x-2 bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200">
+                        <span class="text-lg">⏱️</span>
+                        <span id="timer-display" class="font-mono font-semibold text-slate-700">25:00</span>
+                        <button id="timer-btn" onclick="toggleTimer()" class="text-xs font-bold text-blue-600 hover:text-blue-800 ml-2 px-2 py-1 rounded bg-blue-100 hover:bg-blue-200 transition">START</button>
+                    </div>
+                    
+                    <button onclick="window.print()" class="flex items-center space-x-1 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition shadow-sm">
+                        <span>🖨️</span><span>Save PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pillar Tabs -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto no-scrollbar border-t border-gray-100">
+            <div class="flex space-x-2 py-3" id="tabs-container">
+                <button onclick="switchTab('tab-notes')" class="tab-btn active whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">✍️ 1. Detailed Notes</button>
+                <button onclick="switchTab('tab-traps')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🚨 2. Trap Zone</button>
+                <button onclick="switchTab('tab-revision')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">⚡ 3. Revision & Mnemonics</button>
+                <button onclick="switchTab('tab-recall')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📝 4. Active Recall</button>
+                <button onclick="switchTab('tab-flashcards')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🃏 5. Flashcards</button>
+                <button onclick="switchTab('tab-mcq')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🎯 6. MCQs</button>
+                <button onclick="switchTab('tab-summary')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📊 7. Summary</button>
+                <button onclick="switchTab('tab-mindmap')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🧠 8. Mind Map</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto mt-8 px-4 sm:px-6 lg:px-8">
+
+        <!-- ========================================= -->
+        <!-- TAB 1: HANDWRITTEN DETAILED NOTES         -->
+        <!-- ========================================= -->
+        <div id="tab-notes" class="tab-content active notebook-paper bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden pr-6">
+            <h2 class="text-3xl font-bold mb-4 pt-4 hl-pink inline-block">Chapter 1: Nature & Scope of Business Economics</h2>
+            <div class="mb-4 text-sm font-sans text-gray-500 font-semibold">Weightage: 5% (~5 Marks) | Core Focus: Definitions, Methodology & Economic Systems</div>
+
+            <h3 class="text-2xl font-bold mt-6 text-blue-800">1. Origin & Foundational Definitions</h3>
+            <p>The word <strong>'Economics'</strong> owes its origin to the Greek word <span class="hl-yellow">'Oikonomia'</span>, meaning <em>'household management'</em>. Until the 19th century, economics was known as <strong>'Political Economy'</strong>.</p>
+            <p>Two fundamental facts form the cornerstone of economics:</p>
+            <ul class="list-disc ml-8">
+                <li>Human wants are <strong>unlimited</strong>.</li>
+                <li>The means (resources) to satisfy these wants are <strong>relatively scarce</strong> and have <strong>alternative uses</strong>.</li>
+            </ul>
+
+            <div class="sticky-note mx-auto max-w-lg">
+                <strong>📌 The Great Definitions Spectrum:</strong><br>
+                • <strong>Adam Smith (1776):</strong> Wealth Definition ("An Inquiry into the Nature and Causes of the Wealth of Nations").<br>
+                • <strong>Alfred Marshall (1890):</strong> Material Welfare Definition ("Principles of Economics").<br>
+                • <strong>Lionel Robbins (1932):</strong> Scarcity Definition (Wants vs Scarce Means with Alternative Uses).<br>
+                • <strong>Paul A. Samuelson:</strong> Growth & Development-oriented Definition.
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">2. What is Business Economics?</h3>
+            <p>Business Economics (also called <strong>Managerial Economics</strong>) is the integration of <span class="hl-green">economic theory with business practice</span> for the purpose of facilitating decision-making and forward planning by management.</p>
+            <p><strong>Joel Dean:</strong> Defined Business Economics as <em>"the use of economic analysis in the formulation of business policies."</em></p>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">3. Nature of Business Economics</h3>
+            <ol class="list-decimal ml-8">
+                <li><strong>Business Economics is a Science:</strong> It establishes a cause-and-effect relationship using scientific methodology.</li>
+                <li><strong>Based on Microeconomics:</strong> A business manager is primarily concerned with the achievement of the internal goals of his specific firm.</li>
+                <li><strong>Incorporates Elements of Macroeconomics:</strong> A firm operates in an external macroeconomic environment (tax policy, inflation, exchange rates) that cannot be ignored.</li>
+                <li><strong>Business Economics is an Art:</strong> It involves the practical application of rules and principles to achieve set targets.</li>
+                <li><strong>Use of Theory of Markets and Private Enterprise:</strong> Uses the theory of the firm and resource allocation in competitive or imperfect markets.</li>
+                <li><strong>Pragmatic in Approach:</strong> While microeconomics can be abstract, Business Economics is practical and avoids unrealistic theoretical assumptions.</li>
+                <li><strong><span class="hl-pink">Normative in Nature (Value Judgments):</span></strong>
+                    <ul class="list-disc ml-6">
+                        <li><em>Positive Science:</em> Explains <strong>"what is"</strong> (objective, facts, descriptive, cause & effect, testable).</li>
+                        <li><em>Normative Science:</em> Explains <strong>"what ought to be"</strong> (prescriptive, value judgments, ethical goals). Business economics is <strong>predominantly normative</strong>.</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">4. Scope of Business Economics</h3>
+            <p><strong>A. Microeconomics applied to Operational / Internal Issues:</strong> Demand forecasting, cost and production analysis, pricing policies, profit management, capital expenditure management.</p>
+            <p><strong>B. Macroeconomics applied to Environmental / External Issues:</strong> Phase of the business cycle, trends in national income, government industrial & monetary policy, trade relations.</p>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">5. Central Economic Problems & Economic Systems</h3>
+            <p>Every society faces 4 central problems: (1) <em>What to produce?</em> (2) <em>How to produce?</em> (3) <em>For whom to produce?</em> (4) <em>What provisions to make for economic growth?</em></p>
+            
+            <p class="mt-4"><strong>Three Basic Economic Systems:</strong></p>
+            <ul class="list-disc ml-8">
+                <li><span class="hl-yellow">Capitalist Economy (Free Market / Laissez-faire):</span> Private ownership of resources. Driven by <em>profit motive</em> and guided by the <em>price mechanism</em> (Adam Smith's "Invisible Hand"). Features <strong>Consumer Sovereignty</strong> (consumer is king). Major limitation: Income inequality.</li>
+                <li><span class="hl-pink">Socialist Economy (Command / Karl Marx):</span> Collective/State ownership of all factors of production (except labour). Central Planning Authority (CPA) decides what, how, and for whom. No consumer sovereignty. Abolition of private profit.</li>
+                <li><span class="hl-blue">Mixed Economy:</span> Coexistence of private enterprise and public sector. India is a mixed economy. Solves problems through both price mechanism and state regulation.</li>
+            </ul>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 2: ICAI TRAP ZONE (MISTAKE TRACKER)   -->
+        <!-- ========================================= -->
+        <div id="tab-traps" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-red-600 flex items-center">🚨 ICAI Trap Zone & Mistake Tracker</h2>
+            <p class="mb-6 text-gray-600">These specific conceptual traps frequently appear in ICAI foundation exams. Master the distinction!</p>
+            
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 border">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">What You Might Think (The Trap)</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-green-600 uppercase tracking-wider">What ICAI Actually Wants (The Truth)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Business economics is purely a positive science because it analyzes data.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> Business Economics is <strong>predominantly Normative</strong>. It prescribes what a firm <em>ought to do</em> to achieve goals. Pure micro theory is positive, but managerial economics is normative.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Consumer sovereignty is present in all economic systems.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> Consumer sovereignty is restricted under Capitalism only by income, but is <strong>completely absent</strong> in a Socialist/Command economy where the Central Planning Authority dictates production.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Robbins defined economics as the study of mankind in ordinary business of life.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> That is <strong>Alfred Marshall's</strong> welfare definition! Lionel Robbins provided the <strong>Scarcity & Choice</strong> definition.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Business Economics deals only with Microeconomics.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> Though it is <strong>largely based on Microeconomics</strong>, it actively incorporates <strong>Macroeconomics</strong> because external factors (GDP, monetary policy, inflation) directly impact business viability.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 3: REVISION & MNEMONICS               -->
+        <!-- ========================================= -->
+        <div id="tab-revision" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-4 text-purple-700">⚡ Exam-Eve Revision Notes & Mnemonic Cheatsheet</h2>
+            
+            <div class="bg-purple-50 rounded-lg p-5 mb-6 border border-purple-100">
+                <h3 class="text-xl font-bold text-purple-800 mb-3">🧠 The Mnemonic Cheatsheet</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-4 rounded shadow-sm border border-gray-100">
+                        <strong class="text-blue-600 block mb-1">Nature of Business Economics</strong>
+                        <div class="font-mono text-lg font-bold text-gray-800">"S-A-M-P-N"</div>
+                        <ul class="text-sm mt-2 text-gray-600 space-y-1">
+                            <li><strong>S</strong> - Science & Art</li>
+                            <li><strong>A</strong> - Abstract theory discarded (Pragmatic)</li>
+                            <li><strong>M</strong> - Micro-based with Macro incorporation</li>
+                            <li><strong>P</strong> - Private enterprise theory used</li>
+                            <li><strong>N</strong> - Normative approach</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded shadow-sm border border-gray-100">
+                        <strong class="text-blue-600 block mb-1">Famous Economists & Quotes</strong>
+                        <div class="font-mono text-lg font-bold text-gray-800">"S-M-R-S"</div>
+                        <ul class="text-sm mt-2 text-gray-600 space-y-1">
+                            <li><strong>S</strong>mith = Wealth (1776)</li>
+                            <li><strong>M</strong>arshall = Welfare (1890)</li>
+                            <li><strong>R</strong>obbins = Scarcity (1932)</li>
+                            <li><strong>S</strong>amuelson = Growth & Dynamics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">⏱️ 10-Minute Rapid Review Bullet Points</h3>
+            <ul class="list-disc ml-5 space-y-2 text-gray-700">
+                <li><strong>Oikonomia:</strong> Greek word meaning management of household.</li>
+                <li><strong>Positive Economics:</strong> Objective, explains cause & effect ("What is"). Value-free.</li>
+                <li><strong>Normative Economics:</strong> Prescriptive, involves ethical considerations ("What ought to be").</li>
+                <li><strong>Deductive Method:</strong> Descends from general propositions to particulars (abstract logic).</li>
+                <li><strong>Inductive Method:</strong> Mounts from particular facts to general principles (empirical).</li>
+                <li><strong>Capitalism:</strong> Private ownership, price mechanism, consumer sovereignty, profit motive.</li>
+                <li><strong>Socialism:</strong> Collective ownership, Central Planning Authority, social welfare, absence of consumer sovereignty.</li>
+                <li><strong>Mixed Economy:</strong> Dual system, public and private sectors coexist.</li>
+            </ul>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 4: ACTIVE RECALL WORKSHEETS           -->
+        <!-- ========================================= -->
+        <div id="tab-recall" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-indigo-600">📝 Active Recall Worksheets</h2>
+                <span class="text-sm text-gray-500 bg-gray-100 px-3 py-1 rounded-full">Practice with Apple Pencil</span>
+            </div>
+            <p class="mb-4 text-gray-600">Fill in the blanks from memory. Do not refer to Tab 1!</p>
+            
+            <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 bg-gray-50">
+                <h3 class="text-lg font-bold mb-4">1. Identify the Economist & Definition</h3>
+                <ul class="space-y-4 text-lg">
+                    <li>1. "Economics is the study of mankind in the ordinary business of life": ___________________________</li>
+                    <li>2. Scarcity definition focusing on alternative uses of limited resources: ___________________________</li>
+                    <li>3. An Inquiry into the Nature and Causes of the Wealth of Nations (1776): ___________________________</li>
+                    <li>4. "Business Economics is the use of economic analysis in the formulation of business policies": ___________________________</li>
+                </ul>
+
+                <h3 class="text-lg font-bold mt-8 mb-4">2. Classify: Positive vs. Normative</h3>
+                <table class="w-full border-collapse border border-gray-400 bg-white">
+                    <tr>
+                        <td class="border border-gray-400 p-3 font-semibold w-2/3">"An increase in minimum wage leads to unemployment among unskilled workers."</td>
+                        <td class="border border-gray-400 p-3 text-gray-400 w-1/3">Type: ___________________</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-400 p-3 font-semibold">"The government should provide free healthcare to all citizens."</td>
+                        <td class="border border-gray-400 p-3 text-gray-400">Type: ___________________</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-400 p-3 font-semibold">"India ought to spend at least 6% of GDP on education."</td>
+                        <td class="border border-gray-400 p-3 text-gray-400">Type: ___________________</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-400 p-3 font-semibold">"Printing more currency causes an increase in price level."</td>
+                        <td class="border border-gray-400 p-3 text-gray-400">Type: ___________________</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 5: FLASHCARDS                         -->
+        <!-- ========================================= -->
+        <div id="tab-flashcards" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-teal-600 font-sans">🃏 3D Flip Flashcards</h2>
+                <div class="text-sm font-bold bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-sans">Mastered: <span id="fc-counter">0</span> / 6</div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Is Business Economics Positive or Normative? Explain.</div>
+                            <div class="flip-card-back text-center text-lg flex flex-col">
+                                <span>Predominantly <strong>Normative</strong>.</span>
+                                <span class="text-sm mt-2 text-teal-800">It prescribes course of action (what ought to be done) for a firm to achieve goals, rather than merely stating facts.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch1_fc1')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+                
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is the Greek root of the word 'Economics'?</div>
+                            <div class="flip-card-back text-center text-xl"><strong>Oikonomia</strong><br><span class="text-sm text-blue-700">(Meaning: Household Management)</span></div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch1_fc2')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is 'Consumer Sovereignty'? In which system is it absent?</div>
+                            <div class="flip-card-back text-center text-lg flex flex-col">
+                                <span>Consumer determines what is produced through demand.</span>
+                                <span class="text-sm mt-2 text-red-600 font-bold">Completely ABSENT in Socialist (Command) economies.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch1_fc3')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Differentiate between Deductive and Inductive reasoning.</div>
+                            <div class="flip-card-back text-center text-lg flex flex-col">
+                                <span><strong>Deductive:</strong> General to Particular (Abstract/Analytical).</span>
+                                <span><strong>Inductive:</strong> Particular facts to General rules (Empirical/Historical).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch1_fc4')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Who coined the term 'Invisible Hand' and what does it signify?</div>
+                            <div class="flip-card-back text-center text-lg flex flex-col">
+                                <span><strong>Adam Smith</strong></span>
+                                <span class="text-sm mt-2">Signifies the automatic balancing power of the <strong>Price Mechanism</strong> under free market capitalism.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch1_fc5')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Name two internal operational issues covered under Business Economics.</div>
+                            <div class="flip-card-back text-center text-lg flex flex-col">
+                                <span>1. Demand Forecasting</span>
+                                <span>2. Cost & Production Analysis / Pricing Decisions</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'ch1_fc6')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded transition text-sm">Mark Mastered</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 6: MCQs                               -->
+        <!-- ========================================= -->
+        <div id="tab-mcq" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-orange-600">🎯 ICAI Pattern MCQs</h2>
+                <div class="text-sm font-bold bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Score: <span id="mcq-score">0</span></div>
+            </div>
+            
+            <div class="space-y-8" id="mcq-container">
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border border-gray-200" data-correct="B">
+                    <p class="font-semibold text-lg mb-3">1. Business Economics is:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q1" value="A" class="mr-2"> (a) Abstract and purely theoretical</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q1" value="B" class="mr-2"> (b) Pragmatic in its approach</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q1" value="C" class="mr-2"> (c) Purely descriptive positive science</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q1" value="D" class="mr-2"> (d) Unconcerned with macroeconomic variables</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded border border-blue-200"><strong>Correct!</strong> Business Economics is pragmatic (practical) and applies economic theories directly to real-world management decision problems.</div>
+                </div>
+
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border border-gray-200" data-correct="C">
+                    <p class="font-semibold text-lg mb-3">2. Which of the following is a normative statement?</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q2" value="A" class="mr-2"> (a) Higher taxes reduce consumption spending.</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q2" value="B" class="mr-2"> (b) When interest rates rise, borrowing becomes expensive.</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q2" value="C" class="mr-2"> (c) The government ought to guarantee basic employment for rural youth.</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q2" value="D" class="mr-2"> (d) A decrease in price causes an increase in quantity demanded.</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded border border-blue-200"><strong>Correct!</strong> Normative statements express value judgments and opinions ("ought to", "should be") and cannot be verified with empirical data alone.</div>
+                </div>
+
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border border-gray-200" data-correct="B">
+                    <p class="font-semibold text-lg mb-3">3. In a command economy, all critical economic decisions are made by:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q3" value="A" class="mr-2"> (a) Consumers through market demand</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q3" value="B" class="mr-2"> (b) The Central Planning Authority</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q3" value="C" class="mr-2"> (c) The interaction of price mechanism</label>
+                        <label class="block p-3 rounded border border-gray-300 hover:bg-gray-100 cursor-pointer transition"><input type="radio" name="q3" value="D" class="mr-2"> (d) Private corporate cartels</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded border border-blue-200"><strong>Correct!</strong> In a command/socialist economy, the Central Planning Authority (CPA) exercises direct control over what, how, and for whom to produce.</div>
+                </div>
+
+                <button onclick="gradeMCQs()" class="w-full py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition shadow-md">Submit & Grade Answers</button>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 7: SUMMARY TABLE                      -->
+        <!-- ========================================= -->
+        <div id="tab-summary" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-green-700">📊 Chapter 1 Master Comparative Table</h2>
+            
+            <div class="overflow-x-auto rounded-lg border border-gray-200">
+                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-green-50">
+                        <tr>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700 uppercase">Feature / Parameter</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700 uppercase">Capitalist Economy</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700 uppercase">Socialist Economy</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700 uppercase">Mixed Economy</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-white">
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-gray-900 bg-gray-50">Ownership of Means of Production</td>
+                            <td class="px-4 py-3">Private Individuals</td>
+                            <td class="px-4 py-3">State / Society as a whole</td>
+                            <td class="px-4 py-3">Both Private and State (Dual)</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-gray-900 bg-gray-50">Guiding Motive</td>
+                            <td class="px-4 py-3">Self-interest & Profit</td>
+                            <td class="px-4 py-3">Social Welfare & Collective good</td>
+                            <td class="px-4 py-3">Profit + Social Welfare</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-gray-900 bg-gray-50">Allocation Mechanism</td>
+                            <td class="px-4 py-3">Price Mechanism (Market forces)</td>
+                            <td class="px-4 py-3">Central Planning Authority</td>
+                            <td class="px-4 py-3">Price Mechanism + State Direction</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold text-gray-900 bg-gray-50">Consumer Sovereignty</td>
+                            <td class="px-4 py-3 text-green-600 font-bold">Present (Consumer is King)</td>
+                            <td class="px-4 py-3 text-red-600 font-bold">Absent</td>
+                            <td class="px-4 py-3">Present, subject to regulations</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 8: MIND MAP                           -->
+        <!-- ========================================= -->
+        <div id="tab-mindmap" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans overflow-x-auto">
+            <h2 class="text-3xl font-bold mb-6 text-pink-600">🧠 Chapter 1 Mind Map</h2>
+            
+            <div class="tree flex justify-center min-w-max pb-8">
+                <ul>
+                    <li>
+                        <a href="#" class="font-bold bg-pink-50 text-xl">Business Economics</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="font-bold text-blue-700">Definitions</a>
+                                <ul>
+                                    <li><a href="#">Smith (Wealth)</a></li>
+                                    <li><a href="#">Marshall (Welfare)</a></li>
+                                    <li><a href="#">Robbins (Scarcity)</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-green-700">Nature</a>
+                                <ul>
+                                    <li><a href="#">Micro-Based</a></li>
+                                    <li><a href="#">Normative</a></li>
+                                    <li><a href="#">Pragmatic</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-purple-700">Economic Systems</a>
+                                <ul>
+                                    <li><a href="#">Capitalist (Market)</a></li>
+                                    <li><a href="#">Socialist (Command)</a></li>
+                                    <li><a href="#">Mixed (Coexistence)</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-12 text-center text-gray-400 text-sm pb-8 font-sans no-print">
+        &copy; 8-Pillar Master Study Suite • CA Foundation Business Economics
+    </footer>
+
+    <!-- INTERACTIVITY SCRIPT -->
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function markMastered(btn, cardId) {
+            if(btn.innerText === "Mark Mastered") {
+                btn.innerText = "✅ Mastered";
+                btn.classList.replace("bg-gray-100", "bg-teal-500");
+                btn.classList.replace("text-gray-600", "text-white");
+                localStorage.setItem(cardId, "true");
+            } else {
+                btn.innerText = "Mark Mastered";
+                btn.classList.replace("bg-teal-500", "bg-gray-100");
+                btn.classList.replace("text-white", "text-gray-600");
+                localStorage.removeItem(cardId);
+            }
+            updateFcCounter();
+        }
+
+        function updateFcCounter() {
+            let count = 0;
+            for(let i=1; i<=6; i++) {
+                if(localStorage.getItem('ch1_fc'+i)) count++;
+            }
+            document.getElementById('fc-counter').innerText = count;
+        }
+
+        window.onload = function() {
+            for(let i=1; i<=6; i++) {
+                let id = 'ch1_fc'+i;
+                if(localStorage.getItem(id)) {
+                    let btns = document.querySelectorAll('#tab-flashcards button');
+                    if(btns[i-1]) {
+                        btns[i-1].innerText = "✅ Mastered";
+                        btns[i-1].classList.replace("bg-gray-100", "bg-teal-500");
+                        btns[i-1].classList.replace("text-gray-600", "text-white");
+                    }
+                }
+            }
+            updateFcCounter();
+        };
+
+        function gradeMCQs() {
+            let score = 0;
+            let total = 3;
+            let cards = document.querySelectorAll('.mcq-card');
+            
+            cards.forEach(card => {
+                let correctVal = card.getAttribute('data-correct');
+                let radios = card.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => {
+                    radio.parentElement.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    radio.disabled = true;
+                    if(radio.checked) {
+                        if(radio.value === correctVal) {
+                            score++;
+                            radio.parentElement.classList.add('bg-green-100', 'border-green-500');
+                        } else {
+                            radio.parentElement.classList.add('bg-red-100', 'border-red-500');
+                        }
+                    }
+                    if(radio.value === correctVal) {
+                        radio.parentElement.classList.add('border-green-500');
+                    }
+                });
+                card.querySelector('.explanation').classList.remove('hidden');
+            });
+            document.getElementById('mcq-score').innerText = score + " / " + total;
+        }
+
+        let timerInterval;
+        let timeLeft = 25 * 60;
+        let isRunning = false;
+
+        function toggleTimer() {
+            let btn = document.getElementById('timer-btn');
+            if(isRunning) {
+                clearInterval(timerInterval);
+                btn.innerText = "START";
+                btn.classList.replace("bg-red-100", "bg-blue-100");
+                btn.classList.replace("text-red-600", "text-blue-600");
+                isRunning = false;
+            } else {
+                timerInterval = setInterval(updateTimer, 1000);
+                btn.innerText = "PAUSE";
+                btn.classList.replace("bg-blue-100", "bg-red-100");
+                btn.classList.replace("text-blue-600", "text-red-600");
+                isRunning = true;
+            }
+        }
+
+        function updateTimer() {
+            if(timeLeft <= 0) {
+                clearInterval(timerInterval);
+                alert("🍅 Pomodoro complete! Take a 5-minute break.");
+                timeLeft = 25 * 60;
+                document.getElementById('timer-btn').innerText = "START";
+                isRunning = false;
+            } else {
+                timeLeft--;
+            }
+            let m = Math.floor(timeLeft / 60);
+            let s = timeLeft % 60;
+            document.getElementById('timer-display').innerText = 
+                (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+        }
+    </script>
+</body>
+</html>

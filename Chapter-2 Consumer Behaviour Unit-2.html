@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Foundation - Business Economics: Ch 2 Unit 2 — Theory of Consumer Behaviour</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --line-color: #e5e7eb;
+            --margin-line: #ef4444;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: #1f2937; }
+        .notebook-paper {
+            background-image: repeating-linear-gradient(transparent, transparent 31px, var(--line-color) 31px, var(--line-color) 32px);
+            background-position: 0 1.2rem;
+            background-attachment: local;
+            border-left: 2px solid var(--margin-line);
+            padding-left: 2rem;
+            font-family: 'Kalam', cursive;
+            font-size: 1.15rem;
+            line-height: 2rem;
+        }
+        .hl-yellow { background: linear-gradient(104deg, rgba(253,230,138,0) 0.9%, rgba(253,230,138,1) 2.4%, rgba(253,230,138,0.6) 5.8%, rgba(253,230,138,1) 93%, rgba(253,230,138,0.7) 96%, rgba(253,230,138,0) 98%); }
+        .hl-green { background: linear-gradient(104deg, rgba(167,243,208,0) 0.9%, rgba(167,243,208,1) 2.4%, rgba(167,243,208,0.6) 5.8%, rgba(167,243,208,1) 93%, rgba(167,243,208,0.7) 96%, rgba(167,243,208,0) 98%); }
+        .hl-pink { background: linear-gradient(104deg, rgba(252,165,165,0) 0.9%, rgba(252,165,165,1) 2.4%, rgba(252,165,165,0.6) 5.8%, rgba(252,165,165,1) 93%, rgba(252,165,165,0.7) 96%, rgba(252,165,165,0) 98%); }
+        .hl-blue { background: linear-gradient(104deg, rgba(191,219,254,0) 0.9%, rgba(191,219,254,1) 2.4%, rgba(191,219,254,0.6) 5.8%, rgba(191,219,254,1) 93%, rgba(191,219,254,0.7) 96%, rgba(191,219,254,0) 98%); }
+        
+        .sticky-note {
+            background-color: #fef08a;
+            box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+            padding: 1rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.25rem;
+            margin: 1.25rem 0;
+            border-bottom-right-radius: 20px 5px;
+        }
+
+        .flip-card { background-color: transparent; width: 100%; height: 230px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+        .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back {
+            position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+            display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+            border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-family: 'Patrick Hand', cursive; font-size: 1.2rem;
+        }
+        .flip-card-front { background-color: #ffffff; border: 2px solid #e5e7eb; color: #111827; }
+        .flip-card-back { background-color: #eff6ff; border: 2px solid #93c5fd; color: #1e3a8a; transform: rotateY(180deg); }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .tab-btn { transition: all 0.2s; }
+        .tab-btn.active { background-color: #2563eb; color: white; border-color: #2563eb; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3); }
+
+        @media print {
+            .no-print { display: none !important; }
+            .notebook-paper { background: none; border: none; padding: 0; }
+            body { background: white; }
+            .tab-content { display: block !important; page-break-before: always; }
+            .tab-content:first-of-type { page-break-before: avoid; }
+        }
+
+        .tree ul { padding-top: 20px; position: relative; transition: all 0.5s; }
+        .tree li { float: left; text-align: center; list-style-type: none; position: relative; padding: 20px 5px 0 5px; transition: all 0.5s; }
+        .tree li::before, .tree li::after { content: ''; position: absolute; top: 0; right: 50%; border-top: 2px solid #cbd5e1; width: 50%; height: 20px; }
+        .tree li::after { right: auto; left: 50%; border-left: 2px solid #cbd5e1; }
+        .tree li:only-child::after, .tree li:only-child::before { display: none; }
+        .tree li:only-child { padding-top: 0; }
+        .tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+        .tree li:last-child::before { border-right: 2px solid #cbd5e1; border-radius: 0 5px 0 0; }
+        .tree li:first-child::after { border-radius: 5px 0 0 0; }
+        .tree ul ul::before { content: ''; position: absolute; top: 0; left: 50%; border-left: 2px solid #cbd5e1; width: 0; height: 20px; }
+        .tree li a { border: 2px solid #cbd5e1; padding: 8px 12px; text-decoration: none; color: #1e293b; font-family: 'Patrick Hand', cursive; display: inline-block; border-radius: 8px; background: white; }
+        .tree li a:hover { background: #e0f2fe; border-color: #38bdf8; }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-12">
+
+    <!-- Top Navigation & Tools -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">🧠</span>
+                    <h1 class="font-bold text-xl tracking-tight text-gray-900">CA Foundation: Ch 2 Unit 2 — Theory of Consumer Behaviour</h1>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200">
+                        <span class="text-lg">⏱️</span>
+                        <span id="timer-display" class="font-mono font-semibold text-slate-700">25:00</span>
+                        <button id="timer-btn" onclick="toggleTimer()" class="text-xs font-bold text-blue-600 hover:text-blue-800 ml-2 px-2 py-1 rounded bg-blue-100 hover:bg-blue-200 transition">START</button>
+                    </div>
+                    
+                    <button onclick="window.print()" class="flex items-center space-x-1 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition shadow-sm">
+                        <span>🖨️</span><span>Save PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pillar Tabs -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto no-scrollbar border-t border-gray-100">
+            <div class="flex space-x-2 py-3" id="tabs-container">
+                <button onclick="switchTab('tab-notes')" class="tab-btn active whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">✍️ 1. Detailed Notes</button>
+                <button onclick="switchTab('tab-traps')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🚨 2. Trap Zone</button>
+                <button onclick="switchTab('tab-revision')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">⚡ 3. Revision & Mnemonics</button>
+                <button onclick="switchTab('tab-recall')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📝 4. Active Recall</button>
+                <button onclick="switchTab('tab-flashcards')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🃏 5. Flashcards</button>
+                <button onclick="switchTab('tab-mcq')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🎯 6. MCQs</button>
+                <button onclick="switchTab('tab-summary')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📊 7. Summary</button>
+                <button onclick="switchTab('tab-mindmap')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🧠 8. Mind Map</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto mt-8 px-4 sm:px-6 lg:px-8">
+
+        <!-- ========================================= -->
+        <!-- TAB 1: DETAILED HANDWRITTEN NOTES         -->
+        <!-- ========================================= -->
+        <div id="tab-notes" class="tab-content active notebook-paper bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden pr-6">
+            <h2 class="text-3xl font-bold mb-4 pt-4 hl-pink inline-block">Ch 2 Unit 2: Theory of Consumer Behaviour</h2>
+            <div class="mb-4 text-sm font-sans text-gray-500 font-semibold">Weightage: Core Theory (~3–4 Marks) | Cardinal vs Ordinal Utility & Consumer Surplus</div>
+
+            <h3 class="text-2xl font-bold mt-6 text-blue-800">1. Two Approaches to Consumer Behaviour</h3>
+            <p>Economists study consumer equilibrium through two distinct theoretical approaches:</p>
+            <ul class="list-disc ml-8">
+                <li><span class="hl-yellow">Cardinal Utility Approach (Marshallian):</span> Assumes utility is quantitatively measurable in monetary units or imaginary units called <em>'utils'</em>.</li>
+                <li><span class="hl-green">Ordinal Utility Approach (Hicks & Allen):</span> Assumes utility cannot be quantified numerically, but preferences can be ranked into orders of satisfaction (1st, 2nd, 3rd) via <em>Indifference Curves</em>.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">2. Cardinal Approach: Total Utility (TU) & Marginal Utility (MU)</h3>
+            <p><strong>Utility:</strong> The want-satisfying power of a commodity. It is subjective, relative, and ethically neutral.</p>
+            <ul class="list-disc ml-8">
+                <li><strong>Total Utility (TU):</strong> Sum of satisfaction derived from consuming all successive units of a commodity ($TU_n = \sum MU$).</li>
+                <li><strong>Marginal Utility (MU):</strong> Addition made to Total Utility by consuming one additional unit ($MU_n = TU_n - TU_{n-1}$).</li>
+            </ul>
+
+            <div class="sticky-note mx-auto max-w-lg">
+                <strong>📌 The Exact TU-MU Relationship Rules:</strong><br>
+                1. As long as $MU$ is positive and falling, $TU$ increases at a <em>diminishing rate</em>.<br>
+                2. When $MU = 0$, $TU$ reaches its <strong>maximum</strong> (Point of Satiety / Saturation).<br>
+                3. When $MU$ becomes negative, $TU$ starts <strong>falling</strong>.
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">3. Law of Diminishing Marginal Utility (DMU)</h3>
+            <p>Formulated by <strong>H.H. Gossen</strong> (Gossen's First Law) and popularized by <strong>Alfred Marshall</strong>.</p>
+            <p><em>"The additional benefit which a person derives from an increase in the stock of a thing diminishes with every increase in the stock that he already has."</em></p>
+            <p><strong>Critical Assumptions:</strong> Rational consumer, cardinal measurement, constant marginal utility of money ($MU_m$), homogeneous & standard units consumed continuously without time lag, constant tastes and income.</p>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">4. Consumer's Equilibrium under Cardinal Approach</h3>
+            <p><strong>Case A: Single Commodity:</strong> Consumer is in equilibrium when marginal utility in terms of money equals price:</p>
+            <p class="text-center font-bold text-lg text-blue-900 bg-blue-50 py-2 rounded">$\frac{MU_x}{P_x} = MU_m \quad \text{or} \quad MU_x = P_x \times MU_m$</p>
+
+            <p class="mt-4"><strong>Case B: Multiple Commodities (Law of Equi-Marginal Utility / Gossen's Second Law):</strong></p>
+            <p class="text-center font-bold text-lg text-blue-900 bg-blue-50 py-2 rounded">$\frac{MU_x}{P_x} = \frac{MU_y}{P_y} = \dots = MU_m$</p>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">5. Consumer's Surplus (Marshall)</h3>
+            <p>The difference between what a consumer is <strong>willing to pay</strong> rather than go without the commodity, and what he <strong>actually pays</strong>.</p>
+            <p class="text-center font-bold text-lg text-green-900 bg-green-50 py-2 rounded">$\text{Consumer Surplus} = \text{What consumer is willing to pay} - \text{What consumer actually pays}$<br>$\text{CS} = \sum MU_x - (P_x \times Q_x) = \text{Area under Demand curve above Price line}$</p>
+            <p><strong>Limitations:</strong> Not measurable for prestige goods (Veblen), necessities have infinite surplus, and assumes constant $MU_m$.</p>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">6. Ordinal Approach: Indifference Curve (IC) Analysis</h3>
+            <p>An <strong>Indifference Curve (IC)</strong> represents all combinations of two goods that yield the <em>same level of satisfaction</em> to the consumer.</p>
+            <p><strong>Marginal Rate of Substitution (MRS):</strong> Rate at which consumer is willing to give up Good Y to get one additional unit of Good X: $MRS_{xy} = -\frac{\Delta Y}{\Delta X} = \frac{MU_x}{MU_y}$.</p>
+            
+            <p class="mt-4"><strong>Properties of Indifference Curves:</strong></p>
+            <ol class="list-decimal ml-8">
+                <li><span class="hl-yellow">Slopes downward to the right (negative slope):</span> To increase X, Y must decrease to keep satisfaction constant.</li>
+                <li><span class="hl-green">Convex to the origin:</span> Due to <em>Diminishing Marginal Rate of Substitution (DMRS)</em>.</li>
+                <li><span class="hl-pink">Higher IC represents higher satisfaction:</span> Based on monotonic preferences (more is preferred to less).</li>
+                <li><span class="hl-blue">Two ICs NEVER intersect or touch each other:</span> Intersection violates transitivity/consistency.</li>
+                <li><span class="hl-yellow">IC does not touch either axis:</span> Assumes consumption of both goods in positive quantities.</li>
+            </ol>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">7. Budget Line & Consumer Equilibrium (IC Approach)</h3>
+            <p><strong>Budget Line / Price Line:</strong> Shows all combinations of two goods that the consumer can buy spending his entire income: $P_x \cdot Q_x + P_y \cdot Q_y = M$.</p>
+            <p>• Slope of Budget Line = $-\frac{P_x}{P_y}$ (Price ratio of the two goods).</p>
+            <p class="mt-4 font-bold text-purple-900">Consumer's Equilibrium Conditions under Ordinal Utility:</p>
+            <ul class="list-disc ml-8">
+                <li><strong>Condition 1 (Tangency):</strong> The Budget Line must be tangent to the Indifference Curve:
+                    $$MRS_{xy} = \frac{P_x}{P_y} \quad \left(\text{Slope of IC} = \text{Slope of Budget Line}\right)$$
+                </li>
+                <li><strong>Condition 2 (Curvature):</strong> IC must be <strong>convex to the origin</strong> at the point of tangency (i.e., $MRS_{xy}$ must be diminishing).</li>
+            </ul>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 2: ICAI TRAP ZONE                     -->
+        <!-- ========================================= -->
+        <div id="tab-traps" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-red-600 flex items-center">🚨 ICAI Trap Zone & Mistake Tracker</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 border">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">What You Might Think (Trap)</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-green-600 uppercase">ICAI Examiner's Fact</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Total utility is maximum when Marginal Utility is at its peak.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> Total Utility is maximum when <strong>$MU = 0$ (Zero)</strong>. When $MU$ is at its peak, $TU$ is simply increasing at its fastest rate.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">An Indifference Curve is convex because of the Law of Diminishing Marginal Utility.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>Careful with terminology!</strong> In ordinal analysis, an IC is convex strictly due to the <strong>Diminishing Marginal Rate of Substitution ($DMRS$)</strong>, not cardinal DMU.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Consumer Surplus for life-saving necessities (water, oxygen) is zero.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> Consumer surplus for necessities is <strong>Infinite</strong>, because a person is willing to pay their entire life savings rather than go without them.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Tangency between Budget Line and IC ($MRS = P_x/P_y$) is sufficient for equilibrium.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>Incomplete!</strong> It is a <em>necessary</em> condition, but the <strong>second order condition</strong> requires that the IC must be <strong>convex to the origin</strong> at the point of tangency.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 3: REVISION & MNEMONICS               -->
+        <!-- ========================================= -->
+        <div id="tab-revision" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-4 text-purple-700">⚡ Exam-Eve Rapid Revision & Mnemonics</h2>
+            
+            <div class="bg-purple-50 rounded-lg p-5 mb-6 border border-purple-100">
+                <h3 class="text-xl font-bold text-purple-800 mb-3">🧠 IC Properties Mnemonic: "D-C-H-N"</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Property 1</span>
+                        <div class="text-lg font-bold text-blue-600 mt-1">D</div>
+                        <p class="text-xs text-gray-600 mt-1"><strong>Downward</strong> sloping to right</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Property 2</span>
+                        <div class="text-lg font-bold text-green-600 mt-1">C</div>
+                        <p class="text-xs text-gray-600 mt-1"><strong>Convex</strong> to origin (DMRS)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Property 3</span>
+                        <div class="text-lg font-bold text-purple-600 mt-1">H</div>
+                        <p class="text-xs text-gray-600 mt-1"><strong>Higher</strong> IC = Higher Utility</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Property 4</span>
+                        <div class="text-lg font-bold text-red-600 mt-1">N</div>
+                        <p class="text-xs text-gray-600 mt-1"><strong>Never</strong> touch or intersect</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">⏱️ 5-Minute Core Rules Summary</h3>
+            <ul class="list-disc ml-5 space-y-2 text-gray-700">
+                <li><strong>Gossen's Laws:</strong> 1st Law = Law of Diminishing Marginal Utility; 2nd Law = Law of Equi-Marginal Utility.</li>
+                <li><strong>Consumer Surplus Formula:</strong> $\text{CS} = \text{Potential Price} - \text{Actual Price} = \text{Total Utility} - \text{Total Expenditure}$.</li>
+                <li><strong>Slope of Budget Line:</strong> Ratio of prices $\left|\frac{P_x}{P_y}\right|$. Shifts parallel if income changes; rotates if one price changes.</li>
+                <li><strong>Perfect Substitutes vs Complements:</strong>
+                    <ul class="list-circle ml-6 text-sm">
+                        <li>Perfect Substitutes: IC is a <em>downward sloping straight line</em> ($MRS$ is constant).</li>
+                        <li>Perfect Complements: IC is <em>L-shaped (right-angled)</em> ($MRS$ is zero or infinite).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 4: ACTIVE RECALL                      -->
+        <!-- ========================================= -->
+        <div id="tab-recall" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">📝 Active Recall Apple Pencil Worksheet</h2>
+            <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 bg-gray-50">
+                <h3 class="text-lg font-bold mb-3">1. Equilibrium Equations Recall</h3>
+                <ul class="space-y-4 text-lg">
+                    <li>1. Cardinal Equilibrium condition for single good X: ___________________________</li>
+                    <li>2. Law of Equi-Marginal Utility condition for goods X and Y: ___________________________</li>
+                    <li>3. Slope of Indifference Curve is given by: ___________________________</li>
+                    <li>4. Slope of Budget Line is given by: ___________________________</li>
+                </ul>
+
+                <h3 class="text-lg font-bold mt-8 mb-3">2. State True / False & Reason</h3>
+                <ul class="space-y-3 text-lg">
+                    <li>• "When MU is negative, TU decreases." (True/False): ___________________________</li>
+                    <li>• "Consumer Surplus is zero for luxury goods." (True/False): ___________________________</li>
+                    <li>• "The shape of an IC for perfect complementary goods is a straight line." (True/False): ___________________________</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 5: FLASHCARDS                         -->
+        <!-- ========================================= -->
+        <div id="tab-flashcards" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-teal-600 font-sans">🃏 3D Flip Flashcards</h2>
+                <div class="text-sm font-bold bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-sans">Mastered: <span id="fc-counter">0</span> / 4</div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is the Point of Satiety in Cardinal Utility?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-blue-900">Point where MU = 0 and TU is Maximum.</span>
+                                <span class="mt-2 text-sm text-gray-700">Any consumption beyond this causes MU to turn negative and TU to decline.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c2u2_fc1')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Why cannot two Indifference Curves intersect each other?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-red-700">It violates the axiom of Transitivity & Monotonicity!</span>
+                                <span class="mt-2 text-sm text-gray-700">If they intersect, the common intersection point would imply two different levels of utility simultaneously, which is impossible.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c2u2_fc2')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is the shape of an Indifference Curve for Perfect Substitutes?</div>
+                            <div class="flip-card-back text-center text-lg flex flex-col">
+                                <span class="font-bold text-purple-900">Downward Sloping Straight Line</span>
+                                <span class="mt-2 text-sm text-gray-700">Because the Marginal Rate of Substitution ($MRS_{xy}$) is constant throughout!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c2u2_fc3')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What happens to the Budget Line if price of Good X falls while income and Py stay constant?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-green-800">It rotates outwards (rightwards) along the X-axis.</span>
+                                <span class="mt-2 text-sm text-gray-700">The Y-intercept remains unchanged ($M/P_y$), while the X-intercept extends outwards ($M/P_x$).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c2u2_fc4')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 6: MCQs                               -->
+        <!-- ========================================= -->
+        <div id="tab-mcq" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-orange-600">🎯 Unit 2 Practice MCQs</h2>
+                <div class="text-sm font-bold bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Score: <span id="mcq-score">0</span></div>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="C">
+                    <p class="font-semibold text-lg mb-3">1. When Marginal Utility ($MU$) is equal to zero, Total Utility ($TU$) is:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="A" class="mr-2"> (a) Zero</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="B" class="mr-2"> (b) Minimum</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="C" class="mr-2"> (c) Maximum</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="D" class="mr-2"> (d) Negative</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> $TU$ reaches its highest peak (Point of Satiety) precisely when $MU = 0$.</div>
+                </div>
+
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="B">
+                    <p class="font-semibold text-lg mb-3">2. At the point of consumer equilibrium under Indifference Curve analysis:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="A" class="mr-2"> (a) Slope of IC > Slope of Budget Line</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="B" class="mr-2"> (b) $MRS_{xy} = P_x / P_y$ and IC is convex to the origin</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="C" class="mr-2"> (c) $MRS_{xy} = P_y / P_x$ and IC is concave to origin</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="D" class="mr-2"> (d) Slope of IC = 1</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> Equilibrium occurs where the budget line is tangent to the IC ($MRS_{xy} = P_x/P_y$) and the IC is strictly convex to the origin.</div>
+                </div>
+
+                <button onclick="gradeMCQs()" class="w-full py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition shadow">Grade Answers</button>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 7: MASTER SUMMARY TABLE               -->
+        <!-- ========================================= -->
+        <div id="tab-summary" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-green-700">📊 Cardinal vs Ordinal Utility Synthesis</h2>
+            <div class="overflow-x-auto rounded-lg border">
+                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-green-50">
+                        <tr>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Basis</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Cardinal Approach (Marshall)</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Ordinal Approach (Hicks & Allen)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-white">
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Measurement</td>
+                            <td>Quantitative (utils / money)</td>
+                            <td>Qualitative (ranking / preferences)</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Analytical Tool</td>
+                            <td>Law of Diminishing Marginal Utility ($MU$)</td>
+                            <td>Indifference Curves & Budget Line</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Equilibrium Condition</td>
+                            <td>$\frac{MU_x}{P_x} = \frac{MU_y}{P_y} = MU_m$</td>
+                            <td>$MRS_{xy} = \frac{P_x}{P_y}$ (IC convex to origin)</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Marginal Utility of Money</td>
+                            <td>Assumed Constant ($MU_m$)</td>
+                            <td>Does not require this unrealistic assumption</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 8: MIND MAP                           -->
+        <!-- ========================================= -->
+        <div id="tab-mindmap" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans overflow-x-auto">
+            <h2 class="text-3xl font-bold mb-6 text-pink-600">🧠 Consumer Behaviour Mind Map</h2>
+            <div class="tree flex justify-center min-w-max pb-8">
+                <ul>
+                    <li>
+                        <a href="#" class="font-bold bg-pink-50 text-xl">Consumer Behaviour</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="font-bold text-blue-700">Cardinal Approach</a>
+                                <ul>
+                                    <li><a href="#">Law of DMU</a></li>
+                                    <li><a href="#">Equi-Marginal Utility</a></li>
+                                    <li><a href="#">Consumer Surplus</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-green-700">Ordinal Approach</a>
+                                <ul>
+                                    <li><a href="#">Indifference Curves</a></li>
+                                    <li><a href="#">Budget Line</a></li>
+                                    <li><a href="#">Tangency ($MRS = P_x/P_y$)</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-purple-700">Special Shapes</a>
+                                <ul>
+                                    <li><a href="#">Substitutes: Straight Line</a></li>
+                                    <li><a href="#">Complements: L-Shaped</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-12 text-center text-gray-400 text-sm pb-8 font-sans no-print">
+        &copy; 8-Pillar Master Study Suite • CA Foundation Business Economics Ch 2 Unit 2
+    </footer>
+
+    <!-- INTERACTIVITY SCRIPT -->
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function markMastered(btn, cardId) {
+            if(btn.innerText.includes("Mark Mastered")) {
+                btn.innerText = "✅ Mastered";
+                btn.classList.replace("bg-gray-100", "bg-teal-500");
+                btn.classList.replace("text-gray-600", "text-white");
+                localStorage.setItem(cardId, "true");
+            } else {
+                btn.innerText = "Mark Mastered";
+                btn.classList.replace("bg-teal-500", "bg-gray-100");
+                btn.classList.replace("text-white", "text-gray-600");
+                localStorage.removeItem(cardId);
+            }
+            updateFcCounter();
+        }
+
+        function updateFcCounter() {
+            let count = 0;
+            for(let i=1; i<=4; i++) {
+                if(localStorage.getItem('c2u2_fc'+i)) count++;
+            }
+            document.getElementById('fc-counter').innerText = count;
+        }
+
+        window.onload = function() {
+            for(let i=1; i<=4; i++) {
+                let id = 'c2u2_fc'+i;
+                if(localStorage.getItem(id)) {
+                    let btns = document.querySelectorAll('#tab-flashcards button');
+                    if(btns[i-1]) {
+                        btns[i-1].innerText = "✅ Mastered";
+                        btns[i-1].classList.replace("bg-gray-100", "bg-teal-500");
+                        btns[i-1].classList.replace("text-gray-600", "text-white");
+                    }
+                }
+            }
+            updateFcCounter();
+        };
+
+        function gradeMCQs() {
+            let score = 0;
+            let total = 2;
+            let cards = document.querySelectorAll('.mcq-card');
+            
+            cards.forEach(card => {
+                let correctVal = card.getAttribute('data-correct');
+                let radios = card.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => {
+                    radio.parentElement.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    radio.disabled = true;
+                    if(radio.checked) {
+                        if(radio.value === correctVal) {
+                            score++;
+                            radio.parentElement.classList.add('bg-green-100', 'border-green-500');
+                        } else {
+                            radio.parentElement.classList.add('bg-red-100', 'border-red-500');
+                        }
+                    }
+                    if(radio.value === correctVal) radio.parentElement.classList.add('border-green-500');
+                });
+                card.querySelector('.explanation').classList.remove('hidden');
+            });
+            document.getElementById('mcq-score').innerText = score + " / " + total;
+        }
+
+        let timerInterval;
+        let timeLeft = 25 * 60;
+        let isRunning = false;
+
+        function toggleTimer() {
+            let btn = document.getElementById('timer-btn');
+            if(isRunning) {
+                clearInterval(timerInterval);
+                btn.innerText = "START";
+                btn.classList.replace("bg-red-100", "bg-blue-100");
+                btn.classList.replace("text-red-600", "text-blue-600");
+                isRunning = false;
+            } else {
+                timerInterval = setInterval(updateTimer, 1000);
+                btn.innerText = "PAUSE";
+                btn.classList.replace("bg-blue-100", "bg-red-100");
+                btn.classList.replace("text-blue-600", "text-red-600");
+                isRunning = true;
+            }
+        }
+
+        function updateTimer() {
+            if(timeLeft <= 0) {
+                clearInterval(timerInterval);
+                alert("🍅 Pomodoro complete! Take a 5-minute break.");
+                timeLeft = 25 * 60;
+                document.getElementById('timer-btn').innerText = "START";
+                isRunning = false;
+            } else {
+                timeLeft--;
+            }
+            let m = Math.floor(timeLeft / 60);
+            let s = timeLeft % 60;
+            document.getElementById('timer-display').innerText = 
+                (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+        }
+    </script>
+</body>
+</html>

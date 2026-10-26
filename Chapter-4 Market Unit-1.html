@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Foundation - Business Economics: Ch 4 Unit 1 — Meaning & Types of Markets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #fdfbf7; --line-color: #e5e7eb; --margin-line: #ef4444; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: #1f2937; }
+        .notebook-paper {
+            background-image: repeating-linear-gradient(transparent, transparent 31px, var(--line-color) 31px, var(--line-color) 32px);
+            background-position: 0 1.2rem;
+            background-attachment: local;
+            border-left: 2px solid var(--margin-line);
+            padding-left: 2rem;
+            font-family: 'Kalam', cursive;
+            font-size: 1.15rem;
+            line-height: 2rem;
+        }
+        .hl-yellow { background: linear-gradient(104deg, rgba(253,230,138,0) 0.9%, rgba(253,230,138,1) 2.4%, rgba(253,230,138,0.6) 5.8%, rgba(253,230,138,1) 93%, rgba(253,230,138,0.7) 96%, rgba(253,230,138,0) 98%); }
+        .hl-green { background: linear-gradient(104deg, rgba(167,243,208,0) 0.9%, rgba(167,243,208,1) 2.4%, rgba(167,243,208,0.6) 5.8%, rgba(167,243,208,1) 93%, rgba(167,243,208,0.7) 96%, rgba(167,243,208,0) 98%); }
+        .hl-pink { background: linear-gradient(104deg, rgba(252,165,165,0) 0.9%, rgba(252,165,165,1) 2.4%, rgba(252,165,165,0.6) 5.8%, rgba(252,165,165,1) 93%, rgba(252,165,165,0.7) 96%, rgba(252,165,165,0) 98%); }
+        .hl-blue { background: linear-gradient(104deg, rgba(191,219,254,0) 0.9%, rgba(191,219,254,1) 2.4%, rgba(191,219,254,0.6) 5.8%, rgba(191,219,254,1) 93%, rgba(191,219,254,0.7) 96%, rgba(191,219,254,0) 98%); }
+        .sticky-note {
+            background-color: #fef08a; box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+            transform: rotate(-1deg); padding: 1rem; font-family: 'Caveat', cursive;
+            font-size: 1.25rem; margin: 1.25rem 0; border-bottom-right-radius: 20px 5px;
+        }
+        .flip-card { background-color: transparent; width: 100%; height: 230px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+        .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back {
+            position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+            display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+            border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-family: 'Patrick Hand', cursive; font-size: 1.2rem;
+        }
+        .flip-card-front { background-color: #ffffff; border: 2px solid #e5e7eb; color: #111827; }
+        .flip-card-back { background-color: #eff6ff; border: 2px solid #93c5fd; color: #1e3a8a; transform: rotateY(180deg); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .tab-btn { transition: all 0.2s; }
+        .tab-btn.active { background-color: #2563eb; color: white; border-color: #2563eb; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3); }
+        @media print {
+            .no-print { display: none !important; }
+            .notebook-paper { background: none; border: none; padding: 0; }
+            body { background: white; }
+            .tab-content { display: block !important; page-break-before: always; }
+            .tab-content:first-of-type { page-break-before: avoid; }
+        }
+        .tree ul { padding-top: 20px; position: relative; transition: all 0.5s; }
+        .tree li { float: left; text-align: center; list-style-type: none; position: relative; padding: 20px 5px 0 5px; transition: all 0.5s; }
+        .tree li::before, .tree li::after { content: ''; position: absolute; top: 0; right: 50%; border-top: 2px solid #cbd5e1; width: 50%; height: 20px; }
+        .tree li::after { right: auto; left: 50%; border-left: 2px solid #cbd5e1; }
+        .tree li:only-child::after, .tree li:only-child::before { display: none; }
+        .tree li:only-child { padding-top: 0; }
+        .tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+        .tree li:last-child::before { border-right: 2px solid #cbd5e1; border-radius: 0 5px 0 0; }
+        .tree li:first-child::after { border-radius: 5px 0 0 0; }
+        .tree ul ul::before { content: ''; position: absolute; top: 0; left: 50%; border-left: 2px solid #cbd5e1; width: 0; height: 20px; }
+        .tree li a { border: 2px solid #cbd5e1; padding: 8px 12px; text-decoration: none; color: #1e293b; font-family: 'Patrick Hand', cursive; display: inline-block; border-radius: 8px; background: white; }
+        .tree li a:hover { background: #e0f2fe; border-color: #38bdf8; }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-12">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">🏬</span>
+                    <h1 class="font-bold text-xl tracking-tight text-gray-900">CA Foundation: Ch 4 Unit 1 — Meaning & Classification of Markets</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200">
+                        <span class="text-lg">⏱️</span>
+                        <span id="timer-display" class="font-mono font-semibold text-slate-700">25:00</span>
+                        <button id="timer-btn" onclick="toggleTimer()" class="text-xs font-bold text-blue-600 hover:text-blue-800 ml-2 px-2 py-1 rounded bg-blue-100 hover:bg-blue-200 transition">START</button>
+                    </div>
+                    <button onclick="window.print()" class="flex items-center space-x-1 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition shadow-sm">
+                        <span>🖨️</span><span>Save PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto no-scrollbar border-t border-gray-100">
+            <div class="flex space-x-2 py-3" id="tabs-container">
+                <button onclick="switchTab('tab-notes')" class="tab-btn active whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">✍️ 1. Detailed Notes</button>
+                <button onclick="switchTab('tab-traps')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🚨 2. Trap Zone</button>
+                <button onclick="switchTab('tab-revision')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">⚡ 3. Revision & Mnemonics</button>
+                <button onclick="switchTab('tab-recall')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📝 4. Active Recall</button>
+                <button onclick="switchTab('tab-flashcards')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🃏 5. Flashcards</button>
+                <button onclick="switchTab('tab-mcq')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🎯 6. MCQs</button>
+                <button onclick="switchTab('tab-summary')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📊 7. Summary</button>
+                <button onclick="switchTab('tab-mindmap')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🧠 8. Mind Map</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto mt-8 px-4 sm:px-6 lg:px-8">
+        <!-- TAB 1: DETAILED NOTES -->
+        <div id="tab-notes" class="tab-content active notebook-paper bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden pr-6">
+            <h2 class="text-3xl font-bold mb-4 pt-4 hl-pink inline-block">Ch 4 Unit 1: Meaning and Types of Markets</h2>
+            <div class="mb-4 text-sm font-sans text-gray-500 font-semibold">Weightage: Core Foundations (~3–4 Marks) | Revenue Concepts & Classification Criteria</div>
+
+            <h3 class="text-2xl font-bold mt-6 text-blue-800">1. Economic Meaning of Market</h3>
+            <p>In Economics, a <strong>Market</strong> does NOT mean a physical shopping mall or a geographic spot. It refers to a <span class="hl-yellow">system, arrangement, or contact</span> through which buyers and sellers interact to determine the price and quantity of a good or service.</p>
+            <p><strong>Essential Elements of a Market:</strong> (1) Buyers and Sellers, (2) A Product or Service, (3) Bargaining for a single Price, (4) Knowledge of market conditions, and (5) Free interaction without geographic boundaries.</p>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">2. Classification of Markets</h3>
+            <ul class="list-disc ml-8">
+                <li><strong>On the basis of Geographical Area:</strong>
+                    <ul class="list-circle ml-6">
+                        <li><em>Local Markets:</em> Perishable goods (milk, vegetables) or bulky low-value building materials (bricks, sand).</li>
+                        <li><em>Regional Markets:</em> Semi-durable items, traditional regional dresses, or localized food crops.</li>
+                        <li><em>National Markets:</em> Goods produced and demanded country-wide (steel, cement, Hindi films).</li>
+                        <li><em>International Markets:</em> High value-to-weight, durable goods with worldwide demand (gold, crude oil, forex, IT software).</li>
+                    </ul>
+                </li>
+                <li><strong>On the basis of Time Element (Alfred Marshall):</strong>
+                    <ul class="list-circle ml-6">
+                        <li><em>Very Short Period (Market Period):</em> Supply is completely fixed ($E_s = 0$). Price is entirely demand-determined.</li>
+                        <li><em>Short Period:</em> Output can be adjusted by altering variable inputs; fixed capital remains fixed.</li>
+                        <li><em>Long Period:</em> All inputs are variable. New plants can be built; firms can freely enter or exit. Supply adapts fully.</li>
+                        <li><em>Very Long Period (Secular Time):</em> Factors like population, technology, and capital supply change fundamentally over decades.</li>
+                    </ul>
+                </li>
+                <li><strong>On the basis of Nature of Transactions:</strong> Spot/Cash Market (immediate delivery & payment) vs. Future/Forward Market (agreed settlement at a future date).</li>
+                <li><strong>On the basis of Regulation:</strong> Regulated Markets (APMC agricultural mandis, Stock exchanges under SEBI) vs. Unregulated/Free Markets.</li>
+            </ul>
+
+            <div class="sticky-note mx-auto max-w-lg">
+                <strong>📌 The Revenue Engine:</strong><br>
+                • <strong>Total Revenue (TR):</strong> $TR = P \times Q$<br>
+                • <strong>Average Revenue (AR):</strong> $AR = TR / Q = (P \times Q) / Q = P$. <em>AR is ALWAYS equal to Price! Hence, the AR curve is identical to the firm's Demand Curve.</em><br>
+                • <strong>Marginal Revenue (MR):</strong> $MR = \frac{\Delta TR}{\Delta Q} = TR_n - TR_{n-1}$.
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">3. Crucial Mathematical Relation: AR, MR & Price Elasticity ($e$)</h3>
+            <p>The landmark formula formulated by Joan Robinson relating Marginal Revenue, Average Revenue (Price), and Price Elasticity of Demand ($e$):</p>
+            <p class="text-center font-bold text-xl text-purple-900 bg-purple-50 py-3 rounded border border-purple-200">$$MR = AR \times \left( \frac{e - 1}{e} \right) = P \times \left( 1 - \frac{1}{e} \right)$$</p>
+            <p class="mt-4 font-bold text-indigo-900">Three Direct Outcomes from this Formula:</p>
+            <ul class="list-disc ml-8">
+                <li><span class="hl-green">When $e > 1$ (Elastic demand):</span> $\left(\frac{e-1}{e}\right) > 0 \implies$ <strong>$MR$ is Positive ($MR > 0$)</strong>. $TR$ rises when price falls.</li>
+                <li><span class="hl-yellow">When $e = 1$ (Unitary elastic):</span> $\left(\frac{1-1}{1}\right) = 0 \implies$ <strong>$MR$ is ZERO ($MR = 0$)</strong>. $TR$ is at its absolute <strong>maximum</strong>!</li>
+                <li><span class="hl-pink">When $e < 1$ (Inelastic demand):</span> $\left(\frac{e-1}{e}\right) < 0 \implies$ <strong>$MR$ is Negative ($MR < 0$)</strong>. $TR$ falls when price falls.</li>
+            </ul>
+        </div>
+
+        <!-- TAB 2: TRAP ZONE -->
+        <div id="tab-traps" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-red-600 flex items-center">🚨 ICAI Trap Zone & Mistake Tracker</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 border">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Common Exam Trap</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-green-600 uppercase">ICAI Examiner's Fact</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Average Revenue ($AR$) can be negative if a firm incurs huge operational losses.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>Never!</strong> $AR = TR/Q = (P \times Q)/Q = P$. Price ($P$) can never be negative in economics. Hence, <strong>AR can NEVER be negative or zero</strong>. But $MR$ can be negative!</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">In the very short period (market period), price is influenced equally by cost of production.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> In the market period, supply is completely fixed ($E_s = 0$). Cost of production has zero influence; price is determined <strong>solely by demand</strong>!</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">When MR is zero, Total Revenue is also zero.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>Opposite!</strong> When $MR = 0$, Total Revenue is at its <strong>maximum peak</strong>. $TR$ falls only when $MR$ becomes negative.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 3: REVISION & MNEMONICS -->
+        <div id="tab-revision" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-4 text-purple-700">⚡ Rapid Revision & Mnemonic Matrix</h2>
+            <div class="bg-purple-50 rounded-lg p-5 mb-6 border border-purple-100">
+                <h3 class="text-xl font-bold text-purple-800 mb-3">🧠 Elasticity vs MR Relationship: "P-Z-N"</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Elastic Zone ($e > 1$)</span>
+                        <div class="text-xl font-bold text-green-600 mt-1">MR > 0 (Positive)</div>
+                        <p class="text-xs text-gray-600 mt-1">$TR$ is expanding</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Unitary Point ($e = 1$)</span>
+                        <div class="text-xl font-bold text-blue-600 mt-1">MR = 0 (Zero)</div>
+                        <p class="text-xs text-gray-600 mt-1">$TR$ is at its Peak Maximum</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Inelastic Zone ($e < 1$)</span>
+                        <div class="text-xl font-bold text-red-600 mt-1">MR < 0 (Negative)</div>
+                        <p class="text-xs text-gray-600 mt-1">$TR$ is declining</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: ACTIVE RECALL -->
+        <div id="tab-recall" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">📝 Active Recall Apple Pencil Worksheet</h2>
+            <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 bg-gray-50">
+                <h3 class="text-lg font-bold mb-3">1. Revenue Equation Recall</h3>
+                <ul class="space-y-4 text-lg">
+                    <li>1. Mathematical relationship between AR, MR, and Elasticity ($e$): ___________________________</li>
+                    <li>2. Average Revenue is always algebraically equal to: ___________________________</li>
+                    <li>3. If elasticity of demand is unitary ($e=1$), the marginal revenue is: ___________________________</li>
+                    <li>4. In the market period, price is determined exclusively by: ___________________________</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TAB 5: FLASHCARDS -->
+        <div id="tab-flashcards" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-teal-600 font-sans">🃏 3D Flip Flashcards</h2>
+                <div class="text-sm font-bold bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-sans">Mastered: <span id="fc-counter">0</span> / 4</div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Can Marginal Revenue ($MR$) be negative? Can Average Revenue ($AR$) be negative?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-blue-900">$MR$ CAN be negative (when $e < 1$).</span>
+                                <span class="mt-2 text-sm text-gray-700"><strong>$AR$ can NEVER be negative</strong> because $AR = \text{Price}$, and price cannot be negative.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c4u1_fc1')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Calculate MR if Price = ₹50 and Price Elasticity of Demand = 2.</div>
+                            <div class="flip-card-back text-center text-lg flex flex-col">
+                                <span class="font-bold text-green-900">$MR = ₹25$</span>
+                                <span class="mt-2 text-sm text-gray-700">$MR = 50 \times \left( \frac{2-1}{2} \right) = 50 \times 0.5 = 25$.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c4u1_fc2')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is a 'Market Period' according to Marshall?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-purple-900">Very Short Period where supply is completely fixed.</span>
+                                <span class="mt-2 text-sm text-gray-700">Output cannot be increased even by hiring extra labour. Price is purely demand-driven.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c4u1_fc3')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Why does a firm's AR curve represent its demand curve?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-pink-700">Because $AR = \text{Price}$ at every quantity!</span>
+                                <span class="mt-2 text-sm text-gray-700">A curve plotting price against quantity demanded is, by definition, the demand curve.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c4u1_fc4')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 6: MCQs -->
+        <div id="tab-mcq" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-orange-600">🎯 Unit 1 Practice MCQs</h2>
+                <div class="text-sm font-bold bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Score: <span id="mcq-score">0</span></div>
+            </div>
+            <div class="space-y-6">
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="B">
+                    <p class="font-semibold text-lg mb-3">1. When elasticity of demand is equal to 1, Marginal Revenue ($MR$) is equal to:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="A" class="mr-2"> (a) 1</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="B" class="mr-2"> (b) 0</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="C" class="mr-2"> (c) Infinity</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="D" class="mr-2"> (d) Average Revenue</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> $MR = AR \times \left(\frac{e-1}{e}\right) = AR \times \left(\frac{1-1}{1}\right) = 0$.</div>
+                </div>
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="C">
+                    <p class="font-semibold text-lg mb-3">2. In a very short period (market period), supply is:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="A" class="mr-2"> (a) Highly elastic</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="B" class="mr-2"> (b) Unitary elastic</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="C" class="mr-2"> (c) Perfectly inelastic</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="D" class="mr-2"> (d) Variable</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> In the market period, supply cannot be adjusted at all ($E_s = 0$), so it is completely vertical and perfectly inelastic.</div>
+                </div>
+                <button onclick="gradeMCQs()" class="w-full py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition shadow">Grade Answers</button>
+            </div>
+        </div>
+
+        <!-- TAB 7: MASTER SUMMARY TABLE -->
+        <div id="tab-summary" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-green-700">📊 Market Classification Matrix</h2>
+            <div class="overflow-x-auto rounded-lg border">
+                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-green-50">
+                        <tr>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Criterion</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Sub-Types</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Core Characteristic</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Typical Examples</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-white">
+                        <tr>
+                            <td class="px-4 py-3 font-semibold" rowspan="4">Area</td>
+                            <td>Local</td><td>Perishable, bulky low-value</td><td>Vegetables, milk, bricks</td>
+                        </tr>
+                        <tr><td>Regional</td><td>Wider geographical area</td><td>Regional sarees, local crops</td></tr>
+                        <tr><td>National</td><td>Country-wide demand</td><td>Steel, cement, consumer durables</td></tr>
+                        <tr><td>International</td><td>Global demand, high value-to-weight</td><td>Gold, forex, crude oil, software</td></tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold" rowspan="3">Time (Marshall)</td>
+                            <td>Market Period</td><td>Supply completely fixed ($E_s = 0$)</td><td>Perishable fish/flowers on day</td>
+                        </tr>
+                        <tr><td>Short Period</td><td>Variable inputs change; plant size fixed</td><td>Expanding factory shifts</td>
+                        <tr><td>Long Period</td><td>All factors variable; free entry/exit</td><td>Setting up new manufacturing units</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 8: MIND MAP -->
+        <div id="tab-mindmap" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans overflow-x-auto">
+            <h2 class="text-3xl font-bold mb-6 text-pink-600">🧠 Meaning & Types of Markets Mind Map</h2>
+            <div class="tree flex justify-center min-w-max pb-8">
+                <ul>
+                    <li>
+                        <a href="#" class="font-bold bg-pink-50 text-xl">Markets (Unit 1)</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="font-bold text-blue-700">Classification</a>
+                                <ul>
+                                    <li><a href="#">Area (Local/Intl)</a></li>
+                                    <li><a href="#">Time (Market to Long)</a></li>
+                                    <li><a href="#">Transaction (Spot/Future)</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-green-700">Revenue Engine</a>
+                                <ul>
+                                    <li><a href="#">$TR = P \times Q$</a></li>
+                                    <li><a href="#">$AR = \text{Price}$ (Demand)</a></li>
+                                    <li><a href="#">$MR = \Delta TR / \Delta Q$</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-purple-700">Robinson Formula</a>
+                                <ul>
+                                    <li><a href="#">$e > 1 \implies MR > 0$</a></li>
+                                    <li><a href="#">$e = 1 \implies MR = 0$ ($TR \text{ peak}$)</a></li>
+                                    <li><a href="#">$e < 1 \implies MR < 0$</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-12 text-center text-gray-400 text-sm pb-8 font-sans no-print">
+        &copy; 8-Pillar Master Study Suite • CA Foundation Business Economics Ch 4 Unit 1
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+        function markMastered(btn, cardId) {
+            if(btn.innerText.includes("Mark Mastered")) {
+                btn.innerText = "✅ Mastered";
+                btn.classList.replace("bg-gray-100", "bg-teal-500");
+                btn.classList.replace("text-gray-600", "text-white");
+                localStorage.setItem(cardId, "true");
+            } else {
+                btn.innerText = "Mark Mastered";
+                btn.classList.replace("bg-teal-500", "bg-gray-100");
+                btn.classList.replace("text-white", "text-gray-600");
+                localStorage.removeItem(cardId);
+            }
+            updateFcCounter();
+        }
+        function updateFcCounter() {
+            let count = 0;
+            for(let i=1; i<=4; i++) { if(localStorage.getItem('c4u1_fc'+i)) count++; }
+            document.getElementById('fc-counter').innerText = count;
+        }
+        window.onload = function() {
+            for(let i=1; i<=4; i++) {
+                let id = 'c4u1_fc'+i;
+                if(localStorage.getItem(id)) {
+                    let btns = document.querySelectorAll('#tab-flashcards button');
+                    if(btns[i-1]) {
+                        btns[i-1].innerText = "✅ Mastered";
+                        btns[i-1].classList.replace("bg-gray-100", "bg-teal-500");
+                        btns[i-1].classList.replace("text-gray-600", "text-white");
+                    }
+                }
+            }
+            updateFcCounter();
+        };
+        function gradeMCQs() {
+            let score = 0, total = 2;
+            let cards = document.querySelectorAll('.mcq-card');
+            cards.forEach(card => {
+                let correctVal = card.getAttribute('data-correct');
+                let radios = card.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => {
+                    radio.parentElement.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    radio.disabled = true;
+                    if(radio.checked) {
+                        if(radio.value === correctVal) {
+                            score++;
+                            radio.parentElement.classList.add('bg-green-100', 'border-green-500');
+                        } else {
+                            radio.parentElement.classList.add('bg-red-100', 'border-red-500');
+                        }
+                    }
+                    if(radio.value === correctVal) radio.parentElement.classList.add('border-green-500');
+                });
+                card.querySelector('.explanation').classList.remove('hidden');
+            });
+            document.getElementById('mcq-score').innerText = score + " / " + total;
+        }
+        let timerInterval, timeLeft = 25 * 60, isRunning = false;
+        function toggleTimer() {
+            let btn = document.getElementById('timer-btn');
+            if(isRunning) {
+                clearInterval(timerInterval);
+                btn.innerText = "START";
+                btn.classList.replace("bg-red-100", "bg-blue-100");
+                btn.classList.replace("text-red-600", "text-blue-600");
+                isRunning = false;
+            } else {
+                timerInterval = setInterval(updateTimer, 1000);
+                btn.innerText = "PAUSE";
+                btn.classList.replace("bg-blue-100", "bg-red-100");
+                btn.classList.replace("text-blue-600", "text-red-600");
+                isRunning = true;
+            }
+        }
+        function updateTimer() {
+            if(timeLeft <= 0) {
+                clearInterval(timerInterval);
+                alert("🍅 Pomodoro complete! Take a 5-minute break.");
+                timeLeft = 25 * 60;
+                document.getElementById('timer-btn').innerText = "START";
+                isRunning = false;
+            } else { timeLeft--; }
+            let m = Math.floor(timeLeft / 60), s = timeLeft % 60;
+            document.getElementById('timer-display').innerText = (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+        }
+    </script>
+</body>
+</html>

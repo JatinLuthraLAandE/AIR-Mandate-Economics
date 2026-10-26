@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Foundation - Business Economics: Ch 8 Unit 3 — Monetary Policy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #fdfbf7; --line-color: #e5e7eb; --margin-line: #ef4444; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: #1f2937; }
+        .notebook-paper {
+            background-image: repeating-linear-gradient(transparent, transparent 31px, var(--line-color) 31px, var(--line-color) 32px);
+            background-position: 0 1.2rem;
+            background-attachment: local;
+            border-left: 2px solid var(--margin-line);
+            padding-left: 2rem;
+            font-family: 'Kalam', cursive;
+            font-size: 1.15rem;
+            line-height: 2rem;
+        }
+        .hl-yellow { background: linear-gradient(104deg, rgba(253,230,138,0) 0.9%, rgba(253,230,138,1) 2.4%, rgba(253,230,138,0.6) 5.8%, rgba(253,230,138,1) 93%, rgba(253,230,138,0.7) 96%, rgba(253,230,138,0) 98%); }
+        .hl-green { background: linear-gradient(104deg, rgba(167,243,208,0) 0.9%, rgba(167,243,208,1) 2.4%, rgba(167,243,208,0.6) 5.8%, rgba(167,243,208,1) 93%, rgba(167,243,208,0.7) 96%, rgba(167,243,208,0) 98%); }
+        .hl-pink { background: linear-gradient(104deg, rgba(252,165,165,0) 0.9%, rgba(252,165,165,1) 2.4%, rgba(252,165,165,0.6) 5.8%, rgba(252,165,165,1) 93%, rgba(252,165,165,0.7) 96%, rgba(252,165,165,0) 98%); }
+        .hl-blue { background: linear-gradient(104deg, rgba(191,219,254,0) 0.9%, rgba(191,219,254,1) 2.4%, rgba(191,219,254,0.6) 5.8%, rgba(191,219,254,1) 93%, rgba(191,219,254,0.7) 96%, rgba(191,219,254,0) 98%); }
+        .sticky-note {
+            background-color: #fef08a; box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+            transform: rotate(-1deg); padding: 1rem; font-family: 'Caveat', cursive;
+            font-size: 1.25rem; margin: 1.25rem 0; border-bottom-right-radius: 20px 5px;
+        }
+        .flip-card { background-color: transparent; width: 100%; height: 230px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+        .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back {
+            position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+            display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+            border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-family: 'Patrick Hand', cursive; font-size: 1.2rem;
+        }
+        .flip-card-front { background-color: #ffffff; border: 2px solid #e5e7eb; color: #111827; }
+        .flip-card-back { background-color: #eff6ff; border: 2px solid #93c5fd; color: #1e3a8a; transform: rotateY(180deg); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .tab-btn { transition: all 0.2s; }
+        .tab-btn.active { background-color: #2563eb; color: white; border-color: #2563eb; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3); }
+        @media print {
+            .no-print { display: none !important; }
+            .notebook-paper { background: none; border: none; padding: 0; }
+            body { background: white; }
+            .tab-content { display: block !important; page-break-before: always; }
+            .tab-content:first-of-type { page-break-before: avoid; }
+        }
+        .tree ul { padding-top: 20px; position: relative; transition: all 0.5s; }
+        .tree li { float: left; text-align: center; list-style-type: none; position: relative; padding: 20px 5px 0 5px; transition: all 0.5s; }
+        .tree li::before, .tree li::after { content: ''; position: absolute; top: 0; right: 50%; border-top: 2px solid #cbd5e1; width: 50%; height: 20px; }
+        .tree li::after { right: auto; left: 50%; border-left: 2px solid #cbd5e1; }
+        .tree li:only-child::after, .tree li:only-child::before { display: none; }
+        .tree li:only-child { padding-top: 0; }
+        .tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+        .tree li:last-child::before { border-right: 2px solid #cbd5e1; border-radius: 0 5px 0 0; }
+        .tree li:first-child::after { border-radius: 5px 0 0 0; }
+        .tree ul ul::before { content: ''; position: absolute; top: 0; left: 50%; border-left: 2px solid #cbd5e1; width: 0; height: 20px; }
+        .tree li a { border: 2px solid #cbd5e1; padding: 8px 12px; text-decoration: none; color: #1e293b; font-family: 'Patrick Hand', cursive; display: inline-block; border-radius: 8px; background: white; }
+        .tree li a:hover { background: #e0f2fe; border-color: #38bdf8; }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-12">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">🏛️</span>
+                    <h1 class="font-bold text-xl tracking-tight text-gray-900">CA Foundation: Ch 8 Unit 3 — Monetary Policy</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200">
+                        <span class="text-lg">⏱️</span>
+                        <span id="timer-display" class="font-mono font-semibold text-slate-700">25:00</span>
+                        <button id="timer-btn" onclick="toggleTimer()" class="text-xs font-bold text-blue-600 hover:text-blue-800 ml-2 px-2 py-1 rounded bg-blue-100 hover:bg-blue-200 transition">START</button>
+                    </div>
+                    <button onclick="window.print()" class="flex items-center space-x-1 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition shadow-sm">
+                        <span>🖨️</span><span>Save PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto no-scrollbar border-t border-gray-100">
+            <div class="flex space-x-2 py-3" id="tabs-container">
+                <button onclick="switchTab('tab-notes')" class="tab-btn active whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">✍️ 1. Detailed Notes</button>
+                <button onclick="switchTab('tab-traps')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🚨 2. Trap Zone</button>
+                <button onclick="switchTab('tab-revision')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">⚡ 3. Revision & Mnemonics</button>
+                <button onclick="switchTab('tab-recall')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📝 4. Active Recall</button>
+                <button onclick="switchTab('tab-flashcards')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🃏 5. Flashcards</button>
+                <button onclick="switchTab('tab-mcq')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🎯 6. MCQs</button>
+                <button onclick="switchTab('tab-summary')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📊 7. Summary</button>
+                <button onclick="switchTab('tab-mindmap')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🧠 8. Mind Map</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto mt-8 px-4 sm:px-6 lg:px-8">
+        <!-- TAB 1: DETAILED NOTES -->
+        <div id="tab-notes" class="tab-content active notebook-paper bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden pr-6">
+            <h2 class="text-3xl font-bold mb-4 pt-4 hl-pink inline-block">Ch 8 Unit 3: Monetary Policy</h2>
+            <div class="mb-4 text-sm font-sans text-gray-500 font-semibold">Weightage: Core Macro Policy (~4 Marks) | RBI Instruments: Quantitative vs Qualitative Tools</div>
+
+            <h3 class="text-2xl font-bold mt-6 text-blue-800">1. Nature & Mandate of Monetary Policy</h3>
+            <p><strong>Monetary Policy</strong> refers to the use of monetary instruments under the control of the central bank (RBI) to regulate availability, cost, and allocation of money and credit to achieve targeted economic objectives[cite: 4].</p>
+            <p><strong>Primary Mandate in India (Amended RBI Act, 1934):</strong> To maintain <strong>price stability</strong> while keeping in mind the objective of growth. Under the Flexible Inflation Targeting (FIT) framework, the target is <strong>4% CPI Inflation with a tolerance band of $\pm 2\%$ (2% to 6%)</strong> decided by the 6-member <strong>Monetary Policy Committee (MPC)</strong>.</p>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">2. Quantitative / General Instruments of Credit Control</h3>
+            <p>These tools regulate the total quantum and cost of credit across the entire banking system without discriminating between sectors:</p>
+            <ul class="list-disc ml-8">
+                <li><span class="hl-yellow font-bold">Cash Reserve Ratio (CRR):</span> The fraction of total Net Demand and Time Liabilities (NDTL) that commercial banks must maintain as <strong>cash balances with the RBI</strong>. Earns <strong>no interest</strong> from RBI. Higher CRR shrinks bank lending power.</li>
+                <li><span class="hl-green font-bold">Statutory Liquidity Ratio (SLR):</span> The fraction of NDTL that banks must maintain with <strong>themselves</strong> in approved liquid assets (unencumbered government securities, cash, gold)[cite: 1, 2]. Earns interest.</li>
+                <li><span class="hl-blue font-bold">Policy Repo Rate:</span> Fixed interest rate at which the RBI lends overnight liquidity to commercial banks against the collateral of government securities[cite: 1]. Key policy signaling rate.</li>
+                <li><strong>Standing Deposit Facility (SDF):</strong> Operationalized in April 2022. Allows RBI to absorb uncollateralized overnight liquidity from banks at a rate 25 bps below the policy repo rate. Strengthens liquidity absorption without exhausting RBI's G-sec portfolio[cite: 1, 2].</li>
+                <li><strong>Marginal Standing Facility (MSF):</strong> Penal emergency window where scheduled commercial banks can borrow overnight funds from RBI over and above repo limits (against SLR quota up to a limit). Rate is 25 bps above repo rate.</li>
+                <li><strong>Bank Rate:</strong> Standard discount rate at which RBI buys or rediscounts commercial bills or long-term lending. Does NOT involve collateral repos. Serves as a penal rate aligned with MSF.</li>
+                <li><span class="hl-pink font-bold">Open Market Operations (OMO):</span> Outright purchase or sale of government securities in the open market by the RBI[cite: 1, 2].
+                    <br>• Sale of G-secs $\implies$ absorbs cash from market $\implies$ contracts money supply (anti-inflationary)[cite: 1].
+                    <br>• Purchase of G-secs $\implies$ injects liquidity $\implies$ expands money supply[cite: 1].
+                </li>
+            </ul>
+
+            <div class="sticky-note mx-auto max-w-lg">
+                <strong>📌 The Operating Liquidity Corridor:</strong><br>
+                The RBI manages overnight interbank call money rates within a formal symmetric corridor:<br>
+                • <strong>Ceiling:</strong> Marginal Standing Facility (MSF) Rate (Repo + 25 bps)<br>
+                • <strong>Target / Policy Anchor:</strong> Repo Rate<br>
+                • <strong>Floor:</strong> Standing Deposit Facility (SDF) Rate (Repo − 25 bps)
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">3. Qualitative / Selective Instruments</h3>
+            <p>Target the distribution and direction of bank credit into specific priority channels rather than regulating total overall credit:</p>
+            <ol class="list-decimal ml-8">
+                <li><strong>Margin Requirements:</strong> Difference between the market value of collateral security and the maximum loan sanctioned against it. Raising margins for speculative commodities reduces borrowing.</li>
+                <li><strong>Consumer Credit Regulation:</strong> Specifying minimum down payments and maximum installment repayment tenures.</li>
+                <li><strong>Credit Rationing:</strong> Fixing quantitative lending ceilings for particular industries or sectors.</li>
+                <li><strong>Moral Suasion:</strong> Persuasive appeals, circulars, and informal meetings by the Governor urging banks to restrain credit expansion.</li>
+                <li><strong>Direct Action:</strong> Penal enforcement (refusal of rediscount facilities, imposing punitive interest rates) on non-compliant banks.</li>
+            </ol>
+        </div>
+
+        <!-- TAB 2: TRAP ZONE -->
+        <div id="tab-traps" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-red-600 flex items-center">🚨 ICAI Trap Zone & Mistake Tracker</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 border">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Common Student Error</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-green-600 uppercase">ICAI Standard & Fact</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">CRR and SLR are kept by commercial banks in the same place.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> <strong>CRR</strong> must be maintained strictly as cash reserves <strong>WITH THE RBI</strong> (earning zero interest). <strong>SLR</strong> is held by banks <strong>WITH THEMSELVES</strong> in liquid government securities, cash, or gold (earning returns)[cite: 1, 2]!</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">SDF requires the RBI to pledge government collateral to commercial banks.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> Unlike the Reverse Repo window which requires government collateral, the <strong>Standing Deposit Facility (SDF) is completely UNCOLLATERALIZED</strong>[cite: 1, 2].</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">To control high inflation, the RBI conducts Open Market Purchases of securities.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>Opposite!</strong> To fight inflation, the RBI conducts <strong>Open Market SALES</strong> of securities[cite: 1]. Selling G-secs sucks liquidity out of commercial banks and dampens aggregate demand[cite: 1, 2].</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 3: REVISION & MNEMONICS -->
+        <div id="tab-revision" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-4 text-purple-700">⚡ Rapid Revision & Mnemonic Matrix</h2>
+            <div class="bg-purple-50 rounded-lg p-5 mb-6 border border-purple-100">
+                <h3 class="text-xl font-bold text-purple-800 mb-3">🧠 Qualitative Tools Mnemonic: "M-C-R-M-D"</h3>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-2 text-center text-xs">
+                    <div class="bg-white p-3 rounded shadow-sm border font-semibold"><strong>M</strong>argin Requirements</div>
+                    <div class="bg-white p-3 rounded shadow-sm border font-semibold"><strong>C</strong>onsumer Credit rules</div>
+                    <div class="bg-white p-3 rounded shadow-sm border font-semibold"><strong>R</strong>ationing of Credit</div>
+                    <div class="bg-white p-3 rounded shadow-sm border font-semibold"><strong>M</strong>oral Suasion</div>
+                    <div class="bg-white p-3 rounded shadow-sm border font-semibold"><strong>D</strong>irect Action</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: ACTIVE RECALL -->
+        <div id="tab-recall" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">📝 Active Recall Apple Pencil Worksheet</h2>
+            <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 bg-gray-50">
+                <h3 class="text-lg font-bold mb-3">1. Policy Tool Functions Recall</h3>
+                <ul class="space-y-4 text-lg">
+                    <li>1. The statutory percentage of NDTL maintained as cash with the RBI is: ___________________________</li>
+                    <li>2. The floor of the RBI operating liquidity corridor is set by: ___________________________</li>
+                    <li>3. In an inflationary environment, the RBI will (increase/decrease) the policy repo rate: ___________________________</li>
+                    <li>4. Which tool is a non-collateralized liquidity absorption window introduced in 2022? ___________________________</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TAB 5: FLASHCARDS -->
+        <div id="tab-flashcards" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-teal-600 font-sans">🃏 3D Flip Flashcards</h2>
+                <div class="text-sm font-bold bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-sans">Mastered: <span id="fc-counter">0</span> / 4</div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Difference between CRR and SLR?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-blue-900">CRR = Cash held WITH RBI (Zero interest).</span>
+                                <span class="mt-2 text-sm text-gray-700"><strong>SLR = Liquid assets (G-sec, Gold, Cash) held BY BANKS THEMSELVES</strong> (earns returns)[cite: 1, 2].</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c8u3_fc1')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is the Standing Deposit Facility (SDF)?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-green-900">Uncollateralized liquidity absorption window!</span>
+                                <span class="mt-2 text-sm text-gray-700">Placed at 25 bps below Repo rate; absorbs excess liquidity without requiring RBI to give government bonds as collateral[cite: 1, 2].</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c8u3_fc2')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is the composition and inflation target of the Monetary Policy Committee (MPC)?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-purple-900">6 Members (3 RBI + 3 External Govt appointees).</span>
+                                <span class="mt-2 text-sm text-gray-700">Target: <strong>4% CPI Inflation</strong> with a $\pm 2\%$ tolerance band (2% to 6%).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c8u3_fc3')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What happens to money supply when the RBI sells government securities in OMO?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-pink-700">Money supply CONTRACTS!</span>
+                                <span class="mt-2 text-sm text-gray-700">Buyers pay money to the RBI, withdrawing liquidity from the banking reserves[cite: 1, 2].</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c8u3_fc4')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 6: MCQs -->
+        <div id="tab-mcq" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-orange-600">🎯 Unit 3 Practice MCQs</h2>
+                <div class="text-sm font-bold bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Score: <span id="mcq-score">0</span></div>
+            </div>
+            <div class="space-y-6">
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="A">
+                    <p class="font-semibold text-lg mb-3">1. Which of the following is a qualitative (selective) credit control tool used by the RBI?</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="A" class="mr-2"> (a) Regulation of Margin Requirements</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="B" class="mr-2"> (b) Cash Reserve Ratio (CRR)</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="C" class="mr-2"> (c) Open Market Operations (OMO)</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="D" class="mr-2"> (d) Statutory Liquidity Ratio (SLR)</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> Margin requirements direct credit selectively to target sectors; CRR, SLR, and OMO are quantitative tools[cite: 1, 2].</div>
+                </div>
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="C">
+                    <p class="font-semibold text-lg mb-3">2. In order to absorb surplus liquidity from the banking system without offering government securities as collateral, the RBI uses:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="A" class="mr-2"> (a) Marginal Standing Facility (MSF)</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="B" class="mr-2"> (b) Open Market Purchases</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="C" class="mr-2"> (c) Standing Deposit Facility (SDF)</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="D" class="mr-2"> (d) Bank Rate</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> The Standing Deposit Facility (SDF) is an uncollateralized liquidity absorption window placed at 25 bps below the policy repo rate[cite: 1, 2].</div>
+                </div>
+                <button onclick="gradeMCQs()" class="w-full py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition shadow">Grade Answers</button>
+            </div>
+        </div>
+
+        <!-- TAB 7: MASTER SUMMARY TABLE -->
+        <div id="tab-summary" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-green-700">📊 Quantitative vs Qualitative Tools Master Summary</h2>
+            <div class="overflow-x-auto rounded-lg border">
+                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-green-50">
+                        <tr>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Category</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Instrument</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Operational Target</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Action in Inflation</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-white">
+                        <tr>
+                            <td class="px-4 py-3 font-semibold" rowspan="5">Quantitative (General)</td>
+                            <td>Cash Reserve Ratio (CRR)</td><td>Cash held with RBI (% of NDTL)</td><td><strong>Increase</strong> CRR</td>
+                        </tr>
+                        <tr><td>Statutory Liquidity Ratio (SLR)</td><td>Liquid assets held with banks (% of NDTL)[cite: 1, 2]</td><td><strong>Increase</strong> SLR</td></tr>
+                        <tr><td>Policy Repo Rate</td><td>Key overnight lending rate against collateral[cite: 1]</td><td><strong>Hike</strong> Repo Rate</td></tr>
+                        <tr><td>Standing Deposit Facility (SDF)</td><td>Uncollateralized floor absorption window[cite: 1, 2]</td><td><strong>Hike</strong> SDF Rate</td></tr>
+                        <tr><td>Open Market Operations (OMO)</td><td>Direct purchase/sale of G-secs in market[cite: 1, 2]</td><td><strong>Sell</strong> G-secs[cite: 1, 2]</td></tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold" rowspan="3">Qualitative (Selective)</td>
+                            <td>Margin Requirements</td><td>Haircut on loan collateral value</td><td><strong>Raise</strong> Margins</td>
+                        </tr>
+                        <tr><td>Credit Rationing</td><td>Sector-specific loan ceilings</td><td><strong>Impose</strong> Ceilings</td>
+                        <tr><td>Moral Suasion</td><td>Advisories and persuasion by Governor</td><td><strong>Advise</strong> credit restraint</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 8: MIND MAP -->
+        <div id="tab-mindmap" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans overflow-x-auto">
+            <h2 class="text-3xl font-bold mb-6 text-pink-600">🧠 Monetary Policy Mind Map</h2>
+            <div class="tree flex justify-center min-w-max pb-8">
+                <ul>
+                    <li>
+                        <a href="#" class="font-bold bg-pink-50 text-xl">Monetary Policy (Unit 3)</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="font-bold text-blue-700">Framework</a>
+                                <ul>
+                                    <li><a href="#">Inflation Target: 4% &plusmn; 2%</a></li>
+                                    <li><a href="#">MPC: 6 Members</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-green-700">Quantitative Tools</a>
+                                <ul>
+                                    <li><a href="#">CRR & SLR</a></li>
+                                    <li><a href="#">Corridor: MSF - Repo - SDF</a></li>
+                                    <li><a href="#">OMO (Buy/Sell G-sec)[cite: 1, 2]</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-purple-700">Qualitative Tools</a>
+                                <ul>
+                                    <li><a href="#">Margin Requirements</a></li>
+                                    <li><a href="#">Moral Suasion</a></li>
+                                    <li><a href="#">Credit Rationing</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-12 text-center text-gray-400 text-sm pb-8 font-sans no-print">
+        &copy; 8-Pillar Master Study Suite • CA Foundation Business Economics Ch 8 Unit 3
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+        function markMastered(btn, cardId) {
+            if(btn.innerText.includes("Mark Mastered")) {
+                btn.innerText = "✅ Mastered";
+                btn.classList.replace("bg-gray-100", "bg-teal-500");
+                btn.classList.replace("text-gray-600", "text-white");
+                localStorage.setItem(cardId, "true");
+            } else {
+                btn.innerText = "Mark Mastered";
+                btn.classList.replace("bg-teal-500", "bg-gray-100");
+                btn.classList.replace("text-white", "text-gray-600");
+                localStorage.removeItem(cardId);
+            }
+            updateFcCounter();
+        }
+        function updateFcCounter() {
+            let count = 0;
+            for(let i=1; i<=4; i++) { if(localStorage.getItem('c8u3_fc'+i)) count++; }
+            document.getElementById('fc-counter').innerText = count;
+        }
+        window.onload = function() {
+            for(let i=1; i<=4; i++) {
+                let id = 'c8u3_fc'+i;
+                if(localStorage.getItem(id)) {
+                    let btns = document.querySelectorAll('#tab-flashcards button');
+                    if(btns[i-1]) {
+                        btns[i-1].innerText = "✅ Mastered";
+                        btns[i-1].classList.replace("bg-gray-100", "bg-teal-500");
+                        btns[i-1].classList.replace("text-gray-600", "text-white");
+                    }
+                }
+            }
+            updateFcCounter();
+        };
+        function gradeMCQs() {
+            let score = 0, total = 2;
+            let cards = document.querySelectorAll('.mcq-card');
+            cards.forEach(card => {
+                let correctVal = card.getAttribute('data-correct');
+                let radios = card.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => {
+                    radio.parentElement.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    radio.disabled = true;
+                    if(radio.checked) {
+                        if(radio.value === correctVal) {
+                            score++;
+                            radio.parentElement.classList.add('bg-green-100', 'border-green-500');
+                        } else {
+                            radio.parentElement.classList.add('bg-red-100', 'border-red-500');
+                        }
+                    }
+                    if(radio.value === correctVal) radio.parentElement.classList.add('border-green-500');
+                });
+                card.querySelector('.explanation').classList.remove('hidden');
+            });
+            document.getElementById('mcq-score').innerText = score + " / " + total;
+        }
+        let timerInterval, timeLeft = 25 * 60, isRunning = false;
+        function toggleTimer() {
+            let btn = document.getElementById('timer-btn');
+            if(isRunning) {
+                clearInterval(timerInterval);
+                btn.innerText = "START";
+                btn.classList.replace("bg-red-100", "bg-blue-100");
+                btn.classList.replace("text-red-600", "text-blue-600");
+                isRunning = false;
+            } else {
+                timerInterval = setInterval(updateTimer, 1000);
+                btn.innerText = "PAUSE";
+                btn.classList.replace("bg-blue-100", "bg-red-100");
+                btn.classList.replace("text-blue-600", "text-red-600");
+                isRunning = true;
+            }
+        }
+        function updateTimer() {
+            if(timeLeft <= 0) {
+                clearInterval(timerInterval);
+                alert("🍅 Pomodoro complete! Take a 5-minute break.");
+                timeLeft = 25 * 60;
+                document.getElementById('timer-btn').innerText = "START";
+                isRunning = false;
+            } else { timeLeft--; }
+            let m = Math.floor(timeLeft / 60), s = timeLeft % 60;
+            document.getElementById('timer-display').innerText = (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+        }
+    </script>
+</body>
+</html>

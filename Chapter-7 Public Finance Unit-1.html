@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CA Foundation | Ch 7 Unit 1: Fiscal Functions & Centre-State Finance</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Kalam:wght@400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper-bg: #fffdf7;
+      --line-color: #e2e8f0;
+      --margin-red: #fca5a5;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f1f5f9;
+    }
+    .handwritten-title {
+      font-family: 'Caveat', cursive;
+    }
+    .handwritten-body {
+      font-family: 'Kalam', cursive;
+      line-height: 1.75;
+      font-size: 1.12rem;
+    }
+    .handwritten-alt {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 1.18rem;
+      line-height: 1.65;
+    }
+    .notebook-page {
+      background-color: var(--paper-bg);
+      background-image: linear-gradient(var(--line-color) 1px, transparent 1px);
+      background-size: 100% 32px;
+      border-left: 4px double var(--margin-red);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    }
+    .hl-yellow {
+      background: linear-gradient(104deg, rgba(254, 240, 138, 0) 0.9%, rgba(254, 240, 138, 0.95) 2.4%, rgba(254, 240, 138, 0.6) 5.8%, rgba(254, 240, 138, 0.9) 93%, rgba(254, 240, 138, 0.7) 96%, rgba(254, 240, 138, 0) 98%);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .hl-green {
+      background: linear-gradient(104deg, rgba(187, 247, 208, 0) 0.9%, rgba(187, 247, 208, 0.95) 2.4%, rgba(187, 247, 208, 0.7) 93%, rgba(187, 247, 208, 0) 98%);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .hl-pink {
+      background: linear-gradient(104deg, rgba(251, 207, 232, 0) 0.9%, rgba(251, 207, 232, 0.95) 2.4%, rgba(251, 207, 232, 0.7) 93%, rgba(251, 207, 232, 0) 98%);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .hl-blue {
+      background: linear-gradient(104deg, rgba(186, 230, 253, 0) 0.9%, rgba(186, 230, 253, 0.95) 2.4%, rgba(186, 230, 253, 0.7) 93%, rgba(186, 230, 253, 0) 98%);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .sticky-note {
+      background: #fef9c3;
+      border-top: 10px solid #fde047;
+      box-shadow: 3px 5px 12px rgba(0,0,0,0.08);
+      transform: rotate(-0.5deg);
+    }
+    .sticky-note-blue {
+      background: #e0f2fe;
+      border-top: 10px solid #38bdf8;
+      box-shadow: 3px 5px 12px rgba(0,0,0,0.08);
+      transform: rotate(0.5deg);
+    }
+    .sketch-box {
+      border: 2px dashed #475569;
+      border-radius: 14px;
+      background: #ffffff;
+    }
+    .flip-card {
+      perspective: 1000px;
+      min-height: 250px;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+    @media print {
+      .no-print { display: none !important; }
+      .tab-section { display: block !important; page-break-after: always; }
+    }
+  </style>
+</head>
+<body class="text-slate-800">
+
+  <!-- Top Navigation Header -->
+  <header class="bg-gradient-to-r from-indigo-900 via-blue-900 to-slate-900 text-white sticky top-0 z-50 shadow-lg no-print">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+      <div>
+        <span class="text-xs uppercase tracking-widest bg-amber-400 text-slate-900 font-bold px-2.5 py-0.5 rounded-full">CA Foundation • Business Economics</span>
+        <h1 class="text-xl md:text-2xl font-bold mt-1">Chapter 7: Public Finance — Unit 1 Master Suite</h1>
+      </div>
+      <div class="flex items-center gap-2 text-xs bg-white/10 px-3 py-2 rounded-xl border border-white/15">
+        <span>⏱️ Total Unit 1 Study Target: <strong class="text-amber-300">2 Hrs 05 Mins</strong></span>
+        <span>•</span>
+        <span>🔥 Exam Weightage: <strong class="text-emerald-300">3–4 Marks (Unit 1) | 10–12 Marks (Ch 7)</strong></span>
+      </div>
+    </div>
+
+    <!-- 7-Pillar Navigation Bar -->
+    <nav class="bg-slate-950/60 border-t border-white/10 overflow-x-auto">
+      <div class="max-w-7xl mx-auto px-4 flex space-x-1 py-1.5 text-sm font-semibold whitespace-nowrap">
+        <button onclick="switchTab('tab1')" id="btn-tab1" class="tab-btn bg-amber-400 text-slate-950 px-3.5 py-2 rounded-lg transition">1. ✍️ Handwritten Detailed Notes</button>
+        <button onclick="switchTab('tab2')" id="btn-tab2" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">2. ⚡ Exam-Eve Revision Notes</button>
+        <button onclick="switchTab('tab3')" id="btn-tab3" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">3. 🃏 26 Flashcards</button>
+        <button onclick="switchTab('tab4')" id="btn-tab4" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">4. 🎯 22 PYQ/MTP MCQs</button>
+        <button onclick="switchTab('tab5')" id="btn-tab5" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">5. 📊 Unit 1 Summary Table</button>
+        <button onclick="switchTab('tab6')" id="btn-tab6" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">6. 🧠 Full Ch-7 Mind Map</button>
+        <button onclick="switchTab('tab7')" id="btn-tab7" class="tab-btn text-slate-200 hover:bg-white/10 px-3.5 py-2 rounded-lg transition">7. 🎥 Topic Video Hub</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-6">
+
+    <!-- ========================================================================= -->
+    <!-- TAB 1: DETAILED COLOURFUL HANDWRITTEN NOTES WITH INFOGRAPHICS & TIMERS    -->
+    <!-- ========================================================================= -->
+    <section id="tab1" class="tab-section space-y-8">
+      <!-- Intro Banner -->
+      <div class="bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-300 rounded-2xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl font-bold text-amber-950 flex items-center gap-2">
+            <span>📓</span> 100% Standalone Handwritten-Style Visual Notes (Replaces ICAI Text)
+          </h2>
+          <p class="text-sm text-amber-900">Every single concept, economist, constitutional article, and Finance Commission update from ICAI Unit 1 is covered below with past-exam ratings & ideal timers.</p>
+        </div>
+        <button onclick="window.print()" class="no-print bg-amber-900 hover:bg-amber-800 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow">🖨️ Print / Save PDF</button>
+      </div>
+
+      <!-- TOPIC 1.1 & 1.2 -->
+      <div class="notebook-page rounded-2xl p-6 md:p-10 relative">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-slate-300 pb-3 mb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider bg-indigo-100 text-indigo-800 px-2.5 py-1 rounded-md">Topic 1.1 & 1.2</span>
+            <h3 class="handwritten-title text-4xl md:text-5xl text-indigo-950 font-bold mt-1">Role of Government & Musgrave's 3-Branch Taxonomy</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-rose-100 border border-rose-300 text-rose-800 text-xs font-bold px-3 py-1.5 rounded-full">⭐⭐⭐⭐⭐ Super High Priority (Asked in 8+ Attempts)</span>
+            <span class="bg-slate-800 text-amber-300 text-xs font-bold px-3 py-1.5 rounded-full">⏱️ Ideal Study Time: 20 Mins</span>
+          </div>
+        </div>
+
+        <div class="handwritten-body space-y-6 text-slate-800">
+          <p>
+            <strong class="text-indigo-900 text-xl">1. Why does the Government intervene in the Economy?</strong><br>
+            The primary goal of the state is to <span class="hl-yellow font-bold">promote the general welfare of society</span>. The government does not expect the economy to function automatically; it intervenes to improve the well-being of individuals and households.
+          </p>
+
+          <!-- Infographic: 3 Macroeconomic Goals -->
+          <div class="sketch-box p-5 my-4">
+            <h4 class="handwritten-title text-3xl text-center text-indigo-900 mb-4">🎯 The 3 Main Macroeconomic Goals of Any Nation</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="bg-emerald-50 border-2 border-emerald-400 rounded-xl p-4">
+                <div class="text-2xl mb-1">📈 1. Economic Growth</div>
+                <p class="text-sm font-sans text-emerald-950">If <strong>Real GDP grows faster than population</strong>, people enjoy a <span class="hl-green">higher standard of living</span>.</p>
+              </div>
+              <div class="bg-blue-50 border-2 border-blue-400 rounded-xl p-4">
+                <div class="text-2xl mb-1">👷 2. High Employment</div>
+                <p class="text-sm font-sans text-blue-950">Ensures higher income & output. Unemployment harms society as a whole due to <strong>loss of potential output</strong>.</p>
+              </div>
+              <div class="bg-amber-50 border-2 border-amber-400 rounded-xl p-4">
+                <div class="text-2xl mb-1">⚖️ 3. Stable Price Levels</div>
+                <p class="text-sm font-sans text-amber-950"><strong>Inflation</strong> reduces real income/purchasing power (hurts low-income families most). <strong>Deflation</strong> signals downturn, recession/depression & mass unemployment.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Economic Systems -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div>
+              <strong class="text-indigo-900 text-xl">2. Why an 'Economic System' Must Exist:</strong>
+              <ul class="list-disc pl-6 space-y-1">
+                <li><strong>Root Cause:</strong> Scarcity (<span class="hl-pink">Unlimited Wants vs. Limited Resources</span> with alternative uses).</li>
+                <li><strong>4 Basic Questions Answered by an Economic System:</strong>
+                  <ol class="list-decimal pl-6 font-bold text-indigo-950">
+                    <li>What to produce?</li>
+                    <li>How to produce?</li>
+                    <li>For whom to produce?</li>
+                    <li>How much resources to set apart for growth of productive capacity?</li>
+                  </ol>
+                </li>
+                <li><strong>3 Alternate Economic Systems:</strong>
+                  <br>• <strong>Market (Capitalism)</strong> • <strong>Government (Socialism)</strong> • <strong>Mixed System (Market + Govt)</strong>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Sticky Note: Adam Smith -->
+            <div class="sticky-note p-5 rounded-xl">
+              <h4 class="handwritten-title text-3xl text-amber-950 font-bold">🏛️ Adam Smith's Role of Government (1776)</h4>
+              <p class="text-base text-slate-800 mt-1">
+                Though a bold advocate of <span class="hl-yellow font-bold">free markets & minimal govt activity</span>, Adam Smith saw an important <strong>resource allocation role</strong> for government in <strong>3 areas</strong>:
+              </p>
+              <ol class="list-decimal pl-5 mt-2 space-y-1 font-bold text-slate-900">
+                <li>🛡️ <u>National Defence:</u> Protect nation from external violence & invasion.</li>
+                <li>⚖️ <u>System of Justice:</u> Internal law & order + protection of property rights.</li>
+                <li>🌉 <u>Public Institutions & Public Works:</u> Roads, bridges, canals, harbours, postal system (which profit-seeking individuals cannot efficiently build/operate).</li>
+              </ol>
+              <p class="text-xs font-sans text-rose-700 font-bold mt-2">💡 Historical Turning Point: Since the 1930s Great Depression, traditional state functions were supplemented with Economic / Fiscal Functions!</p>
+            </div>
+          </div>
+
+          <!-- Richard Musgrave Diagram -->
+          <div class="bg-gradient-to-br from-indigo-50 via-white to-purple-50 border-2 border-indigo-400 rounded-2xl p-6 mt-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+              <h4 class="handwritten-title text-3xl md:text-4xl text-indigo-950 font-bold">🌟 Richard Musgrave's Three-Branch Taxonomy (1959)</h4>
+              <span class="bg-indigo-900 text-white text-xs font-sans font-bold px-3 py-1 rounded-full">Book: 'The Theory of Public Finance' (1959)</span>
+            </div>
+
+            <!-- SVG Flowchart of Musgrave's Taxonomy -->
+            <div class="w-full overflow-x-auto my-3">
+              <svg viewBox="0 0 850 250" class="w-full h-auto min-w-[680px]">
+                <!-- Top Box -->
+                <rect x="255" y="10" width="340" height="52" rx="12" fill="#1e1b4b" />
+                <text x="425" y="34" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="bold" font-family="Plus Jakarta Sans">RICHARD MUSGRAVE (1959)</text>
+                <text x="425" y="52" text-anchor="middle" fill="#fcd34d" font-size="12" font-family="Plus Jakarta Sans">'The Theory of Public Finance' — 3 Fiscal Functions</text>
+
+                <!-- Connector Lines -->
+                <line x1="425" y1="62" x2="425" y2="95" stroke="#4338ca" stroke-width="3"/>
+                <line x1="145" y1="95" x2="705" y2="95" stroke="#4338ca" stroke-width="3"/>
+                <line x1="145" y1="95" x2="145" y2="120" stroke="#4338ca" stroke-width="3"/>
+                <line x1="425" y1="95" x2="425" y2="120" stroke="#4338ca" stroke-width="3"/>
+                <line x1="705" y1="95" x2="705" y2="120" stroke="#4338ca" stroke-width="3"/>
+
+                <!-- Branch 1: Allocation -->
+                <rect x="20" y="120" width="250" height="115" rx="12" fill="#ecfdf5" stroke="#10b981" stroke-width="2.5"/>
+                <text x="145" y="146" text-anchor="middle" fill="#065f46" font-size="15" font-weight="bold" font-family="Plus Jakarta Sans">1. ALLOCATION FUNCTION</text>
+                <text x="145" y="168" text-anchor="middle" fill="#047857" font-size="13" font-weight="bold" font-family="Plus Jakarta Sans">Goal: EFFICIENCY</text>
+                <text x="145" y="190" text-anchor="middle" fill="#334155" font-size="11.5" font-family="Plus Jakarta Sans">Corrects market failures &amp; misallocation</text>
+                <rect x="55" y="202" width="180" height="22" rx="6" fill="#059669"/>
+                <text x="145" y="217" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold" font-family="Plus Jakarta Sans">🔬 MICROECONOMIC FUNCTION</text>
+
+                <!-- Branch 2: Redistribution -->
+                <rect x="300" y="120" width="250" height="115" rx="12" fill="#eff6ff" stroke="#3b82f6" stroke-width="2.5"/>
+                <text x="425" y="146" text-anchor="middle" fill="#1e40af" font-size="15" font-weight="bold" font-family="Plus Jakarta Sans">2. REDISTRIBUTION FUNCTION</text>
+                <text x="425" y="168" text-anchor="middle" fill="#1d4ed8" font-size="13" font-weight="bold" font-family="Plus Jakarta Sans">Goal: FAIRNESS / EQUITY</text>
+                <text x="425" y="190" text-anchor="middle" fill="#334155" font-size="11.5" font-family="Plus Jakarta Sans">Fair distribution of income &amp; wealth</text>
+                <rect x="335" y="202" width="180" height="22" rx="6" fill="#2563eb"/>
+                <text x="425" y="217" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold" font-family="Plus Jakarta Sans">🔬 MICROECONOMIC FUNCTION</text>
+
+                <!-- Branch 3: Stabilization -->
+                <rect x="580" y="120" width="250" height="115" rx="12" fill="#fff1f2" stroke="#f43f5e" stroke-width="2.5"/>
+                <text x="705" y="146" text-anchor="middle" fill="#9f1239" font-size="15" font-weight="bold" font-family="Plus Jakarta Sans">3. STABILIZATION FUNCTION</text>
+                <text x="705" y="168" text-anchor="middle" fill="#be123c" font-size="13" font-weight="bold" font-family="Plus Jakarta Sans">Goal: MACRO STABILITY</text>
+                <text x="705" y="190" text-anchor="middle" fill="#334155" font-size="11.5" font-family="Plus Jakarta Sans">Full employment, price stability &amp; growth</text>
+                <rect x="615" y="202" width="180" height="22" rx="6" fill="#e11d48"/>
+                <text x="705" y="217" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="bold" font-family="Plus Jakarta Sans">🌐 MACROECONOMIC FUNCTION</text>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOPIC 1.3: THE ALLOCATION FUNCTION -->
+      <div class="notebook-page rounded-2xl p-6 md:p-10 relative">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-slate-300 pb-3 mb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-md">Topic 1.3</span>
+            <h3 class="handwritten-title text-4xl md:text-5xl text-emerald-950 font-bold mt-1">The Allocation Function (Ensuring Efficiency)</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-amber-100 border border-amber-300 text-amber-900 text-xs font-bold px-3 py-1.5 rounded-full">⭐⭐⭐⭐ High Priority (Asked in 5+ Attempts)</span>
+            <span class="bg-slate-800 text-amber-300 text-xs font-bold px-3 py-1.5 rounded-full">⏱️ Ideal Study Time: 25 Mins</span>
+          </div>
+        </div>
+
+        <div class="handwritten-body space-y-6 text-slate-800">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white/90 p-4 rounded-xl border border-slate-200">
+              <strong class="text-emerald-900 text-xl">📌 Meaning & Private vs. State Allocation:</strong>
+              <ul class="list-disc pl-5 mt-2 space-y-1">
+                <li><strong>Resource Allocation:</strong> Way in which available scarce factors of production are allocated among various alternative uses.</li>
+                <li><strong>Allocative Efficiency:</strong> Achieving the <span class="hl-green font-bold">largest possible output of goods & services</span> from existing stock of resources & technology to maximize value to society.</li>
+                <li><strong>Private Sector Allocation:</strong> Driven by market supply & demand, price mechanism, <span class="hl-yellow">consumer sovereignty & producer profit motives</span>.</li>
+                <li><strong>State Allocation:</strong> Accomplished through <strong>revenue and expenditure activities of government budgeting</strong>.</li>
+              </ul>
+            </div>
+
+            <div class="sticky-note-blue p-5 rounded-xl">
+              <h4 class="handwritten-title text-3xl text-sky-950 font-bold">💡 Key Exam Takeaway!</h4>
+              <p class="mt-2 text-slate-800">
+                <span class="hl-pink font-bold">"Market failures provide the rationale for government's allocative function."</span><br><br>
+                Without government intervention, society produces <strong>too much of demerit goods</strong> (cigarettes, alcohol) and <strong>too little of merit goods</strong> (education, healthcare) and <strong>public goods</strong> (defence).<br><br>
+                👉 In its allocation role, the government acts as a <span class="hl-yellow font-bold">COMPLEMENT rather than a SUBSTITUTE</span> to the market system!
+              </p>
+            </div>
+          </div>
+
+          <!-- 8 Reasons for Market Failure in Allocation -->
+          <div class="sketch-box p-5">
+            <h4 class="handwritten-title text-3xl text-indigo-950 font-bold mb-3">⚠️ 8 Reasons Why Markets Fail to Allocate Resources Efficiently:</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 font-sans text-sm">
+              <div class="p-3 bg-rose-50 border border-rose-200 rounded-lg"><strong>1. Imperfect Competition & Monopoly Power:</strong> Leads to <span class="text-rose-700 font-bold">under-production & higher prices</span>.</div>
+              <div class="p-3 bg-rose-50 border border-rose-200 rounded-lg"><strong>2. Collective Public Goods:</strong> Markets fail to provide goods consumed in common (e.g., <strong>National Defence</strong>).</div>
+              <div class="p-3 bg-rose-50 border border-rose-200 rounded-lg"><strong>3. Incomplete Markets (Merit Goods):</strong> Fail to produce right quantity of <strong>education & healthcare</strong>.</div>
+              <div class="p-3 bg-rose-50 border border-rose-200 rounded-lg"><strong>4. Common Property Resources:</strong> Overused & exhausted in individual pursuit of self-interest (e.g., <strong>Environment</strong>).</div>
+              <div class="p-3 bg-rose-50 border border-rose-200 rounded-lg"><strong>5. Externalities:</strong> Production/consumption affects third parties (e.g., <strong>Pollution</strong>). Prices don't reflect true social costs.</div>
+              <div class="p-3 bg-rose-50 border border-rose-200 rounded-lg"><strong>6. Factor Immobility:</strong> Causes <strong>unemployment and inefficiency</strong>.</div>
+              <div class="p-3 bg-rose-50 border border-rose-200 rounded-lg"><strong>7. Imperfect Information:</strong> One party may withhold full information from the other party.</div>
+              <div class="p-3 bg-rose-50 border border-rose-200 rounded-lg"><strong>8. Inequalities:</strong> Skewed distribution of income and wealth.</div>
+            </div>
+          </div>
+
+          <!-- Budgeting Decisions & 7 Allocation Instruments -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-amber-50/70 border-2 border-amber-300 rounded-xl p-4">
+              <h4 class="handwritten-title text-2xl text-amber-950 font-bold">📋 What Allocative Function in Budgeting Determines (6 Points):</h4>
+              <ol class="list-decimal pl-5 mt-2 space-y-1 text-base">
+                <li><strong>Who and what</strong> will be taxed.</li>
+                <li><strong>How much and on what</strong> government revenue will be spent.</li>
+                <li>Process by which total resources are divided among various uses.</li>
+                <li>Optimum mix of social goods (<strong>public goods + merit goods</strong>).</li>
+                <li>Level of involvement of public sector in the national economy.</li>
+                <li>Reallocation of society's resources from <strong>private use to public use</strong>.</li>
+              </ol>
+            </div>
+
+            <div class="bg-emerald-50/70 border-2 border-emerald-300 rounded-xl p-4">
+              <h4 class="handwritten-title text-2xl text-emerald-950 font-bold">🛠️ 7 Allocation Instruments Used by Government:</h4>
+              <ul class="list-disc pl-5 mt-2 space-y-1 text-base">
+                <li><strong>1. Direct Production:</strong> e.g., electricity & public transportation.</li>
+                <li><strong>2. Price Mechanism (Incentives & Disincentives):</strong> Altering market prices via <span class="hl-green">tax concessions/subsidies</span> (for social welfare goods) & <span class="hl-pink">higher taxes</span> (on cigarettes/alcohol).</li>
+                <li><strong>3. Legislation & Force:</strong> e.g., ban on single-use plastic goods.</li>
+                <li><strong>4. Competition & Merger Policies:</strong> e.g., <strong>Competition Act in India</strong> prevents anti-competitive activities.</li>
+                <li><strong>5. Regulatory Activities:</strong> Licensing, controls, minimum wages, directives on industrial location.</li>
+                <li><strong>6. Legal & Administrative Frameworks:</strong> Property rights & contract enforcement via courts.</li>
+                <li><strong>7. Combination</strong> of any of the above remedies.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOPIC 1.4: THE REDISTRIBUTION FUNCTION -->
+      <div class="notebook-page rounded-2xl p-6 md:p-10 relative">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-slate-300 pb-3 mb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider bg-blue-100 text-blue-800 px-2.5 py-1 rounded-md">Topic 1.4</span>
+            <h3 class="handwritten-title text-4xl md:text-5xl text-blue-950 font-bold mt-1">The Redistribution Function (Equity vs. Efficiency)</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-rose-100 border border-rose-300 text-rose-800 text-xs font-bold px-3 py-1.5 rounded-full">⭐⭐⭐⭐⭐ Super High Priority (Asked in 7+ Attempts)</span>
+            <span class="bg-slate-800 text-amber-300 text-xs font-bold px-3 py-1.5 rounded-full">⏱️ Ideal Study Time: 20 Mins</span>
+          </div>
+        </div>
+
+        <div class="handwritten-body space-y-6 text-slate-800">
+          <p>
+            <strong class="text-blue-900 text-xl">1. Core Concept & Basic Question Answered:</strong><br>
+            Left to the market, distribution of income & wealth becomes skewed. Influenced by socialist ideology emphasizing equality, the distributive function relates to the basic economic question: <span class="hl-yellow font-bold">“FOR WHOM should an economy produce goods and services?”</span> It also determines how <strong>effective demand</strong> over economic goods is divided among spending units.
+          </p>
+
+          <!-- Revenue vs Expenditure Side Redistribution -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-indigo-50 border-2 border-indigo-300 rounded-xl p-4">
+              <h4 class="handwritten-title text-3xl text-indigo-900 font-bold">📥 Revenue Side of Budget</h4>
+              <p class="mt-1">Done through <span class="hl-yellow font-bold">Progressive Taxation</span> (taxing the rich at higher rates).</p>
+            </div>
+            <div class="bg-teal-50 border-2 border-teal-300 rounded-xl p-4">
+              <h4 class="handwritten-title text-3xl text-teal-900 font-bold">📤 Expenditure Side of Budget</h4>
+              <p class="mt-1">Providing <span class="hl-green font-bold">free or subsidized education, healthcare, housing, food</span> & basic goods to deserving people.</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <strong class="text-blue-900 text-xl">🎯 4 Aims of the Distribution Function:</strong>
+              <ol class="list-decimal pl-5 mt-1 space-y-1">
+                <li>Achieve an <strong>equitable distribution</strong> of societal output for increased overall social welfare.</li>
+                <li>Advance well-being of members suffering from <strong>deprivations</strong>.</li>
+                <li>Provide <strong>equality of income, wealth and opportunities</strong>.</li>
+                <li>Provide <strong>security (fulfillment of basic needs)</strong> & ensure a minimum standard of living for everyone.</li>
+              </ol>
+            </div>
+            <div>
+              <strong class="text-blue-900 text-xl">📌 7 Real-World Examples of Redistribution:</strong>
+              <ul class="list-disc pl-5 mt-1 space-y-1 text-base">
+                <li>Progressive taxation of rich + subsidies to poor households.</li>
+                <li>Using progressive tax proceeds to supply essential food grains at highly subsidized prices to <strong>BPL households</strong>.</li>
+                <li>Employment reservations, minimum wages, and <strong>Minimum Support Prices (MSP)</strong> for farmers.</li>
+                <li><strong>Unemployment benefits & transfer payments</strong> (for elderly, handicapped, unemployed, underprivileged).</li>
+                <li>Monetary aid and aid in kind to BPL families.</li>
+                <li>Regulation of manufacture/sale of products for consumer health.</li>
+                <li>Special schemes for backward regions & vulnerable sections.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Infographic: Conflict Between Efficiency & Equity -->
+          <div class="bg-rose-50 border-2 border-rose-400 rounded-2xl p-5">
+            <h4 class="handwritten-title text-3xl text-rose-950 font-bold mb-2">⚡ The Famous Trade-Off: Conflict Between Efficiency & Equity (Deadweight Loss)</h4>
+            <p class="text-base mb-3">
+              Redistribution policies that interfere with producer or consumer choices are likely to have <span class="hl-pink font-bold">Efficiency Costs (Deadweight Losses)</span>:
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-2 text-center font-sans text-xs font-bold">
+              <div class="bg-white p-3 rounded-xl border border-rose-300 shadow-sm flex-1">High Tax Rates on the Rich (For Greater Equity)</div>
+              <div class="text-rose-600 text-lg">➔</div>
+              <div class="bg-white p-3 rounded-xl border border-rose-300 shadow-sm flex-1">Acts as Disincentive to Entrepreneurship, Work, Savings, Investment & Risk-Taking</div>
+              <div class="text-rose-600 text-lg">➔</div>
+              <div class="bg-white p-3 rounded-xl border border-rose-300 shadow-sm flex-1">Negative Impact on Economic Output, Productivity & Growth</div>
+              <div class="text-rose-600 text-lg">➔</div>
+              <div class="bg-white p-3 rounded-xl border border-rose-300 shadow-sm flex-1">Future Tax Revenue Falls & Scope for Welfare Activities Shrinks!</div>
+            </div>
+            <p class="mt-3 text-sm font-sans text-rose-950 font-semibold">
+              ✅ <strong>Optimal Budgetary Policy Rule:</strong> Reconcile the conflicting goals of efficiency and equity by exercising an appropriate trade-off so redistribution is achieved with <u>minimal efficiency costs</u>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOPIC 1.5: STABILIZATION FUNCTION -->
+      <div class="notebook-page rounded-2xl p-6 md:p-10 relative">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-slate-300 pb-3 mb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider bg-rose-100 text-rose-800 px-2.5 py-1 rounded-md">Topic 1.5</span>
+            <h3 class="handwritten-title text-4xl md:text-5xl text-rose-950 font-bold mt-1">The Stabilization Function (Macroeconomic Stability)</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-rose-100 border border-rose-300 text-rose-800 text-xs font-bold px-3 py-1.5 rounded-full">⭐⭐⭐⭐⭐ Super High Priority (Asked in 8+ Attempts)</span>
+            <span class="bg-slate-800 text-amber-300 text-xs font-bold px-3 py-1.5 rounded-full">⏱️ Ideal Study Time: 20 Mins</span>
+          </div>
+        </div>
+
+        <div class="handwritten-body space-y-6 text-slate-800">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <strong class="text-rose-900 text-xl">1. When does Macroeconomic Stability exist? (4 Conditions):</strong>
+              <ul class="list-disc pl-5 mt-1 space-y-1">
+                <li>Economy's <strong>output matches its production capacity</strong>.</li>
+                <li>Economy's <strong>total spending matches its total output</strong>.</li>
+                <li>Economy's <strong>labour resources are fully employed</strong>.</li>
+                <li><strong>Inflation is low and stable</strong>.</li>
+              </ul>
+              <p class="mt-3">
+                <strong class="text-rose-900">🧠 Theoretical Rationale:</strong> Derived from the <span class="hl-yellow font-bold">Keynesian Proposition</span> that a market economy does <u>not</u> automatically generate full employment and price stability, requiring deliberate government stabilization policies (e.g., 2008 global crisis & COVID-19 pandemic revived interest in <strong>countercyclical fiscal policy</strong>).
+              </p>
+            </div>
+
+            <div class="sticky-note p-5 rounded-xl">
+              <h4 class="handwritten-title text-3xl text-amber-950 font-bold">⚠️ 2 Complex Macro Instabilities to Know:</h4>
+              <ul class="space-y-2 mt-2">
+                <li>🔥 <strong>Stagflation:</strong> A complex state of affairs in which <span class="hl-pink font-bold">inflation and unemployment exist side by side</span>.</li>
+                <li>🌍 <strong>Contagion Effect:</strong> Due to increased international interdependence and financial integration, <span class="hl-yellow font-bold">forces of instability get easily transmitted from one country to other countries</span>.</li>
+              </ul>
+              <div class="mt-3 pt-2 border-t border-amber-400 text-sm font-sans">
+                <strong>5 Areas of Aggregate Economy Concerned with Stabilization:</strong><br>
+                (1) Labour employment & capital utilization, (2) Overall output & income, (3) General price levels, (4) Balance of international payments, (5) Rate of economic growth.
+              </div>
+            </div>
+          </div>
+
+          <!-- Infographic: Monetary vs Fiscal Policy & Countercyclical Action -->
+          <div class="sketch-box p-5">
+            <h4 class="handwritten-title text-3xl text-center text-indigo-950 font-bold mb-4">🎛️ Stabilization Policy Matrix: Monetary vs. Fiscal Intervention</h4>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse font-sans text-sm">
+                <thead>
+                  <tr class="bg-slate-800 text-white">
+                    <th class="p-3 rounded-tl-lg">Economic Situation</th>
+                    <th class="p-3">Policy Stance</th>
+                    <th class="p-3">Government Spending (G)</th>
+                    <th class="p-3">Taxes (T)</th>
+                    <th class="p-3">Budget Nature</th>
+                    <th class="p-3 rounded-tr-lg">Monetary Policy (Central Bank)</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+                  <tr class="bg-emerald-50">
+                    <td class="p-3 font-bold text-emerald-950">📉 Recession / High Unemployment</td>
+                    <td class="p-3 font-bold text-emerald-700">Expansionary Policy (Boosts Aggregate Demand)</td>
+                    <td class="p-3 font-semibold">⬆️ Increase Spending (Injects money)</td>
+                    <td class="p-3 font-semibold">⬇️ Cut Taxes (Raises disposable income)</td>
+                    <td class="p-3 font-bold text-emerald-800">Deficit Budget (Stimulates activity)</td>
+                    <td class="p-3">⬆️ Increase Money Supply / ⬇️ Cut Interest Rates</td>
+                  </tr>
+                  <tr class="bg-rose-50">
+                    <td class="p-3 font-bold text-rose-950">📈 High Inflation</td>
+                    <td class="p-3 font-bold text-rose-700">Contractionary Policy (Curbs Aggregate Demand)</td>
+                    <td class="p-3 font-semibold">⬇️ Decrease Spending</td>
+                    <td class="p-3 font-semibold">⬆️ Raise Taxes (Reduces disposable income)</td>
+                    <td class="p-3 font-bold text-rose-800">Surplus Budget (Slows down activity)</td>
+                    <td class="p-3">⬇️ Reduce Money Supply / ⬆️ Raise Interest Rates</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOPIC 1.6: CENTRE AND STATE FINANCE (FISCAL FEDERALISM) -->
+      <div class="notebook-page rounded-2xl p-6 md:p-10 relative">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b-2 border-slate-300 pb-3 mb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider bg-purple-100 text-purple-800 px-2.5 py-1 rounded-md">Topic 1.6</span>
+            <h3 class="handwritten-title text-4xl md:text-5xl text-purple-950 font-bold mt-1">Centre & State Finance (Fiscal Federalism, FC & GST)</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-rose-100 border border-rose-300 text-rose-800 text-xs font-bold px-3 py-1.5 rounded-full">⭐⭐⭐⭐⭐ Super High Priority (Asked in Every Recent Attempt!)</span>
+            <span class="bg-slate-800 text-amber-300 text-xs font-bold px-3 py-1.5 rounded-full">⏱️ Ideal Study Time: 40 Mins</span>
+          </div>
+        </div>
+
+        <div class="handwritten-body space-y-6 text-slate-800">
+          <!-- Fiscal Federalism Intro -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-purple-50 border-2 border-purple-300 rounded-xl p-4">
+              <h4 class="handwritten-title text-3xl text-purple-950 font-bold">🏛️ What is Fiscal Federalism?</h4>
+              <ul class="list-disc pl-5 mt-2 space-y-1">
+                <li>Term introduced by <span class="hl-yellow font-bold">Richard Musgrave</span>.</li>
+                <li>Deals with division of governmental functions and financial relations among different levels of government.</li>
+                <li><strong>Musgrave's Rule of Division:</strong>
+                  <br>• <strong>Central / Federal Govt:</strong> Responsible for <span class="hl-pink font-bold">Economic Stabilization & Income Redistribution</span>.
+                  <br>• <strong>State & Local Govts:</strong> Responsible for <span class="hl-green font-bold">Allocation of Resources</span>.
+                </li>
+                <li>India is a federation of <strong>28 States and 8 Union Territories</strong> with an independent judiciary to resolve disputes.</li>
+              </ul>
+            </div>
+
+            <!-- Article 246 -->
+            <div class="bg-indigo-50 border-2 border-indigo-300 rounded-xl p-4">
+              <h4 class="handwritten-title text-3xl text-indigo-950 font-bold">📜 Article 246: Three Legislative Lists</h4>
+              <ul class="list-disc pl-5 mt-2 space-y-1.5">
+                <li><strong>1. Union List:</strong> Union Parliament alone can legislate.</li>
+                <li><strong>2. State List:</strong> State Legislative Assemblies alone can legislate.</li>
+                <li><strong>3. Concurrent List:</strong> Both Parliament & State Assemblies can legislate. <span class="hl-yellow font-bold">In case of conflict, the law passed by the Centre prevails!</span></li>
+              </ul>
+              <div class="mt-3 pt-2 border-t border-indigo-200 text-sm font-sans">
+                <strong>Expenditure Decentralization:</strong><br>
+                • <strong>Centre:</strong> Defence, foreign affairs, foreign trade & exchange, money & banking, cross-state transport/communication.<br>
+                • <strong>States:</strong> Agriculture, industry, <span class="bg-yellow-200 px-1 font-bold">health & education (social sector)</span>, police, state roads.<br>
+                • <strong>Local Self-Govts (Municipalities/Panchayats):</strong> Water supply, sanitation, local roads, electricity.
+              </div>
+            </div>
+          </div>
+
+          <!-- Taxing Powers: Union vs States -->
+          <div class="sketch-box p-5">
+            <h4 class="handwritten-title text-3xl text-center text-slate-900 font-bold mb-3">💰 Demarcation of Taxing Powers: Union Govt vs. State Govts</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans text-sm">
+              <div class="bg-blue-50 p-4 rounded-xl border border-blue-300">
+                <h5 class="font-bold text-blue-950 text-base mb-2">🇮🇳 Union Government Taxes (Greater Revenue Raising Power)</h5>
+                <ul class="list-disc pl-5 space-y-1 text-slate-800">
+                  <li>Tax on Income (<strong>other than agricultural income</strong>)</li>
+                  <li><strong>Corporation Tax</strong></li>
+                  <li>Customs and Export Duties</li>
+                  <li>Union Excise Duties on certain goods</li>
+                  <li>Tax on Capital Value of Assets (<strong>excluding agricultural land</strong>)</li>
+                  <li>Terminal Taxes & <strong>Security Transaction Tax (STT)</strong></li>
+                  <li><strong>Central GST (CGST)</strong> & Taxes other than stamp duties</li>
+                </ul>
+              </div>
+              <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-300">
+                <h5 class="font-bold text-emerald-950 text-base mb-2">🏞️ State Government Taxes</h5>
+                <ul class="list-disc pl-5 space-y-1 text-slate-800">
+                  <li>Tax on <strong>Agricultural Income</strong> & <strong>Land Revenue</strong></li>
+                  <li>Taxes on <strong>Lands and Buildings</strong></li>
+                  <li>Taxes on <strong>Mineral Rights</strong></li>
+                  <li>Taxes on <strong>Electricity, Vehicles, and Tolls</strong></li>
+                  <li>Taxes on <strong>Professions</strong></li>
+                  <li>State Excise Duties on certain items & <strong>State GST (SGST)</strong></li>
+                </ul>
+                <p class="mt-2 text-xs font-bold text-emerald-900 bg-white p-2 rounded border border-emerald-200">
+                  🛡️ Mutual Exemption: Union property is exempt from state taxation; State property and income are not liable to be taxed by the Centre.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Constitutional Articles Table (268 to 293) -->
+          <div class="bg-amber-50 border-2 border-amber-400 rounded-2xl p-5">
+            <h4 class="handwritten-title text-3xl text-amber-950 font-bold mb-3">📖 Must-Memorize Constitutional Articles (Articles 268 to 293)</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 font-sans text-xs">
+              <div class="bg-white p-3 rounded-lg border border-amber-300">
+                <span class="font-extrabold text-amber-900 text-sm">Article 268:</span><br>
+                Duties <strong>levied by Union</strong> but <strong>collected and appropriated by States</strong>.
+              </div>
+              <div class="bg-white p-3 rounded-lg border border-amber-300">
+                <span class="font-extrabold text-amber-900 text-sm">Article 269:</span><br>
+                Taxes <strong>levied and collected by Union</strong> but <strong>assigned to the States</strong>.
+              </div>
+              <div class="bg-white p-3 rounded-lg border border-amber-300">
+                <span class="font-extrabold text-amber-900 text-sm">Article 270:</span><br>
+                Taxes <strong>levied and collected by Union</strong> and <strong>distributed between Union and States</strong>.
+              </div>
+              <div class="bg-white p-3 rounded-lg border border-amber-300">
+                <span class="font-extrabold text-amber-900 text-sm">Article 271:</span><br>
+                <strong>Surcharge</strong> on certain duties and taxes for purposes of the Union.
+              </div>
+              <div class="bg-white p-3 rounded-lg border border-amber-300">
+                <span class="font-extrabold text-amber-900 text-sm">Article 275:</span><br>
+                <strong>Statutory Grants-in-aid</strong> from the Union to certain States in need.
+              </div>
+              <div class="bg-white p-3 rounded-lg border border-amber-300">
+                <span class="font-extrabold text-indigo-900 text-sm">Article 280 (★ Star):</span><br>
+                Institutional mechanism of <strong>FINANCE COMMISSION</strong> to facilitate transfers.
+              </div>
+              <div class="bg-white p-3 rounded-lg border border-amber-300">
+                <span class="font-extrabold text-amber-900 text-sm">Article 282:</span><br>
+                <strong>Grants</strong> for any public purpose.
+              </div>
+              <div class="bg-white p-3 rounded-lg border border-amber-300">
+                <span class="font-extrabold text-amber-900 text-sm">Article 292:</span><br>
+                <strong>Borrowing by Govt of India (Centre)</strong> on security of Consolidated Fund of India within limits fixed by Parliament.
+              </div>
+              <div class="bg-white p-3 rounded-lg border border-amber-300">
+                <span class="font-extrabold text-amber-900 text-sm">Article 293:</span><br>
+                <strong>Loans for any public purpose / Borrowing by States</strong> within India on Consolidated Fund of State. (Needs <u>Centre's consent</u> if State is indebted to Centre over a previous loan!).
+              </div>
+            </div>
+          </div>
+
+          <!-- Finance Commission Deep Dive -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-5 rounded-xl border-2 border-slate-300">
+              <h4 class="handwritten-title text-3xl text-indigo-950 font-bold">⚖️ Finance Commission (Article 280)</h4>
+              <p class="text-base mt-1"><strong>4 Core Functions:</strong></p>
+              <ol class="list-decimal pl-5 space-y-1 text-base">
+                <li>Distribution between Union & States of net proceeds of taxes (<strong>Vertical Equity</strong>) & allocation between States of their respective shares (<strong>Horizontal Equity</strong>).</li>
+                <li>Determine principles & quantum of <strong>grants-in-aid</strong> to needy states.</li>
+                <li>Recommend measures to the President to augment the <strong>Consolidated Fund of a State</strong> to supplement resources of <strong>Panchayats and Municipalities</strong>.</li>
+                <li>Any other matter referred by the President in the interest of sound finance.</li>
+              </ol>
+              <div class="mt-3 p-3 bg-indigo-50 rounded-lg font-sans text-xs">
+                <strong>🧮 Net Divisible Pool (NDP) Formula:</strong><br>
+                <span class="font-bold text-indigo-900">NDP = Gross Tax Revenues of Union − (Cesses + Surcharges + Non-Tax Revenue)</span><br>
+                *(Note: Following a Constitutional Amendment in <strong>year 2000</strong>, the divisible pool consists of all taxes of the Union).*
+              </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border-2 border-slate-300">
+              <h4 class="handwritten-title text-3xl text-rose-950 font-bold">📊 15th & 16th Finance Commission Updates</h4>
+              <ul class="list-disc pl-5 space-y-1.5 text-base mt-1">
+                <li><strong>14th Finance Commission (2015–20):</strong> Recommended <strong>42%</strong> vertical share.</li>
+                <li><strong>15th Finance Commission:</strong> Constituted on <span class="hl-yellow font-bold">27 November 2017</span> (against backdrop of abolition of Planning Commission & introduction of GST). Recommended <span class="hl-green font-bold">41% vertical devolution</span> for 2020–21 and <strong>2021–26</strong> (1% adjustment for newly formed UTs of <strong>Jammu & Kashmir and Ladakh</strong>).</li>
+                <li><strong>16th Finance Commission (2026–27 to 2030–31):</strong> Headed by <span class="hl-pink font-bold">Prof. Arvind Panagariya</span> — kept vertical devolution unchanged at <span class="hl-yellow font-bold">41%</span>!</li>
+              </ul>
+              <div class="mt-3 p-3 bg-rose-50 rounded-lg font-sans text-xs">
+                <strong>🎯 6 Criteria for Horizontal Distribution (2021–26):</strong><br>
+                1. <strong>Income Distance</strong> (distance of state's income from state with highest income)<br>
+                2. <strong>Area</strong> &nbsp;|&nbsp; 3. <strong>Population (2011)</strong> &nbsp;|&nbsp; 4. <strong>Demographic Performance</strong> (rewards population control) &nbsp;|&nbsp; 5. <strong>Forest and Ecology</strong> &nbsp;|&nbsp; 6. <strong>Tax and Fiscal Efforts</strong>.<br>
+                <span class="text-rose-700 font-bold">⚠️ Exam Trap: "Infrastructure performance" is NOT a criterion!</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- GST Framework -->
+          <div class="bg-gradient-to-r from-emerald-50 to-teal-50 border-2 border-teal-400 rounded-2xl p-5">
+            <h4 class="handwritten-title text-3xl text-teal-950 font-bold mb-2">🧾 Goods and Services Tax (GST) — Rolled Out on 1 July 2017</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-base">
+              <ul class="list-disc pl-5 space-y-1">
+                <li>Replaced <strong>production-based taxation</strong> with a <span class="hl-green font-bold">consumption-based (destination) taxation system</span>; made India's indirect tax regime <strong>unitary in nature</strong>.</li>
+                <li>Subsumes majority of indirect taxes (excise, service tax, sales tax, octroi/entry tax).</li>
+                <li><strong>Revenue Share:</strong> Accounts for <strong>35% of gross tax revenue of Union</strong> and <strong>~44% of own tax revenue of States</strong>.</li>
+                <li><strong>CGST & SGST:</strong> Equal rates on intra-state supplies.</li>
+                <li><strong>IGST (Integrated GST):</strong> Applied on <strong>inter-state movement & imports/exports</strong>. Administered & collected by <strong>Union Govt</strong>, kept in a separate account, and distributed between Union & States.</li>
+              </ul>
+              <ul class="list-disc pl-5 space-y-1">
+                <li><strong>⚖️ Supreme Court Verdict (May 2022):</strong> Union and State legislatures have <span class="hl-yellow font-bold">"equal, simultaneous and unique powers"</span> to make laws on GST, and recommendations of the <strong>GST Council are NOT binding</strong> on them.</li>
+                <li><strong>💰 GST Compensation to States:</strong> Guaranteed for <strong>5 years</strong> (and extended beyond 5 years due to pandemic slowdown) to compensate manufacturing states for loss of revenue. Financed via a <strong>Compensation Cess levied on luxury and demerit goods</strong>.</li>
+                <li><strong>🏆 Top 5 GST Compensation-Receiving States:</strong> <span class="hl-pink font-bold">Maharashtra, Karnataka, Gujarat, Tamil Nadu, and Punjab</span>. (Total released in 2022–23: <strong>₹1,15,662 crore</strong>).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 2: CONCISE EXAM-EVE REVISION NOTES (HIGH-YIELD PYQ/MTP/RTP BULLETS)   -->
+    <!-- ========================================================================= -->
+    <section id="tab2" class="tab-section hidden space-y-6">
+      <div class="bg-indigo-950 text-white rounded-2xl p-6 shadow-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <span class="bg-amber-400 text-slate-950 text-xs font-extrabold px-2.5 py-1 rounded-full uppercase">15-Minute Rapid Revision</span>
+          <h2 class="text-2xl font-bold mt-2">⚡ Concise Exam-Eve Revision Notes — Unit 1</h2>
+          <p class="text-sm text-indigo-200">Filtered strictly for high-frequency ICAI Past Year Questions (PYQs), MTPs, and RTPs.</p>
+        </div>
+        <button onclick="window.print()" class="no-print bg-white text-indigo-950 text-xs font-bold px-4 py-2.5 rounded-xl">🖨️ Print Revision Sheet</button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-2xl p-6 shadow border-l-4 border-indigo-600">
+          <h3 class="font-bold text-lg text-indigo-950 mb-3">1. Economists & Books (Guaranteed 1–2 MCQs)</h3>
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li>• <strong>Adam Smith:</strong> Advocated free markets & minimal govt, EXCEPT 3 resource allocation roles: <strong>(a) National Defence, (b) System of Justice & Property Rights, (c) Public Works/Institutions</strong> (roads, bridges, canals, harbours, postal system).</li>
+            <li>• <strong>Richard Musgrave (1959):</strong> Book <em>'The Theory of Public Finance'</em> — introduced the <strong>Three-Branch Taxonomy</strong>:
+              <br>&nbsp;&nbsp;1. <strong>Allocation Function</strong> (Efficiency) ➔ <em>Microeconomic</em>
+              <br>&nbsp;&nbsp;2. <strong>Redistribution Function</strong> (Fairness/Equity) ➔ <em>Microeconomic</em>
+              <br>&nbsp;&nbsp;3. <strong>Stabilization Function</strong> (Macro Stability) ➔ <em>Macroeconomic</em>
+            </li>
+            <li>• <strong>Richard Musgrave on Fiscal Federalism:</strong> Coined the term <em>Fiscal Federalism</em>. Assigned <strong>Stabilization & Redistribution to Central Govt</strong>, and <strong>Allocation of Resources to State & Local Govts</strong>.</li>
+            <li>• <strong>John Maynard Keynes:</strong> Theoretical rationale for the <strong>Stabilization Function</strong> (market economy does not automatically generate full employment & price stability).</li>
+            <li>• <strong>Prof. Arvind Panagariya:</strong> Chairman of the <strong>16th Finance Commission</strong> (recommended <strong>41%</strong> vertical tax devolution for <strong>2026–27 to 2030–31</strong>).</li>
+          </ul>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl p-6 shadow border-l-4 border-emerald-600">
+          <h3 class="font-bold text-lg text-emerald-950 mb-3">2. Classification of Govt Actions (PYQ Favourite)</h3>
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li>• <strong>Allocation Function Examples:</strong> Parking army on borders/national defence, building modern road infrastructure, Competition Act 2002, banning single-use plastics, taxing alcohol/cigarettes, subsidizing merit goods, establishing property rights.</li>
+            <li>• <strong>Redistribution Function Examples:</strong> Answering <em>"For whom to produce?"</em>, progressive taxation (Revenue side), free/subsidized food grains to BPL families (Expenditure side), unemployment benefits, transfer payments to underprivileged/elderly, job reservations, Minimum Support Price (MSP) for farmers.</li>
+            <li>• <strong>Efficiency vs. Equity Conflict:</strong> Redistribution causes <strong>efficiency costs / deadweight losses</strong> because high taxes create <strong>disincentives to work, save, invest, and take entrepreneurial risks</strong>.</li>
+            <li>• <strong>Stabilization Function Examples:</strong>
+              <br>&nbsp;&nbsp;• <strong>During Recession/Unemployment:</strong> Expansionary Fiscal Policy (⬆️ Govt Spending, ⬇️ Taxes, Deficit Budget) + ⬆️ Money Supply.
+              <br>&nbsp;&nbsp;• <strong>During High Inflation:</strong> Contractionary Fiscal Policy (⬇️ Govt Spending, ⬆️ Taxes, Surplus Budget) + ⬇️ Money Supply.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl p-6 shadow border-l-4 border-amber-500">
+          <h3 class="font-bold text-lg text-amber-950 mb-3">3. Constitutional Articles & Finance Commission</h3>
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li>• <strong>Article 246:</strong> 3 Lists — Union List, State List, Concurrent List (Centre prevails in conflict).</li>
+            <li>• <strong>Article 268:</strong> Levied by Union, collected & appropriated by States.</li>
+            <li>• <strong>Article 269:</strong> Levied & collected by Union, assigned to States.</li>
+            <li>• <strong>Article 270:</strong> Levied & collected by Union, distributed between Union & States.</li>
+            <li>• <strong>Article 271:</strong> Surcharge on certain duties/taxes for Union purposes.</li>
+            <li>• <strong>Article 275:</strong> Statutory Grants-in-aid to states in need.</li>
+            <li>• <strong>Article 280:</strong> Finance Commission (Vertical & Horizontal equity, Grants-in-aid, augmenting State Consolidated Fund for Panchayats/Municipalities).</li>
+            <li>• <strong>Article 282:</strong> Grants for any public purpose.</li>
+            <li>• <strong>Article 292 & 293:</strong> Borrowing by Centre (Art. 292) & States (Art. 293 — State needs <strong>Centre's consent</strong> if indebted to Centre over a previous loan).</li>
+          </ul>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-2xl p-6 shadow border-l-4 border-rose-600">
+          <h3 class="font-bold text-lg text-rose-950 mb-3">4. Finance Commission Numbers & GST Facts</h3>
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li>• <strong>Net Divisible Pool (NDP):</strong> Gross Union Tax Revenue minus <em>Cesses, Surcharges, and Non-Tax Revenue</em>. (Year 2000 Amendment included all Union taxes in divisible pool).</li>
+            <li>• <strong>Vertical Devolution Share:</strong> 14th FC = <strong>42%</strong> | 15th FC (constituted 27 Nov 2017 for 2021–26) = <strong>41%</strong> (1% cut for J&K and Ladakh UTs) | 16th FC (2026–31) = <strong>41%</strong>.</li>
+            <li>• <strong>6 Criteria of 15th FC:</strong> (1) Income Distance, (2) Area, (3) Population (2011), (4) Demographic Performance, (5) Forest & Ecology, (6) Tax & Fiscal Efforts.</li>
+            <li>• <strong>GST (1 July 2017):</strong> Consumption-based; unitary indirect tax regime; <strong>35%</strong> of Union gross tax revenue & <strong>44%</strong> of States' own tax revenue.</li>
+            <li>• <strong>May 2022 SC Verdict:</strong> Union & States have equal, simultaneous powers on GST; GST Council recommendations are <strong>not binding</strong>.</li>
+            <li>• <strong>GST Compensation:</strong> Cess on luxury/demerit goods; Top 5 states: <strong>Maharashtra, Karnataka, Gujarat, Tamil Nadu, Punjab</strong> (₹1,15,662 cr in 2022–23).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: 26 INTERACTIVE FLASHCARDS (PYQ / MTP / RTP BASED)                  -->
+    <!-- ========================================================================= -->
+    <section id="tab3" class="tab-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border border-slate-200">
+        <div>
+          <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded-full">Active Recall Deck • 26 Cards</span>
+          <h2 class="text-2xl font-bold text-slate-900 mt-1">🃏 Unit 1 Flashcards (Click Any Card to Flip)</h2>
+          <p class="text-sm text-slate-600">Mark cards as "Mastered" as you revise to track your preparation progress.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="bg-emerald-50 border border-emerald-300 px-4 py-2 rounded-xl text-sm font-bold text-emerald-900">
+            Mastered: <span id="fc-mastered-count">0</span> / 26
+          </div>
+          <button onclick="resetFlashcards()" class="text-xs bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-3 py-2 rounded-lg">Reset Deck</button>
+        </div>
+      </div>
+
+      <div id="flashcard-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 4: 22 PRACTICE MCQs (DIFFERENT FROM FLASHCARDS, WITH EXPLANATIONS)    -->
+    <!-- ========================================================================= -->
+    <section id="tab4" class="tab-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border border-slate-200">
+        <div>
+          <span class="bg-rose-100 text-rose-800 text-xs font-bold px-2.5 py-1 rounded-full">ICAI Exam Simulator • 22 MCQs</span>
+          <h2 class="text-2xl font-bold text-slate-900 mt-1">🎯 Practice MCQs (PYQ, MTP & RTP Pattern)</h2>
+          <p class="text-sm text-slate-600">All 22 questions are scenario-based or statement-based and completely distinct from the flashcards.</p>
+        </div>
+        <div class="flex items-center gap-4">
+          <div class="bg-indigo-50 border border-indigo-200 px-4 py-2 rounded-xl text-sm font-bold text-indigo-950">
+            Score: <span id="mcq-score">0</span> / 22
+          </div>
+          <button onclick="resetMCQs()" class="text-xs bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-3 py-2 rounded-lg">Retake Test</button>
+        </div>
+      </div>
+
+      <div id="mcq-container" class="space-y-4"></div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 5: UNIT-WISE MASTER SUMMARY TABLE                                     -->
+    <!-- ========================================================================= -->
+    <section id="tab5" class="tab-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow border border-slate-200">
+        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2.5 py-1 rounded-full">All-In-One Reference</span>
+        <h2 class="text-2xl font-bold text-slate-900 mt-1">📊 Unit 1 Master Summary Table</h2>
+        <p class="text-sm text-slate-600 mb-6">A structured comparative synthesis of every sub-unit in Chapter 7 Unit 1.</p>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="bg-slate-900 text-white">
+                <th class="p-3.5 rounded-tl-xl">Topic / Dimension</th>
+                <th class="p-3.5">Core Concept & Authority</th>
+                <th class="p-3.5">Mechanism / Instruments</th>
+                <th class="p-3.5">Key Examples / Constitutional Provisions</th>
+                <th class="p-3.5 rounded-tr-xl">ICAI Exam Focus / Trap</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200">
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-indigo-950">1. Macroeconomic Goals</td>
+                <td class="p-3.5">3 primary macro goals of any nation</td>
+                <td class="p-3.5">Real GDP growth > Population growth; Full Employment; Price Stability</td>
+                <td class="p-3.5">Inflation hurts low-income households; Deflation triggers recession & unemployment</td>
+                <td class="p-3.5 text-rose-700 font-semibold">Government intervenes because markets do not automatically achieve these goals.</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-indigo-950">2. Adam Smith's Role of State</td>
+                <td class="p-3.5">Minimal govt advocate, yet defined 3 resource allocation roles</td>
+                <td class="p-3.5">Public provision where profit-seeking individuals fail</td>
+                <td class="p-3.5">(1) National Defence, (2) System of Justice & Property Rights, (3) Public Works (roads, canals, harbours, postal system)</td>
+                <td class="p-3.5 text-rose-700 font-semibold">Post-1930s Great Depression expanded traditional roles into Fiscal Functions.</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-indigo-950">3. Allocation Function</td>
+                <td class="p-3.5">Richard Musgrave (1959) • <strong>Microeconomic</strong> • Goal: <strong>Efficiency</strong></td>
+                <td class="p-3.5">Direct production, taxes/subsidies, legislation, Competition Act, licensing, legal frameworks</td>
+                <td class="p-3.5">Corrects 8 market failures: monopoly, public goods, incomplete markets (merit goods), common property resources, externalities, factor immobility, imperfect info, inequality</td>
+                <td class="p-3.5 text-rose-700 font-semibold">Govt acts as a <strong>complement</strong>, not a substitute, to the market. Assigned to <strong>State/Local govts</strong> under Fiscal Federalism.</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-indigo-950">4. Redistribution Function</td>
+                <td class="p-3.5">Richard Musgrave (1959) • <strong>Microeconomic</strong> • Goal: <strong>Fairness / Equity</strong></td>
+                <td class="p-3.5"><strong>Revenue side:</strong> Progressive taxation.<br><strong>Expenditure side:</strong> Free/subsidized basic goods & transfer payments.</td>
+                <td class="p-3.5">Answers <em>"For whom to produce?"</em>; BPL food subsidies, unemployment benefits, pensions, reservations, MSP for farmers</td>
+                <td class="p-3.5 text-rose-700 font-semibold">Creates <strong>Efficiency Costs (Deadweight Loss)</strong> by discouraging work, saving & investment. Assigned to <strong>Central Govt</strong>.</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-indigo-950">5. Stabilization Function</td>
+                <td class="p-3.5">Richard Musgrave (1959) & Keynes • <strong>Macroeconomic</strong> • Goal: <strong>Macro Stability</strong></td>
+                <td class="p-3.5"><strong>Expansionary Policy</strong> (Recession: ⬆️G, ⬇️T, Deficit) & <strong>Contractionary Policy</strong> (Inflation: ⬇️G, ⬆️T, Surplus) + Monetary Policy</td>
+                <td class="p-3.5">Targets employment, capital utilization, output, general price level, BoP & growth. Handles <strong>Stagflation</strong> & <strong>Contagion Effect</strong>.</td>
+                <td class="p-3.5 text-rose-700 font-semibold">In a federal setup, stabilization is performed effectively by the <strong>Central Government</strong>.</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-indigo-950">6. Division of Powers & Taxes</td>
+                <td class="p-3.5"><strong>Article 246</strong> (Union, State & Concurrent Lists)</td>
+                <td class="p-3.5">Demarcation of taxing & expenditure responsibilities across Centre, 28 States & 8 UTs</td>
+                <td class="p-3.5"><strong>Union:</strong> Income tax (non-agri), Corp tax, Customs, CGST, STT, Capital value (non-agri).<br><strong>State:</strong> Agri income, Land revenue, Mineral rights, Tolls, Vehicles, Electricity, Professions, SGST.</td>
+                <td class="p-3.5 text-rose-700 font-semibold">Health & Education are <strong>State Govt</strong> expenditure responsibilities; Water & Sanitation are <strong>Local Govt</strong> responsibilities.</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-indigo-950">7. Finance Commission</td>
+                <td class="p-3.5"><strong>Article 280</strong> • Constitutional Body</td>
+                <td class="p-3.5">Evaluates finances, recommends Vertical & Horizontal tax devolution, Grants-in-aid, & local body support</td>
+                <td class="p-3.5"><strong>14th FC:</strong> 42% | <strong>15th FC (2021–26):</strong> 41% | <strong>16th FC (2026–31, Prof. Arvind Panagariya):</strong> 41%.<br><strong>6 Criteria:</strong> Income Distance, Area, Pop (2011), Demographic Perf., Forest & Ecology, Tax & Fiscal Efforts.</td>
+                <td class="p-3.5 text-rose-700 font-semibold"><strong>NDP</strong> = Gross Union Tax Revenue − (Cesses + Surcharges + Non-tax revenue). <em>Infrastructure performance</em> is NOT a criterion.</td>
+              </tr>
+              <tr class="hover:bg-slate-50">
+                <td class="p-3.5 font-bold text-indigo-950">8. GST & Borrowing Rules</td>
+                <td class="p-3.5">Rolled out <strong>1 July 2017</strong> • Articles 292 & 293 for Borrowing</td>
+                <td class="p-3.5">CGST, SGST, IGST (inter-state & imports/exports collected by Union) + Compensation Cess on luxury/demerit goods</td>
+                <td class="p-3.5"><strong>May 2022 SC Verdict:</strong> Equal, simultaneous powers; GST Council recommendations not binding. Top 5 Compensation States: MH, KA, GJ, TN, PB.</td>
+                <td class="p-3.5 text-rose-700 font-semibold">Under <strong>Article 293</strong>, a State MUST obtain Centre's consent to borrow if it is indebted to the Centre over a previous loan.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 6: CHAPTER-WISE MIND MAP (COVERING ALL 4 UNITS OF CHAPTER 7)          -->
+    <!-- ========================================================================= -->
+    <section id="tab6" class="tab-section hidden space-y-6">
+      <div class="bg-white rounded-2xl p-6 shadow border border-slate-200">
+        <span class="bg-purple-100 text-purple-800 text-xs font-bold px-2.5 py-1 rounded-full">Complete Chapter Bird's-Eye View</span>
+        <h2 class="text-2xl font-bold text-slate-900 mt-1">🧠 Chapter 7: Public Finance — Complete 4-Unit Master Mind Map</h2>
+        <p class="text-sm text-slate-600 mb-6">Connects all topics across Unit 1, Unit 2, Unit 3, and Unit 4 of Chapter 7 so you see the big picture from Day 1.</p>
+
+        <!-- Interactive Visual Mind Map Tree -->
+        <div class="bg-slate-900 text-white p-6 rounded-2xl mb-6 text-center shadow-inner">
+          <div class="inline-block bg-amber-400 text-slate-950 font-extrabold px-6 py-3 rounded-2xl text-lg shadow-lg">
+            🏛️ CHAPTER 7: PUBLIC FINANCE (ALL 4 UNITS)
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-6 text-left">
+            <!-- Unit 1 Branch -->
+            <div class="bg-slate-800 border-2 border-emerald-400 rounded-2xl p-4 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="bg-emerald-400 text-slate-950 text-xs font-extrabold px-2.5 py-1 rounded">UNIT 1 (Current)</span>
+                <span class="text-xs text-emerald-300 font-bold">Fiscal Functions & Federalism</span>
+              </div>
+              <h3 class="font-bold text-base text-white">Fiscal Functions & Centre-State Finance</h3>
+              <ul class="text-xs space-y-1.5 text-slate-200">
+                <li>🔹 <strong>1.1 Intro:</strong> 3 Macro Goals (Growth, Employment, Price Stability)</li>
+                <li>🔹 <strong>1.2 Role of Govt:</strong> Adam Smith's 3 Roles & Musgrave's 3-Branch Taxonomy (1959)</li>
+                <li>🔹 <strong>1.3 Allocation (Micro):</strong> Efficiency, 8 Market Failures & 7 Instruments</li>
+                <li>🔹 <strong>1.4 Redistribution (Micro):</strong> Equity, Progressive Tax vs Subsidies, Deadweight Loss Trade-off</li>
+                <li>🔹 <strong>1.5 Stabilization (Macro):</strong> Keynesian Rationale, Stagflation, Contagion, Expansionary vs Contractionary</li>
+                <li>🔹 <strong>1.6 Fiscal Federalism:</strong> Art. 246 (3 Lists), Tax Powers, Art. 268–293, Finance Commission (Art. 280, 41% Share, 6 Criteria), GST (1 July 2017, CGST/SGST/IGST, Compensation Cess)</li>
+              </ul>
+            </div>
+
+            <!-- Unit 2 Branch -->
+            <div class="bg-slate-800 border-2 border-sky-400 rounded-2xl p-4 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="bg-sky-400 text-slate-950 text-xs font-extrabold px-2.5 py-1 rounded">UNIT 2</span>
+                <span class="text-xs text-sky-300 font-bold">Market Failure & Intervention</span>
+              </div>
+              <h3 class="font-bold text-base text-white">Market Failure & Govt Intervention</h3>
+              <ul class="text-xs space-y-1.5 text-slate-200">
+                <li>🔹 <strong>2.1–2.2 Concept:</strong> Complete (Missing Markets) vs Partial Market Failure</li>
+                <li>🔹 <strong>2.3.1 Market Power:</strong> Monopoly restricts output & raises price ($P > MC$)</li>
+                <li>🔹 <strong>2.3.2 Externalities:</strong> 4 Types (Pos/Neg Production & Consumption); $\text{Social Cost} = \text{Private Cost} + \text{External Cost}$</li>
+                <li>🔹 <strong>2.4 Public Goods:</strong> Paul Samuelson (1954); Non-rival, Non-excludable, Indivisible, Free-Rider Problem</li>
+                <li>🔹 <strong>2.5 Incomplete Info:</strong> Asymmetric Info, Adverse Selection (Akerlof's Lemons) & Moral Hazard</li>
+                <li>🔹 <strong>2.6–2.13 Govt Interventions:</strong> Competition Act, Direct Controls vs Market-Based (Pigouvian Tax, Cap-and-Trade), Merit/Demerit Goods, Price Floor (MSP) & Ceiling, Govt Failure</li>
+              </ul>
+            </div>
+
+            <!-- Unit 3 Branch -->
+            <div class="bg-slate-800 border-2 border-amber-400 rounded-2xl p-4 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="bg-amber-400 text-slate-950 text-xs font-extrabold px-2.5 py-1 rounded">UNIT 3</span>
+                <span class="text-xs text-amber-300 font-bold">Budget, Revenue, Exp & Debt</span>
+              </div>
+              <h3 class="font-bold text-base text-white">Budget Making, Revenue, Expenditure & Debt</h3>
+              <ul class="text-xs space-y-1.5 text-slate-200">
+                <li>🔹 <strong>3.1–3.2 Budget Process:</strong> Art. 112 (AFS), Consolidated Fund, Contingency Fund, Public Account, Cut Motions, Guillotine, Appropriation & Finance Bill, Railway Merger (2017–18)</li>
+                <li>🔹 <strong>3.3 Sources of Revenue:</strong> CBDT & CBIC; Revenue Receipts (Tax & Non-Tax) vs Capital Receipts (Debt & Non-Debt: Disinvestment/Loan Recovery)</li>
+                <li>🔹 <strong>3.4 Public Expenditure:</strong> Dept of Expenditure; Centre's Expenditure vs Transfers</li>
+                <li>🔹 <strong>3.5 Public Debt Management:</strong> Internal (RBI IDMD, T-Bills, Dated Securities, WMA, Retail Direct) vs External Debt (MoF); FRBM Act 2003 & PDMC</li>
+                <li>🔹 <strong>Deficit Concepts:</strong> Revenue Deficit, Fiscal Deficit, Primary Deficit ($\text{FD} - \text{Net Interest}$), Outcome Budget</li>
+              </ul>
+            </div>
+
+            <!-- Unit 4 Branch -->
+            <div class="bg-slate-800 border-2 border-rose-400 rounded-2xl p-4 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="bg-rose-400 text-slate-950 text-xs font-extrabold px-2.5 py-1 rounded">UNIT 4</span>
+                <span class="text-xs text-rose-300 font-bold">Fiscal Policy</span>
+              </div>
+              <h3 class="font-bold text-base text-white">Fiscal Policy: Tools, Types & Limitations</h3>
+              <ul class="text-xs space-y-1.5 text-slate-200">
+                <li>🔹 <strong>4.1–4.2 Intro & Objectives:</strong> Classical Laissez-faire vs Keynes (1936); $\text{GDP} = C + I + G + NX$</li>
+                <li>🔹 <strong>4.3 Types of Fiscal Policy:</strong> Expansionary (closes Recessionary Gap) vs Contractionary (eliminates Inflationary Gap)</li>
+                <li>🔹 <strong>4.4.1–4.4.4 4 Instruments:</strong> (1) Govt Expenditure (Current, Capital, Transfers + Multiplier), (2) Taxes, (3) Public Debt (Market Loans vs Small Savings), (4) Budget Balance</li>
+                <li>🔹 <strong>4.4.5–4.4.6 Long-Run Growth & Inequality:</strong> Supply-side infrastructure & human capital; Progressive direct & differential indirect taxes</li>
+                <li>🔹 <strong>4.4.7–4.4.8 Limitations & Crowding Out:</strong> 4 Lags (Recognition, Decision, Implementation, Impact) & Crowding Out of Private Investment</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 7: DETAILED VIDEO HUB & TOPIC-ON-DEMAND LECTURE GENERATOR             -->
+    <!-- ========================================================================= -->
+    <section id="tab7" class="tab-section hidden space-y-6">
+      <div class="bg-gradient-to-r from-indigo-900 to-slate-900 text-white rounded-2xl p-6 shadow-lg">
+        <span class="bg-amber-400 text-slate-950 text-xs font-extrabold px-2.5 py-1 rounded-full uppercase">Pillar 7 • Interactive Video Hub</span>
+        <h2 class="text-2xl font-bold mt-2">🎥 Detailed Topic Video Lectures & Visual Walkthroughs</h2>
+        <p class="text-sm text-indigo-200 mt-1">
+          Click any Unit 1 topic below for an instant interactive animated slide-by-slide visual walkthrough with voiceover support, plus direct curated CA Foundation video lecture links. <strong>Whenever you want a deep-dive video on a specific sub-topic in chat, just name the topic!</strong>
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Topic Selector List -->
+        <div class="bg-white rounded-2xl p-5 shadow border border-slate-200 space-y-3">
+          <h3 class="font-bold text-slate-900 text-base">🎬 Select a Unit 1 Topic to Play:</h3>
+          <button onclick="loadVideoLesson(0)" id="vid-btn-0" class="vid-btn w-full text-left p-3.5 rounded-xl border-2 border-indigo-600 bg-indigo-50 font-semibold text-sm text-indigo-950 transition">
+            ▶️ Module 1: Adam Smith & Musgrave's 3-Branch Taxonomy (1959)
+          </button>
+          <button onclick="loadVideoLesson(1)" id="vid-btn-1" class="vid-btn w-full text-left p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 font-semibold text-sm text-slate-800 transition">
+            ▶️ Module 2: Allocation Function & 8 Market Failures
+          </button>
+          <button onclick="loadVideoLesson(2)" id="vid-btn-2" class="vid-btn w-full text-left p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 font-semibold text-sm text-slate-800 transition">
+            ▶️ Module 3: Redistribution Function & Equity-Efficiency Trade-Off
+          </button>
+          <button onclick="loadVideoLesson(3)" id="vid-btn-3" class="vid-btn w-full text-left p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 font-semibold text-sm text-slate-800 transition">
+            ▶️ Module 4: Stabilization Function, Stagflation & Contagion Effect
+          </button>
+          <button onclick="loadVideoLesson(4)" id="vid-btn-4" class="vid-btn w-full text-left p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 font-semibold text-sm text-slate-800 transition">
+            ▶️ Module 5: Fiscal Federalism, Articles 246–293, Finance Commission & GST
+          </button>
+        </div>
+
+        <!-- Interactive Animated Visual Player -->
+        <div class="lg:col-span-2 bg-slate-950 text-white rounded-2xl p-6 shadow-xl flex flex-col justify-between min-h-[420px]">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3 mb-4">
+              <span id="vid-badge" class="bg-amber-400 text-slate-950 text-xs font-extrabold px-2.5 py-1 rounded">MODULE 1 OF 5</span>
+              <span id="vid-slide-counter" class="text-xs text-slate-400 font-mono">Slide 1 / 3</span>
+            </div>
+            <h3 id="vid-title" class="text-xl md:text-2xl font-bold text-amber-300 mb-3"></h3>
+            <div id="vid-visual-stage" class="bg-slate-900 border border-slate-800 rounded-xl p-5 my-3 min-h-[190px] flex flex-col justify-center"></div>
+            <p id="vid-narration" class="text-sm text-slate-300 leading-relaxed bg-white/5 p-4 rounded-xl border border-white/10"></p>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-4 mt-4 border-t border-slate-800">
+            <div class="flex items-center gap-2">
+              <button onclick="prevSlide()" class="bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl">⬅️ Prev Slide</button>
+              <button onclick="speakCurrentSlide()" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl">🔊 Read Aloud</button>
+              <button onclick="stopSpeech()" class="bg-rose-700 hover:bg-rose-600 text-white text-xs font-bold px-3 py-2.5 rounded-xl">⏹️</button>
+              <button onclick="nextSlide()" class="bg-amber-400 hover:bg-amber-300 text-slate-950 text-xs font-bold px-4 py-2.5 rounded-xl">Next Slide ➡️</button>
+            </div>
+            <a id="vid-yt-link" href="https://www.youtube.com/results?search_query=CA+Foundation+Business+Economics+Public+Finance+Unit+1+ICAI" target="_blank" rel="noopener noreferrer" class="text-xs bg-red-600 hover:bg-red-500 text-white font-bold px-4 py-2.5 rounded-xl">
+              📺 Watch Curated YouTube Lectures ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // =========================================================================
+    // TAB SWITCHING LOGIC
+    // =========================================================================
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-section').forEach(sec => sec.classList.add('hidden'));
+      document.getElementById(tabId).classList.remove('hidden');
+
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-amber-400', 'text-slate-950');
+        btn.classList.add('text-slate-200');
+      });
+      const activeBtn = document.getElementById('btn-' + tabId);
+      activeBtn.classList.add('bg-amber-400', 'text-slate-950');
+      activeBtn.classList.remove('text-slate-200');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // =========================================================================
+    // 26 FLASHCARDS DATA & RENDERING (PILLAR 3)
+    // =========================================================================
+    const flashcardsData = [
+      { q: "1. What are the three main macroeconomic goals for any nation?", a: "1. Economic Growth (Real GDP growing faster than population)\n2. High Levels of Employment\n3. Stable Price Levels (avoiding prolonged inflation and deflation).", tag: "Macro Goals" },
+      { q: "2. What are the 4 basic economic questions that an economic system must answer due to scarcity?", a: "1. What to produce?\n2. How to produce?\n3. For whom to produce?\n4. How much resources to set apart to ensure growth of productive capacity?", tag: "Economic System" },
+      { q: "3. According to Adam Smith, what are the 3 resource allocation roles of the government?", a: "(a) National defence against external violence/invasion\n(b) System of justice for internal law & order and property protection\n(c) Highly beneficial public institutions & public works (roads, bridges, canals, harbours, postal system).", tag: "PYQ Favourite" },
+      { q: "4. Who introduced the 'Three-Branch Taxonomy' of government fiscal functions, in which year, and in which book?", a: "Richard Musgrave in 1959, in his classic treatise 'The Theory of Public Finance'.", tag: "Must Know" },
+      { q: "5. Which of Musgrave's three functions are Microeconomic and which is Macroeconomic?", a: "• Microeconomic Functions: Allocation Function & Redistribution Function.\n• Macroeconomic Function: Stabilization Function.", tag: "PYQ Favourite" },
+      { q: "6. What is 'Allocative Efficiency'?", a: "Utilizing limited resources to produce goods and services that maximize value to society—achieving the largest possible output from the existing stock of resources and technology.", tag: "Allocation" },
+      { q: "7. List the 8 main reasons for Market Failure that hinder efficient allocation of resources.", a: "1. Imperfect competition & monopoly power\n2. Failure to provide collective public goods (e.g., defence)\n3. Incomplete markets / under-production of merit goods\n4. Overuse of common property resources\n5. Externalities\n6. Factor immobility\n7. Imperfect information\n8. Inequalities in income & wealth.", tag: "High Yield" },
+      { q: "8. In its resource allocation role, does the government act as a substitute or a complement to the market system?", a: "The government acts as a COMPLEMENT rather than as a substitute to the market system.", tag: "Exam Trap" },
+      { q: "9. Which fiscal function relates to the basic question of 'For whom should an economy produce goods and services'?", a: "The Redistribution (or Distributive) Function of the government/budget.", tag: "PYQ Favourite" },
+      { q: "10. How does the government redistribute income through the (a) Revenue side and (b) Expenditure side of the budget?", a: "• Revenue Side: Through Progressive Taxation.\n• Expenditure Side: By providing free or subsidized education, healthcare, housing, food, and basic goods to deserving people.", tag: "Redistribution" },
+      { q: "11. Why do redistribution policies often create a conflict between Efficiency and Equity (Deadweight Loss)?", a: "Because high tax rates on the rich to achieve equity can act as a disincentive to entrepreneurship, work, savings, investment, and risk-taking—reducing future output and tax revenues.", tag: "PYQ Favourite" },
+      { q: "12. From which economic proposition is the theoretical rationale for the Stabilization Function derived?", a: "The Keynesian proposition (J.M. Keynes) that a market economy does not automatically generate full employment and price stability, requiring deliberate stabilization policies.", tag: "Stabilization" },
+      { q: "13. Define 'Stagflation' and 'Contagion Effect'.", a: "• Stagflation: A state of affairs in which inflation and unemployment exist side by side.\n• Contagion Effect: Transmission of forces of economic instability from one country to other countries due to international interdependence and financial integration.", tag: "Key Terms" },
+      { q: "14. What fiscal and monetary measures are taken during (a) Recession/High Unemployment and (b) High Inflation?", a: "• Recession (Expansionary): Increase govt spending, cut taxes (Deficit budget) & increase money supply.\n• High Inflation (Contractionary): Cut govt spending, raise taxes (Surplus budget) & reduce money supply.", tag: "PYQ Favourite" },
+      { q: "15. Who introduced the term 'Fiscal Federalism' and how did he divide responsibilities between Central and State governments?", a: "Introduced by Richard Musgrave.\n• Central/Federal Govt: Economic Stabilization & Income Redistribution.\n• State & Local Govts: Allocation of Resources.", tag: "PYQ Favourite" },
+      { q: "16. What does Article 246 of the Indian Constitution provide, and what happens in case of a conflict in the Concurrent List?", a: "Article 246 classifies legislative powers into 3 lists: Union List, State List, and Concurrent List. In the event of conflicting legislation in the Concurrent List, the law passed by the Centre prevails.", tag: "Constitution" },
+      { q: "17. Compare key taxes levied by the Union Government vs. State Governments.", a: "• Union Taxes: Income tax (except agricultural income), Corporation tax, Customs & Export duties, CGST, STT, tax on capital value of assets (excluding agricultural land).\n• State Taxes: Agricultural income tax, land revenue, lands & buildings, mineral rights, electricity, vehicles, tolls, professions, SGST.", tag: "PYQ Favourite" },
+      { q: "18. Distinguish between Articles 268, 269, and 270 of the Constitution.", a: "• Art 268: Duties levied by Union, but collected & appropriated by States.\n• Art 269: Taxes levied & collected by Union, but assigned to States.\n• Art 270: Taxes levied & collected by Union, and distributed between Union and States.", tag: "Articles" },
+      { q: "19. What are Articles 271, 275, and 282 of the Constitution?", a: "• Art 271: Surcharge on certain duties and taxes for purposes of the Union.\n• Art 275: Statutory Grants-in-aid from the Union to certain States.\n• Art 282: Grants for any public purpose.", tag: "Articles" },
+      { q: "20. Which Article establishes the Finance Commission and what are its 4 core functions?", a: "Article 280. Functions:\n1. Distribution of net tax proceeds between Union & States and allocation among States.\n2. Principles & quantum of grants-in-aid to states.\n3. Measures to augment State Consolidated Fund for Panchayats & Municipalities.\n4. Any other matter referred by the President.", tag: "PYQ Favourite" },
+      { q: "21. Define Vertical Equity, Horizontal Equity, and Net Divisible Pool (NDP).", a: "• Vertical Equity: Deciding the share of all states in revenue collected by the Centre.\n• Horizontal Equity: Allocation among states of their respective shares.\n• NDP = Gross Tax Revenues of Union minus (Cesses + Surcharges + Non-tax revenue).", tag: "Finance Commission" },
+      { q: "22. Compare the vertical tax devolution % recommended by the 14th, 15th, and 16th Finance Commissions.", a: "• 14th FC (2015–20): 42%\n• 15th FC (2021–26): 41% (1% reduced to provide for newly formed UTs of J&K and Ladakh)\n• 16th FC (2026–31, headed by Prof. Arvind Panagariya): 41% (kept unchanged).", tag: "Latest Update" },
+      { q: "23. What are the 6 criteria for horizontal distribution of central taxes among states (2021–26)?", a: "1. Income Distance\n2. Area\n3. Population (2011)\n4. Demographic Performance (rewards population control)\n5. Forest and Ecology\n6. Tax and Fiscal Efforts.", tag: "PYQ Favourite" },
+      { q: "24. When was GST rolled out in India, and how is IGST administered?", a: "Rolled out on 1 July 2017. IGST is applied on inter-state movement of goods/services and imports/exports. It is administered and collected by the Union Government and distributed between Union and States.", tag: "GST" },
+      { q: "25. What did the Supreme Court rule in May 2022 regarding GST laws, and which were the top 5 GST compensation-receiving states?", a: "• May 2022 SC Verdict: Union and State legislatures have 'equal, simultaneous and unique powers' to make laws on GST; GST Council recommendations are NOT binding.\n• Top 5 Compensation States: Maharashtra, Karnataka, Gujarat, Tamil Nadu, and Punjab.", tag: "PYQ Favourite" },
+      { q: "26. What do Articles 292 and 293 govern regarding government borrowing?", a: "• Article 292: Borrowing by the Government of India on the security of the Consolidated Fund of India.\n• Article 293: Borrowing by States within India on the security of the Consolidated Fund of the State. States MUST obtain the Centre's consent to borrow if indebted to the Centre over a previous loan.", tag: "Borrowing Rules" }
+    ];
+
+    let masteredCards = new Set();
+
+    function renderFlashcards() {
+      const grid = document.getElementById('flashcard-grid');
+      grid.innerHTML = flashcardsData.map((item, idx) => {
+        const isMastered = masteredCards.has(idx);
+        return `
+          <div id="fcard-${idx}" class="flip-card cursor-pointer" onclick="flipCard(${idx})">
+            <div class="flip-card-inner">
+              <!-- Front -->
+              <div class="flip-card-front bg-white border-2 ${isMastered ? 'border-emerald-400 bg-emerald-50/30' : 'border-slate-200'} shadow-sm hover:shadow-md">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold uppercase px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-800">${item.tag}</span>
+                  <span class="text-xs text-slate-400 font-semibold">Click to Flip 🔄</span>
+                </div>
+                <p class="font-bold text-slate-800 text-base my-auto py-3">${item.q}</p>
+                <div class="flex items-center justify-between pt-2 border-t border-slate-100">
+                  <span class="text-xs text-slate-500">Card #${idx + 1}</span>
+                  <button onclick="toggleMastered(event, ${idx})" class="text-xs font-bold px-2.5 py-1 rounded-md ${isMastered ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-700 hover:bg-emerald-100'}">
+                    ${isMastered ? '✓ Mastered' : 'Mark Mastered'}
+                  </button>
+                </div>
+              </div>
+              <!-- Back -->
+              <div class="flip-card-back bg-indigo-950 text-white shadow-md">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold uppercase px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950">Answer</span>
+                  <span class="text-xs text-indigo-300">Click to Flip Back 🔄</span>
+                </div>
+                <p class="text-sm text-indigo-50 whitespace-pre-line my-auto py-2 leading-relaxed">${item.a}</p>
+                <div class="flex items-center justify-between pt-2 border-t border-indigo-800">
+                  <span class="text-xs text-indigo-300">ICAI Chapter 7 • Unit 1</span>
+                  <button onclick="toggleMastered(event, ${idx})" class="text-xs font-bold px-2.5 py-1 rounded-md ${isMastered ? 'bg-emerald-500 text-slate-950' : 'bg-white/15 text-white hover:bg-emerald-500'}">
+                    ${isMastered ? '✓ Mastered' : 'Mark Mastered'}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+      document.getElementById('fc-mastered-count').textContent = masteredCards.size;
+    }
+
+    function flipCard(idx) {
+      document.getElementById(`fcard-${idx}`).classList.toggle('flipped');
+    }
+
+    function toggleMastered(event, idx) {
+      event.stopPropagation();
+      if (masteredCards.has(idx)) {
+        masteredCards.delete(idx);
+      } else {
+        masteredCards.add(idx);
+      }
+      renderFlashcards();
+    }
+
+    function resetFlashcards() {
+      masteredCards.clear();
+      renderFlashcards();
+    }
+
+    // =========================================================================
+    // 22 PRACTICE MCQs DATA & RENDERING (PILLAR 4 - DISTINCT FROM FLASHCARDS)
+    // =========================================================================
+    const mcqData = [
+      {
+        q: "1. [PYQ Pattern] Suppose the Government of India imposes a 28% GST plus a heavy compensation cess on aerated drinks and tobacco, while simultaneously providing a 50% subsidy on solar water heaters. Under Musgrave's framework, using the price mechanism through incentives and disincentives in this manner is an instrument of:",
+        options: [
+          "The Redistribution Function",
+          "The Allocation Function",
+          "The Macroeconomic Stabilization Function",
+          "Monetary Policy Intervention"
+        ],
+        correct: 1,
+        exp: "Altering market prices determined by demand and supply through taxes (disincentives on demerit goods) and subsidies (incentives on socially desirable goods) to change consumer/producer behaviour is a core instrument of the Allocation Function."
+      },
+      {
+        q: "2. [RTP Pattern] Which of the following statements regarding the three-branch taxonomy of government functions is INCORRECT?",
+        options: [
+          "It was introduced by Richard Musgrave in his 1959 treatise 'The Theory of Public Finance'.",
+          "The allocation function and redistribution function are primarily microeconomic functions.",
+          "The stabilization function is a macroeconomic function concerned with aggregate performance.",
+          "According to Musgrave's fiscal federalism, the allocation function should be performed exclusively by the Central Government."
+        ],
+        correct: 3,
+        exp: "Musgrave argued that the federal/central government should be responsible for economic stabilization and income redistribution, whereas the allocation of resources should be the responsibility of State and Local governments."
+      },
+      {
+        q: "3. [MTP Pattern] When an economy experiences 'Deflation', why is it considered a major macroeconomic concern requiring government intervention?",
+        options: [
+          "It disproportionately reduces the purchasing power of lower-income families.",
+          "It signals a downturn in economic activity which may cause recession or depression and large-scale unemployment.",
+          "It causes the real GDP to grow faster than the population.",
+          "It leads to immediate exhaustion of common property resources."
+        ],
+        correct: 1,
+        exp: "While inflation reduces purchasing power and hurts lower-income families, deflation signals a downturn in economic activity that can trigger recession/depression and large-scale unemployment."
+      },
+      {
+        q: "4. [PYQ Pattern] Which of the following was NOT advocated by Adam Smith as a legitimate resource allocation role of the government?",
+        options: [
+          "National defence to protect the nation from external violence and invasion",
+          "Establishing a system of justice to provide internal law and order",
+          "Active countercyclical deficit financing to eliminate business cycle unemployment",
+          "Maintenance of beneficial public works like canals, harbours, and the postal system"
+        ],
+        correct: 2,
+        exp: "Countercyclical fiscal policy to combat unemployment was advocated by John Maynard Keynes in the 1930s, not Adam Smith."
+      },
+      {
+        q: "5. [MTP Pattern] The government of a state introduces a 'Minimum Support Price (MSP)' for wheat farmers and also provides monthly social security pensions to senior citizens. Which fiscal function is primarily being performed here?",
+        options: [
+          "Allocation Function",
+          "Redistribution Function",
+          "Stabilization Function",
+          "Fiscal Federalism Devolution"
+        ],
+        correct: 1,
+        exp: "Employment reservations, minimum wages, Minimum Support Prices (MSP) for farmers, and transfer payments/pensions to older citizens are explicit examples of the Redistribution Function."
+      },
+      {
+        q: "6. [PYQ Pattern] Why does an optimal budgetary policy towards distributional change require a careful trade-off between 'Equity' and 'Efficiency'?",
+        options: [
+          "Because progressive taxes always increase the administrative cost of the Finance Commission.",
+          "Because redistribution policies that interfere with producer or consumer choices generate efficiency costs or deadweight losses.",
+          "Because the Supreme Court prohibits taxation above 30%.",
+          "Because equity is a macroeconomic goal while efficiency is a monetary goal."
+        ],
+        correct: 1,
+        exp: "High taxes on the rich to achieve greater equity can discourage work, entrepreneurship, savings, and investment—creating efficiency costs (deadweight losses) that reduce economic output and future tax revenue."
+      },
+      {
+        q: "7. [RTP Pattern] A financial crisis originates in the banking sector of Country X and rapidly triggers a stock market crash, capital flight, and recession in Country Y due to global financial integration. In Public Finance, this phenomenon is termed as:",
+        options: [
+          "Stagflation Effect",
+          "Deadweight Loss",
+          "Contagion Effect",
+          "Horizontal Imbalance"
+        ],
+        correct: 2,
+        exp: "The 'Contagion Effect' refers to how increased international interdependence and financial integration cause forces of instability to be easily transmitted from one country to other countries."
+      },
+      {
+        q: "8. [PYQ Pattern] If an economy is suffering from severe recession and high unemployment, which of the following combinations represents the correct countercyclical policy response?",
+        options: [
+          "Decrease government spending, raise taxes, and adopt a surplus budget",
+          "Increase government spending, cut taxes, and adopt a deficit budget",
+          "Increase taxes, reduce money supply, and adopt a balanced budget",
+          "Cut government spending and increase interest rates"
+        ],
+        correct: 1,
+        exp: "During a recession, the government adopts an expansionary fiscal policy: increasing expenditure and/or cutting taxes (running a deficit budget) to inject money and boost aggregate demand."
+      },
+      {
+        q: "9. [MTP Pattern] Which of the following is NOT one of the five aggregate economic performance indicators directly targeted by the government's Stabilization Function?",
+        options: [
+          "Labour employment and capital utilization",
+          "Balance of international payments",
+          "General price levels and rate of economic growth",
+          "Determination of entry fees for municipal parks and museums"
+        ],
+        correct: 3,
+        exp: "Entry fees for excludable public goods like parks/museums fall under the microeconomic Allocation function, whereas Stabilization targets employment/capital utilization, overall output/income, general price levels, balance of international payments, and economic growth."
+      },
+      {
+        q: "10. [PYQ Pattern] In India's federal setup, if both the Union Parliament and a State Legislative Assembly pass conflicting laws on an item listed in the 'Concurrent List' under Article 246, whose law will prevail?",
+        options: [
+          "The State Legislative Assembly's law prevails within that state.",
+          "The law passed by the Centre (Union Parliament) prevails.",
+          "The Finance Commission decides which law will prevail.",
+          "Both laws are automatically declared null and void."
+        ],
+        correct: 1,
+        exp: "Under Article 246, in the event of conflicting legislation on a Concurrent List subject, the law passed by the Centre prevails."
+      },
+      {
+        q: "11. [PYQ Pattern] Which of the following pairs of taxes can be levied ONLY by the State Governments in India?",
+        options: [
+          "Corporation Tax and Security Transaction Tax",
+          "Tax on Agricultural Income and Tax on Mineral Rights",
+          "Customs Duty and Tax on Capital Value of non-agricultural assets",
+          "Terminal Taxes and Central GST"
+        ],
+        correct: 1,
+        exp: "State governments levy taxes on agricultural income, lands and buildings, mineral rights, electricity, vehicles, tolls, professions, and land revenue."
+      },
+      {
+        q: "12. [RTP Pattern] Match the following Constitutional Articles with their correct provisions:\n(I) Article 268 — (P) Taxes levied & collected by Union but assigned to States\n(II) Article 269 — (Q) Duties levied by Union but collected & appropriated by States\n(III) Article 270 — (R) Statutory Grants-in-aid from Union to certain States\n(IV) Article 275 — (S) Taxes levied & collected by Union and distributed between Union & States",
+        options: [
+          "I-Q, II-P, III-S, IV-R",
+          "I-P, II-Q, III-R, IV-S",
+          "I-Q, II-S, III-P, IV-R",
+          "I-S, II-P, III-Q, IV-R"
+        ],
+        correct: 0,
+        exp: "Art 268 = Levied by Union, collected & appropriated by States (Q); Art 269 = Levied & collected by Union, assigned to States (P); Art 270 = Levied & collected by Union, distributed between Union & States (S); Art 275 = Statutory Grants-in-aid (R)."
+      },
+      {
+        q: "13. [MTP Pattern] How does the Finance Commission calculate the 'Net Divisible Pool (NDP)' from the Gross Tax Revenues of the Union?",
+        options: [
+          "Gross Tax Revenue minus Corporation Tax and Income Tax",
+          "Gross Tax Revenue minus Cesses, Surcharges, and Non-Tax Revenue",
+          "Gross Tax Revenue plus GST Compensation Cess",
+          "Gross Tax Revenue minus State GST and Land Revenue"
+        ],
+        correct: 1,
+        exp: "The Finance Commission broadly assesses the overall gross tax revenues of the Union; cesses, surcharges, and non-tax revenue are netted out from gross tax revenue to arrive at the Net Divisible Pool (NDP)."
+      },
+      {
+        q: "14. [PYQ Pattern] When the Finance Commission decides what percentage of the Net Divisible Pool (e.g., 41%) should be assigned to all State Governments combined, it is addressing the issue of:",
+        options: [
+          "Horizontal Equity",
+          "Vertical Equity",
+          "Inter-generational Equity",
+          "Benefit Principle of Taxation"
+        ],
+        correct: 1,
+        exp: "Vertical equity refers to deciding the share of all states combined in the revenue collected by the Centre, whereas Horizontal equity refers to the allocation among individual states of their respective shares."
+      },
+      {
+        q: "15. [PYQ Pattern] Why did the 15th Finance Commission reduce the vertical devolution share of states from 42% (under the 14th FC) to 41% for 2021–26?",
+        options: [
+          "To penalize states for high fiscal deficits during COVID-19",
+          "To provide 1% for the newly formed Union Territories of Jammu & Kashmir and Ladakh from the resources of the Centre",
+          "To fund the abolition of the Planning Commission",
+          "Because GST subsumed state sales taxes"
+        ],
+        correct: 1,
+        exp: "The 1% adjustment (from 42% to 41%) was made to provide for the newly formed Union Territories of Jammu & Kashmir and Ladakh out of the Centre's resources."
+      },
+      {
+        q: "16. [Latest Update MCQ] Who headed the Sixteenth Finance Commission, and what vertical tax devolution share did it recommend for the five-year period 2026–27 to 2030–31?",
+        options: [
+          "N.K. Singh; 42%",
+          "Prof. Arvind Panagariya; 41%",
+          "Dr. Y.V. Reddy; 40%",
+          "Dr. Vijay Kelkar; 45%"
+        ],
+        correct: 1,
+        exp: "As stated in the ICAI Unit 1 summary, the Sixteenth Finance Commission headed by Prof. Arvind Panagariya recommended the tax devolution between the Union and State Governments for 2026–27 to 2030–31 at 41%, keeping it unchanged from the 15th Finance Commission."
+      },
+      {
+        q: "17. [PYQ Pattern] Under the 15th Finance Commission criteria for horizontal distribution of central taxes among states, what does the criterion of 'Income Distance' measure?",
+        options: [
+          "The difference between a state's tax revenue and its fiscal deficit",
+          "The distance of a state's income from the state with the highest income",
+          "The gap between urban per-capita income and rural per-capita income",
+          "The geographical distance of a state capital from New Delhi"
+        ],
+        correct: 1,
+        exp: "Income Distance is defined as the distance of a state's income from the state with the highest income."
+      },
+      {
+        q: "18. [MTP Pattern] With the introduction of Goods and Services Tax (GST) on 1 July 2017, India's indirect tax system shifted from:",
+        options: [
+          "A consumption-based taxation system to a production-based taxation system",
+          "A production-based taxation system to a consumption-based taxation system",
+          "A unitary indirect tax regime to a fragmented octroi regime",
+          "A progressive direct tax system to a regressive direct tax system"
+        ],
+        correct: 1,
+        exp: "The GST system replaced the then-prevailing production-based taxation system with a consumption-based one and made India's indirect tax regime unitary in nature."
+      },
+      {
+        q: "19. [RTP Pattern] Approximately what percentage does GST account for in (i) the gross tax revenue of the Union and (ii) the own tax revenue of the States?",
+        options: [
+          "20% of Union gross tax revenue and 25% of States' own tax revenue",
+          "35% of Union gross tax revenue and around 44% of States' own tax revenue",
+          "50% of Union gross tax revenue and 50% of States' own tax revenue",
+          "44% of Union gross tax revenue and 35% of States' own tax revenue"
+        ],
+        correct: 1,
+        exp: "With many taxes subsumed under it, GST accounts for 35% of the gross tax revenue of the Union and around 44% of the own tax revenue of the States."
+      },
+      {
+        q: "20. [PYQ Pattern] During the five-year GST transition period, which of the following was the correct set of Top 5 GST compensation-receiving states?",
+        options: [
+          "Uttar Pradesh, Bihar, Madhya Pradesh, Rajasthan, and Odisha",
+          "Maharashtra, Karnataka, Gujarat, Tamil Nadu, and Punjab",
+          "Kerala, Andhra Pradesh, Telangana, West Bengal, and Assam",
+          "Haryana, Delhi, Goa, Sikkim, and Himachal Pradesh"
+        ],
+        correct: 1,
+        exp: "During the five-year transition period, the top five GST compensation-receiving states were Maharashtra, Karnataka, Gujarat, Tamil Nadu, and Punjab."
+      },
+      {
+        q: "21. [PYQ Pattern] Under expenditure decentralization in India, which level of government is entrusted with the responsibility of providing public utility services such as water supply, sanitation, and local roads?",
+        options: [
+          "The Central Government",
+          "The State Governments",
+          "Local Self-Governments such as Municipalities and Panchayats",
+          "The Finance Commission"
+        ],
+        correct: 2,
+        exp: "Local self-governments (municipalities and panchayats) are entrusted with water supply, sanitation, local roads, and electricity; State governments handle agriculture, industry, health, education, and police; Central government handles defence, foreign affairs, money & banking, etc."
+      },
+      {
+        q: "22. [RTP Pattern] According to Article 293 of the Constitution of India, under what condition MUST a State Government obtain the Central Government's consent before borrowing money?",
+        options: [
+          "Whenever the State wants to borrow from commercial banks within the state",
+          "In case the State is indebted to the Centre over a previous loan",
+          "Whenever the State's vertical devolution share exceeds 41%",
+          "States can never borrow under any circumstances"
+        ],
+        correct: 1,
+        exp: "Under Article 293, state governments may borrow within the territory of India on the security of the Consolidated Fund of the State, but they need to obtain the Centre's consent to borrow if the state is indebted to the Centre over a previous loan."
+      }
+    ];
+
+    let mcqAnswers = {};
+    let mcqScore = 0;
+
+    function renderMCQs() {
+      const container = document.getElementById('mcq-container');
+      container.innerHTML = mcqData.map((item, qIdx) => {
+        const userAns = mcqAnswers[qIdx];
+        const hasAnswered = userAns !== undefined;
+
+        return `
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+            <p class="font-bold text-slate-900 text-base whitespace-pre-line mb-4">${item.q}</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              ${item.options.map((opt, oIdx) => {
+                let btnStyle = "border-slate-200 hover:bg-slate-50 text-slate-800";
+                if (hasAnswered) {
+                  if (oIdx === item.correct) {
+                    btnStyle = "border-emerald-500 bg-emerald-50 text-emerald-950 font-bold";
+                  } else if (oIdx === userAns && userAns !== item.correct) {
+                    btnStyle = "border-rose-500 bg-rose-50 text-rose-950 font-bold";
+                  } else {
+                    btnStyle = "border-slate-200 opacity-60";
+                  }
+                }
+                return `
+                  <button onclick="selectMCQ(${qIdx}, ${oIdx})" ${hasAnswered ? 'disabled' : ''} class="text-left p-3.5 rounded-xl border-2 text-sm transition flex items-start gap-2.5 ${btnStyle}">
+                    <span class="font-bold">${String.fromCharCode(65 + oIdx)}.</span>
+                    <span>${opt}</span>
+                  </button>
+                `;
+              }).join('')}
+            </div>
+            ${hasAnswered ? `
+              <div class="mt-4 p-4 rounded-xl text-sm ${userAns === item.correct ? 'bg-emerald-50 border border-emerald-200 text-emerald-950' : 'bg-rose-50 border border-rose-200 text-rose-950'}">
+                <strong>${userAns === item.correct ? '✅ Correct!' : '❌ Incorrect.'}</strong> ${item.exp}
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }).join('');
+      document.getElementById('mcq-score').textContent = mcqScore;
+    }
+
+    function selectMCQ(qIdx, oIdx) {
+      if (mcqAnswers[qIdx] !== undefined) return;
+      mcqAnswers[qIdx] = oIdx;
+      if (oIdx === mcqData[qIdx].correct) {
+        mcqScore++;
+      }
+      renderMCQs();
+    }
+
+    function resetMCQs() {
+      mcqAnswers = {};
+      mcqScore = 0;
+      renderMCQs();
+    }
+
+    // =========================================================================
+    // INTERACTIVE VIDEO HUB SLIDE DECK (PILLAR 7)
+    // =========================================================================
+    const videoModules = [
+      {
+        title: "Module 1: Adam Smith & Musgrave's 3-Branch Taxonomy (1959)",
+        ytQuery: "https://www.youtube.com/results?search_query=CA+Foundation+Economics+Fiscal+Functions+Musgrave+Public+Finance",
+        slides: [
+          {
+            visual: `<div class="grid grid-cols-3 gap-3 text-center">
+              <div class="p-3 bg-emerald-900/50 border border-emerald-400 rounded-xl"><div class="text-2xl">📈</div><div class="font-bold text-sm mt-1">1. Economic Growth</div><div class="text-xs text-slate-300">Real GDP > Pop Growth</div></div>
+              <div class="p-3 bg-blue-900/50 border border-blue-400 rounded-xl"><div class="text-2xl">👷</div><div class="font-bold text-sm mt-1">2. High Employment</div><div class="text-xs text-slate-300">Avoids output loss</div></div>
+              <div class="p-3 bg-amber-900/50 border border-amber-400 rounded-xl"><div class="text-2xl">⚖️</div><div class="font-bold text-sm mt-1">3. Stable Prices</div><div class="text-xs text-slate-300">No prolonged inflation/deflation</div></div>
+            </div>`,
+            narration: "Welcome to Module 1! Every nation strives for three main macroeconomic goals: Economic Growth, High Employment, and Stable Price Levels. Because free markets do not automatically achieve these goals, the government intervenes to promote social welfare."
+          },
+          {
+            visual: `<div class="p-4 bg-amber-950/40 border border-amber-400 rounded-xl text-center space-y-2">
+              <div class="text-amber-300 font-bold text-base">🏛️ ADAM SMITH (1776) — 3 Resource Allocation Roles of State</div>
+              <div class="flex justify-around text-xs pt-2">
+                <span>🛡️ 1. National Defence</span>
+                <span>⚖️ 2. Justice & Law/Order</span>
+                <span>🌉 3. Public Works (Roads, Canals, Harbours, Post)</span>
+              </div>
+            </div>`,
+            narration: "Even Adam Smith, a bold advocate of free markets, recognized three essential roles for government: National defence, establishing a system of justice, and maintaining public works like roads, canals, and harbours that private individuals cannot profitably operate."
+          },
+          {
+            visual: `<div class="grid grid-cols-3 gap-3 text-center text-xs">
+              <div class="p-3 bg-emerald-950 border border-emerald-400 rounded-xl"><strong class="text-emerald-300 block text-sm">1. ALLOCATION</strong>Efficiency • <em>Microeconomic</em></div>
+              <div class="p-3 bg-blue-950 border border-blue-400 rounded-xl"><strong class="text-blue-300 block text-sm">2. REDISTRIBUTION</strong>Fairness/Equity • <em>Microeconomic</em></div>
+              <div class="p-3 bg-rose-950 border border-rose-400 rounded-xl"><strong class="text-rose-300 block text-sm">3. STABILIZATION</strong>Macro Stability • <em>Macroeconomic</em></div>
+            </div>`,
+            narration: "In 1959, Richard Musgrave published 'The Theory of Public Finance', introducing the famous three-branch taxonomy: Resource Allocation (microeconomic, for efficiency), Income Redistribution (microeconomic, for fairness), and Macroeconomic Stabilization (macroeconomic, for full employment and price stability)."
+          }
+        ]
+      },
+      {
+        title: "Module 2: The Allocation Function & 8 Market Failures",
+        ytQuery: "https://www.youtube.com/results?search_query=CA+Foundation+Economics+Allocation+Function+Public+Finance",
+        slides: [
+          {
+            visual: `<div class="text-center space-y-2">
+              <div class="text-lg font-bold text-emerald-300">Private Allocation vs. State Allocation</div>
+              <div class="grid grid-cols-2 gap-4 text-xs mt-2">
+                <div class="p-3 bg-slate-800 rounded-lg"><strong>Private Sector:</strong> Market Supply & Demand, Price Mechanism, Consumer Sovereignty & Profit Motive</div>
+                <div class="p-3 bg-emerald-950 border border-emerald-500 rounded-lg"><strong>State Sector:</strong> Revenue & Expenditure Activities of Government Budgeting</div>
+              </div>
+            </div>`,
+            narration: "Allocative efficiency means achieving the largest possible output from limited resources. While private allocation runs on consumer sovereignty and profit motives, state allocation works through government budgeting."
+          },
+          {
+            visual: `<div class="grid grid-cols-4 gap-2 text-xs text-center">
+              <div class="p-2 bg-rose-950/60 border border-rose-400 rounded">1. Monopoly Power</div>
+              <div class="p-2 bg-rose-950/60 border border-rose-400 rounded">2. Public Goods</div>
+              <div class="p-2 bg-rose-950/60 border border-rose-400 rounded">3. Merit Goods</div>
+              <div class="p-2 bg-rose-950/60 border border-rose-400 rounded">4. Common Property</div>
+              <div class="p-2 bg-rose-950/60 border border-rose-400 rounded">5. Externalities</div>
+              <div class="p-2 bg-rose-950/60 border border-rose-400 rounded">6. Factor Immobility</div>
+              <div class="p-2 bg-rose-950/60 border border-rose-400 rounded">7. Imperfect Info</div>
+              <div class="p-2 bg-rose-950/60 border border-rose-400 rounded">8. Inequality</div>
+            </div>`,
+            narration: "Why do markets fail to allocate efficiently? Due to 8 reasons: Monopoly power, failure to provide collective public goods like defence, underproduction of merit goods like education, overuse of common property resources, externalities like pollution, factor immobility, imperfect information, and inequality."
+          },
+          {
+            visual: `<div class="text-center p-4 bg-indigo-950/60 border border-indigo-400 rounded-xl text-xs space-y-2">
+              <div class="text-sm font-bold text-amber-300">🛠️ 7 Allocation Instruments of Government</div>
+              <div>Direct Production • Taxes & Subsidies • Legislation/Bans (Single-use plastic) • Competition Act 2002 • Licensing & Minimum Wages • Legal Frameworks</div>
+            </div>`,
+            narration: "Remember for your exam: Market failures provide the rationale for the government's allocation function, and the government acts as a complement rather than a substitute to the market!"
+          }
+        ]
+      },
+      {
+        title: "Module 3: Redistribution Function & Equity-Efficiency Trade-Off",
+        ytQuery: "https://www.youtube.com/results?search_query=CA+Foundation+Economics+Redistribution+Function+Public+Finance",
+        slides: [
+          {
+            visual: `<div class="grid grid-cols-2 gap-4 text-center text-xs">
+              <div class="p-4 bg-indigo-950 border border-indigo-400 rounded-xl"><strong class="text-base text-indigo-300 block">📥 Revenue Side</strong>Progressive Taxation of the Rich</div>
+              <div class="p-4 bg-teal-950 border border-teal-400 rounded-xl"><strong class="text-base text-teal-300 block">📤 Expenditure Side</strong>Free/Subsidized Education, Healthcare, BPL Food Grains & Transfer Payments</div>
+            </div>`,
+            narration: "The Redistribution Function answers the basic question: 'For whom should an economy produce?' It operates through progressive taxation on the revenue side and free or subsidized services and transfer payments on the expenditure side."
+          },
+          {
+            visual: `<div class="p-4 bg-rose-950/70 border border-rose-400 rounded-xl text-center text-xs space-y-2">
+              <div class="font-bold text-sm text-rose-300">⚡ Conflict Between Equity & Efficiency (Deadweight Loss)</div>
+              <div>High Taxes on Rich ➔ Disincentive to Work, Save, Invest & Take Risks ➔ Lower Output & Future Tax Revenue</div>
+            </div>`,
+            narration: "Exam Alert! Redistribution policies often carry efficiency costs or deadweight losses. Excessive taxation on the rich can discourage entrepreneurship, work, and savings. Therefore, optimal budgetary policy must carefully balance equity and efficiency."
+          }
+        ]
+      },
+      {
+        title: "Module 4: Stabilization Function, Stagflation & Contagion Effect",
+        ytQuery: "https://www.youtube.com/results?search_query=CA+Foundation+Economics+Stabilization+Function+Public+Finance",
+        slides: [
+          {
+            visual: `<div class="grid grid-cols-2 gap-4 text-xs">
+              <div class="p-3 bg-amber-950/60 border border-amber-400 rounded-xl"><strong class="text-amber-300 block text-sm">🔥 Stagflation</strong>Inflation + Unemployment existing side by side.</div>
+              <div class="p-3 bg-purple-950/60 border border-purple-400 rounded-xl"><strong class="text-purple-300 block text-sm">🌍 Contagion Effect</strong>Instability transmitted across countries via global financial integration.</div>
+            </div>`,
+            narration: "Based on the Keynesian proposition, a market economy does not automatically achieve full employment or price stability. Left unchecked, business cycles can lead to Stagflation—where inflation and unemployment coexist—and spread globally via the Contagion Effect."
+          },
+          {
+            visual: `<div class="grid grid-cols-2 gap-4 text-xs text-center">
+              <div class="p-3 bg-emerald-950 border border-emerald-400 rounded-xl"><strong class="text-emerald-300 block text-sm">📉 During Recession</strong>Expansionary Policy: ⬆️ Govt Spending, ⬇️ Taxes (Deficit Budget) + ⬆️ Money Supply</div>
+              <div class="p-3 bg-rose-950 border border-rose-400 rounded-xl"><strong class="text-rose-300 block text-sm">📈 During High Inflation</strong>Contractionary Policy: ⬇️ Govt Spending, ⬆️ Taxes (Surplus Budget) + ⬇️ Money Supply</div>
+            </div>`,
+            narration: "To combat recession, the government uses Expansionary Fiscal Policy—increasing expenditure or cutting taxes to run a deficit budget that stimulates demand. Conversely, to control high inflation, it uses Contractionary Fiscal Policy—cutting expenditure or raising taxes."
+          }
+        ]
+      },
+      {
+        title: "Module 5: Fiscal Federalism, Articles 246–293, Finance Commission & GST",
+        ytQuery: "https://www.youtube.com/results?search_query=CA+Foundation+Economics+Centre+and+State+Finance+Fiscal+Federalism",
+        slides: [
+          {
+            visual: `<div class="grid grid-cols-3 gap-2 text-xs text-center">
+              <div class="p-3 bg-slate-800 border border-slate-600 rounded-lg"><strong>Art. 246:</strong> Union, State & Concurrent Lists</div>
+              <div class="p-3 bg-indigo-950 border border-indigo-400 rounded-lg"><strong>Art. 268–275:</strong> Tax Sharing & Grants-in-Aid</div>
+              <div class="p-3 bg-amber-950 border border-amber-400 rounded-lg"><strong>Art. 280:</strong> Finance Commission</div>
+            </div>`,
+            narration: "Richard Musgrave coined 'Fiscal Federalism', assigning Stabilization and Redistribution to the Centre, and Allocation to the States. In India, Article 246 divides legislative powers into three lists, while Article 280 establishes the Finance Commission."
+          },
+          {
+            visual: `<div class="p-4 bg-emerald-950/60 border border-emerald-400 rounded-xl text-xs space-y-1.5">
+              <div class="font-bold text-sm text-emerald-300">📊 Finance Commission Devolution & 6 Criteria</div>
+              <div>• <strong>14th FC:</strong> 42% &nbsp;|&nbsp; <strong>15th FC (2021–26):</strong> 41% &nbsp;|&nbsp; <strong>16th FC (2026–31, Prof. Arvind Panagariya):</strong> 41%</div>
+              <div>• <strong>6 Criteria:</strong> Income Distance, Area, Population (2011), Demographic Performance, Forest & Ecology, Tax & Fiscal Efforts.</div>
+            </div>`,
+            narration: "Both the 15th Finance Commission and the 16th Finance Commission headed by Professor Arvind Panagariya recommended a 41% vertical share for states. Memorize the 6 horizontal criteria—and remember that 'Infrastructure performance' is NOT one of them!"
+          },
+          {
+            visual: `<div class="p-4 bg-teal-950/60 border border-teal-400 rounded-xl text-xs space-y-1.5">
+              <div class="font-bold text-sm text-teal-300">🧾 GST (1 July 2017) & Borrowing (Art. 292 & 293)</div>
+              <div>• Consumption-based; 35% of Union Gross Tax & 44% of State Own Tax</div>
+              <div>• May 2022 SC Verdict: Equal, simultaneous powers; GST Council not binding</div>
+              <div>• Top 5 Compensation States: MH, KA, GJ, TN, Punjab</div>
+            </div>`,
+            narration: "GST launched on 1st July 2017 as a consumption-based tax. In May 2022, the Supreme Court ruled that Union and State legislatures have equal, simultaneous powers on GST. Finally, under Article 293, a State must take the Centre's consent to borrow if it owes a previous loan to the Centre."
+          }
+        ]
+      }
+    ];
+
+    let currentModIdx = 0;
+    let currentSlideIdx = 0;
+
+    function loadVideoLesson(modIdx) {
+      stopSpeech();
+      currentModIdx = modIdx;
+      currentSlideIdx = 0;
+      document.querySelectorAll('.vid-btn').forEach((btn, i) => {
+        if (i === modIdx) {
+          btn.className = "vid-btn w-full text-left p-3.5 rounded-xl border-2 border-indigo-600 bg-indigo-50 font-semibold text-sm text-indigo-950 transition";
+        } else {
+          btn.className = "vid-btn w-full text-left p-3.5 rounded-xl border border-slate-200 hover:bg-slate-50 font-semibold text-sm text-slate-800 transition";
+        }
+      });
+      renderVideoSlide();
+    }
+
+    function renderVideoSlide() {
+      const mod = videoModules[currentModIdx];
+      const slide = mod.slides[currentSlideIdx];
+      document.getElementById('vid-badge').textContent = `MODULE ${currentModIdx + 1} OF ${videoModules.length}`;
+      document.getElementById('vid-slide-counter').textContent = `Slide ${currentSlideIdx + 1} / ${mod.slides.length}`;
+      document.getElementById('vid-title').textContent = mod.title;
+      document.getElementById('vid-visual-stage').innerHTML = slide.visual;
+      document.getElementById('vid-narration').textContent = slide.narration;
+      document.getElementById('vid-yt-link').href = mod.ytQuery;
+    }
+
+    function nextSlide() {
+      stopSpeech();
+      const mod = videoModules[currentModIdx];
+      if (currentSlideIdx < mod.slides.length - 1) {
+        currentSlideIdx++;
+        renderVideoSlide();
+      }
+    }
+
+    function prevSlide() {
+      stopSpeech();
+      if (currentSlideIdx > 0) {
+        currentSlideIdx--;
+        renderVideoSlide();
+      }
+    }
+
+    function speakCurrentSlide() {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const text = videoModules[currentModIdx].slides[currentSlideIdx].narration;
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = 0.98;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function stopSpeech() {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+    }
+
+    // Initialize all interactive views on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderFlashcards();
+      renderMCQs();
+      renderVideoSlide();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Foundation - Business Economics: Ch 2 Unit 1 - Law of Demand & Elasticity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --line-color: #e5e7eb;
+            --margin-line: #ef4444;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: #1f2937; }
+        .notebook-paper {
+            background-image: repeating-linear-gradient(transparent, transparent 31px, var(--line-color) 31px, var(--line-color) 32px);
+            background-position: 0 1.2rem;
+            background-attachment: local;
+            border-left: 2px solid var(--margin-line);
+            padding-left: 2rem;
+            font-family: 'Kalam', cursive;
+            font-size: 1.15rem;
+            line-height: 2rem;
+        }
+        .hl-yellow { background: linear-gradient(104deg, rgba(253,230,138,0) 0.9%, rgba(253,230,138,1) 2.4%, rgba(253,230,138,0.6) 5.8%, rgba(253,230,138,1) 93%, rgba(253,230,138,0.7) 96%, rgba(253,230,138,0) 98%); }
+        .hl-green { background: linear-gradient(104deg, rgba(167,243,208,0) 0.9%, rgba(167,243,208,1) 2.4%, rgba(167,243,208,0.6) 5.8%, rgba(167,243,208,1) 93%, rgba(167,243,208,0.7) 96%, rgba(167,243,208,0) 98%); }
+        .hl-pink { background: linear-gradient(104deg, rgba(252,165,165,0) 0.9%, rgba(252,165,165,1) 2.4%, rgba(252,165,165,0.6) 5.8%, rgba(252,165,165,1) 93%, rgba(252,165,165,0.7) 96%, rgba(252,165,165,0) 98%); }
+        .hl-blue { background: linear-gradient(104deg, rgba(191,219,254,0) 0.9%, rgba(191,219,254,1) 2.4%, rgba(191,219,254,0.6) 5.8%, rgba(191,219,254,1) 93%, rgba(191,219,254,0.7) 96%, rgba(191,219,254,0) 98%); }
+        
+        .sticky-note {
+            background-color: #fef08a;
+            box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+            padding: 1rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.25rem;
+            margin: 1.25rem 0;
+            border-bottom-right-radius: 20px 5px;
+        }
+
+        .flip-card { background-color: transparent; width: 100%; height: 230px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+        .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back {
+            position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+            display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+            border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-family: 'Patrick Hand', cursive; font-size: 1.2rem;
+        }
+        .flip-card-front { background-color: #ffffff; border: 2px solid #e5e7eb; color: #111827; }
+        .flip-card-back { background-color: #eff6ff; border: 2px solid #93c5fd; color: #1e3a8a; transform: rotateY(180deg); }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .tab-btn { transition: all 0.2s; }
+        .tab-btn.active { background-color: #2563eb; color: white; border-color: #2563eb; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3); }
+
+        @media print {
+            .no-print { display: none !important; }
+            .notebook-paper { background: none; border: none; padding: 0; }
+            body { background: white; }
+            .tab-content { display: block !important; page-break-before: always; }
+            .tab-content:first-of-type { page-break-before: avoid; }
+        }
+
+        .tree ul { padding-top: 20px; position: relative; transition: all 0.5s; }
+        .tree li { float: left; text-align: center; list-style-type: none; position: relative; padding: 20px 5px 0 5px; transition: all 0.5s; }
+        .tree li::before, .tree li::after { content: ''; position: absolute; top: 0; right: 50%; border-top: 2px solid #cbd5e1; width: 50%; height: 20px; }
+        .tree li::after { right: auto; left: 50%; border-left: 2px solid #cbd5e1; }
+        .tree li:only-child::after, .tree li:only-child::before { display: none; }
+        .tree li:only-child { padding-top: 0; }
+        .tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+        .tree li:last-child::before { border-right: 2px solid #cbd5e1; border-radius: 0 5px 0 0; }
+        .tree li:first-child::after { border-radius: 5px 0 0 0; }
+        .tree ul ul::before { content: ''; position: absolute; top: 0; left: 50%; border-left: 2px solid #cbd5e1; width: 0; height: 20px; }
+        .tree li a { border: 2px solid #cbd5e1; padding: 8px 12px; text-decoration: none; color: #1e293b; font-family: 'Patrick Hand', cursive; display: inline-block; border-radius: 8px; background: white; }
+        .tree li a:hover { background: #e0f2fe; border-color: #38bdf8; }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-12">
+
+    <!-- Top Navigation & Tools -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">📉</span>
+                    <h1 class="font-bold text-xl tracking-tight text-gray-900">CA Foundation: Ch 2 Unit 1 — Law of Demand & Elasticity</h1>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200">
+                        <span class="text-lg">⏱️</span>
+                        <span id="timer-display" class="font-mono font-semibold text-slate-700">25:00</span>
+                        <button id="timer-btn" onclick="toggleTimer()" class="text-xs font-bold text-blue-600 hover:text-blue-800 ml-2 px-2 py-1 rounded bg-blue-100 hover:bg-blue-200 transition">START</button>
+                    </div>
+                    
+                    <button onclick="window.print()" class="flex items-center space-x-1 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition shadow-sm">
+                        <span>🖨️</span><span>Save PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pillar Tabs -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto no-scrollbar border-t border-gray-100">
+            <div class="flex space-x-2 py-3" id="tabs-container">
+                <button onclick="switchTab('tab-notes')" class="tab-btn active whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">✍️ 1. Detailed Notes</button>
+                <button onclick="switchTab('tab-traps')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🚨 2. Trap Zone</button>
+                <button onclick="switchTab('tab-revision')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">⚡ 3. Revision & Mnemonics</button>
+                <button onclick="switchTab('tab-recall')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📝 4. Active Recall</button>
+                <button onclick="switchTab('tab-flashcards')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🃏 5. Flashcards</button>
+                <button onclick="switchTab('tab-mcq')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🎯 6. MCQs</button>
+                <button onclick="switchTab('tab-summary')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📊 7. Summary</button>
+                <button onclick="switchTab('tab-mindmap')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🧠 8. Mind Map</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto mt-8 px-4 sm:px-6 lg:px-8">
+
+        <!-- ========================================= -->
+        <!-- TAB 1: DETAILED HANDWRITTEN NOTES         -->
+        <!-- ========================================= -->
+        <div id="tab-notes" class="tab-content active notebook-paper bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden pr-6">
+            <h2 class="text-3xl font-bold mb-4 pt-4 hl-pink inline-block">Ch 2 Unit 1: Law of Demand & Elasticity of Demand</h2>
+            <div class="mb-4 text-sm font-sans text-gray-500 font-semibold">Weightage: Core Micro Pillar (~5–6 Marks) | High Formula & Elasticity Density</div>
+
+            <h3 class="text-2xl font-bold mt-6 text-blue-800">1. The Meaning of Demand</h3>
+            <p>In Economics, <strong>Demand</strong> is NOT just a mere desire. Effective demand requires three conditions:</p>
+            <ul class="list-disc ml-8">
+                <li><span class="hl-yellow">Desire</span> for the commodity.</li>
+                <li><span class="hl-yellow">Ability to pay</span> (purchasing power).</li>
+                <li><span class="hl-yellow">Willingness to spend</span> money to acquire it.</li>
+            </ul>
+            <p>Demand is always expressed at a <strong>specific price</strong> and per <strong>unit of time</strong> (it is a <em>flow concept</em>).</p>
+
+            <h3 class="text-2xl font-bold mt-6 text-blue-800">2. Determinants of Demand</h3>
+            <p>Quantity demanded depends on several factors: $Q_x = f(P_x, Y, P_r, T, A, E)$</p>
+            <ul class="list-disc ml-8">
+                <li><strong>Price of the commodity ($P_x$):</strong> Inverse relationship (ceteris paribus).</li>
+                <li><strong>Income of consumer ($Y$):</strong>
+                    <ul class="list-circle ml-6">
+                        <li><em>Normal Goods:</em> Direct relation (Income $\uparrow \implies$ Demand $\uparrow$).</li>
+                        <li><em>Inferior Goods:</em> Inverse relation (Income $\uparrow \implies$ Demand $\downarrow$).</li>
+                    </ul>
+                </li>
+                <li><strong>Price of Related Goods ($P_r$):</strong>
+                    <ul class="list-circle ml-6">
+                        <li><em>Substitutes (Tea/Coffee):</em> Direct relationship ($P_{tea} \uparrow \implies D_{coffee} \uparrow$).</li>
+                        <li><em>Complements (Car/Petrol):</em> Inverse relationship ($P_{car} \uparrow \implies D_{petrol} \downarrow$).</li>
+                    </ul>
+                </li>
+                <li><strong>Tastes and Preferences:</strong> Includes modern psychological effects:
+                    <ul class="list-circle ml-6">
+                        <li><em>Bandwagon Effect:</em> Buying because everyone else is doing so (imitation).</li>
+                        <li><em>Snob Effect:</em> Desiring exclusivity; demand falls when a good becomes common.</li>
+                        <li><em>Veblen Effect (Conspicuous Consumption):</em> Higher price makes it a prestige symbol (diamonds, luxury cars).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="sticky-note mx-auto max-w-lg">
+                <strong>📌 Expansion/Contraction vs. Increase/Decrease:</strong><br>
+                • <strong>Change in Quantity Demanded:</strong> Caused ONLY by a change in own price ($P_x$). Results in <em>movement along the same demand curve</em> (Downward = Expansion; Upward = Contraction).<br>
+                • <strong>Change in Demand:</strong> Caused by ANY factor OTHER than own price (income, tastes, related goods). Results in a <em>shift of the demand curve</em> (Rightward = Increase; Leftward = Decrease).
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">3. Rationale Behind the Law of Demand</h3>
+            <p>Why does the demand curve slope downwards from left to right?</p>
+            <ol class="list-decimal ml-8">
+                <li><strong>Law of Diminishing Marginal Utility (Marshall):</strong> Consumer pays only what corresponds to the marginal utility; since $MU$ falls with each unit, more will be bought only at a lower price.</li>
+                <li><strong>Substitution Effect (Hicks & Allen):</strong> When price falls, the commodity becomes relatively cheaper than substitutes; consumers substitute it in place of other goods.</li>
+                <li><strong>Income Effect:</strong> Fall in price increases the <em>real income (purchasing power)</em> of the buyer, enabling higher purchases.</li>
+                <li><strong>Arrival of New Consumers:</strong> Lower price attracts consumers who couldn't afford it earlier.</li>
+                <li><strong>Different / Multiple Uses:</strong> When price falls, the good is diverted to less urgent uses (e.g., electricity, milk).</li>
+            </ol>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">4. Elasticity of Demand & Calculation Methods</h3>
+            <p>Elasticity measures responsiveness of quantity demanded to a change in determinants.</p>
+
+            <p class="mt-4"><strong>A. Price Elasticity ($E_p$):</strong> $E_p = \frac{\% \Delta Q}{\% \Delta P}$</p>
+            <ul class="list-disc ml-8">
+                <li><strong>Arc Elasticity (Midpoint Method):</strong> Used when price change is large:
+                    $$E_p = \frac{Q_2 - Q_1}{Q_2 + Q_1} \times \frac{P_2 + P_1}{P_2 - P_1}$$
+                </li>
+                <li><strong>Point Elasticity (Geometric Method):</strong> $E_p = \frac{\text{Lower Segment}}{\text{Upper Segment}}$ on a linear demand curve.
+                    <br>• Midpoint: $E_p = 1$ | Upper half: $E_p > 1$ | Vertical axis intercept: $E_p = \infty$ | Lower half: $E_p < 1$ | Horizontal axis intercept: $E_p = 0$.
+                </li>
+                <li><strong>Total Outlay / Expenditure Method (Marshall):</strong>
+                    <ul class="list-circle ml-6">
+                        <li>Price & Total Outlay move in <strong>opposite</strong> directions $\implies E_p > 1$ (Elastic).</li>
+                        <li>Total Outlay remains <strong>unchanged</strong> when price changes $\implies E_p = 1$ (Unitary).</li>
+                        <li>Price & Total Outlay move in the <strong>same</strong> direction $\implies E_p < 1$ (Inelastic).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p class="mt-4"><strong>B. Income Elasticity ($E_y$):</strong></p>
+            <ul class="list-disc ml-8">
+                <li>$E_y > 0$ (Positive) $\implies$ Normal Goods.</li>
+                <li>$E_y > 1$ $\implies$ Luxury goods.</li>
+                <li>$0 < E_y < 1$ $\implies$ Necessities.</li>
+                <li>$E_y < 0$ (Negative) $\implies$ Inferior Goods.</li>
+            </ul>
+
+            <p class="mt-4"><strong>C. Cross Elasticity ($E_c$):</strong></p>
+            <ul class="list-disc ml-8">
+                <li>$E_c > 0$ (Positive) $\implies$ Substitute goods (Slope of cross-demand curve is upward).</li>
+                <li>$E_c < 0$ (Negative) $\implies$ Complementary goods (Slope is downward).</li>
+                <li>$E_c = 0$ $\implies$ Unrelated goods.</li>
+            </ul>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 2: ICAI TRAP ZONE                     -->
+        <!-- ========================================= -->
+        <div id="tab-traps" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-red-600 flex items-center">🚨 ICAI Trap Zone & Mistake Tracker</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 border">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Common Student Mistake</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-green-600 uppercase">ICAI Exam Standard & Fact</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">All inferior goods are Giffen goods.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> All Giffen goods are inferior, but <strong>not all inferior goods are Giffen</strong>! Giffen goods are a special subset where the negative income effect completely overwhelms the substitution effect, causing demand to rise when price rises.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">If Total Expenditure increases when price increases, demand is elastic.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> If Price $\uparrow$ and Outlay $\uparrow$, they move in the <strong>SAME direction</strong>, which means demand is <strong>Inelastic ($E_p < 1$)</strong>. Demand is Elastic only when Price and Outlay move in <em>opposite</em> directions.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Cross elasticity for complementary goods is positive because both are bought together.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False.</strong> Cross elasticity for complements is <strong>NEGATIVE</strong>. When the price of cars rises, demand for petrol decreases. Only substitutes have positive cross elasticity.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 3: REVISION & MNEMONICS               -->
+        <!-- ========================================= -->
+        <div id="tab-revision" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-4 text-purple-700">⚡ Exam-Eve Quick Revision & Mnemonics</h2>
+            
+            <div class="bg-purple-50 rounded-lg p-5 mb-6 border border-purple-100">
+                <h3 class="text-xl font-bold text-purple-800 mb-3">🧠 Marshall Total Outlay Rule: "I-O-S"</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-sm font-semibold text-gray-500">Same Direction</span>
+                        <div class="text-xl font-bold text-blue-600 mt-1">$E_p < 1$</div>
+                        <p class="text-xs text-gray-600 mt-1">Price $\uparrow$, Outlay $\uparrow$</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-sm font-semibold text-gray-500">Opposite Direction</span>
+                        <div class="text-xl font-bold text-green-600 mt-1">$E_p > 1$</div>
+                        <p class="text-xs text-gray-600 mt-1">Price $\uparrow$, Outlay $\downarrow$</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-sm font-semibold text-gray-500">No Change in Outlay</span>
+                        <div class="text-xl font-bold text-purple-600 mt-1">$E_p = 1$</div>
+                        <p class="text-xs text-gray-600 mt-1">Outlay Constant</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">⏱️ 5-Minute High-Yield Flash Points</h3>
+            <ul class="list-disc ml-5 space-y-2 text-gray-700">
+                <li><strong>Slope vs. Elasticity:</strong> Slope of linear demand curve is constant ($-\Delta P/\Delta Q$), but elasticity varies from $\infty$ to $0$ along the curve!</li>
+                <li><strong>Rectangular Hyperbola Demand Curve:</strong> Has constant unitary elasticity ($E_p = 1$) at all points; total outlay is constant.</li>
+                <li><strong>Arc Formula:</strong> Always use the Midpoint method when given two distinct price-quantity coordinates without specifying point derivative.</li>
+                <li><strong>Giffen Paradox:</strong> Named after Sir Robert Giffen (Scottish economist studying bread/meat consumption among British workers).</li>
+            </ul>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 4: ACTIVE RECALL                      -->
+        <!-- ========================================= -->
+        <div id="tab-recall" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">📝 Active Recall Apple Pencil Worksheet</h2>
+            <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 bg-gray-50">
+                <h3 class="text-lg font-bold mb-3">1. Formula Recall Challenge</h3>
+                <ul class="space-y-4 text-lg">
+                    <li>1. Point Elasticity (Geometric) = ___________________________ / ___________________________</li>
+                    <li>2. Arc Elasticity Formula = ___________________________</li>
+                    <li>3. Cross Elasticity between Goods X and Y ($E_c$) = ___________________________</li>
+                </ul>
+
+                <h3 class="text-lg font-bold mt-8 mb-3">2. Quick Classification</h3>
+                <ul class="space-y-3 text-lg">
+                    <li>• If $E_c = +2.4$, the goods are: ___________________________</li>
+                    <li>• If $E_y = -0.8$, the good is: ___________________________</li>
+                    <li>• If a price rise leaves Total Outlay identical, $E_p$ is: ___________________________</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 5: FLASHCARDS                         -->
+        <!-- ========================================= -->
+        <div id="tab-flashcards" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-teal-600 font-sans">🃏 3D Flip Flashcards</h2>
+                <div class="text-sm font-bold bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-sans">Mastered: <span id="fc-counter">0</span> / 4</div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is the substitution effect vs income effect of a price fall?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span><strong>Substitution Effect:</strong> Good becomes relatively cheaper than rivals $\implies$ buy more.</span>
+                                <span class="mt-2"><strong>Income Effect:</strong> Real purchasing power rises $\implies$ buy more.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c2u1_fc1')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is a Veblen good? How does it affect the demand curve?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span>Conspicuous consumption goods whose utility is derived from their high price and prestige.</span>
+                                <span class="mt-2 text-red-600 font-bold">Exception to Law of Demand: Slopes upward!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c2u1_fc2')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What value does Point Elasticity take at the vertical and horizontal axes?</div>
+                            <div class="flip-card-back text-center text-lg flex flex-col">
+                                <span><strong>Vertical Axis (Price intercept):</strong> $E_p = \infty$ (Infinite)</span>
+                                <span><strong>Horizontal Axis (Qty intercept):</strong> $E_p = 0$ (Zero)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c2u1_fc3')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Define the Snob Effect vs Bandwagon Effect.</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span><strong>Bandwagon:</strong> Demand rises as more people buy it (herd mentality).</span>
+                                <span class="mt-2"><strong>Snob:</strong> Demand falls as the good becomes common (desire for exclusive rarity).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c2u1_fc4')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 6: MCQs                               -->
+        <!-- ========================================= -->
+        <div id="tab-mcq" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-orange-600">🎯 Unit 1 Practice MCQs</h2>
+                <div class="text-sm font-bold bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Score: <span id="mcq-score">0</span></div>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="B">
+                    <p class="font-semibold text-lg mb-3">1. If the price of good X falls from ₹10 to ₹8, and the total outlay of the consumer increases from ₹100 to ₹120, elasticity is:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="A" class="mr-2"> (a) Less than 1</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="B" class="mr-2"> (b) Greater than 1</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="C" class="mr-2"> (c) Equal to 1</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="D" class="mr-2"> (d) Zero</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> Price falls while total outlay increases (opposite direction) $\implies E_p > 1$ (Elastic).</div>
+                </div>
+
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="C">
+                    <p class="font-semibold text-lg mb-3">2. In the case of Giffen goods, the demand curve:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="A" class="mr-2"> (a) Slopes downwards to the right</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="B" class="mr-2"> (b) Is horizontal</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="C" class="mr-2"> (c) Slopes upwards to the right</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="D" class="mr-2"> (d) Is a rectangular hyperbola</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> Giffen goods are direct exceptions to the Law of Demand; their demand curves slope upwards.</div>
+                </div>
+
+                <button onclick="gradeMCQs()" class="w-full py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition shadow">Grade Answers</button>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 7: MASTER SUMMARY TABLE               -->
+        <!-- ========================================= -->
+        <div id="tab-summary" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-green-700">📊 Elasticity Classification Matrix</h2>
+            <div class="overflow-x-auto rounded-lg border">
+                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-green-50">
+                        <tr>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Type of Elasticity</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Numerical Value</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Description</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Curve Shape</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-white">
+                        <tr><td class="px-4 py-3 font-semibold">Perfect Inelastic</td><td>$E_p = 0$</td><td>Qty does not change with price</td><td>Vertical Straight Line</td></tr>
+                        <tr><td class="px-4 py-3 font-semibold">Inelastic</td><td>$0 < E_p < 1$</td><td>% Change in Qty < % Change in Price</td><td>Steeper downward slope</td></tr>
+                        <tr><td class="px-4 py-3 font-semibold">Unitary Elastic</td><td>$E_p = 1$</td><td>% Change in Qty = % Change in Price</td><td>Rectangular Hyperbola</td></tr>
+                        <tr><td class="px-4 py-3 font-semibold">Elastic</td><td>$1 < E_p < \infty$</td><td>% Change in Qty > % Change in Price</td><td>Flatter downward slope</td></tr>
+                        <tr><td class="px-4 py-3 font-semibold">Perfect Elastic</td><td>$E_p = \infty$</td><td>Infinite change at current price</td><td>Horizontal Straight Line</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 8: MIND MAP                           -->
+        <!-- ========================================= -->
+        <div id="tab-mindmap" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans overflow-x-auto">
+            <h2 class="text-3xl font-bold mb-6 text-pink-600">🧠 Demand & Elasticity Mind Map</h2>
+            <div class="tree flex justify-center min-w-max pb-8">
+                <ul>
+                    <li>
+                        <a href="#" class="font-bold bg-pink-50 text-xl">Demand Theory</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="font-bold text-blue-700">Determinants</a>
+                                <ul>
+                                    <li><a href="#">Price ($P_x$)</a></li>
+                                    <li><a href="#">Income ($Y$)</a></li>
+                                    <li><a href="#">Related ($P_r$)</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-green-700">Exceptions</a>
+                                <ul>
+                                    <li><a href="#">Giffen Goods</a></li>
+                                    <li><a href="#">Veblen / Snob</a></li>
+                                    <li><a href="#">Speculative</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-purple-700">Elasticities</a>
+                                <ul>
+                                    <li><a href="#">Price ($E_p$)</a></li>
+                                    <li><a href="#">Income ($E_y$)</a></li>
+                                    <li><a href="#">Cross ($E_c$)</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-12 text-center text-gray-400 text-sm pb-8 font-sans no-print">
+        &copy; 8-Pillar Master Study Suite • CA Foundation Business Economics Ch 2 Unit 1
+    </footer>
+
+    <!-- INTERACTIVITY SCRIPT -->
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function markMastered(btn, cardId) {
+            if(btn.innerText.includes("Mark Mastered")) {
+                btn.innerText = "✅ Mastered";
+                btn.classList.replace("bg-gray-100", "bg-teal-500");
+                btn.classList.replace("text-gray-600", "text-white");
+                localStorage.setItem(cardId, "true");
+            } else {
+                btn.innerText = "Mark Mastered";
+                btn.classList.replace("bg-teal-500", "bg-gray-100");
+                btn.classList.replace("text-white", "text-gray-600");
+                localStorage.removeItem(cardId);
+            }
+            updateFcCounter();
+        }
+
+        function updateFcCounter() {
+            let count = 0;
+            for(let i=1; i<=4; i++) {
+                if(localStorage.getItem('c2u1_fc'+i)) count++;
+            }
+            document.getElementById('fc-counter').innerText = count;
+        }
+
+        window.onload = function() {
+            for(let i=1; i<=4; i++) {
+                let id = 'c2u1_fc'+i;
+                if(localStorage.getItem(id)) {
+                    let btns = document.querySelectorAll('#tab-flashcards button');
+                    if(btns[i-1]) {
+                        btns[i-1].innerText = "✅ Mastered";
+                        btns[i-1].classList.replace("bg-gray-100", "bg-teal-500");
+                        btns[i-1].classList.replace("text-gray-600", "text-white");
+                    }
+                }
+            }
+            updateFcCounter();
+        };
+
+        function gradeMCQs() {
+            let score = 0;
+            let total = 2;
+            let cards = document.querySelectorAll('.mcq-card');
+            
+            cards.forEach(card => {
+                let correctVal = card.getAttribute('data-correct');
+                let radios = card.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => {
+                    radio.parentElement.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    radio.disabled = true;
+                    if(radio.checked) {
+                        if(radio.value === correctVal) {
+                            score++;
+                            radio.parentElement.classList.add('bg-green-100', 'border-green-500');
+                        } else {
+                            radio.parentElement.classList.add('bg-red-100', 'border-red-500');
+                        }
+                    }
+                    if(radio.value === correctVal) radio.parentElement.classList.add('border-green-500');
+                });
+                card.querySelector('.explanation').classList.remove('hidden');
+            });
+            document.getElementById('mcq-score').innerText = score + " / " + total;
+        }
+
+        let timerInterval;
+        let timeLeft = 25 * 60;
+        let isRunning = false;
+
+        function toggleTimer() {
+            let btn = document.getElementById('timer-btn');
+            if(isRunning) {
+                clearInterval(timerInterval);
+                btn.innerText = "START";
+                btn.classList.replace("bg-red-100", "bg-blue-100");
+                btn.classList.replace("text-red-600", "text-blue-600");
+                isRunning = false;
+            } else {
+                timerInterval = setInterval(updateTimer, 1000);
+                btn.innerText = "PAUSE";
+                btn.classList.replace("bg-blue-100", "bg-red-100");
+                btn.classList.replace("text-blue-600", "text-red-600");
+                isRunning = true;
+            }
+        }
+
+        function updateTimer() {
+            if(timeLeft <= 0) {
+                clearInterval(timerInterval);
+                alert("🍅 Pomodoro complete! Take a 5-minute break.");
+                timeLeft = 25 * 60;
+                document.getElementById('timer-btn').innerText = "START";
+                isRunning = false;
+            } else {
+                timeLeft--;
+            }
+            let m = Math.floor(timeLeft / 60);
+            let s = timeLeft % 60;
+            document.getElementById('timer-display').innerText = 
+                (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+        }
+    </script>
+</body>
+</html>

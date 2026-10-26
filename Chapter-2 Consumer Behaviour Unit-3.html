@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Foundation - Business Economics: Ch 2 Unit 3 — Supply & Elasticity of Supply</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --line-color: #e5e7eb;
+            --margin-line: #ef4444;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: #1f2937; }
+        .notebook-paper {
+            background-image: repeating-linear-gradient(transparent, transparent 31px, var(--line-color) 31px, var(--line-color) 32px);
+            background-position: 0 1.2rem;
+            background-attachment: local;
+            border-left: 2px solid var(--margin-line);
+            padding-left: 2rem;
+            font-family: 'Kalam', cursive;
+            font-size: 1.15rem;
+            line-height: 2rem;
+        }
+        .hl-yellow { background: linear-gradient(104deg, rgba(253,230,138,0) 0.9%, rgba(253,230,138,1) 2.4%, rgba(253,230,138,0.6) 5.8%, rgba(253,230,138,1) 93%, rgba(253,230,138,0.7) 96%, rgba(253,230,138,0) 98%); }
+        .hl-green { background: linear-gradient(104deg, rgba(167,243,208,0) 0.9%, rgba(167,243,208,1) 2.4%, rgba(167,243,208,0.6) 5.8%, rgba(167,243,208,1) 93%, rgba(167,243,208,0.7) 96%, rgba(167,243,208,0) 98%); }
+        .hl-pink { background: linear-gradient(104deg, rgba(252,165,165,0) 0.9%, rgba(252,165,165,1) 2.4%, rgba(252,165,165,0.6) 5.8%, rgba(252,165,165,1) 93%, rgba(252,165,165,0.7) 96%, rgba(252,165,165,0) 98%); }
+        .hl-blue { background: linear-gradient(104deg, rgba(191,219,254,0) 0.9%, rgba(191,219,254,1) 2.4%, rgba(191,219,254,0.6) 5.8%, rgba(191,219,254,1) 93%, rgba(191,219,254,0.7) 96%, rgba(191,219,254,0) 98%); }
+        
+        .sticky-note {
+            background-color: #fef08a;
+            box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+            padding: 1rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.25rem;
+            margin: 1.25rem 0;
+            border-bottom-right-radius: 20px 5px;
+        }
+
+        .flip-card { background-color: transparent; width: 100%; height: 230px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+        .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back {
+            position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+            display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+            border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-family: 'Patrick Hand', cursive; font-size: 1.2rem;
+        }
+        .flip-card-front { background-color: #ffffff; border: 2px solid #e5e7eb; color: #111827; }
+        .flip-card-back { background-color: #eff6ff; border: 2px solid #93c5fd; color: #1e3a8a; transform: rotateY(180deg); }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .tab-btn { transition: all 0.2s; }
+        .tab-btn.active { background-color: #2563eb; color: white; border-color: #2563eb; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3); }
+
+        @media print {
+            .no-print { display: none !important; }
+            .notebook-paper { background: none; border: none; padding: 0; }
+            body { background: white; }
+            .tab-content { display: block !important; page-break-before: always; }
+            .tab-content:first-of-type { page-break-before: avoid; }
+        }
+
+        .tree ul { padding-top: 20px; position: relative; transition: all 0.5s; }
+        .tree li { float: left; text-align: center; list-style-type: none; position: relative; padding: 20px 5px 0 5px; transition: all 0.5s; }
+        .tree li::before, .tree li::after { content: ''; position: absolute; top: 0; right: 50%; border-top: 2px solid #cbd5e1; width: 50%; height: 20px; }
+        .tree li::after { right: auto; left: 50%; border-left: 2px solid #cbd5e1; }
+        .tree li:only-child::after, .tree li:only-child::before { display: none; }
+        .tree li:only-child { padding-top: 0; }
+        .tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+        .tree li:last-child::before { border-right: 2px solid #cbd5e1; border-radius: 0 5px 0 0; }
+        .tree li:first-child::after { border-radius: 5px 0 0 0; }
+        .tree ul ul::before { content: ''; position: absolute; top: 0; left: 50%; border-left: 2px solid #cbd5e1; width: 0; height: 20px; }
+        .tree li a { border: 2px solid #cbd5e1; padding: 8px 12px; text-decoration: none; color: #1e293b; font-family: 'Patrick Hand', cursive; display: inline-block; border-radius: 8px; background: white; }
+        .tree li a:hover { background: #e0f2fe; border-color: #38bdf8; }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-12">
+
+    <!-- Top Navigation & Tools -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">📈</span>
+                    <h1 class="font-bold text-xl tracking-tight text-gray-900">CA Foundation: Ch 2 Unit 3 — Supply & Elasticity of Supply</h1>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200">
+                        <span class="text-lg">⏱️</span>
+                        <span id="timer-display" class="font-mono font-semibold text-slate-700">25:00</span>
+                        <button id="timer-btn" onclick="toggleTimer()" class="text-xs font-bold text-blue-600 hover:text-blue-800 ml-2 px-2 py-1 rounded bg-blue-100 hover:bg-blue-200 transition">START</button>
+                    </div>
+                    
+                    <button onclick="window.print()" class="flex items-center space-x-1 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition shadow-sm">
+                        <span>🖨️</span><span>Save PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Pillar Tabs -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto no-scrollbar border-t border-gray-100">
+            <div class="flex space-x-2 py-3" id="tabs-container">
+                <button onclick="switchTab('tab-notes')" class="tab-btn active whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">✍️ 1. Detailed Notes</button>
+                <button onclick="switchTab('tab-traps')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🚨 2. Trap Zone</button>
+                <button onclick="switchTab('tab-revision')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">⚡ 3. Revision & Mnemonics</button>
+                <button onclick="switchTab('tab-recall')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📝 4. Active Recall</button>
+                <button onclick="switchTab('tab-flashcards')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🃏 5. Flashcards</button>
+                <button onclick="switchTab('tab-mcq')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🎯 6. MCQs</button>
+                <button onclick="switchTab('tab-summary')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📊 7. Summary</button>
+                <button onclick="switchTab('tab-mindmap')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🧠 8. Mind Map</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto mt-8 px-4 sm:px-6 lg:px-8">
+
+        <!-- ========================================= -->
+        <!-- TAB 1: DETAILED HANDWRITTEN NOTES         -->
+        <!-- ========================================= -->
+        <div id="tab-notes" class="tab-content active notebook-paper bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden pr-6">
+            <h2 class="text-3xl font-bold mb-4 pt-4 hl-pink inline-block">Ch 2 Unit 3: Supply & Elasticity of Supply</h2>
+            <div class="mb-4 text-sm font-sans text-gray-500 font-semibold">Weightage: Core Micro Pillar (~2–3 Marks) | Stock vs Supply & Elasticity Geometry</div>
+
+            <h3 class="text-2xl font-bold mt-6 text-blue-800">1. Concept of Supply vs. Stock</h3>
+            <p><strong>Supply</strong> refers to the quantity of a good or service that producers are <span class="hl-yellow">willing and able to offer to the market</span> at various prices during a given period of time.</p>
+            <ul class="list-disc ml-8">
+                <li><strong>Stock:</strong> The total quantity of a commodity available with the seller at any given point in time (a <em>static/stock concept</em>).</li>
+                <li><strong>Supply:</strong> That part of the stock which the seller is actually ready to bring to the market at a specific price (a <em>flow concept</em>). Supply can be equal to or less than stock, but cannot exceed total available stock in the short run.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">2. Determinants of Supply</h3>
+            <p>Supply function: $S_x = f(P_x, P_f, P_r, T, G, N, E_p)$</p>
+            <ul class="list-disc ml-8">
+                <li><strong>Own Price ($P_x$):</strong> Direct relationship (ceteris paribus). Higher price yields higher profit margin $\implies$ higher supply.</li>
+                <li><strong>Prices of Factors of Production ($P_f$):</strong> Inverse relationship. Rise in input costs (wages, raw materials) reduces profit margins $\implies$ supply falls.</li>
+                <li><strong>Prices of Related Goods ($P_r$):</strong> If price of a substitute-in-production (e.g., wheat) rises, farmers shift resources away from rice $\implies$ supply of rice falls.</li>
+                <li><strong>State of Technology ($T$):</strong> Technological improvements lower production costs $\implies$ supply increases.</li>
+                <li><strong>Government Policy ($G$):</strong> Excise taxes and GST reduce supply (shifts curve left); subsidies increase supply (shifts curve right).</li>
+            </ul>
+
+            <div class="sticky-note mx-auto max-w-lg">
+                <strong>📌 Movement Along Supply Curve vs Shift in Supply Curve:</strong><br>
+                • <strong>Change in Quantity Supplied (Movement):</strong> Caused ONLY by a change in own price ($P_x$). Upward movement = Expansion of supply; Downward movement = Contraction of supply.<br>
+                • <strong>Change in Supply (Shift):</strong> Caused by factors other than own price (technology, taxes, input costs). Rightward shift = Increase in supply; Leftward shift = Decrease in supply.
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">3. The Law of Supply & Exceptions</h3>
+            <p><em>"Other things remaining constant (ceteris paribus), there is a direct/positive relationship between the price of a good and the quantity supplied."</em> The supply curve slopes upwards from left to right.</p>
+            
+            <p class="mt-4 font-bold text-red-700">Exceptions to the Law of Supply:</p>
+            <ol class="list-decimal ml-8">
+                <li><span class="hl-pink">Backward Bending Supply Curve of Labour:</span> Beyond a certain wage rate, workers prefer leisure over work. As wage increases further, hours of labour supplied actually decrease.</li>
+                <li><span class="hl-yellow">Agricultural Goods:</span> Production depends on climatic conditions, rainfall, and seasons, not solely on price changes.</li>
+                <li><span class="hl-blue">Perishable Commodities:</span> Sellers must dispose of goods (fruits, fish) even at lower prices to avoid total loss.</li>
+                <li><strong>Auction / Rare Goods:</strong> Supply of historical art (e.g., Mona Lisa) is fixed and completely vertical ($E_s = 0$).</li>
+            </ol>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">4. Elasticity of Supply ($E_s$)</h3>
+            <p>Measures the responsiveness of quantity supplied to a change in price:</p>
+            <p class="text-center font-bold text-lg text-blue-900 bg-blue-50 py-2 rounded">$$E_s = \frac{\% \Delta Q_s}{\% \Delta P} = \frac{\Delta Q}{\Delta P} \times \frac{P}{Q}$$</p>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">5. Geometric / Intercept Method of Supply Elasticity</h3>
+            <p>For any straight-line linear supply curve extending backwards to touch the axes:</p>
+            <ul class="list-disc ml-8">
+                <li><span class="hl-yellow">Passes through Origin:</span> $E_s = 1$ (Unitary Elastic) regardless of the angle/slope!</li>
+                <li><span class="hl-green">Intercepts the Price (Vertical) Axis:</span> $E_s > 1$ (Elastic supply).</li>
+                <li><span class="hl-pink">Intercepts the Quantity (Horizontal) Axis:</span> $E_s < 1$ (Inelastic supply).</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">6. Market Equilibrium</h3>
+            <p>Determined at the intersection of Market Demand ($D$) and Market Supply ($S$): $Q_d = Q_s$.</p>
+            <ul class="list-disc ml-8">
+                <li>If $P > P_e \implies$ Excess Supply (surplus) $\implies$ downward pressure on price.</li>
+                <li>If $P < P_e \implies$ Excess Demand (shortage) $\implies$ upward pressure on price.</li>
+            </ul>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 2: ICAI TRAP ZONE                     -->
+        <!-- ========================================= -->
+        <div id="tab-traps" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-red-600 flex items-center">🚨 ICAI Trap Zone & Mistake Tracker</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 border">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Common Student Trap</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-green-600 uppercase">ICAI Exam Standard & Fact</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">A steeper linear supply curve passing through the origin has $E_s < 1$, while a flatter one has $E_s > 1$.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> ANY straight-line supply curve that originates from the origin has <strong>$E_s = 1$ everywhere</strong>, regardless of whether it is steep (e.g. 75°) or flat (e.g. 20°)! Elasticity depends on the origin intercept, not the slope alone.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">Supply and stock can be used interchangeably in economics.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> Stock is the total volume available; supply is only the portion offered for sale at a specific price during a specific period. Supply can never exceed stock in the short run.</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">When a labourer's wage rate rises indefinitely, he will always supply more hours of labour.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> This creates a <strong>backward-bending supply curve</strong>. Beyond a threshold income level, the income effect (desire for leisure) dominates the substitution effect, causing hours supplied to fall as wages rise.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 3: REVISION & MNEMONICS               -->
+        <!-- ========================================= -->
+        <div id="tab-revision" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-4 text-purple-700">⚡ Rapid Revision & Mnemonic Matrix</h2>
+            
+            <div class="bg-purple-50 rounded-lg p-5 mb-6 border border-purple-100">
+                <h3 class="text-xl font-bold text-purple-800 mb-3">🧠 Intercept Elasticity Mnemonic: "P-O-Q"</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Price (Y) Axis Intercept</span>
+                        <div class="text-2xl font-bold text-green-600 mt-1">$E_s > 1$</div>
+                        <p class="text-xs text-gray-600 mt-1">Starts on Price Axis (Elastic)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Origin Intercept (0,0)</span>
+                        <div class="text-2xl font-bold text-blue-600 mt-1">$E_s = 1$</div>
+                        <p class="text-xs text-gray-600 mt-1">Passes through Origin (Unitary)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Quantity (X) Axis Intercept</span>
+                        <div class="text-2xl font-bold text-pink-600 mt-1">$E_s < 1$</div>
+                        <p class="text-xs text-gray-600 mt-1">Starts on Quantity Axis (Inelastic)</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-bold text-gray-800 mb-3 border-b pb-2">⏱️ 5-Minute Core Rules Summary</h3>
+            <ul class="list-disc ml-5 space-y-2 text-gray-700">
+                <li><strong>Law of Supply:</strong> Shows positive relation between price and quantity supplied (slope $= \Delta P / \Delta Q > 0$).</li>
+                <li><strong>Arc Elasticity Formula for Supply:</strong> $E_s = \frac{Q_2 - Q_1}{Q_2 + Q_1} \times \frac{P_2 + P_1}{P_2 - P_1}$.</li>
+                <li><strong>Time Horizon Impact:</strong> Market Period (very short run) $\implies E_s$ is very inelastic / zero; Long run $\implies E_s$ is highly elastic because capacity can expand.</li>
+                <li><strong>Indirect Taxes vs Subsidies:</strong> Taxes shift supply curve leftward/upward; subsidies shift supply curve rightward/downward.</li>
+            </ul>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 4: ACTIVE RECALL                      -->
+        <!-- ========================================= -->
+        <div id="tab-recall" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">📝 Active Recall Apple Pencil Worksheet</h2>
+            <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 bg-gray-50">
+                <h3 class="text-lg font-bold mb-3">1. Intercept & Elasticity Identification</h3>
+                <ul class="space-y-4 text-lg">
+                    <li>1. A linear supply curve cutting the quantity axis at a positive coordinate has elasticity: ___________________________</li>
+                    <li>2. A linear supply curve passing through $(0,0)$ at a 60-degree angle has elasticity: ___________________________</li>
+                    <li>3. A linear supply curve cutting the price axis at a positive coordinate has elasticity: ___________________________</li>
+                    <li>4. A vertical supply curve parallel to the price axis has elasticity: ___________________________</li>
+                </ul>
+
+                <h3 class="text-lg font-bold mt-8 mb-3">2. Shift vs Movement Classification</h3>
+                <ul class="space-y-3 text-lg">
+                    <li>• Introduction of a subsidy on solar panels leads to: (Movement / Rightward Shift) ___________________________</li>
+                    <li>• An increase in cement price causing cement makers to supply more bags leads to: ___________________________</li>
+                    <li>• A rise in the wage of construction workers shifts the housing supply curve: ___________________________</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 5: FLASHCARDS                         -->
+        <!-- ========================================= -->
+        <div id="tab-flashcards" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-teal-600 font-sans">🃏 3D Flip Flashcards</h2>
+                <div class="text-sm font-bold bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-sans">Mastered: <span id="fc-counter">0</span> / 4</div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is the elasticity of a straight-line supply curve passing through the origin?</div>
+                            <div class="flip-card-back text-center text-xl flex flex-col">
+                                <span class="font-bold text-blue-900">$E_s = 1$ (Unitary Elastic)</span>
+                                <span class="mt-2 text-sm text-gray-700">True for ANY straight line through the origin, regardless of steepness or slope!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c2u3_fc1')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Why does the supply curve of labour bend backwards?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-pink-700">Income Effect outweighs Substitution Effect!</span>
+                                <span class="mt-2 text-sm text-gray-700">At very high wages, workers value leisure more than additional income, so hours of work supplied diminish.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c2u3_fc2')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">How does time period affect price elasticity of supply?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-purple-900">Longer time = Greater elasticity ($E_s$).</span>
+                                <span class="mt-2 text-sm text-gray-700">In the very short run (market period), supply is fixed ($E_s = 0$). In the long run, firms can adjust plant capacity and entry occurs ($E_s > 1$).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c2u3_fc3')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Difference between 'Increase in Supply' and 'Expansion of Supply'?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-green-800">Expansion = Movement along curve due to rise in own price ($P_x$).</span>
+                                <span class="mt-2 text-sm text-gray-700"><strong>Increase</strong> = Rightward shift of the entire curve due to non-price factors (technology, subsidies, lower input cost).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c2u3_fc4')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 6: MCQs                               -->
+        <!-- ========================================= -->
+        <div id="tab-mcq" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-orange-600">🎯 Unit 3 Practice MCQs</h2>
+                <div class="text-sm font-bold bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Score: <span id="mcq-score">0</span></div>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="B">
+                    <p class="font-semibold text-lg mb-3">1. If a straight-line supply curve intercepts the positive Y-axis (Price axis), its price elasticity of supply is:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="A" class="mr-2"> (a) Less than one</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="B" class="mr-2"> (b) Greater than one</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="C" class="mr-2"> (c) Equal to one</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="D" class="mr-2"> (d) Equal to zero</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> A straight-line supply curve cutting the price (vertical) axis has $E_s > 1$ (Elastic supply).</div>
+                </div>
+
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="C">
+                    <p class="font-semibold text-lg mb-3">2. If price rises from ₹40 to ₹50 and quantity supplied increases from 100 units to 150 units, the price elasticity of supply (using percentage method) is:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="A" class="mr-2"> (a) 0.5</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="B" class="mr-2"> (b) 1.0</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="C" class="mr-2"> (c) 2.0</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="D" class="mr-2"> (d) 2.5</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> $\% \Delta Q = \frac{50}{100} \times 100 = 50\%$. $\% \Delta P = \frac{10}{40} \times 100 = 25\%$. $E_s = \frac{50\%}{25\%} = 2.0$.</div>
+                </div>
+
+                <button onclick="gradeMCQs()" class="w-full py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition shadow">Grade Answers</button>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 7: MASTER SUMMARY TABLE               -->
+        <!-- ========================================= -->
+        <div id="tab-summary" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-green-700">📊 Supply Elasticity Geometric Classification</h2>
+            <div class="overflow-x-auto rounded-lg border">
+                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-green-50">
+                        <tr>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Type of Supply Elasticity</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Value of $E_s$</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Intercept / Position</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Real-World Context</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-white">
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Perfect Inelastic</td>
+                            <td>$E_s = 0$</td>
+                            <td>Vertical straight line parallel to Y-axis</td>
+                            <td>Rare art, vintage antiques, momentary market run</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Inelastic Supply</td>
+                            <td>$E_s < 1$</td>
+                            <td>Intercepts positive Quantity (X) axis</td>
+                            <td>Agricultural goods, heavy capital machinery (short-run)</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Unitary Elastic</td>
+                            <td>$E_s = 1$</td>
+                            <td>Passes directly through Origin $(0,0)$</td>
+                            <td>Constant proportion output expansion</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Elastic Supply</td>
+                            <td>$E_s > 1$</td>
+                            <td>Intercepts positive Price (Y) axis</td>
+                            <td>Manufactured goods with spare factory capacity</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3 font-semibold">Perfect Elastic</td>
+                            <td>$E_s = \infty$</td>
+                            <td>Horizontal straight line parallel to X-axis</td>
+                            <td>Theoretical competitive benchmark</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ========================================= -->
+        <!-- TAB 8: MIND MAP                           -->
+        <!-- ========================================= -->
+        <div id="tab-mindmap" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans overflow-x-auto">
+            <h2 class="text-3xl font-bold mb-6 text-pink-600">🧠 Supply & Elasticity Mind Map</h2>
+            <div class="tree flex justify-center min-w-max pb-8">
+                <ul>
+                    <li>
+                        <a href="#" class="font-bold bg-pink-50 text-xl">Supply Theory</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="font-bold text-blue-700">Determinants</a>
+                                <ul>
+                                    <li><a href="#">Price ($P_x$)</a></li>
+                                    <li><a href="#">Input Cost ($P_f$)</a></li>
+                                    <li><a href="#">Technology & Tax</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-green-700">Exceptions</a>
+                                <ul>
+                                    <li><a href="#">Backward Labour Supply</a></li>
+                                    <li><a href="#">Agricultural Output</a></li>
+                                    <li><a href="#">Perishables</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-purple-700">Elasticity ($E_s$)</a>
+                                <ul>
+                                    <li><a href="#">Y-Axis Intercept ($>1$)</a></li>
+                                    <li><a href="#">Origin ($=1$)</a></li>
+                                    <li><a href="#">X-Axis Intercept ($<1$)</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="mt-12 text-center text-gray-400 text-sm pb-8 font-sans no-print">
+        &copy; 8-Pillar Master Study Suite • CA Foundation Business Economics Ch 2 Unit 3
+    </footer>
+
+    <!-- INTERACTIVITY SCRIPT -->
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        function markMastered(btn, cardId) {
+            if(btn.innerText.includes("Mark Mastered")) {
+                btn.innerText = "✅ Mastered";
+                btn.classList.replace("bg-gray-100", "bg-teal-500");
+                btn.classList.replace("text-gray-600", "text-white");
+                localStorage.setItem(cardId, "true");
+            } else {
+                btn.innerText = "Mark Mastered";
+                btn.classList.replace("bg-teal-500", "bg-gray-100");
+                btn.classList.replace("text-white", "text-gray-600");
+                localStorage.removeItem(cardId);
+            }
+            updateFcCounter();
+        }
+
+        function updateFcCounter() {
+            let count = 0;
+            for(let i=1; i<=4; i++) {
+                if(localStorage.getItem('c2u3_fc'+i)) count++;
+            }
+            document.getElementById('fc-counter').innerText = count;
+        }
+
+        window.onload = function() {
+            for(let i=1; i<=4; i++) {
+                let id = 'c2u3_fc'+i;
+                if(localStorage.getItem(id)) {
+                    let btns = document.querySelectorAll('#tab-flashcards button');
+                    if(btns[i-1]) {
+                        btns[i-1].innerText = "✅ Mastered";
+                        btns[i-1].classList.replace("bg-gray-100", "bg-teal-500");
+                        btns[i-1].classList.replace("text-gray-600", "text-white");
+                    }
+                }
+            }
+            updateFcCounter();
+        };
+
+        function gradeMCQs() {
+            let score = 0;
+            let total = 2;
+            let cards = document.querySelectorAll('.mcq-card');
+            
+            cards.forEach(card => {
+                let correctVal = card.getAttribute('data-correct');
+                let radios = card.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => {
+                    radio.parentElement.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    radio.disabled = true;
+                    if(radio.checked) {
+                        if(radio.value === correctVal) {
+                            score++;
+                            radio.parentElement.classList.add('bg-green-100', 'border-green-500');
+                        } else {
+                            radio.parentElement.classList.add('bg-red-100', 'border-red-500');
+                        }
+                    }
+                    if(radio.value === correctVal) radio.parentElement.classList.add('border-green-500');
+                });
+                card.querySelector('.explanation').classList.remove('hidden');
+            });
+            document.getElementById('mcq-score').innerText = score + " / " + total;
+        }
+
+        let timerInterval;
+        let timeLeft = 25 * 60;
+        let isRunning = false;
+
+        function toggleTimer() {
+            let btn = document.getElementById('timer-btn');
+            if(isRunning) {
+                clearInterval(timerInterval);
+                btn.innerText = "START";
+                btn.classList.replace("bg-red-100", "bg-blue-100");
+                btn.classList.replace("text-red-600", "text-blue-600");
+                isRunning = false;
+            } else {
+                timerInterval = setInterval(updateTimer, 1000);
+                btn.innerText = "PAUSE";
+                btn.classList.replace("bg-blue-100", "bg-red-100");
+                btn.classList.replace("text-blue-600", "text-red-600");
+                isRunning = true;
+            }
+        }
+
+        function updateTimer() {
+            if(timeLeft <= 0) {
+                clearInterval(timerInterval);
+                alert("🍅 Pomodoro complete! Take a 5-minute break.");
+                timeLeft = 25 * 60;
+                document.getElementById('timer-btn').innerText = "START";
+                isRunning = false;
+            } else {
+                timeLeft--;
+            }
+            let m = Math.floor(timeLeft / 60);
+            let s = timeLeft % 60;
+            document.getElementById('timer-display').innerText = 
+                (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+        }
+    </script>
+</body>
+</html>

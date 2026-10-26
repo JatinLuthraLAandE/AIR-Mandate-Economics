@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA Foundation - Business Economics: Ch 5 Unit 2 — Keynesian Theory of National Income</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Kalam:wght@300;400;700&family=Patrick+Hand&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #fdfbf7; --line-color: #e5e7eb; --margin-line: #ef4444; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-color); color: #1f2937; }
+        .notebook-paper {
+            background-image: repeating-linear-gradient(transparent, transparent 31px, var(--line-color) 31px, var(--line-color) 32px);
+            background-position: 0 1.2rem;
+            background-attachment: local;
+            border-left: 2px solid var(--margin-line);
+            padding-left: 2rem;
+            font-family: 'Kalam', cursive;
+            font-size: 1.15rem;
+            line-height: 2rem;
+        }
+        .hl-yellow { background: linear-gradient(104deg, rgba(253,230,138,0) 0.9%, rgba(253,230,138,1) 2.4%, rgba(253,230,138,0.6) 5.8%, rgba(253,230,138,1) 93%, rgba(253,230,138,0.7) 96%, rgba(253,230,138,0) 98%); }
+        .hl-green { background: linear-gradient(104deg, rgba(167,243,208,0) 0.9%, rgba(167,243,208,1) 2.4%, rgba(167,243,208,0.6) 5.8%, rgba(167,243,208,1) 93%, rgba(167,243,208,0.7) 96%, rgba(167,243,208,0) 98%); }
+        .hl-pink { background: linear-gradient(104deg, rgba(252,165,165,0) 0.9%, rgba(252,165,165,1) 2.4%, rgba(252,165,165,0.6) 5.8%, rgba(252,165,165,1) 93%, rgba(252,165,165,0.7) 96%, rgba(252,165,165,0) 98%); }
+        .hl-blue { background: linear-gradient(104deg, rgba(191,219,254,0) 0.9%, rgba(191,219,254,1) 2.4%, rgba(191,219,254,0.6) 5.8%, rgba(191,219,254,1) 93%, rgba(191,219,254,0.7) 96%, rgba(191,219,254,0) 98%); }
+        .sticky-note {
+            background-color: #fef08a; box-shadow: 2px 4px 6px rgba(0,0,0,0.1);
+            transform: rotate(-1deg); padding: 1rem; font-family: 'Caveat', cursive;
+            font-size: 1.25rem; margin: 1.25rem 0; border-bottom-right-radius: 20px 5px;
+        }
+        .flip-card { background-color: transparent; width: 100%; height: 230px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; }
+        .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back {
+            position: absolute; width: 100%; height: 100%; backface-visibility: hidden;
+            display: flex; align-items: center; justify-content: center; padding: 1.5rem;
+            border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-family: 'Patrick Hand', cursive; font-size: 1.2rem;
+        }
+        .flip-card-front { background-color: #ffffff; border: 2px solid #e5e7eb; color: #111827; }
+        .flip-card-back { background-color: #eff6ff; border: 2px solid #93c5fd; color: #1e3a8a; transform: rotateY(180deg); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .tab-btn { transition: all 0.2s; }
+        .tab-btn.active { background-color: #2563eb; color: white; border-color: #2563eb; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3); }
+        @media print {
+            .no-print { display: none !important; }
+            .notebook-paper { background: none; border: none; padding: 0; }
+            body { background: white; }
+            .tab-content { display: block !important; page-break-before: always; }
+            .tab-content:first-of-type { page-break-before: avoid; }
+        }
+        .tree ul { padding-top: 20px; position: relative; transition: all 0.5s; }
+        .tree li { float: left; text-align: center; list-style-type: none; position: relative; padding: 20px 5px 0 5px; transition: all 0.5s; }
+        .tree li::before, .tree li::after { content: ''; position: absolute; top: 0; right: 50%; border-top: 2px solid #cbd5e1; width: 50%; height: 20px; }
+        .tree li::after { right: auto; left: 50%; border-left: 2px solid #cbd5e1; }
+        .tree li:only-child::after, .tree li:only-child::before { display: none; }
+        .tree li:only-child { padding-top: 0; }
+        .tree li:first-child::before, .tree li:last-child::after { border: 0 none; }
+        .tree li:last-child::before { border-right: 2px solid #cbd5e1; border-radius: 0 5px 0 0; }
+        .tree li:first-child::after { border-radius: 5px 0 0 0; }
+        .tree ul ul::before { content: ''; position: absolute; top: 0; left: 50%; border-left: 2px solid #cbd5e1; width: 0; height: 20px; }
+        .tree li a { border: 2px solid #cbd5e1; padding: 8px 12px; text-decoration: none; color: #1e293b; font-family: 'Patrick Hand', cursive; display: inline-block; border-radius: 8px; background: white; }
+        .tree li a:hover { background: #e0f2fe; border-color: #38bdf8; }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-12">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl">📈</span>
+                    <h1 class="font-bold text-xl tracking-tight text-gray-900">CA Foundation: Ch 5 Unit 2 — Keynesian Determination of Income</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2 bg-slate-100 rounded-full px-4 py-1.5 border border-slate-200">
+                        <span class="text-lg">⏱️</span>
+                        <span id="timer-display" class="font-mono font-semibold text-slate-700">25:00</span>
+                        <button id="timer-btn" onclick="toggleTimer()" class="text-xs font-bold text-blue-600 hover:text-blue-800 ml-2 px-2 py-1 rounded bg-blue-100 hover:bg-blue-200 transition">START</button>
+                    </div>
+                    <button onclick="window.print()" class="flex items-center space-x-1 px-4 py-2 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition shadow-sm">
+                        <span>🖨️</span><span>Save PDF</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-x-auto no-scrollbar border-t border-gray-100">
+            <div class="flex space-x-2 py-3" id="tabs-container">
+                <button onclick="switchTab('tab-notes')" class="tab-btn active whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">✍️ 1. Detailed Notes</button>
+                <button onclick="switchTab('tab-traps')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🚨 2. Trap Zone</button>
+                <button onclick="switchTab('tab-revision')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">⚡ 3. Revision & Mnemonics</button>
+                <button onclick="switchTab('tab-recall')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📝 4. Active Recall</button>
+                <button onclick="switchTab('tab-flashcards')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🃏 5. Flashcards</button>
+                <button onclick="switchTab('tab-mcq')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🎯 6. MCQs</button>
+                <button onclick="switchTab('tab-summary')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">📊 7. Summary</button>
+                <button onclick="switchTab('tab-mindmap')" class="tab-btn whitespace-nowrap px-4 py-2 rounded-lg border border-gray-200 text-sm font-semibold text-gray-600 bg-white">🧠 8. Mind Map</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto mt-8 px-4 sm:px-6 lg:px-8">
+        <!-- TAB 1: DETAILED NOTES -->
+        <div id="tab-notes" class="tab-content active notebook-paper bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden pr-6">
+            <h2 class="text-3xl font-bold mb-4 pt-4 hl-pink inline-block">Ch 5 Unit 2: The Keynesian Theory of National Income</h2>
+            <div class="mb-4 text-sm font-sans text-gray-500 font-semibold">Weightage: Core Macro Modeling (~7–8 Marks) | 2, 3 & 4 Sector Models & Multipliers</div>
+
+            <h3 class="text-2xl font-bold mt-6 text-blue-800">1. Classical vs. Keynesian Framework</h3>
+            <p><strong>Classical View:</strong> Believed in Say's Law of Markets (<em>"Supply creates its own demand"</em>). Assumed full employment is a normal equilibrium state guaranteed by flexible wages, prices, and interest rates.</p>
+            <p><strong>Keynesian Revolution (J.M. Keynes, 1936):</strong> Postulated that equilibrium can occur at <strong>less than full employment</strong>. National output and employment are determined by <span class="hl-yellow">Effective Demand</span> (Aggregate Demand = Aggregate Supply).</p>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">2. Consumption Function & Propensities</h3>
+            <p>The linear Keynesian consumption function: <span class="hl-green">$C = a + bY$</span></p>
+            <ul class="list-disc ml-8">
+                <li>$a$ ($\bar{C}$): <strong>Autonomous Consumption</strong> (consumption when disposable income is zero, financed by dissaving).</li>
+                <li>$b$: <strong>Marginal Propensity to Consume (MPC)</strong>: $b = \frac{\Delta C}{\Delta Y}$. Keynesian psychological law dictates $0 < b < 1$.</li>
+                <li><strong>Average Propensity to Consume (APC):</strong> $APC = \frac{C}{Y}$. As income increases, $APC$ declines continuously.</li>
+            </ul>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">3. Saving Function & The Fundamental Identity</h3>
+            <p>Since Income $Y = C + S$, the saving function is derived as: $S = -a + (1 - b)Y$</p>
+            <ul class="list-disc ml-8">
+                <li>$1 - b$: <strong>Marginal Propensity to Save (MPS)</strong>: $MPS = \frac{\Delta S}{\Delta Y}$.</li>
+                <li><span class="hl-yellow font-bold">Universal Propensity Identities:</span>
+                    $$APC + APS = 1 \quad \text{and} \quad MPC + MPS = 1$$
+                </li>
+            </ul>
+
+            <div class="sticky-note mx-auto max-w-lg">
+                <strong>📌 The Investment Multiplier ($K$):</strong><br>
+                Measures the multiple by which national income increases following an autonomous increase in investment ($\Delta I$):<br>
+                $$K = \frac{\Delta Y}{\Delta I} = \frac{1}{1 - MPC} = \frac{1}{MPS}$$
+                • Minimum value of $K = 1$ (when $MPC = 0$).<br>
+                • Maximum value of $K = \infty$ (when $MPC = 1$).
+            </div>
+
+            <h3 class="text-2xl font-bold mt-8 text-blue-800">4. Sector Models of Income Determination</h3>
+            <p><strong>A. Two-Sector Model (Households + Firms):</strong></p>
+            <ul class="list-disc ml-8">
+                <li>$AD = C + I$, where $I$ is assumed autonomous ($\bar{I}$).</li>
+                <li>Equilibrium condition: $Y = AD \implies Y = a + bY + \bar{I} \implies$
+                    <span class="hl-yellow font-bold text-lg">$Y = \frac{a + \bar{I}}{1 - b}$</span>.
+                </li>
+                <li>Leakages-Injections Approach: Equilibrium occurs where <strong>Saving = Investment ($S = I$)</strong>.</li>
+            </ul>
+
+            <p class="mt-4"><strong>B. Three-Sector Model (Adding Government $G$ and Net Taxes $T$):</strong></p>
+            <ul class="list-disc ml-8">
+                <li>$Y = C + I + G$, where disposable income $Y_d = Y - T$.</li>
+                <li>$C = a + b(Y - T) = a + bY - bT$.</li>
+                <li>Equilibrium condition:
+                    <span class="hl-green font-bold text-lg">$Y = \frac{a - bT + I + G}{1 - b}$</span>.
+                </li>
+                <li>Leakages = Injections: <strong>$S + T = I + G$</strong>.</li>
+                <li><strong>Tax Multiplier:</strong> $K_t = -\frac{b}{1 - b} = -\frac{MPC}{MPS}$. (Negative, and smaller in magnitude than government expenditure multiplier by 1).</li>
+                <li><strong>Balanced Budget Multiplier:</strong> When $\Delta G = \Delta T$, the Balanced Budget Multiplier is <strong>always equal to 1</strong>! ($\Delta Y = \Delta G$).</li>
+            </ul>
+
+            <p class="mt-4"><strong>C. Four-Sector Open Economy Model (Adding Foreign Sector $X - M$):</strong></p>
+            <ul class="list-disc ml-8">
+                <li>Imports function: $M = \bar{M} + mY$, where $m$ is the <strong>Marginal Propensity to Import (MPM)</strong> ($0 < m < 1$).</li>
+                <li>$AD = C + I + G + (X - M)$.</li>
+                <li>Equilibrium Income:
+                    <span class="hl-blue font-bold text-lg">$Y = \frac{a - bT + I + G + X - \bar{M}}{1 - b + m}$</span>.
+                </li>
+                <li><strong>Foreign Trade Multiplier:</strong>
+                    $$K_f = \frac{1}{1 - b + m} = \frac{1}{MPS + MPM}$$
+                    <em>(Notice that the open economy multiplier is smaller than the closed economy multiplier because imports act as a leakage!)</em>
+            </ul>
+        </div>
+
+        <!-- TAB 2: TRAP ZONE -->
+        <div id="tab-traps" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-red-600 flex items-center">🚨 ICAI Trap Zone & Mistake Tracker</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 border">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Common Student Confusion</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-green-600 uppercase">ICAI Exam Standard & Fact</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">A balanced budget increase where Government spends ₹100 crore financed by ₹100 crore taxes has zero net effect on National Income.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> This is the <strong>Balanced Budget Multiplier Theorem</strong>! Because the expenditure multiplier ($1/(1-b)$) is strictly greater than the tax multiplier ($-b/(1-b)$) by 1, the net multiplier is <strong>exactly 1</strong>. National income increases by the full ₹100 crore!</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">The multiplier in an open 4-sector economy is greater than in a closed 3-sector economy.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> In an open economy, imports ($m$) create an additional domestic income leakage. Hence, $K_f = 1/(MPS + m)$, which makes the <strong>multiplier smaller</strong> than in a closed economy ($1/MPS$).</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-red-50">APC can never be greater than 1.</td>
+                            <td class="px-6 py-4 text-sm text-gray-800 bg-green-50"><strong>False!</strong> At low income levels before the break-even point where consumption exceeds income ($C > Y$, financed by dissaving), <strong>$APC > 1$</strong> and $APS$ is negative! However, $MPC$ can never exceed 1.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 3: REVISION & MNEMONICS -->
+        <div id="tab-revision" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-4 text-purple-700">⚡ Rapid Revision & Mnemonic Matrix</h2>
+            <div class="bg-purple-50 rounded-lg p-5 mb-6 border border-purple-100">
+                <h3 class="text-xl font-bold text-purple-800 mb-3">🧠 Multipliers at a Glance</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Investment / Govt Multiplier</span>
+                        <div class="text-xl font-bold text-blue-600 mt-1">$K = \frac{1}{1 - MPC}$</div>
+                        <p class="text-xs text-gray-600 mt-1">Autonomous spending shift</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Tax Multiplier</span>
+                        <div class="text-xl font-bold text-red-600 mt-1">$K_t = -\frac{b}{1 - b}$</div>
+                        <p class="text-xs text-gray-600 mt-1">Negative impact on income</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm border text-center">
+                        <span class="text-xs font-semibold text-gray-500">Balanced Budget Multiplier</span>
+                        <div class="text-xl font-bold text-green-600 mt-1">$K_{bb} = 1$</div>
+                        <p class="text-xs text-gray-600 mt-1">Always equal to unity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 4: ACTIVE RECALL -->
+        <div id="tab-recall" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold text-indigo-600 mb-4">📝 Active Recall Apple Pencil Worksheet</h2>
+            <div class="border-2 border-dashed border-gray-300 rounded-xl p-6 bg-gray-50">
+                <h3 class="text-lg font-bold mb-3">1. Multiplier & Equilibrium Recall</h3>
+                <ul class="space-y-4 text-lg">
+                    <li>1. If $MPC = 0.8$, the value of the investment multiplier is: ___________________________</li>
+                    <li>2. The value of the balanced budget multiplier is always: ___________________________</li>
+                    <li>3. In an open 4-sector economy, the leakages are: ___________________________</li>
+                    <li>4. At the break-even level of income, the value of $APS$ is: ___________________________</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TAB 5: FLASHCARDS -->
+        <div id="tab-flashcards" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-teal-600 font-sans">🃏 3D Flip Flashcards</h2>
+                <div class="text-sm font-bold bg-teal-100 text-teal-800 px-3 py-1 rounded-full font-sans">Mastered: <span id="fc-counter">0</span> / 4</div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Calculate Multiplier ($K$) if $MPC = 0.75$. What if $MPC = 0.9$?</div>
+                            <div class="flip-card-back text-center text-lg flex flex-col">
+                                <span class="font-bold text-blue-900">If $MPC=0.75 \implies K = 4$.</span>
+                                <span class="mt-2 text-sm text-gray-700">If $MPC=0.9 \implies K = \frac{1}{1-0.9} = \mathbf{10}$. Higher MPC yields a vastly higher multiplier.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c5u2_fc1')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">What is the Balanced Budget Multiplier theorem?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-green-900">$K_{bb} = 1$ (Unity)</span>
+                                <span class="mt-2 text-sm text-gray-700">An equal increase in government spending and taxation increases national income by an amount exactly equal to the increase in spending ($\Delta Y = \Delta G$).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c5u2_fc2')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">Why is the Tax Multiplier negative and smaller than the Spending Multiplier?</div>
+                            <div class="flip-card-back text-center text-base flex flex-col">
+                                <span class="font-bold text-purple-900">Because part of a tax cut is saved, not spent!</span>
+                                <span class="mt-2 text-sm text-gray-700">Direct government spending immediately affects aggregate demand, whereas taxes work indirectly through consumption ($MPC \times \Delta T$).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c5u2_fc3')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+                <div class="fc-container">
+                    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front text-center">State the leakages-injections equilibrium condition for a 4-sector economy.</div>
+                            <div class="flip-card-back text-center text-lg flex flex-col">
+                                <span class="font-bold text-pink-700">$S + T + M = I + G + X$</span>
+                                <span class="mt-2 text-sm text-gray-700">Total Leakages (Savings + Taxes + Imports) must equal Total Injections (Investment + Government + Exports).</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="markMastered(this, 'c5u2_fc4')" class="mt-2 w-full py-2 bg-gray-100 hover:bg-teal-500 hover:text-white text-gray-600 font-sans font-semibold rounded text-sm transition">Mark Mastered</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 6: MCQs -->
+        <div id="tab-mcq" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-3xl font-bold text-orange-600">🎯 Unit 2 Practice MCQs</h2>
+                <div class="text-sm font-bold bg-orange-100 text-orange-800 px-3 py-1 rounded-full">Score: <span id="mcq-score">0</span></div>
+            </div>
+            <div class="space-y-6">
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="C">
+                    <p class="font-semibold text-lg mb-3">1. If the marginal propensity to save ($MPS$) is 0.20, an autonomous increase in investment of ₹500 crore will increase national income by:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="A" class="mr-2"> (a) ₹1,000 crore</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="B" class="mr-2"> (b) ₹2,000 crore</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="C" class="mr-2"> (c) ₹2,500 crore</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q1" value="D" class="mr-2"> (d) ₹5,000 crore</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> $K = 1 / MPS = 1 / 0.20 = 5$. $\Delta Y = K \times \Delta I = 5 \times 500 = ₹2,500\text{ crore}$.</div>
+                </div>
+                <div class="mcq-card bg-gray-50 p-5 rounded-lg border" data-correct="B">
+                    <p class="font-semibold text-lg mb-3">2. If government spending and tax revenue both increase simultaneously by ₹200 crore, national income will:</p>
+                    <div class="space-y-2">
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="A" class="mr-2"> (a) Remain completely unchanged</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="B" class="mr-2"> (b) Increase by ₹200 crore</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="C" class="mr-2"> (c) Decrease by ₹200 crore</label>
+                        <label class="block p-3 rounded border bg-white hover:bg-gray-100 cursor-pointer"><input type="radio" name="q2" value="D" class="mr-2"> (d) Increase by ₹400 crore</label>
+                    </div>
+                    <div class="explanation hidden mt-3 p-3 bg-blue-50 text-blue-800 text-sm rounded"><strong>Correct!</strong> By the Balanced Budget Multiplier theorem, $K_{bb} = 1$. Hence, $\Delta Y = 1 \times 200 = ₹200\text{ crore}$.</div>
+                </div>
+                <button onclick="gradeMCQs()" class="w-full py-3 bg-orange-600 hover:bg-orange-700 text-white font-bold rounded-lg transition shadow">Grade Answers</button>
+            </div>
+        </div>
+
+        <!-- TAB 7: MASTER SUMMARY TABLE -->
+        <div id="tab-summary" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans">
+            <h2 class="text-3xl font-bold mb-6 text-green-700">📊 Sectoral Equilibrium Models Comparison</h2>
+            <div class="overflow-x-auto rounded-lg border">
+                <table class="min-w-full divide-y divide-gray-200 text-sm">
+                    <thead class="bg-green-50">
+                        <tr>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Model Type</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Aggregate Demand ($AD$)</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Leakages = Injections</th>
+                            <th class="px-4 py-3 text-left font-bold text-gray-700">Multiplier Formula</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-white">
+                        <tr><td class="px-4 py-3 font-semibold">2-Sector Model</td><td>$C + I$</td><td>$S = I$</td><td>$K = \frac{1}{1 - b}$</td></tr>
+                        <tr><td class="px-4 py-3 font-semibold">3-Sector Model</td><td>$C + I + G$</td><td>$S + T = I + G$</td><td>$K_g = \frac{1}{1 - b}$; $K_t = -\frac{b}{1 - b}$; $K_{bb} = 1$</td></tr>
+                        <tr><td class="px-4 py-3 font-semibold">4-Sector Model</td><td>$C + I + G + (X - M)$</td><td>$S + T + M = I + G + X$</td><td>$K_f = \frac{1}{1 - b + m}$</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- TAB 8: MIND MAP -->
+        <div id="tab-mindmap" class="tab-content bg-white rounded-xl shadow-md border border-gray-200 p-6 font-sans overflow-x-auto">
+            <h2 class="text-3xl font-bold mb-6 text-pink-600">🧠 Keynesian Determination Mind Map</h2>
+            <div class="tree flex justify-center min-w-max pb-8">
+                <ul>
+                    <li>
+                        <a href="#" class="font-bold bg-pink-50 text-xl">Keynesian Model</a>
+                        <ul>
+                            <li>
+                                <a href="#" class="font-bold text-blue-700">Propensities</a>
+                                <ul>
+                                    <li><a href="#">$C = a + bY$</a></li>
+                                    <li><a href="#">$APC + APS = 1$</a></li>
+                                    <li><a href="#">$MPC + MPS = 1$</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-green-700">Multipliers</a>
+                                <ul>
+                                    <li><a href="#">Investment: $1/MPS$</a></li>
+                                    <li><a href="#">Tax: $-b/(1-b)$</a></li>
+                                    <li><a href="#">Balanced Budget: $1$</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="font-bold text-purple-700">Equilibrium</a>
+                                <ul>
+                                    <li><a href="#">2-Sector: $S = I$</a></li>
+                                    <li><a href="#">3-Sector: $S+T = I+G$</a></li>
+                                    <li><a href="#">4-Sector: $S+T+M = I+G+X$</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-12 text-center text-gray-400 text-sm pb-8 font-sans no-print">
+        &copy; 8-Pillar Master Study Suite • CA Foundation Business Economics Ch 5 Unit 2
+    </footer>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+        function markMastered(btn, cardId) {
+            if(btn.innerText.includes("Mark Mastered")) {
+                btn.innerText = "✅ Mastered";
+                btn.classList.replace("bg-gray-100", "bg-teal-500");
+                btn.classList.replace("text-gray-600", "text-white");
+                localStorage.setItem(cardId, "true");
+            } else {
+                btn.innerText = "Mark Mastered";
+                btn.classList.replace("bg-teal-500", "bg-gray-100");
+                btn.classList.replace("text-white", "text-gray-600");
+                localStorage.removeItem(cardId);
+            }
+            updateFcCounter();
+        }
+        function updateFcCounter() {
+            let count = 0;
+            for(let i=1; i<=4; i++) { if(localStorage.getItem('c5u2_fc'+i)) count++; }
+            document.getElementById('fc-counter').innerText = count;
+        }
+        window.onload = function() {
+            for(let i=1; i<=4; i++) {
+                let id = 'c5u2_fc'+i;
+                if(localStorage.getItem(id)) {
+                    let btns = document.querySelectorAll('#tab-flashcards button');
+                    if(btns[i-1]) {
+                        btns[i-1].innerText = "✅ Mastered";
+                        btns[i-1].classList.replace("bg-gray-100", "bg-teal-500");
+                        btns[i-1].classList.replace("text-gray-600", "text-white");
+                    }
+                }
+            }
+            updateFcCounter();
+        };
+        function gradeMCQs() {
+            let score = 0, total = 2;
+            let cards = document.querySelectorAll('.mcq-card');
+            cards.forEach(card => {
+                let correctVal = card.getAttribute('data-correct');
+                let radios = card.querySelectorAll('input[type="radio"]');
+                radios.forEach(radio => {
+                    radio.parentElement.classList.remove('bg-green-100', 'border-green-500', 'bg-red-100', 'border-red-500');
+                    radio.disabled = true;
+                    if(radio.checked) {
+                        if(radio.value === correctVal) {
+                            score++;
+                            radio.parentElement.classList.add('bg-green-100', 'border-green-500');
+                        } else {
+                            radio.parentElement.classList.add('bg-red-100', 'border-red-500');
+                        }
+                    }
+                    if(radio.value === correctVal) radio.parentElement.classList.add('border-green-500');
+                });
+                card.querySelector('.explanation').classList.remove('hidden');
+            });
+            document.getElementById('mcq-score').innerText = score + " / " + total;
+        }
+        let timerInterval, timeLeft = 25 * 60, isRunning = false;
+        function toggleTimer() {
+            let btn = document.getElementById('timer-btn');
+            if(isRunning) {
+                clearInterval(timerInterval);
+                btn.innerText = "START";
+                btn.classList.replace("bg-red-100", "bg-blue-100");
+                btn.classList.replace("text-red-600", "text-blue-600");
+                isRunning = false;
+            } else {
+                timerInterval = setInterval(updateTimer, 1000);
+                btn.innerText = "PAUSE";
+                btn.classList.replace("bg-blue-100", "bg-red-100");
+                btn.classList.replace("text-blue-600", "text-red-600");
+                isRunning = true;
+            }
+        }
+        function updateTimer() {
+            if(timeLeft <= 0) {
+                clearInterval(timerInterval);
+                alert("🍅 Pomodoro complete! Take a 5-minute break.");
+                timeLeft = 25 * 60;
+                document.getElementById('timer-btn').innerText = "START";
+                isRunning = false;
+            } else { timeLeft--; }
+            let m = Math.floor(timeLeft / 60), s = timeLeft % 60;
+            document.getElementById('timer-display').innerText = (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
+        }
+    </script>
+</body>
+</html>
